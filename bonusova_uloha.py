@@ -1,6 +1,6 @@
 import tkinter as tk
 import time
-c = tk.Canvas(bg="grey", width=500, height=400)
+c = tk.Canvas(bg="grey", width=600, height=400)
 c.pack()
 
 file = open("spokojnost.txt", "w").close()
@@ -13,7 +13,7 @@ def draw(rect_color0="yellow", rect_color1="yellow"):
     c.create_text(100, 300, text="ano:)", font="arial 20")
 
     c.create_rectangle(350, 280, 450, 320, fill=rect_color1)
-    c.create_text(400, 300, text="nie:(", font="arial 20")
+    c.create_text(400, 300, text="nie:(", font="arial 15")
     c.update()
 
 
