@@ -1,5 +1,5 @@
 # Mabasej_Team
-We are working on system, that will help tourists in cities to get information about city more easily.
+We are working on system, that will help tourists in cities to get information about city more easily. Also it will be usefull for citizens.
 
 # Hardware
 - work in progress (but probabbly we will use rpi with external antena for wifi)
