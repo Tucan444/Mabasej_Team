@@ -6,7 +6,7 @@ We are working on system, that will help tourists in cities to get information a
 
 # Software
 - python 3.9 based server with basic web interface
-- python 3.x based mobile app with help of android studio
+- python 3.8.6 based mobile app with help of android studio
 
 # Known issues
 - no code writen (needs to be fixed app does not work because of it)
