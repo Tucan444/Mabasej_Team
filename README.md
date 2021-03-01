@@ -10,3 +10,4 @@ We are working on system, that will help tourists in cities to get information a
 
 # Known issues
 - no code writen (needs to be fixed app does not work because of it)
+k
