@@ -1,7 +1,17 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, Request
 from pydantic import BaseModel
+import engine
 
 app = FastAPI()
+
+sensors = {
+    "teplota": 24,
+    "vlhkosť": 25,
+    "počet ľudí": 10,
+    "doba čakania": 2
+}
+log = engine.Log(print_m=True, debug=True)
+
 location = "izba"
 ID = 55
 IP = "192.168.1.25"
@@ -28,16 +38,29 @@ class Server_table(BaseModel):
 
 
 @app.post("/heartbeat")
-def heartbeat(s_table: Server_table):
-    for position, server_id in enumerate(s_table.ID):
-        if server_id in heartbeat_table["ID"]:
-            if heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] > s_table.last_heartbeat[position]:
-                heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] = s_table.last_heartbeat[position]
-        else:
-            heartbeat_table["ID"].append(s_table.ID[position])
-            heartbeat_table["IP"].append(s_table.IP[position])
-            heartbeat_table["location"].append(s_table.location[position])
-            heartbeat_table["file_system"].append(s_table.file_system[position])
-            heartbeat_table["last_heartbeat"].append(s_table.last_heartbeat[position])
-    print(heartbeat_table)
+def heartbeat(s_table: Server_table, request: Request):
+    log.message(f"heartbeat requested: {request.client.host}:{request.client.port}")
+    log.debug(f"Recieved server table: {s_table}")
+    try:
+        for position, server_id in enumerate(s_table.ID):
+            if server_id in heartbeat_table["ID"]:
+                if heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] > s_table.last_heartbeat[
+                    position]:
+                    heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] = s_table.last_heartbeat[
+                        position]
+            else:
+                heartbeat_table["ID"].append(s_table.ID[position])
+                heartbeat_table["IP"].append(s_table.IP[position])
+                heartbeat_table["location"].append(s_table.location[position])
+                heartbeat_table["file_system"].append(s_table.file_system[position])
+                heartbeat_table["last_heartbeat"].append(s_table.last_heartbeat[position])
+    except Exception as error:
+        log.error(f"heartbeat > {error}")
     return heartbeat_table, {"ID": ID, "file_system": filesystem, "location": location}
+
+
+@app.get("/sensors")
+def get_sensors(request: Request):
+    log.message(f"sensor data sent to {request.client.host}:{request.client.port}")
+    log.debug(f"sensor data: {sensors}")
+    return sensors
