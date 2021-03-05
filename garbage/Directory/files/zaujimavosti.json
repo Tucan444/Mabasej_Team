@@ -1,0 +1,20 @@
+{
+    "D_backround": "files/bg3.pmg",
+    "D_menu": "Zauj\u00edmavosti Pova\u017esk\u00e9ho hradu",
+    "D_text": "Tu dole si m\u00f4\u017ete pozrie\u0165 zauj\u00edmavosti",
+    "historia": [
+        "txt",
+        "files/txt/txt1.txt",
+        "menu"
+    ],
+    "novinky": [
+        "txt",
+        "files/txt/txt2.txt",
+        "download"
+    ],
+    "aktu\u00e1lny hrad": [
+        "mp4",
+        "files/video/video1.mp4",
+        "show"
+    ]
+}
