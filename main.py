@@ -44,8 +44,8 @@ def heartbeat(s_table: Server_table, request: Request):
     try:
         for position, server_id in enumerate(s_table.ID):
             if server_id in heartbeat_table["ID"]:
-                if heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] > s_table.last_heartbeat[
-                    position]:
+                if heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] > \
+                        s_table.last_heartbeat[position]:
                     heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] = s_table.last_heartbeat[
                         position]
             else:
@@ -64,3 +64,15 @@ def get_sensors(request: Request):
     log.message(f"sensor data sent to {request.client.host}:{request.client.port}")
     log.debug(f"sensor data: {sensors}")
     return sensors
+
+
+@app.get("/files/{file}")
+def get_file(file: str):
+    pass
+
+
+def send_heartbeat(server_table, ID, files_table):
+    pass
+
+while True:
+    for server in heartbeat_table["IP"]:
