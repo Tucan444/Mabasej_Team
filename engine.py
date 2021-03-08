@@ -2,7 +2,7 @@ from datetime import datetime
 
 
 class Log():
-    def __init__(self, save_e=True, save_w=False, save_m=False, print_e=True, print_w=True, print_m=False, debug = False):
+    def __init__(self, save_e=True, save_w=False, save_m=False, print_e=True, print_w=True, print_m=False, debug=False):
         self.save_error = save_e
         self.save_warning = save_w
         self.save_messages = save_m

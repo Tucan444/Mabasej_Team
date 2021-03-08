@@ -1,6 +1,10 @@
 from fastapi import FastAPI, Request
 from pydantic import BaseModel
 import engine
+import requests
+import time
+import json
+import threading
 
 app = FastAPI()
 
@@ -12,22 +16,28 @@ sensors = {
 }
 log = engine.Log(print_m=True, debug=True)
 
-location = "izba"
-ID = 55
-IP = "192.168.1.25"
+time_to_heartbeat = 60 #Seconds
+location = "2"
+ID = 2
+IP = "192.168.1.99"
 filesystem = {
     "otvaracie_hod": ["t", {"pon": "10-25"}, {"uto": "10-25"}],
     "prehliadka": ["pdf", "/files/prehliadka.pdf"],
     "fotky_hrad": ["png_z", ["/files/hrad1.png", "/files/hrad2.png"]]
 }
 heartbeat_table = {
-    "ID": [1, 2, 3, 4, 5, 6, 7],
-    "IP": ["192.168.1.11", "192.168.1.12", "192.168.1.13", "192.168.1.14", "192.168.1.16", "192.168.1.17"],
-    "location": ["1", "2", "3", "4", "5", "6", "hrad"],
-    "file_system": ["x", "x", "x", "x", "x", "x", "x"],
-    "last_heartbeat": [15, 15, 15, 15, 15, 15, 15]
+    "ID": [1],
+    "IP": ["192.168.1.231"],
+    "location": ["1"],
+    "file_system": ["x"],
+    "last_heartbeat": [7]
 }
-
+heartbeat_table["ID"].append(ID)
+heartbeat_table["IP"].append(IP)
+heartbeat_table["location"].append(location)
+heartbeat_table["file_system"].append(filesystem)
+heartbeat_table["last_heartbeat"].append(time_to_heartbeat)
+# Todo better "host" ID handeling
 
 class Server_table(BaseModel):
     ID: list
@@ -44,10 +54,15 @@ def heartbeat(s_table: Server_table, request: Request):
     try:
         for position, server_id in enumerate(s_table.ID):
             if server_id in heartbeat_table["ID"]:
-                if heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] > \
+                if heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] < \
                         s_table.last_heartbeat[position]:
                     heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(server_id)] = s_table.last_heartbeat[
                         position]
+                    log.debug(f"updated {server_id}`s heartbeat to {s_table.last_heartbeat[position]}")
+                    #Todo update filesystem too. Now updating only last heartbeat
+            elif server_id == ID:
+                log.debug(f"Updated my heartbeat from {s_table.last_heartbeat[position]} to {time_to_heartbeat}")
+                heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(ID)] = time_to_heartbeat
             else:
                 heartbeat_table["ID"].append(s_table.ID[position])
                 heartbeat_table["IP"].append(s_table.IP[position])
@@ -69,10 +84,25 @@ def get_sensors(request: Request):
 @app.get("/files/{file}")
 def get_file(file: str):
     pass
+    #Todo Get files function for client (phone/ther rpi)
 
 
-def send_heartbeat(server_table, ID, files_table):
-    pass
+def send_heartbeat(ip):
+    log.message(f"requesting heartbeat from {ip}")
+    cache_request = requests.post(f"http://{ip}:8000/heartbeat", data=json.dumps(heartbeat_table))
+    log.debug(json.dumps(cache_request.json(), indent=4))
 
-while True:
-    for server in heartbeat_table["IP"]:
+
+def mainloop():
+    while True:
+        for device_number, device_ID in enumerate(heartbeat_table["ID"]):
+            if device_ID != ID:
+                if heartbeat_table["last_heartbeat"][device_number] < 0:
+                    send_heartbeat(heartbeat_table["IP"][device_number])
+                    heartbeat_table["last_heartbeat"][device_number] = time_to_heartbeat + 5
+                print(f"""{device_ID} : time to heartbeat : {heartbeat_table["last_heartbeat"][device_number]}""")
+                heartbeat_table["last_heartbeat"][device_number] -= 1
+        time.sleep(1)
+
+thread_1 = threading.Thread(target=mainloop, daemon=True)
+thread_1.start()
