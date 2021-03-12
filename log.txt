@@ -1,3 +1,0 @@
-
-2021-03-10 12:20:52.490547 -> ERROR: heartbeat > list indices must be integers or slices, not str
-2021-03-10 12:29:03.690483 -> ERROR: heartbeat > list indices must be integers or slices, not str

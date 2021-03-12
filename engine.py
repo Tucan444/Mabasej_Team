@@ -2,14 +2,17 @@ from datetime import datetime
 
 
 class Log():
-    def __init__(self, save_e=True, save_w=False, save_m=False, print_e=True, print_w=True, print_m=False, debug=False):
-        self.save_error = save_e
-        self.save_warning = save_w
-        self.save_messages = save_m
-        self.print_error = print_e
-        self.print_warning = print_w
-        self.print_messages = print_m
-        self.debug_e = debug
+    def __init__(self, settings=None):
+        if settings is None:
+            settings = {"save_error": True, "print_error": True, "save_warning": True, "print_warning": True,
+                        "save_message": False, "print_message": True, "enable_debug": False}
+        self.save_error = settings["save_error"]
+        self.save_warning = settings["save_warning"]
+        self.save_messages = settings["save_message"]
+        self.print_error = settings["print_error"]
+        self.print_warning = settings["print_warning"]
+        self.print_messages = settings["print_message"]
+        self.debug_e = settings["enable_debug"]
 
     def error(self, error):
         if self.print_error:
