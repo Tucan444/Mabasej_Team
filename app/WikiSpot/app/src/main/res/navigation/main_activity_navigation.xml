@@ -3,7 +3,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_activity_navigation"
-    app:startDestination="@id/chatFragment">
+    app:startDestination="@id/homeFragment">
 
     <fragment
         android:id="@+id/chatFragment"
@@ -14,7 +14,7 @@
         android:id="@+id/exploreFragment"
         android:name="com.example.wikispot.fragments.exploreFragment"
         android:label="fragment_explore"
-        tools:layout="@layout/fragment_explore" >
+        tools:layout="@layout/fragment_explore">
         <action
             android:id="@+id/action_exploreFragment_to_mapFragment"
             app:destination="@id/mapFragment" />
@@ -28,7 +28,11 @@
         android:id="@+id/mapFragment"
         android:name="com.example.wikispot.fragments.mapFragment"
         android:label="fragment_map"
-        tools:layout="@layout/fragment_map" />
+        tools:layout="@layout/fragment_map">
+        <action
+            android:id="@+id/action_mapFragment_to_exploreFragment"
+            app:destination="@id/exploreFragment" />
+    </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.wikispot.fragments.settingsFragment"
