@@ -1,7 +1,7 @@
 from datetime import datetime
 
 
-class Log():
+class Log:
     def __init__(self, settings=None):
         if settings is None:
             settings = {"save_error": True, "print_error": True, "save_warning": True, "print_warning": True,
