@@ -1,12 +1,19 @@
 package com.example.wikispot.activities
 
-import androidx.appcompat.app.AppCompatActivity
+import android.os.Build
 import android.os.Bundle
+import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AlertDialog
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
+import com.chaquo.python.Python
+import com.chaquo.python.android.AndroidPlatform
 import com.example.wikispot.R
-import com.google.android.material.bottomnavigation.BottomNavigationView
+import kotlinx.android.synthetic.main.activity_main.*
+import org.json.JSONArray
+import org.json.JSONObject
+import java.util.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -14,8 +21,8 @@ class MainActivity : AppCompatActivity() {
         val builder = AlertDialog.Builder(this)
         builder.setTitle("Confirm")
         builder.setMessage("Do you want to quit the application?")
-        builder.setPositiveButton("Yes") {_, _ -> finish()}
-        builder.setNegativeButton("No") {_, _ -> }
+        builder.setPositiveButton("Yes") { _, _ -> finish()}
+        builder.setNegativeButton("No") { _, _ -> }
         builder.show()
     }
 
@@ -24,8 +31,8 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val navController = findNavController(R.id.mainFragmentHost)
-        val bottomNavView = findViewById<BottomNavigationView>(R.id.mainBottomNavigationView)
 
-        bottomNavView.setupWithNavController(navController)
+        mainBottomNavigationView.setupWithNavController(navController)
     }
+
 }
