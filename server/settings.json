@@ -12,5 +12,12 @@
     "save_message": false,
     "print_message": true,
     "enable_debug": false
-  }
+  },
+  "heartbeat_table": {
+    "ID": [],
+    "IP": [],
+    "location": [],
+    "file_system": [],
+    "last_heartbeat": []
+}
 }

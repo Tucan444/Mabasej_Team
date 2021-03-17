@@ -12,6 +12,9 @@ import hashlib
 with open("settings.json", "r") as f:  # loading settings
     settings = json.load(f)
 
+with open("filesystem.json", "r") as f:  # loading settings
+    filesystem = json.load(f)
+
 IP = settings["IP"]
 ID = settings["ID"]
 location = settings["location"]
@@ -25,11 +28,6 @@ time_to_heartbeat_offline = settings[
     "time_to_heartbeat_offline"]  # Raspberry will be requesting heartbeat every __ seconds from offline rpi
 
 # json variables
-filesystem = {  # Here will be files saved on this raspberry
-    "otvaracie_hod": ["t", {"pon": "10-25"}, {"uto": "10-25"}],
-    "prehliadka": ["pdf", "/files/prehliadka.pdf"],
-    "fotky_hrad": ["png_z", ["/files/hrad1.png", "/files/hrad2.png"]]
-}
 heartbeat_table = settings["heartbeat_table"]
 sensors = {  # List of "live" data like tempeature, etc.
     "teplota": 24,
@@ -140,7 +138,7 @@ def comparision(file: str):
 
 @app.get("/devices_list")
 def get_devices_list():
-    return heartbeat_table
+    return heartbeat_table["file_system"]
 
 
 def send_heartbeat(ip, id):
