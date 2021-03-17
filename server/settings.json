@@ -1,0 +1,23 @@
+{
+  "ID": 0,
+  "IP": "192.168.1.99",
+  "location": "izba",
+  "time_to_heartbeat": 20,
+  "time_to_heartbeat_offline": 25,
+  "log": {
+    "save_error": true,
+    "print_error": true,
+    "save_warning": true,
+    "print_warning": true,
+    "save_message": false,
+    "print_message": true,
+    "enable_debug": false
+  },
+  "heartbeat_table": {
+    "ID": [],
+    "IP": [],
+    "location": [],
+    "file_system": [],
+    "last_heartbeat": []
+}
+}
