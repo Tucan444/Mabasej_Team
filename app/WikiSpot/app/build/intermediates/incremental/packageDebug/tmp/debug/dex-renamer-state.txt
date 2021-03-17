@@ -1,0 +1,4 @@
+#Tue Mar 16 20:54:05 CET 2021
+base.0=/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/build/intermediates/dex/debug/mergeDexDebug/classes.dex
+path.0=classes.dex
+renamed.0=classes.dex

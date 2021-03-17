@@ -1,0 +1,14 @@
+com/example/wikispot/databinding/FragmentChatBinding.java
+ com.example.wikispot.databinding.FragmentChatBinding
+com/example/wikispot/databinding/FragmentExploreBinding.java
+ com.example.wikispot.databinding.FragmentExploreBinding
+com/example/wikispot/databinding/FragmentSettingsBinding.java
+ com.example.wikispot.databinding.FragmentSettingsBinding
+com/example/wikispot/databinding/FragmentMapBinding.java
+ com.example.wikispot.databinding.FragmentMapBinding
+com/example/wikispot/databinding/ActivityMainBinding.java
+ com.example.wikispot.databinding.ActivityMainBinding
+com/example/wikispot/databinding/FragmentHomeBinding.java
+ com.example.wikispot.databinding.FragmentHomeBinding
+com/example/wikispot/BuildConfig.java
+ com.example.wikispot.BuildConfig

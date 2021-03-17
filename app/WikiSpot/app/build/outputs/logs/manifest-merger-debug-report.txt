@@ -1,0 +1,245 @@
+-- Merging decision tree log ---
+manifest
+ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+MERGED from [androidx.databinding:viewbinding:4.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/3e9ba0f4e9d59e6d60155338c0473400/jetified-viewbinding-4.1.1/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/0e96400cfdbea8aa8746da917a5e978e/navigation-fragment-ktx-2.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/33ad36dad59a3b65dc67320ab2e3c9f4/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/148be60049c0c15c570e9f39a947fcb7/navigation-ui-ktx-2.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/07ec2e913ca23f2f86346baaa7bb0e0f/navigation-runtime-ktx-2.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/2c9d3b436c3e07252c3159e987293da6/navigation-common-ktx-2.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity-ktx:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/004d398242ef857f1e3de1b447421471/jetified-activity-ktx-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core-ktx:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/8191a63f7e6da539b5ff1890a471c00c/jetified-core-ktx-1.3.2/AndroidManifest.xml:2:1-9:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/72728d8b4e70e02c47445ed14724a54d/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/f7c1eeba876e3d5c0f26c8667a6c7d69/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/e51e80c98454a14f3178ec353b4bf4ef/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-ui:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/93a9399f692d158c78fd72889f7f8348/navigation-ui-2.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [com.google.android.material:material:1.3.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/459c37dd9853f1f59aacef986b1e8672/material-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/411e6a39cae23d00af206fedb75c3b7c/constraintlayout-2.0.4/AndroidManifest.xml:2:1-11:12
+MERGED from [androidx.preference:preference:1.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/f42dec6d4057f289cd84a95e7ece32a9/preference-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/02f112790acb86e01becda457397384d/appcompat-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a8f9024572421c71ee1b1bb107357714/legacy-support-v4-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/6895766bb04da0795ecf57d400eeeb15/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/6fccd4a64ffd30f83fe32b6080ccc74d/legacy-support-core-ui-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/7b884ef8aa275f79a2820a7074b69c74/coordinatorlayout-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/40b6c5b143b5f2b639111fb0a8ad642d/dynamicanimation-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5694f74ab7155034a3b2ca7e1b4be270/vectordrawable-animated-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/05af191f93088b8ccb6e4f6dd32b8271/vectordrawable-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/dbb8c96049017e3ff60968e7b1da7af7/jetified-viewpager2-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.media:media:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/f616d3d8be26eb01605d772c11f8abaf/media-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/1f99263a088c5bd61c3b0d0978b30ebe/legacy-support-core-utils-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-fragment:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/148dea09cf090c65296aea993c00ebe1/navigation-fragment-2.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.fragment:fragment:1.2.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/389acceba03f4de36a4bbc8fb470d470/fragment-1.2.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/8c2bae7bcdb6fc34a01850dc7ef22ec8/recyclerview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/08499e964b2dcee00443165017d975b3/drawerlayout-1.1.1/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/70fb50da59c28b0d262d769bbd9258dd/viewpager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a807a076b4ae387f8784a4c3fe883500/slidingpanelayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.customview:customview:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4d083496fa0e62199d0cedeceed3ecfb/customview-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.transition:transition:1.3.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4e3ed7d5ff0297a52ccaa0ab40dad51f/transition-1.3.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.loader:loader:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5f313d56effa4fc1fd36a88ee51e6681/loader-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a0f5533ed94e2cd162cdfbb50b576ace/swiperefreshlayout-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/84e5540c86e216725b697c0c0283fd9f/asynclayoutinflater-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.navigation:navigation-runtime:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/fe6f70ba5310b4d9ee3ae4c0f67c7b33/navigation-runtime-2.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.activity:activity:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/75312a13fcdf7c179d7ed39f54b3c227/jetified-activity-1.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.navigation:navigation-common:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/1b5a6f1e087881394c7e71f3167d2c8b/navigation-common-2.3.4/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.core:core:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/23f47a022bc4a6d972d25fd57f70238b/core-1.3.2/AndroidManifest.xml:17:1-26:12
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/311aece7eedfec4879891428c56c0e91/cursoradapter-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.cardview:cardview:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/872155668c5e4883a1a789b01d2b5944/cardview-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/18c3ac50c010dd209398fd4865b108ac/versionedparcelable-1.1.0/AndroidManifest.xml:17:1-27:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4c017c2395c580df9c60f1df694bb84a/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/60a7ab60cc6696cd5f1538ac47e4329d/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5f3e16ee877ccba308247db72edd8ed1/documentfile-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a44eb1f53504884f925249ccdcd98ddf/localbroadcastmanager-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.print:print:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/834fa83a55f4405b7bf36affe86e1fc7/print-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/bd00c0cbfadac69acd5457c66c903dfc/interpolator-1.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/677b10053e11149a6503cda4e2961fe3/jetified-savedstate-1.0.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/e4a0b05ae2387b7110900df50e1693c3/lifecycle-runtime-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5de18c9f01964c933d66ecab3b9d4004/lifecycle-livedata-2.0.0/AndroidManifest.xml:17:1-22:12
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4e88684e7308c56c83dd60ac7586bb6f/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/3d1165d820f0ac4a0e3025881ff290e7/core-runtime-2.1.0/AndroidManifest.xml:17:1-24:12
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/52c3b823cb8714f376e9e908dcd3e7c1/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:17:1-24:12
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+	package
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:3:5-35
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+	android:versionName
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+	android:versionCode
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:1-22:12
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+	xmlns:android
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:2:11-69
+application
+ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:5:5-20:19
+MERGED from [com.google.android.material:material:1.3.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/459c37dd9853f1f59aacef986b1e8672/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [com.google.android.material:material:1.3.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/459c37dd9853f1f59aacef986b1e8672/material-1.3.0/AndroidManifest.xml:22:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/411e6a39cae23d00af206fedb75c3b7c/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/411e6a39cae23d00af206fedb75c3b7c/constraintlayout-2.0.4/AndroidManifest.xml:9:5-20
+MERGED from [androidx.core:core:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/23f47a022bc4a6d972d25fd57f70238b/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.core:core:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/23f47a022bc4a6d972d25fd57f70238b/core-1.3.2/AndroidManifest.xml:24:5-89
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/18c3ac50c010dd209398fd4865b108ac/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/18c3ac50c010dd209398fd4865b108ac/versionedparcelable-1.1.0/AndroidManifest.xml:24:5-25:19
+	android:appComponentFactory
+		ADDED from [androidx.core:core:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/23f47a022bc4a6d972d25fd57f70238b/core-1.3.2/AndroidManifest.xml:24:18-86
+	android:supportsRtl
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:10:9-35
+	android:label
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:8:9-41
+	android:roundIcon
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:9:9-54
+	android:icon
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:7:9-43
+	android:allowBackup
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:6:9-35
+	android:theme
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:11:9-59
+activity#com.example.wikispot.activities.MainActivity
+ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:12:9-19:20
+	android:launchMode
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:13:13-44
+	android:name
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:12:19-58
+intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
+ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:14:13-18:29
+action#android.intent.action.MAIN
+ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:15:17-69
+	android:name
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:15:25-66
+category#android.intent.category.LAUNCHER
+ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:17:17-77
+	android:name
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml:17:27-74
+uses-sdk
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml reason: use-sdk injection requested
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+MERGED from [androidx.databinding:viewbinding:4.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/3e9ba0f4e9d59e6d60155338c0473400/jetified-viewbinding-4.1.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.databinding:viewbinding:4.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/3e9ba0f4e9d59e6d60155338c0473400/jetified-viewbinding-4.1.1/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/0e96400cfdbea8aa8746da917a5e978e/navigation-fragment-ktx-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/0e96400cfdbea8aa8746da917a5e978e/navigation-fragment-ktx-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/33ad36dad59a3b65dc67320ab2e3c9f4/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment-ktx:1.2.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/33ad36dad59a3b65dc67320ab2e3c9f4/jetified-fragment-ktx-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/148be60049c0c15c570e9f39a947fcb7/navigation-ui-ktx-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/148be60049c0c15c570e9f39a947fcb7/navigation-ui-ktx-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/07ec2e913ca23f2f86346baaa7bb0e0f/navigation-runtime-ktx-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/07ec2e913ca23f2f86346baaa7bb0e0f/navigation-runtime-ktx-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/2c9d3b436c3e07252c3159e987293da6/navigation-common-ktx-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common-ktx:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/2c9d3b436c3e07252c3159e987293da6/navigation-common-ktx-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/004d398242ef857f1e3de1b447421471/jetified-activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity-ktx:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/004d398242ef857f1e3de1b447421471/jetified-activity-ktx-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core-ktx:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/8191a63f7e6da539b5ff1890a471c00c/jetified-core-ktx-1.3.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.core:core-ktx:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/8191a63f7e6da539b5ff1890a471c00c/jetified-core-ktx-1.3.2/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/72728d8b4e70e02c47445ed14724a54d/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/72728d8b4e70e02c47445ed14724a54d/jetified-lifecycle-viewmodel-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/f7c1eeba876e3d5c0f26c8667a6c7d69/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/f7c1eeba876e3d5c0f26c8667a6c7d69/jetified-lifecycle-livedata-core-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/e51e80c98454a14f3178ec353b4bf4ef/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime-ktx:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/e51e80c98454a14f3178ec353b4bf4ef/jetified-lifecycle-runtime-ktx-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/93a9399f692d158c78fd72889f7f8348/navigation-ui-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-ui:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/93a9399f692d158c78fd72889f7f8348/navigation-ui-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [com.google.android.material:material:1.3.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/459c37dd9853f1f59aacef986b1e8672/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [com.google.android.material:material:1.3.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/459c37dd9853f1f59aacef986b1e8672/material-1.3.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/411e6a39cae23d00af206fedb75c3b7c/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.constraintlayout:constraintlayout:2.0.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/411e6a39cae23d00af206fedb75c3b7c/constraintlayout-2.0.4/AndroidManifest.xml:5:5-7:41
+MERGED from [androidx.preference:preference:1.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/f42dec6d4057f289cd84a95e7ece32a9/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.preference:preference:1.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/f42dec6d4057f289cd84a95e7ece32a9/preference-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/02f112790acb86e01becda457397384d/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat:1.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/02f112790acb86e01becda457397384d/appcompat-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a8f9024572421c71ee1b1bb107357714/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-v4:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a8f9024572421c71ee1b1bb107357714/legacy-support-v4-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/6895766bb04da0795ecf57d400eeeb15/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.appcompat:appcompat-resources:1.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/6895766bb04da0795ecf57d400eeeb15/jetified-appcompat-resources-1.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/6fccd4a64ffd30f83fe32b6080ccc74d/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-ui:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/6fccd4a64ffd30f83fe32b6080ccc74d/legacy-support-core-ui-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/7b884ef8aa275f79a2820a7074b69c74/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.coordinatorlayout:coordinatorlayout:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/7b884ef8aa275f79a2820a7074b69c74/coordinatorlayout-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/40b6c5b143b5f2b639111fb0a8ad642d/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.dynamicanimation:dynamicanimation:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/40b6c5b143b5f2b639111fb0a8ad642d/dynamicanimation-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5694f74ab7155034a3b2ca7e1b4be270/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable-animated:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5694f74ab7155034a3b2ca7e1b4be270/vectordrawable-animated-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/05af191f93088b8ccb6e4f6dd32b8271/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.vectordrawable:vectordrawable:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/05af191f93088b8ccb6e4f6dd32b8271/vectordrawable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/dbb8c96049017e3ff60968e7b1da7af7/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager2:viewpager2:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/dbb8c96049017e3ff60968e7b1da7af7/jetified-viewpager2-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.media:media:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/f616d3d8be26eb01605d772c11f8abaf/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.media:media:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/f616d3d8be26eb01605d772c11f8abaf/media-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/1f99263a088c5bd61c3b0d0978b30ebe/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.legacy:legacy-support-core-utils:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/1f99263a088c5bd61c3b0d0978b30ebe/legacy-support-core-utils-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-fragment:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/148dea09cf090c65296aea993c00ebe1/navigation-fragment-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-fragment:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/148dea09cf090c65296aea993c00ebe1/navigation-fragment-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/389acceba03f4de36a4bbc8fb470d470/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.fragment:fragment:1.2.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/389acceba03f4de36a4bbc8fb470d470/fragment-1.2.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/8c2bae7bcdb6fc34a01850dc7ef22ec8/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.recyclerview:recyclerview:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/8c2bae7bcdb6fc34a01850dc7ef22ec8/recyclerview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/08499e964b2dcee00443165017d975b3/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.drawerlayout:drawerlayout:1.1.1] /home/untriex/.gradle/caches/transforms-2/files-2.1/08499e964b2dcee00443165017d975b3/drawerlayout-1.1.1/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/70fb50da59c28b0d262d769bbd9258dd/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.viewpager:viewpager:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/70fb50da59c28b0d262d769bbd9258dd/viewpager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a807a076b4ae387f8784a4c3fe883500/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.slidingpanelayout:slidingpanelayout:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a807a076b4ae387f8784a4c3fe883500/slidingpanelayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.customview:customview:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4d083496fa0e62199d0cedeceed3ecfb/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.customview:customview:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4d083496fa0e62199d0cedeceed3ecfb/customview-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4e3ed7d5ff0297a52ccaa0ab40dad51f/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.transition:transition:1.3.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4e3ed7d5ff0297a52ccaa0ab40dad51f/transition-1.3.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.loader:loader:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5f313d56effa4fc1fd36a88ee51e6681/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.loader:loader:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5f313d56effa4fc1fd36a88ee51e6681/loader-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a0f5533ed94e2cd162cdfbb50b576ace/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.swiperefreshlayout:swiperefreshlayout:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a0f5533ed94e2cd162cdfbb50b576ace/swiperefreshlayout-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/84e5540c86e216725b697c0c0283fd9f/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.asynclayoutinflater:asynclayoutinflater:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/84e5540c86e216725b697c0c0283fd9f/asynclayoutinflater-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.navigation:navigation-runtime:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/fe6f70ba5310b4d9ee3ae4c0f67c7b33/navigation-runtime-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-runtime:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/fe6f70ba5310b4d9ee3ae4c0f67c7b33/navigation-runtime-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/75312a13fcdf7c179d7ed39f54b3c227/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.activity:activity:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/75312a13fcdf7c179d7ed39f54b3c227/jetified-activity-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/1b5a6f1e087881394c7e71f3167d2c8b/navigation-common-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.navigation:navigation-common:2.3.4] /home/untriex/.gradle/caches/transforms-2/files-2.1/1b5a6f1e087881394c7e71f3167d2c8b/navigation-common-2.3.4/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/23f47a022bc4a6d972d25fd57f70238b/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.core:core:1.3.2] /home/untriex/.gradle/caches/transforms-2/files-2.1/23f47a022bc4a6d972d25fd57f70238b/core-1.3.2/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/311aece7eedfec4879891428c56c0e91/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cursoradapter:cursoradapter:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/311aece7eedfec4879891428c56c0e91/cursoradapter-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/872155668c5e4883a1a789b01d2b5944/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.cardview:cardview:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/872155668c5e4883a1a789b01d2b5944/cardview-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/18c3ac50c010dd209398fd4865b108ac/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/18c3ac50c010dd209398fd4865b108ac/versionedparcelable-1.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4c017c2395c580df9c60f1df694bb84a/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel-savedstate:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4c017c2395c580df9c60f1df694bb84a/jetified-lifecycle-viewmodel-savedstate-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/60a7ab60cc6696cd5f1538ac47e4329d/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-viewmodel:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/60a7ab60cc6696cd5f1538ac47e4329d/lifecycle-viewmodel-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5f3e16ee877ccba308247db72edd8ed1/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.documentfile:documentfile:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5f3e16ee877ccba308247db72edd8ed1/documentfile-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a44eb1f53504884f925249ccdcd98ddf/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/a44eb1f53504884f925249ccdcd98ddf/localbroadcastmanager-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/834fa83a55f4405b7bf36affe86e1fc7/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.print:print:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/834fa83a55f4405b7bf36affe86e1fc7/print-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/bd00c0cbfadac69acd5457c66c903dfc/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.interpolator:interpolator:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/bd00c0cbfadac69acd5457c66c903dfc/interpolator-1.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/677b10053e11149a6503cda4e2961fe3/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.savedstate:savedstate:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/677b10053e11149a6503cda4e2961fe3/jetified-savedstate-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/e4a0b05ae2387b7110900df50e1693c3/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-runtime:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/e4a0b05ae2387b7110900df50e1693c3/lifecycle-runtime-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5de18c9f01964c933d66ecab3b9d4004/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata:2.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/5de18c9f01964c933d66ecab3b9d4004/lifecycle-livedata-2.0.0/AndroidManifest.xml:20:5-44
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4e88684e7308c56c83dd60ac7586bb6f/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.lifecycle:lifecycle-livedata-core:2.2.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/4e88684e7308c56c83dd60ac7586bb6f/lifecycle-livedata-core-2.2.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/3d1165d820f0ac4a0e3025881ff290e7/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.arch.core:core-runtime:2.1.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/3d1165d820f0ac4a0e3025881ff290e7/core-runtime-2.1.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/52c3b823cb8714f376e9e908dcd3e7c1/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+MERGED from [androidx.annotation:annotation-experimental:1.0.0] /home/untriex/.gradle/caches/transforms-2/files-2.1/52c3b823cb8714f376e9e908dcd3e7c1/jetified-annotation-experimental-1.0.0/AndroidManifest.xml:20:5-22:41
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+	android:targetSdkVersion
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+	android:minSdkVersion
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+		ADDED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml
+		INJECTED from /home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/AndroidManifest.xml

@@ -1,0 +1,26 @@
+[
+    {
+        "merged": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_explore.xml",
+        "source": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/res/layout/fragment_explore.xml"
+    },
+    {
+        "merged": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_settings.xml",
+        "source": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/res/layout/fragment_settings.xml"
+    },
+    {
+        "merged": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/activity_main.xml",
+        "source": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/res/layout/activity_main.xml"
+    },
+    {
+        "merged": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_chat.xml",
+        "source": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/res/layout/fragment_chat.xml"
+    },
+    {
+        "merged": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_home.xml",
+        "source": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/res/layout/fragment_home.xml"
+    },
+    {
+        "merged": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/build/intermediates/incremental/mergeDebugResources/stripped.dir/layout/fragment_map.xml",
+        "source": "/home/untriex/Documents/Mabasej_Team/app/WikiSpot/app/src/main/res/layout/fragment_map.xml"
+    }
+]
