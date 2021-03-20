@@ -4,13 +4,15 @@ nav{
 }
 li{
     padding-top: 50px;
-    padding-bottom: 50px;
+    padding-bottom: 48px;
     padding-left: 50px;
     padding-right: 50px;
+    margin-right: -5px;
     display: inline-block;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 18px;
+    font-size: 20px;
     transition: background-color 0.5s;
+    position: relative;
 }
 header{
     background-color:#0077B6;
@@ -32,6 +34,23 @@ li:hover{
 }
 ul{
     margin: 0;
+    margin-left: 280px;
+}
+label{
+    visibility: collapse;
+    user-select: none;
+}
+.expandable{
+    visibility: collapse;
+    display: block;
+    margin-left: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    text-decoration: none;
+    color: black;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+    text-align: center;
 }
 .an{
     color: #FFFFFF;
@@ -52,12 +71,74 @@ ul{
     background-color: black;
     margin-left: 150px;
     margin-top: 150px;
+    position: relative;
 }
-div{
+#ref{
+    position: relative;
+    margin-top: 180px;
+    margin-left: -30px;
+    width: 2px;
+    height: 250px;
+    border: 2px solid rgba(79, 80, 80, 0.356);
+    border-radius: 30%;
+    background: rgba(126, 133, 133, 0.356);
+}
+#ref2{
+    position: relative;
+    margin-top: 450px;
+    margin-left: -30px;
+    width:50;
+    border: 3px solid rgba(166, 172, 172, 0.39);
+    border-radius: 50%;
+}
+#phone, #ref, #ref2, #android{
     display: inline-block;
     float: left;
 }
 a{
     text-decoration: none;
     color: #FFFFFF;
+}
+@media (max-width: 1250px){
+    li{
+        font-size: 15px;
+        padding-top: 52px;
+        padding-bottom: 50.5px;
+    }
+    ul{
+        margin-top: -98px;
+        margin-left: 353.5px;
+    }
+}
+@media (max-width: 825px){
+    ul{
+        visibility: collapse;
+        padding: 0;
+    }
+    
+    label{
+        font-size: 40px;
+        float: right;
+        margin-top: -86px;
+        margin-right: 45px;
+        position: relative;
+        visibility: visible;
+    }
+    .expandable{
+        visibility: collapse;
+        display: block;
+        position: relative;
+        margin-left: 400px;
+        text-decoration: none;
+        color: black;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+        text-align: center;
+    }
+}
+#check{
+    display: none;
+}
+#check:checked ~ * .expandable{
+    visibility: visible;
 }
