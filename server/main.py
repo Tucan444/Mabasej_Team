@@ -1,5 +1,5 @@
 from fastapi import FastAPI, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel
 import engine
 import requests
@@ -18,10 +18,13 @@ with open("filesystem.json", "r") as f:  # loading settings
 IP = settings["IP"]
 ID = settings["ID"]
 location = settings["location"]
+time_to_save = settings["time_to_save"]
 
 app = FastAPI()  # init of FastAPI
 log = engine.Log(settings["log"])  # init of LOG
+update = engine.Update()
 offline = []
+save_time = time.time()
 
 time_to_heartbeat = settings["time_to_heartbeat"]  # Raspberry will be requesting heartbeat every __ seconds
 time_to_heartbeat_offline = settings[
@@ -141,6 +144,14 @@ def get_devices_list():
     return heartbeat_table["file_system"]
 
 
+@app.get("/admin/{command}")
+def admin(command: str):
+    if command == "get_updates":
+        return [update.get_version(), update.get_updates()]
+    if "update-" in command:
+        os.system(f"""python3 system.py update -version {command.split("-")[1]}""")
+
+
 def send_heartbeat(ip, id):
     global heartbeat_table
     log.message(f"""sending heartbeat to {ip}({"offline" if id in offline else "online"})""")
@@ -150,6 +161,7 @@ def send_heartbeat(ip, id):
 
 
 def mainloop():
+    global save_time
     while True:
         for device_number, device_ID in enumerate(heartbeat_table["ID"]):
             if device_ID != ID:
@@ -160,22 +172,37 @@ def mainloop():
                         if heartbeat_table["ID"][device_number] not in offline:
                             log.warning(f"""{heartbeat_table["IP"][device_number]} disconnected/is not available""")
                             offline.append(heartbeat_table["ID"][device_number])
-                        heartbeat_table["last_heartbeat"][int(device_number)] = int(time_to_heartbeat_offline)
+                            heartbeat_table["last_heartbeat"][int(device_number)] = int(time_to_heartbeat_offline)
+                        else:
+                            offline.remove(heartbeat_table["ID"][device_number])
+                            log.message(f"""Removing {device_ID} because of long inactivity.""")
+                            del heartbeat_table["ID"][device_number]
+                            del heartbeat_table["IP"][device_number]
+                            del heartbeat_table["location"][device_number]
+                            del heartbeat_table["file_system"][device_number]
+                            del heartbeat_table["last_heartbeat"][device_number]
                     else:
                         if heartbeat_table["ID"][device_number] in offline:
                             offline.remove(heartbeat_table["ID"][device_number])
                             log.message(f"""{heartbeat_table["IP"][device_number]} gone online""")
                         heartbeat_table["last_heartbeat"][int(device_number)] = int(time_to_heartbeat) + 5
-                log.debug(f"""{device_ID} : time to heartbeat : {heartbeat_table["last_heartbeat"][device_number]}""")
-                heartbeat_table["last_heartbeat"][device_number] -= 1
+                try:
+                    log.debug(f"""{device_ID} : time to heartbeat : {heartbeat_table["last_heartbeat"][device_number]}""")
+                    heartbeat_table["last_heartbeat"][device_number] -= 1
+                except IndexError:
+                    pass
+            if time.time() - time_to_save > save_time and settings["save_table"]:
+                save_time = time.time()
+                log.message("Saving heartbeat table.")
+                log.debug(f"Saving heartbeat table: {heartbeat_table}")
+                settings["heartbeat_table"] = heartbeat_table
+                with open("settings.json", "w") as file:
+                    json.dump(settings, file, indent=2)
         time.sleep(1)
 
 
 thread_1 = threading.Thread(target=mainloop, daemon=True)
 thread_1.start()
 
-# Todo in next release: disconnect offline client after set time
-# Todo send to mobile
 # Todo new filesystem handeling
-# Todo implement update system
 # Todo settings for easy adding/editing files/id/text

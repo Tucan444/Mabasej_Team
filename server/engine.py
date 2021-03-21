@@ -1,4 +1,6 @@
 from datetime import datetime
+import json
+import requests
 
 
 class Log:
@@ -38,3 +40,18 @@ class Log:
     def debug(self, debug):
         if self.debug_e:
             print(f"{datetime.now()} -> DEBUG: {debug}")
+
+
+class Update:
+    def __init__(self):
+        with open("version.json", "r") as f:  # loading settings
+            version = json.load(f)
+        self.url = version["url"]
+        self.version = version["version"]
+        self.id = version["id"]
+
+    def get_updates(self):
+        return json.loads(requests.get(self.url).text)
+
+    def get_version(self):
+        return {"version": self.version, "id": self.id}
