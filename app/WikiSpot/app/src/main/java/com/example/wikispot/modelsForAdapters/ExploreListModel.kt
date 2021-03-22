@@ -1,4 +1,4 @@
-package com.example.wikispot.models_and_adapters
+package com.example.wikispot.modelsForAdapters
 
 import android.media.Image
 

@@ -43,10 +43,10 @@
         app:layout_constraintTop_toBottomOf="@+id/getDataBtn" />
 
     <Button
-        android:id="@+id/displayJsonFileBtn"
+        android:id="@+id/getJsonFileBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Display Json File"
+        android:text="Get Json File"
         app:layout_constraintStart_toStartOf="@+id/idInput"
         app:layout_constraintTop_toBottomOf="@+id/idInput" />
 
@@ -59,7 +59,7 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/displayJsonFileBtn">
+        app:layout_constraintTop_toBottomOf="@+id/getJsonFileBtn">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -67,11 +67,12 @@
             android:orientation="vertical">
 
             <TextView
-                android:id="@+id/jsonFileOutputView"
+                android:id="@+id/jsonFileContentView"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:text="json output"
+                android:text="json content"
                 android:textAlignment="center"
+                android:textSize="18sp"
                 tools:layout_editor_absoluteX="254dp"
                 tools:layout_editor_absoluteY="95dp" />
 
@@ -86,8 +87,80 @@
         android:layout_marginLeft="24dp"
         android:text="Amount of json's: 0"
         android:textSize="24sp"
-        app:layout_constraintBottom_toTopOf="@+id/displayJsonFileBtn"
+        app:layout_constraintBottom_toTopOf="@+id/getJsonFileBtn"
         app:layout_constraintStart_toEndOf="@+id/idInput"
         app:layout_constraintTop_toBottomOf="@+id/getDataBtn" />
+
+    <Button
+        android:id="@+id/getAttributeContentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:text="Get Attribute "
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.2"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+
+    <EditText
+        android:id="@+id/attributeNameInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:ems="10"
+        android:hint=" attribute name"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/getAttributeContentBtn"
+        app:layout_constraintTop_toBottomOf="@+id/getAttributeContentBtn" />
+
+    <ScrollView
+        android:layout_width="380dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="#FF6C6C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/attributeNameInput">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/attributeContentView"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="attribute content"
+                android:textAlignment="center"
+                android:textSize="18sp"
+                android:gravity="center_horizontal" />
+        </LinearLayout>
+    </ScrollView>
+
+    <Button
+        android:id="@+id/clearAttributeBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="6dp"
+        android:layout_marginLeft="6dp"
+        android:layout_marginTop="24dp"
+        android:layout_marginEnd="16dp"
+        android:layout_marginRight="16dp"
+        android:text="Clear Attribute"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@+id/getAttributeContentBtn"
+        app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
+
+    <Button
+        android:id="@+id/goSecondDebugFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

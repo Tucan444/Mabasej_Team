@@ -53,5 +53,18 @@
         android:id="@+id/debugFragment"
         android:name="com.example.wikispot.fragments.debugFragment"
         android:label="fragment_debug"
-        tools:layout="@layout/fragment_debug" />
+        tools:layout="@layout/fragment_debug" >
+        <action
+            android:id="@+id/navigateToAnotherDebugFragment"
+            app:destination="@id/anotherDebugFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anotherDebugFragment"
+        android:name="com.example.wikispot.fragments.anotherDebugFragment"
+        android:label="fragment_another_debug"
+        tools:layout="@layout/fragment_another_debug" >
+        <action
+            android:id="@+id/navigateBackToDebugFragment"
+            app:destination="@id/debugFragment" />
+    </fragment>
 </navigation>

@@ -8,6 +8,20 @@
     tools:context=".fragments.settingsFragment">
 
     <TextView
+        android:id="@+id/actionBarThemeSwitchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="32dp"
+        android:text="Action Bar"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/darkThemeSwitchText" />
+
+    <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Settings Fragment"
@@ -24,8 +38,41 @@
         android:id="@+id/debugBtn"
         android:layout_width="30dp"
         android:layout_height="30dp"
-        app:srcCompat="@drawable/debug_vector_asset"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/debug_vector_asset" />
+
+    <TextView
+        android:id="@+id/darkThemeSwitchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="64dp"
+        android:layout_marginLeft="64dp"
+        android:layout_marginTop="88dp"
+        android:text="Dark theme"
+        android:textColor="#FFFFFF"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/darkThemeSwitch"
+        android:layout_width="50dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/darkThemeSwitchText"
+        app:layout_constraintStart_toEndOf="@+id/darkThemeSwitchText"
+        app:layout_constraintTop_toTopOf="@+id/darkThemeSwitchText" />
+
+    <Switch
+        android:id="@+id/actionBarSwitch"
+        android:layout_width="50dp"
+        android:layout_height="21dp"
+        app:layout_constraintBottom_toBottomOf="@+id/actionBarThemeSwitchText"
+        app:layout_constraintEnd_toEndOf="@+id/darkThemeSwitch"
+        app:layout_constraintStart_toStartOf="@+id/darkThemeSwitch"
+        app:layout_constraintTop_toTopOf="@+id/actionBarThemeSwitchText" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

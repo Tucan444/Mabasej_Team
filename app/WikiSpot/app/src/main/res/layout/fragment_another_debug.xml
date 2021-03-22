@@ -1,0 +1,135 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#E04C4C"
+    tools:context=".fragments.anotherDebugFragment">
+
+    <TextView
+        android:id="@+id/textView3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Another Debug Fragment"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/goFirstDegubFragmentBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginRight="32dp"
+        android:text="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/generateAndSaveDataBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
+        android:text="Generate and save data"
+        app:layout_constraintEnd_toStartOf="@+id/goFirstDegubFragmentBtn"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView3" />
+
+    <Button
+        android:id="@+id/loadAndShowDataBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="16dp"
+        android:text="Load and Show data"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/generateAndSaveDataBtn" />
+
+    <ScrollView
+        android:id="@+id/scrollView4"
+        android:layout_width="120dp"
+        android:layout_height="80dp"
+        android:layout_marginTop="16dp"
+        android:background="#E66C6C"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.05"
+        app:layout_constraintStart_toEndOf="@+id/loadAndShowDataBtn"
+        app:layout_constraintTop_toBottomOf="@+id/goFirstDegubFragmentBtn">
+
+        <TextView
+            android:id="@+id/dataContentView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="data content"
+            android:textAlignment="center" />
+    </ScrollView>
+
+    <CheckBox
+        android:id="@+id/wholeContentCheckBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="8dp"
+        android:shadowColor="#B4B4B4"
+        android:text="Whole Content"
+        android:textColor="#FFFFFF"
+        android:textColorHighlight="#FFFFFF"
+        android:textColorHint="#FFFFFF"
+        android:textColorLink="#FFFFFF"
+        app:layout_constraintStart_toStartOf="@+id/attributePathInput"
+        app:layout_constraintTop_toBottomOf="@+id/attributePathInput"
+        app:useMaterialThemeColors="false" />
+
+    <EditText
+        android:id="@+id/attributePathInput"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="50dp"
+        android:ems="10"
+        android:hint="attribute path"
+        android:inputType="textPersonName"
+        app:layout_constraintStart_toStartOf="@+id/loadAndShowDataBtn"
+        app:layout_constraintTop_toBottomOf="@+id/loadAndShowDataBtn" />
+
+    <Button
+        android:id="@+id/createViewConnectionBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="8dp"
+        android:text="Create View Connection"
+        android:textSize="12sp"
+        app:layout_constraintStart_toEndOf="@+id/wholeContentCheckBox"
+        app:layout_constraintTop_toBottomOf="@+id/attributePathInput" />
+
+    <Button
+        android:id="@+id/stopConnectionBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="Stop Connection"
+        android:textSize="10sp"
+        app:layout_constraintBottom_toBottomOf="@+id/attributePathInput"
+        app:layout_constraintEnd_toEndOf="@+id/createViewConnectionBtn"
+        app:layout_constraintStart_toEndOf="@+id/attributePathInput" />
+
+    <EditText
+        android:id="@+id/filePathInput"
+        android:layout_width="160dp"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="file path"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/attributePathInput"
+        app:layout_constraintStart_toStartOf="@+id/loadAndShowDataBtn"
+        app:layout_constraintTop_toBottomOf="@+id/loadAndShowDataBtn" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

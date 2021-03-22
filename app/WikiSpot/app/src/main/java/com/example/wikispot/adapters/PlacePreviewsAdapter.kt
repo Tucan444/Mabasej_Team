@@ -1,4 +1,4 @@
-package com.example.wikispot.models_and_adapters
+package com.example.wikispot.adapters
 
 import android.content.Context
 import android.view.LayoutInflater
@@ -6,6 +6,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wikispot.R
+import com.example.wikispot.modelsForAdapters.PlacePreview
 import kotlinx.android.synthetic.main.explore_list_item.view.*
 
 
