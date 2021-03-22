@@ -6,8 +6,10 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.wikispot.*
+import com.example.wikispot.fragments.*
 import com.example.wikispot.modelClasses.SettingsSaveManager
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_home.*
 
 class MainActivity : AppCompatActivity() {
 
@@ -21,13 +23,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
-        /*if (ActivityCompat.checkSelfPermission(this, Manifest.permission.READ_EXTERNAL_STORAGE) != PackageManager.PERMISSION_GRANTED) {
-            ActivityCompat.requestPermissions(this, arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE),
-                    ManifestRelatedVariables.REQUEST_READ_EXTERNAL)
-        } */
         loadSettings()
-        ServerManagement.serverManager.addActivityConnection(this, "main",0)
-        ServerManagement.serverManager.getData(this, this, 0, "", "", true)
 
         setTheme(getThemeId())
         super.onCreate(savedInstanceState)
@@ -37,8 +33,36 @@ class MainActivity : AppCompatActivity() {
         mainBottomNavigationView.setupWithNavController(navController)
 
         handleExtras()
+    }
 
-        println("[debug] ${getDataFromServer()}")
+    override fun onResume() {
+        super.onResume()
+        // server communication
+
+        val dataReceiver: (String) -> Unit = {data: String ->
+            println("Data here: $data")
+
+            when (mainFragmentHost.childFragmentManager.fragments[0]) {
+                is chatFragment -> {}
+                is exploreFragment -> {}
+                is homeFragment -> {
+                    val view = mainFragmentHost.childFragmentManager.fragments[0].homeFragmentTextIdTest
+                    view.post {
+                        view.text = data
+                    }
+                }
+                is mapFragment -> {}
+                is settingsFragment -> {}
+            }
+
+        }
+
+        ServerManagement.serverManager.addReceiverConnection(dataReceiver, this, "mainConnection", 0, "test0.json")
+    }
+
+    override fun onPause() {
+        super.onPause()
+        ServerManagement.serverManager.deleteConnection("mainConnection")
     }
 
     private fun handleExtras() {
@@ -55,5 +79,4 @@ class MainActivity : AppCompatActivity() {
         val settingsSaveManager = SettingsSaveManager(this)
         settingsSaveManager.loadSettings()
     }
-
 }

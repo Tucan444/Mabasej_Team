@@ -9,6 +9,7 @@
         <item name="colorSecondary">#E91E63</item>
         <item name="colorSecondaryVariant">#F48FB1</item>
         <item name="colorOnSecondary">@color/black</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
 
@@ -24,6 +25,7 @@
         <item name="colorSecondary">#E91E63</item>
         <item name="colorSecondaryVariant">#F48FB1</item>
         <item name="colorOnSecondary">@color/black</item>
+
         <!-- Status bar color. -->
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->

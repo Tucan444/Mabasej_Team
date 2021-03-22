@@ -42,7 +42,7 @@ fun Context.getThemeId(): Int {
 // for client
 fun Context.getDataFromServer(): String {
     // requesting data
-    val url = "http://192.168.1.230:8000/devices_list"
+    val url = "${ServerManagement.baseUrl}devices_list"
     val request = Request.Builder().url(url).build()
     val client = OkHttpClient()
     var receivedResponse = ""

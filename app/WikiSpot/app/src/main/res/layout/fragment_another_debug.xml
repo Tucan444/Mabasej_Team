@@ -73,21 +73,6 @@
             android:textAlignment="center" />
     </ScrollView>
 
-    <CheckBox
-        android:id="@+id/wholeContentCheckBox"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="8dp"
-        android:shadowColor="#B4B4B4"
-        android:text="Whole Content"
-        android:textColor="#FFFFFF"
-        android:textColorHighlight="#FFFFFF"
-        android:textColorHint="#FFFFFF"
-        android:textColorLink="#FFFFFF"
-        app:layout_constraintStart_toStartOf="@+id/attributePathInput"
-        app:layout_constraintTop_toBottomOf="@+id/attributePathInput"
-        app:useMaterialThemeColors="false" />
-
     <EditText
         android:id="@+id/attributePathInput"
         android:layout_width="wrap_content"
@@ -103,11 +88,10 @@
         android:id="@+id/createViewConnectionBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="20dp"
         android:layout_marginTop="8dp"
         android:text="Create View Connection"
         android:textSize="12sp"
-        app:layout_constraintStart_toEndOf="@+id/wholeContentCheckBox"
+        app:layout_constraintStart_toStartOf="@+id/attributePathInput"
         app:layout_constraintTop_toBottomOf="@+id/attributePathInput" />
 
     <Button
@@ -118,8 +102,8 @@
         android:text="Stop Connection"
         android:textSize="10sp"
         app:layout_constraintBottom_toBottomOf="@+id/attributePathInput"
-        app:layout_constraintEnd_toEndOf="@+id/createViewConnectionBtn"
-        app:layout_constraintStart_toEndOf="@+id/attributePathInput" />
+        app:layout_constraintStart_toEndOf="@+id/attributePathInput"
+        app:layout_constraintTop_toTopOf="@+id/attributePathInput" />
 
     <EditText
         android:id="@+id/filePathInput"

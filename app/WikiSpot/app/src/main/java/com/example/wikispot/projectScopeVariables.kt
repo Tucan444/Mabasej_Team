@@ -21,12 +21,13 @@ object ServerManagement {
     const val activityConnectionOnCheckWait: Long = 4000
     const val viewConnectionOnCheckWait: Long = 5000
     const val dataRequestOnAttemptWait: Long = 2000
+    const val baseUrl = "http://192.168.1.230:8000/"
 }
 
 
 object ThemeOptions {
 
     var darkTheme = false
-    var actionBar = true
+    var actionBar = false
 
 }

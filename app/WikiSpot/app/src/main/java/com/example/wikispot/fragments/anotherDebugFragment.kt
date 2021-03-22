@@ -45,11 +45,10 @@ class anotherDebugFragment : Fragment(R.layout.fragment_another_debug) {
 
         createViewConnectionBtn.setOnClickListener {
             val attributePath = attributePathInput.text.toString()
-            val setWholeContent = wholeContentCheckBox.isChecked
             val filePath = filePathInput.text.toString()
 
             ServerManagement.serverManager.deleteConnection("debug", "view")
-            ServerManagement.serverManager.addViewConnection(requireContext(), dataContentView, "debug",0, filePath, attributePath, setWholeContent)
+            ServerManagement.serverManager.addViewConnection(requireContext(), dataContentView, "debug",0, filePath, attributePath)
         }
 
         // handling navigation between debug fragments
