@@ -1,8 +1,10 @@
 package com.example.wikispot.activities
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.wikispot.*
@@ -24,8 +26,8 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         loadSettings()
-
         setTheme(getThemeId())
+
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
@@ -42,18 +44,20 @@ class MainActivity : AppCompatActivity() {
         val dataReceiver: (String) -> Unit = {data: String ->
             println("Data here: $data")
 
-            when (mainFragmentHost.childFragmentManager.fragments[0]) {
-                is chatFragment -> {}
-                is exploreFragment -> {}
-                is homeFragment -> {
-                    val view = mainFragmentHost.childFragmentManager.fragments[0].homeFragmentTextIdTest
-                    view.post {
-                        view.text = data
+            try {
+                when (mainFragmentHost.childFragmentManager.fragments[0]) {
+                    is chatFragment -> {}
+                    is exploreFragment -> {}
+                    is homeFragment -> {
+                        val view = mainFragmentHost.childFragmentManager.fragments[0].homeFragmentTextIdTest
+                        view.post {
+                            view.text = data
+                        }
                     }
+                    is mapFragment -> {}
+                    is settingsFragment -> {}
                 }
-                is mapFragment -> {}
-                is settingsFragment -> {}
-            }
+            } catch (e: Throwable) { println(e) }
 
         }
 
@@ -76,7 +80,17 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun loadSettings() {
+        AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         val settingsSaveManager = SettingsSaveManager(this)
         settingsSaveManager.loadSettings()
+    }
+
+    private fun restartAppPartially() {
+        val intent = Intent(applicationContext, MainActivity::class.java)
+
+        intent.putExtra(IntentsKeys.startFragment, "settingsFragment")
+
+        startActivity(intent)
+        finish()
     }
 }

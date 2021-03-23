@@ -10,10 +10,12 @@
         android:id="@+id/mainBottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="70dp"
-        app:itemRippleColor="#43E8E8E8"
+        app:itemRippleColor="?attr/bottomNavBarRippleColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:itemIconTint="@color/bottom_nav_bar_item_color"
+        app:itemTextColor="@color/bottom_nav_bar_item_color"
         app:menu="@menu/main_bottom_nav_menu" />
 
     <fragment

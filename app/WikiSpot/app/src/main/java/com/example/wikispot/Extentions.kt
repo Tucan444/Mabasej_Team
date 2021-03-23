@@ -25,17 +25,9 @@ fun Context.showSnack(message: String, view: View, length: Int = Snackbar.LENGTH
 
 fun Context.getThemeId(): Int {
     if (ThemeOptions.darkTheme) {
-        if (ThemeOptions.actionBar) {
-            return R.style.Theme_WikiSpotWithActionBarDark
-        } else {
-            return R.style.Theme_WikiSpotDark
-        }
+        return R.style.Theme_WikiSpotDark
     } else {
-        if (ThemeOptions.actionBar) {
-            return R.style.Theme_WikiSpotWithActionBar
-        } else {
-            return R.style.Theme_WikiSpot
-        }
+        return R.style.Theme_WikiSpot
     }
 }
 

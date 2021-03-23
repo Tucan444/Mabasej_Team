@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- Backgrounds -->
+    <attr name="chatFragmentBg" format="color"/>
+    <attr name="exploreFragmentBg" format="color"/>
+    <attr name="homeFragmentBg" format="color"/>
+    <attr name="mapFragmentBg" format="color"/>
+    <attr name="settingsFragmentBg" format="color"/>
+
+    <!-- For bottomNavBar -->
+    <attr name="bottomNavBarCheckedItemColor" format="color"/>
+    <attr name="bottomNavBarRippleColor" format="color"/>
+
+</resources>

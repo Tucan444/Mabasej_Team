@@ -88,6 +88,17 @@ class ServerManager {
 
     // connections
 
+    fun clearConnections() {
+        for (i in 0 until receiverConnections.size) {
+            receiverConnections[i].running = false
+            receiverConnections.removeAt(i)
+        }
+        for (i in 0 until viewConnections.size) {
+            viewConnections[i].running = false
+            viewConnections.removeAt(i)
+        }
+    }
+
     fun deleteConnection(connectionName: String, connectionType: String="any") {  // other types are any, activity and view
         if ((connectionType == "any") or (connectionType == "activity")) {
             for (i in 0 until receiverConnections.size) {  // checking in connections

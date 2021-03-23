@@ -8,10 +8,22 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
+    <!-- Light Theme -->
     <color name="chatFragmentBackground">#E11976D2</color>
     <color name="exploreFragmentBackground">#2EBFB2</color>
     <color name="homeFragmentBackground">#7CB342</color>
     <color name="mapFragmentBackground">#FBC02D</color>
     <color name="settingsFragmentBackground">#F57C00</color>
+    <color name="bottomNavBarCheckedItemColor">#ECB269C8</color>
+    <color name="bottomNavBarRippleColor">#43E8E8E8</color>
+
+    <!-- Dark Theme -->
+    <color name="chatFragmentBackgroundDark">#422DA9</color>
+    <color name="exploreFragmentBackgroundDark">#5829B1</color>
+    <color name="homeFragmentBackgroundDark">#6A1B9A</color>
+    <color name="mapFragmentBackgroundDark">#AD1457</color>
+    <color name="settingsFragmentBackgroundDark">#C62845</color>
+    <color name="bottomNavBarCheckedItemColorDark">#D7BEDE</color>
+    <color name="bottomNavBarRippleColorDark">#33222222</color>
 
 </resources>

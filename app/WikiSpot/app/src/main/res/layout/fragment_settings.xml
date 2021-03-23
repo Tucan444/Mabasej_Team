@@ -4,22 +4,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/settingsFragmentBackground"
+    android:background="?attr/settingsFragmentBg"
+    tools:background="@color/settingsFragmentBackground"
     tools:context=".fragments.settingsFragment">
-
-    <TextView
-        android:id="@+id/actionBarThemeSwitchText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="64dp"
-        android:layout_marginLeft="64dp"
-        android:layout_marginTop="32dp"
-        android:text="Action Bar"
-        android:textColor="#FFFFFF"
-        android:textSize="24sp"
-        android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/darkThemeSwitchText" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -64,15 +51,7 @@
         android:layout_marginLeft="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/darkThemeSwitchText"
         app:layout_constraintStart_toEndOf="@+id/darkThemeSwitchText"
-        app:layout_constraintTop_toTopOf="@+id/darkThemeSwitchText" />
-
-    <Switch
-        android:id="@+id/actionBarSwitch"
-        android:layout_width="50dp"
-        android:layout_height="21dp"
-        app:layout_constraintBottom_toBottomOf="@+id/actionBarThemeSwitchText"
-        app:layout_constraintEnd_toEndOf="@+id/darkThemeSwitch"
-        app:layout_constraintStart_toStartOf="@+id/darkThemeSwitch"
-        app:layout_constraintTop_toTopOf="@+id/actionBarThemeSwitchText" />
+        app:layout_constraintTop_toTopOf="@+id/darkThemeSwitchText"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

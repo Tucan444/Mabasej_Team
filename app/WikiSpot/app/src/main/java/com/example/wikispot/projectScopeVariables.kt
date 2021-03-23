@@ -9,6 +9,12 @@ object ManifestRelatedVariables {
 
 }
 
+object GeneralVariables {
+
+    var appRunningFirstTime = true
+
+}
+
 object IntentsKeys {
 
     const val startFragment = "start_fragment"
@@ -17,7 +23,7 @@ object IntentsKeys {
 
 
 object ServerManagement {
-    val serverManager = ServerManager()
+    var serverManager = ServerManager()
     const val activityConnectionOnCheckWait: Long = 4000
     const val viewConnectionOnCheckWait: Long = 5000
     const val dataRequestOnAttemptWait: Long = 2000
@@ -28,6 +34,5 @@ object ServerManagement {
 object ThemeOptions {
 
     var darkTheme = false
-    var actionBar = false
 
 }
