@@ -8,22 +8,49 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Light Theme -->
-    <color name="chatFragmentBackground">#E11976D2</color>
-    <color name="exploreFragmentBackground">#2EBFB2</color>
-    <color name="homeFragmentBackground">#7CB342</color>
-    <color name="mapFragmentBackground">#FBC02D</color>
-    <color name="settingsFragmentBackground">#F57C00</color>
-    <color name="bottomNavBarCheckedItemColor">#ECB269C8</color>
+    <!-- Light Theme --> <!--    Pink one
+    <color name="chatFragmentBackground">#E1C1ABE6</color>
+    <color name="exploreFragmentBackground">#A892DE</color>
+    <color name="homeFragmentBackground">#DCB59BDD</color>
+    <color name="mapFragmentBackground">#D3ACD9</color>
+    <color name="settingsFragmentBackground">#CEDC8AC6</color>
+    <color name="bottomNavBarCheckedItemColor">#ECC87AE0</color>
     <color name="bottomNavBarRippleColor">#43E8E8E8</color>
+    <color name="statusBarColor">#ECB988D7</color> -->
+    <!-- Blue-Green one
+    <color name="chatFragmentBackground">#E1ABD8E6</color>
+    <color name="exploreFragmentBackground">#92DED8</color>
+    <color name="homeFragmentBackground">#DC9BF1ED</color>
+    <color name="mapFragmentBackground">#C5F2E5</color>
+    <color name="settingsFragmentBackground">#CEA7F2E1</color>
+    <color name="bottomNavBarCheckedItemColor">#EC37DC7C</color>
+    <color name="bottomNavBarRippleColor">#43E8E8E8</color>
+    <color name="statusBarColor">#EC8ECDED</color> -->
+    <color name="chatFragmentBackground">#E10A1C2F</color>
+    <color name="exploreFragmentBackground">#142448</color>
+    <color name="homeFragmentBackground">#DC17294D</color>
+    <color name="mapFragmentBackground">#10132F</color>
+    <color name="settingsFragmentBackground">#CE131C33</color>
+    <color name="bottomNavBarCheckedItemColor">#ECD21A1A</color>
+    <color name="bottomNavBarRippleColor">#33C4BCC9</color>
+    <color name="statusBarColor">#EC000000</color>
 
     <!-- Dark Theme -->
-    <color name="chatFragmentBackgroundDark">#422DA9</color>
+    <!--<color name="chatFragmentBackgroundDark">#422DA9</color>
     <color name="exploreFragmentBackgroundDark">#5829B1</color>
     <color name="homeFragmentBackgroundDark">#6A1B9A</color>
     <color name="mapFragmentBackgroundDark">#AD1457</color>
     <color name="settingsFragmentBackgroundDark">#C62845</color>
     <color name="bottomNavBarCheckedItemColorDark">#D7BEDE</color>
     <color name="bottomNavBarRippleColorDark">#33222222</color>
+    <color name="statusBarColorDark">#4527A0</color>-->
+    <color name="chatFragmentBackgroundDark">#422DA9</color>
+    <color name="exploreFragmentBackgroundDark">#5829B1</color>
+    <color name="homeFragmentBackgroundDark">#6A1B9A</color>
+    <color name="mapFragmentBackgroundDark">#AD1457</color>
+    <color name="settingsFragmentBackgroundDark">#C62845</color>
+    <color name="bottomNavBarCheckedItemColorDark">#FFB571</color>
+    <color name="bottomNavBarRippleColorDark">#33222222</color>
+    <color name="statusBarColorDark">#4527A0</color>
 
 </resources>

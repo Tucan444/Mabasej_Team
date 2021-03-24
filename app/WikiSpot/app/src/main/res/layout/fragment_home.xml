@@ -4,22 +4,25 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/homeFragmentBg"
-    tools:background="@color/homeFragmentBackground"
+    android:background="@drawable/home_fragment_gradient_background"
+    tools:background="@drawable/home_fragment_gradient_background"
     tools:context=".fragments.homeFragment">
 
     <TextView
+        android:id="@+id/homeFragmentTextIdTest"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:background="@drawable/text_background_gradient"
+        android:padding="5dp"
         android:text="Home Fragment"
-        android:textColor="@android:color/white"
+        android:textColor="#fff"
         android:textSize="24sp"
         android:textStyle="bold"
-        android:id="@+id/homeFragmentTextIdTest"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.22000003" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

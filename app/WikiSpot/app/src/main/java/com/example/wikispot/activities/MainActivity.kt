@@ -9,7 +9,10 @@ import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import com.example.wikispot.*
 import com.example.wikispot.fragments.*
+import com.example.wikispot.modelClasses.JsonManager
 import com.example.wikispot.modelClasses.SettingsSaveManager
+import com.example.wikispot.modelsForAdapters.PlacePreview
+import com.example.wikispot.modelsForAdapters.PlaceSupplier
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_home.*
 
@@ -61,7 +64,8 @@ class MainActivity : AppCompatActivity() {
 
         }
 
-        ServerManagement.serverManager.addReceiverConnection(dataReceiver, this, "mainConnection", 0, "test0.json")
+        //ServerManagement.serverManager.addReceiverConnection(dataReceiver, this, "mainConnection", 0, "test0.json")
+        connectExploreFragmentAdapterModel()
     }
 
     override fun onPause() {
@@ -83,6 +87,24 @@ class MainActivity : AppCompatActivity() {
         AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO)
         val settingsSaveManager = SettingsSaveManager(this)
         settingsSaveManager.loadSettings()
+    }
+
+    private fun connectExploreFragmentAdapterModel () {
+        val dataReceiver: (String) -> Unit = {data: String ->
+            val json = JsonManager(this, data)
+            for (i in 0 until json.getLengthOfJsonArray()) {  // todo change to 1
+                json.getJsonObject(i)
+                json.getAttributeContent("description")
+                val title = json.getAttributeContent("title")
+                val shortDescription = json.getAttributeContent("description_s")
+                val place = PlacePreview(title, shortDescription)
+                if (!PlaceSupplier.places.contains(place)) {
+                    PlaceSupplier.appendPlace(place)
+                }
+            }
+        }
+
+        ServerManagement.serverManager.addReceiverConnection(dataReceiver, this, "exploreListConnection", 0, "", "GET_JSON_ARRAY")
     }
 
     private fun restartAppPartially() {

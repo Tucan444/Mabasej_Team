@@ -10,7 +10,7 @@ import com.example.wikispot.modelsForAdapters.PlacePreview
 import kotlinx.android.synthetic.main.explore_list_item.view.*
 
 
-class PlacePreviewsAdapter(private val context: Context, private val placePreviews: Array<PlacePreview>) : RecyclerView.Adapter<PlacePreviewsAdapter.MyViewHolder>() {
+class PlacePreviewsAdapter(private val context: Context, private val placePreviews: Array<PlacePreview?>) : RecyclerView.Adapter<PlacePreviewsAdapter.MyViewHolder>() {
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 

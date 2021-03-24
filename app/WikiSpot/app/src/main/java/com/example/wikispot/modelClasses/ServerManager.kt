@@ -157,6 +157,10 @@ class ServerManager {
 
                                     val jsonManager = JsonManager(context, receivedString)
                                     if (path == "") {
+                                        if (attributePath == "GET_JSON_ARRAY") {
+                                            dataReceiver(jsonManager.jsonArray.toString())
+                                            return
+                                        }
                                         jsonManager.getJsonObject(serverId)
                                     } else {
                                         if (attributePath == "") {
@@ -195,7 +199,7 @@ class ServerManager {
                         }
                     })
 
-                    Thread.sleep(ServerManagement.dataRequestOnAttemptWait)
+                    Thread.sleep(ServerManagement.receiverConnectionOnCheckWait)
                 }
             }
         }

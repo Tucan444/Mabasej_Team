@@ -26,7 +26,7 @@
         <!-- Other items -->
         <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
 
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColor</item>
     </style>
 
     <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
@@ -34,8 +34,14 @@
     </style>
 
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
+        <!--
         <item name="colorPrimary">#EDD9F8</item>
-        <item name="colorOnPrimary">#C788EB</item>
+        <item name="colorOnPrimary">#C788EB</item> -->
+        <!--
+        <item name="colorPrimary">#FAF1FF</item>
+        <item name="colorOnPrimary">#6DBEED</item>    #E4D539-->
+        <item name="colorPrimary">#0A0A1F</item>
+        <item name="colorOnPrimary">#320747</item>
     </style>
 
     <!-- Dark theme-->
@@ -64,7 +70,7 @@
         <!-- Other items -->
         <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationViewDark</item>
 
-        <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
+        <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColorDark</item>
     </style>
 
 

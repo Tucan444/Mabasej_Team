@@ -23,7 +23,7 @@ data class PlacePreview(var title: String, var description: String, var img: Ima
 
 object PlaceSupplier {
 
-    val places = arrayOf(
+    var places = arrayOf<PlacePreview?>(
         PlacePreview("Castle", "Its ruins had been repaired to stable state."),
         PlacePreview("Library", "You can find books here."),
         PlacePreview("Bakery", "You can buy bread here."),
@@ -35,5 +35,11 @@ object PlaceSupplier {
         PlacePreview("Library", "You can find books here."),
         PlacePreview("Bakery", "You can buy bread here.")
     )
+
+    fun appendPlace(place: PlacePreview) {
+        val array = places.copyOf(places.size + 1)
+        array[places.size] = place
+        places = array
+    }
 
 }
