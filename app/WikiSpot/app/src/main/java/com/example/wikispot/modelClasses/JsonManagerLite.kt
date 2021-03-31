@@ -7,7 +7,7 @@ import com.example.wikispot.showToast
 import org.json.JSONArray
 import org.json.JSONObject
 
-data class JsonManager(private val context: Context, val data: String, val inputType: String = "JSONArray", val debug: Boolean = false) {
+data class JsonManagerLite(val data: String, val inputType: String = "JSONArray") {
 
     var jsonArray: JSONArray? = null
     var currentJsonObject: JSONObject? = null
@@ -21,31 +21,15 @@ data class JsonManager(private val context: Context, val data: String, val input
                 currentJsonObject = jsonArray!!.getJSONObject(0)
             } catch (exception: Throwable) {}
 
-            if (debug) {
-                println("[debug] Content of received JSONArray is ${jsonArray.toString()}")
-            }
-
         } else if (inputType == "JSONObject") {
             currentJsonObject = JSONObject(data)
-
-            if (debug) {
-                println("[debug] Content of received JSONObject is ${currentJsonObject.toString()}")
-            }
         }
     }
 
     fun getJsonObject(i: Int): JSONObject? {
         jsonArray?.let {
-            if ((i >= jsonArray!!.length()) or (i < 0)) {
-                context.showToast("Index out of range")
-            } else {
-                currentJsonObject = jsonArray?.getJSONObject(i)
-                return currentJsonObject
-            }
-        }
-
-        if (jsonArray == null) {
-            context.showToast("Json Array is null")
+            currentJsonObject = jsonArray?.getJSONObject(i)
+            return currentJsonObject
         }
 
         return null
@@ -65,11 +49,7 @@ data class JsonManager(private val context: Context, val data: String, val input
                     } catch (exception: Throwable) {
                         try {
                             return currentJsonAttribute0!!.get(name).toString()
-                        } catch (exception: Throwable) {
-                            if (debug) {
-                                context.showToast("Invalid attribute name: $name")
-                            }
-                        }
+                        } catch (exception: Throwable) { }
                     }
                 }
             } else if (currentJsonAttribute1 != null) {
@@ -84,11 +64,7 @@ data class JsonManager(private val context: Context, val data: String, val input
                     } catch (exception: Throwable) {
                         try {
                             return currentJsonAttribute1!!.get(name.toInt()).toString()
-                        } catch (exception: Throwable) {
-                            if (debug) {
-                                context.showToast("Invalid attribute name: $name")
-                            }
-                        }
+                        } catch (exception: Throwable) { }
                     }
                 }
             } else {
@@ -103,17 +79,9 @@ data class JsonManager(private val context: Context, val data: String, val input
                     } catch (exception: Throwable) {
                         try {
                             return currentJsonObject!!.get(name).toString()
-                        } catch (exception: Throwable) {
-                            if (debug) {
-                                context.showToast("Invalid attribute name: $name")
-                            }
-                        }
+                        } catch (exception: Throwable) { }
                     }
                 }
-            }
-        } else {
-            if (debug) {
-                context.showToast("Invalid attribute name: $name")
             }
         }
 
@@ -132,7 +100,6 @@ data class JsonManager(private val context: Context, val data: String, val input
             try {
                 result = getAttributeContent(step)
             } catch (exception: Throwable) {
-                context.showToast("Invalid path")
                 // loading back saved json attributes
                 currentJsonAttribute0 = currentJsonAttributesBackup[0] as JSONObject?
                 currentJsonAttribute1 = currentJsonAttributesBackup[1] as JSONArray?
@@ -155,12 +122,8 @@ data class JsonManager(private val context: Context, val data: String, val input
 
     fun getLengthOfJsonArray(): Int {
         return if (jsonArray != null) {
-            if (debug) {
-                println("[debug] Length of json array is ${jsonArray!!.length()}")
-            }
             jsonArray!!.length()
         } else {
-            println("[debug] Length of json array is 0")
             0
         }
     }
@@ -173,52 +136,4 @@ data class JsonManager(private val context: Context, val data: String, val input
         }
         return "get json attribute first"
     }
-
-    fun findJsonObjectByAttribute(attributePath: String, value: Any): String {
-        val currentJsonObjectSave = currentJsonObject
-
-        for (i in 0 until getLengthOfJsonArray()) {
-
-            getJsonObject(i)
-
-            val attributeContent = getAttributeContentByPath(attributePath)
-
-            if (attributeContent != "null") {
-
-                if (attributeContent == value.toString()) {
-                    return currentJsonObject.toString()
-                }
-
-            }
-
-        }
-
-        currentJsonObject = currentJsonObjectSave
-        return currentJsonObject.toString()
-
-    }
-
-    // saving and loading
-
-    fun saveJson(accessKey: String) {
-
-        // finding data that could be saved
-        if (jsonArray != null) {
-            context.saveString(accessKey, jsonArray.toString(), "jsonStrings")
-        } else if (currentJsonObject != null) {
-            context.saveString(accessKey, currentJsonObject.toString(), "jsonStrings")
-        } else if (currentJsonAttribute0 != null) {
-            context.saveString(accessKey, currentJsonAttribute0.toString(), "jsonStrings")
-        } else if (currentJsonAttribute1 != null) {
-            context.saveString(accessKey, currentJsonAttribute1.toString(), "jsonStrings")
-        } else {
-            context.showToast("Nothing to save")
-        }
-
-    }
-
-    fun loadJson(context: Context, accessKey: String, inputType: String = "JSONArray", debug: Boolean = false): JsonManager {
-        return JsonManager(context, context.getStringFromSharedPreferences(accessKey, "jsonStrings"), inputType, debug)
-    }
-
 }

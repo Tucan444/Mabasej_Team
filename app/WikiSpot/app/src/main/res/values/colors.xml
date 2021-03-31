@@ -8,48 +8,45 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
 
-    <!-- Light Theme --> <!--    Pink one
-    <color name="chatFragmentBackground">#E1C1ABE6</color>
-    <color name="exploreFragmentBackground">#A892DE</color>
-    <color name="homeFragmentBackground">#DCB59BDD</color>
-    <color name="mapFragmentBackground">#D3ACD9</color>
-    <color name="settingsFragmentBackground">#CEDC8AC6</color>
-    <color name="bottomNavBarCheckedItemColor">#ECC87AE0</color>
-    <color name="bottomNavBarRippleColor">#43E8E8E8</color>
-    <color name="statusBarColor">#ECB988D7</color> -->
-    <!-- Blue-Green one
-    <color name="chatFragmentBackground">#E1ABD8E6</color>
-    <color name="exploreFragmentBackground">#92DED8</color>
-    <color name="homeFragmentBackground">#DC9BF1ED</color>
-    <color name="mapFragmentBackground">#C5F2E5</color>
-    <color name="settingsFragmentBackground">#CEA7F2E1</color>
-    <color name="bottomNavBarCheckedItemColor">#EC37DC7C</color>
-    <color name="bottomNavBarRippleColor">#43E8E8E8</color>
-    <color name="statusBarColor">#EC8ECDED</color> -->
-    <color name="chatFragmentBackground">#E10A1C2F</color>
-    <color name="exploreFragmentBackground">#142448</color>
-    <color name="homeFragmentBackground">#DC17294D</color>
-    <color name="mapFragmentBackground">#10132F</color>
-    <color name="settingsFragmentBackground">#CE131C33</color>
+    <!-- Light Theme -->
     <color name="bottomNavBarCheckedItemColor">#ECD21A1A</color>
+    <color name="bottomNavBarItemColor">#320747</color>
     <color name="bottomNavBarRippleColor">#33C4BCC9</color>
     <color name="statusBarColor">#EC000000</color>
 
+    <color name="textBackgroundGradientStartColor" >#80E5BEFF</color>
+    <color name="textBackgroundGradientEndColor" >#80FFB5F0</color>
+
+    <color name="bottomNavBarGradientStartColor" >#FCDD94</color>
+    <color name="bottomNavBarGradientEndColor" >#C5F8AB</color>
+
+    <color name="chatFragmentGradientStartColor" >#FCB0EF</color>
+    <color name="chatFragmentGradientCenterColor" >#9ECFFF</color>
+    <color name="chatFragmentGradientEndColor" >#9FE7FF</color>
+
+    <color name="exploreFragmentGradientStartColor" >#A1DEFC</color>
+    <color name="exploreFragmentGradientCenterColor" >#A5CBFF</color>
+    <color name="exploreFragmentGradientEndColor" >#F9B6F6</color>
+
+    <color name="homeFragmentGradientStartColor" >#83E1FF</color>
+    <color name="homeFragmentGradientCenterColor" >#9EC6FF</color>
+    <color name="homeFragmentGradientEndColor" >#FEBBFF</color>
+
+    <color name="mapFragmentGradientStartColor" >#FBBEFC</color>
+    <color name="mapFragmentGradientCenterColor" >#A5CBFF</color>
+    <color name="mapFragmentGradientEndColor" >#95DDFC</color>
+
+    <color name="settingsFragmentGradientStartColor" >#92EB97FC</color>
+    <color name="settingsFragmentGradientCenterColor" >#A198F9</color>
+    <color name="settingsFragmentGradientEndColor" >#74C7F7</color>
+
+    <color name="infoFragmentGradientStartColor" >#FFB6FB</color>
+    <color name="infoFragmentGradientCenterColor" >#A7D2FF</color>
+    <color name="infoFragmentGradientEndColor" >#96E7FF</color>
+
     <!-- Dark Theme -->
-    <!--<color name="chatFragmentBackgroundDark">#422DA9</color>
-    <color name="exploreFragmentBackgroundDark">#5829B1</color>
-    <color name="homeFragmentBackgroundDark">#6A1B9A</color>
-    <color name="mapFragmentBackgroundDark">#AD1457</color>
-    <color name="settingsFragmentBackgroundDark">#C62845</color>
-    <color name="bottomNavBarCheckedItemColorDark">#D7BEDE</color>
-    <color name="bottomNavBarRippleColorDark">#33222222</color>
-    <color name="statusBarColorDark">#4527A0</color>-->
-    <color name="chatFragmentBackgroundDark">#422DA9</color>
-    <color name="exploreFragmentBackgroundDark">#5829B1</color>
-    <color name="homeFragmentBackgroundDark">#6A1B9A</color>
-    <color name="mapFragmentBackgroundDark">#AD1457</color>
-    <color name="settingsFragmentBackgroundDark">#C62845</color>
     <color name="bottomNavBarCheckedItemColorDark">#FFB571</color>
+    <color name="bottomNavBarItemColorDark">#320747</color>
     <color name="bottomNavBarRippleColorDark">#33222222</color>
     <color name="statusBarColorDark">#4527A0</color>
 

@@ -1,12 +1,15 @@
 package com.example.wikispot.modelClasses
 
 import android.content.Context
+import android.graphics.Bitmap
+import android.graphics.BitmapFactory
 import android.widget.TextView
 import com.example.wikispot.ServerManagement
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
 import java.io.IOException
+import java.io.InputStream
 
 class ServerManager {
 
@@ -43,6 +46,10 @@ class ServerManager {
 
                                 val jsonManager = JsonManager(context, receivedString)
                                 if (path == "") {
+                                    if (attributePath == "GET_JSON_ARRAY") {
+                                        dataReceiver(jsonManager.jsonArray.toString())
+                                        return
+                                    }
                                     jsonManager.getJsonObject(serverId)
                                 } else {
                                     if (attributePath == "") {
@@ -86,44 +93,74 @@ class ServerManager {
         }
     }
 
+    fun getImage(imageReceiver: (Bitmap) -> Unit, serverId: Int, path: String, numberOfAttempts: Int) {
+        val imageRequestThread = Thread(ImageRequest(imageReceiver, serverId, path, numberOfAttempts))
+        imageRequestThread.start()
+    }
+
+    inner class ImageRequest(val imageReceiver: (Bitmap) -> Unit, val serverId: Int, val path: String, private val numberOfAttempts: Int): Runnable {
+        override fun run() {
+            for (i in 0 until numberOfAttempts) {
+                val url = "${ServerManagement.baseUrl}files/$serverId/$path"
+
+                try {
+                    val inputStream = java.net.URL(url).openStream()
+                    val bitmap = BitmapFactory.decodeStream(inputStream)
+
+                    imageReceiver(bitmap)
+                } catch (e: Throwable) { println(e) }
+
+                Thread.sleep(ServerManagement.imageRequestOnAttemptWait)
+            }
+        }
+    }
+
     // connections
 
     fun clearConnections() {
         for (i in 0 until receiverConnections.size) {
-            receiverConnections[i].running = false
-            receiverConnections.removeAt(i)
+            try {
+                receiverConnections[i].running = false
+                receiverConnections.removeAt(i)
+            } catch (e: Throwable) { println("In clearConnections: $e") }
         }
         for (i in 0 until viewConnections.size) {
-            viewConnections[i].running = false
-            viewConnections.removeAt(i)
+            try {
+                viewConnections[i].running = false
+                viewConnections.removeAt(i)
+            } catch (e: Throwable) { println("In clearConnections: $e") }
         }
     }
 
     fun deleteConnection(connectionName: String, connectionType: String="any") {  // other types are any, activity and view
         if ((connectionType == "any") or (connectionType == "activity")) {
             for (i in 0 until receiverConnections.size) {  // checking in connections
-                if (receiverConnections[i].connectionName == connectionName) {
-                    receiverConnections[i].running = false
-                    receiverConnections.removeAt(i)
-                }
+                try {
+                    if (receiverConnections[i].connectionName == connectionName) {
+                        receiverConnections[i].running = false
+                        receiverConnections.removeAt(i)
+                    }
+                } catch (e: Throwable) { println("In deleteConnection: $e") }
             }
         }
 
         if ((connectionType == "any") or (connectionType == "view")) {
             for (i in 0 until viewConnections.size) {  // checking in connections
-                if (viewConnections[i].connectionName == connectionName) {
-                    viewConnections[i].running = false
-                    viewConnections.removeAt(i)
-                }
+                try {
+                    if (viewConnections[i].connectionName == connectionName) {
+                        viewConnections[i].running = false
+                        viewConnections.removeAt(i)
+                    }
+                } catch (e: Throwable) { println("In deleteConnection: $e") }
             }
         }
     }
 
-    fun addReceiverConnection(dataReceiver: (String) -> Unit, context: Context, connectionName: String, serverId: Int, path: String?=null, attributePath: String="") {
-        receiverConnections.add(ReceiverConnection(dataReceiver, context, connectionName, serverId, path, attributePath))
+    fun addReceiverConnection(dataReceiver: (String) -> Unit, context: Context, connectionName: String, serverId: Int, path: String?=null, attributePath: String="", waitTime: Long=ServerManagement.receiverConnectionOnCheckWait) {
+        receiverConnections.add(ReceiverConnection(dataReceiver, context, connectionName, serverId, path, attributePath, waitTime))
     }
 
-    inner class ReceiverConnection(val dataReceiver: (String) -> Unit, val context: Context, val connectionName: String, val serverId: Int, val path: String?=null, val attributePath: String) {
+    inner class ReceiverConnection(val dataReceiver: (String) -> Unit, val context: Context, val connectionName: String, val serverId: Int, val path: String?=null, val attributePath: String, val waitTime: Long) {
 
         var running = true
 
@@ -157,7 +194,7 @@ class ServerManager {
 
                                     val jsonManager = JsonManager(context, receivedString)
                                     if (path == "") {
-                                        if (attributePath == "GET_JSON_ARRAY") {
+                                        if (attributePath == "GET_WHOLE_ARRAY") {
                                             dataReceiver(jsonManager.jsonArray.toString())
                                             return
                                         }
@@ -199,7 +236,7 @@ class ServerManager {
                         }
                     })
 
-                    Thread.sleep(ServerManagement.receiverConnectionOnCheckWait)
+                    Thread.sleep(waitTime)
                 }
             }
         }
@@ -245,6 +282,10 @@ class ServerManager {
 
                                     val jsonManager = JsonManager(context, receivedString)
                                     if (path == "") {
+                                        if (attributePath == "GET_WHOLE_ARRAY") {
+                                            view.text = jsonManager.jsonArray.toString()
+                                            return
+                                        }
                                         jsonManager.getJsonObject(serverId)
                                     } else {
                                         if (attributePath == "") {

@@ -21,6 +21,9 @@
         <action
             android:id="@+id/action_exploreFragment_to_homeFragment"
             app:destination="@id/homeFragment" />
+        <action
+            android:id="@+id/navigateToInfoFragment"
+            app:destination="@id/infoFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
@@ -66,5 +69,14 @@
         <action
             android:id="@+id/navigateBackToDebugFragment"
             app:destination="@id/debugFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.wikispot.fragments.infoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <action
+            android:id="@+id/navigateBackToExploreFragmentFromInfoFragment"
+            app:destination="@id/exploreFragment" />
     </fragment>
 </navigation>

@@ -3,8 +3,15 @@
     android:shape="rectangle">
     <gradient
         android:centerX="1"
-        android:startColor="#FCDD94"
-        android:endColor="#C5F8AB"
+        android:startColor="?attr/bottomNavBarGradientStartColor"
+        android:endColor="?attr/bottomNavBarGradientEndColor"
         android:angle="45"
         android:type="sweep" />
 </shape>
+
+<!-- <gradient
+        android:centerX="1"
+        android:startColor="#FCDD94"
+        android:endColor="#C5F8AB"
+        android:angle="45"
+        android:type="sweep" /> -->

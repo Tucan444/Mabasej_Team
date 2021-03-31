@@ -1,14 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <shape xmlns:android="http://schemas.android.com/apk/res/android"
     android:shape="rectangle">
-    <gradient
-        android:startColor="#650822"
-        android:centerColor="#A7451E"
-        android:endColor="#CB7715"
-        android:angle="135" />
+
     <gradient
         android:centerY="0.7"
-        android:startColor="#92DD4B4B"
-        android:endColor="#CD742B"
+        android:startColor="?attr/settingsFragmentGradientStartColor"
+        android:centerColor="?attr/settingsFragmentGradientCenterColor"
+        android:endColor="?attr/settingsFragmentGradientEndColor"
         android:type="sweep"/>
+
 </shape>

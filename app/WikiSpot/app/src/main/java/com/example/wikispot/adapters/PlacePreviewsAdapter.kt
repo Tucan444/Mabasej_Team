@@ -4,9 +4,12 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wikispot.R
+import com.example.wikispot.ServerManagement
 import com.example.wikispot.modelsForAdapters.PlacePreview
+import com.example.wikispot.showToast
 import kotlinx.android.synthetic.main.explore_list_item.view.*
 
 
@@ -18,6 +21,10 @@ class PlacePreviewsAdapter(private val context: Context, private val placePrevie
         var pos: Int = 0
 
         init {
+            itemView.setOnClickListener {
+                ServerManagement.selectedServerId = currentPlacePreview?.id!!
+                Navigation.findNavController(it).navigate(R.id.navigateToInfoFragment)
+            }
         }
 
         fun setData(placePreview: PlacePreview?, pos: Int) {
@@ -25,7 +32,7 @@ class PlacePreviewsAdapter(private val context: Context, private val placePrevie
                 itemView.item_title.text = placePreview.title
                 itemView.item_description.text = placePreview.description
                 placePreview.img?.let {
-                    // TODO set image somehow
+                    itemView.item_img.setImageBitmap(placePreview.img)
                 }
             }
 

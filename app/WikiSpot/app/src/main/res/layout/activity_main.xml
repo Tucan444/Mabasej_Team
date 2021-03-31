@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:itemIconTint="@color/bottom_nav_bar_item_color"
         app:itemTextColor="@color/bottom_nav_bar_item_color"
-        android:background="@drawable/gradient_fill_for_bottom_nav_bar"
+        android:background="@drawable/bottom_nav_bar_gradient_background"
         app:menu="@menu/main_bottom_nav_menu" />
 
     <fragment

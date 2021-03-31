@@ -12,20 +12,45 @@
         <item name="colorSecondaryVariant">#F48FB1</item>
         <item name="colorOnSecondary">@color/black</item>
 
-        <!-- Backgrounds -->
-        <item name="chatFragmentBg">@color/chatFragmentBackground</item>
-        <item name="exploreFragmentBg">@color/exploreFragmentBackground</item>
-        <item name="homeFragmentBg">@color/homeFragmentBackground</item>
-        <item name="mapFragmentBg">@color/mapFragmentBackground</item>
-        <item name="settingsFragmentBg">@color/settingsFragmentBackground</item>
+        <!-- For gradient Backgrounds -->
+
+        <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColor</item>
+        <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColor</item>
+
+        <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColor</item>
+        <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColor</item>
+
+        <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColor</item>
+        <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColor</item>
+        <item name="chatFragmentGradientEndColor" >@color/chatFragmentGradientEndColor</item>
+
+        <item name="exploreFragmentGradientStartColor" >@color/exploreFragmentGradientStartColor</item>
+        <item name="exploreFragmentGradientCenterColor" >@color/exploreFragmentGradientCenterColor</item>
+        <item name="exploreFragmentGradientEndColor" >@color/exploreFragmentGradientEndColor</item>
+
+        <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColor</item>
+        <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColor</item>
+        <item name="homeFragmentGradientEndColor" >@color/homeFragmentGradientEndColor</item>
+
+        <item name="mapFragmentGradientStartColor" >@color/mapFragmentGradientStartColor</item>
+        <item name="mapFragmentGradientCenterColor" >@color/mapFragmentGradientCenterColor</item>
+        <item name="mapFragmentGradientEndColor" >@color/mapFragmentGradientEndColor</item>
+
+        <item name="settingsFragmentGradientStartColor" >@color/settingsFragmentGradientStartColor</item>
+        <item name="settingsFragmentGradientCenterColor" >@color/settingsFragmentGradientCenterColor</item>
+        <item name="settingsFragmentGradientEndColor" >@color/settingsFragmentGradientEndColor</item>
+
+        <item name="infoFragmentGradientStartColor" >@color/infoFragmentGradientStartColor</item>
+        <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColor</item>
+        <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColor</item>
 
         <!-- BottomNavCheckedItemColor -->
         <item name="bottomNavBarCheckedItemColor">@color/bottomNavBarCheckedItemColor</item>
         <item name="bottomNavBarRippleColor">@color/bottomNavBarRippleColor</item>
 
-        <!-- Other items -->
         <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView</item>
 
+        <!-- StatusBarColor -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColor</item>
     </style>
 
@@ -34,14 +59,7 @@
     </style>
 
     <style name="ThemeOverlay.App.BottomNavigationView" parent="">
-        <!--
-        <item name="colorPrimary">#EDD9F8</item>
-        <item name="colorOnPrimary">#C788EB</item> -->
-        <!--
-        <item name="colorPrimary">#FAF1FF</item>
-        <item name="colorOnPrimary">#6DBEED</item>    #E4D539-->
-        <item name="colorPrimary">#0A0A1F</item>
-        <item name="colorOnPrimary">#320747</item>
+        <item name="colorOnPrimary">@color/bottomNavBarItemColor</item>
     </style>
 
     <!-- Dark theme-->
@@ -56,20 +74,45 @@
         <item name="colorSecondaryVariant">@color/teal_200</item>
         <item name="colorOnSecondary">@color/black</item>
 
-        <!-- Backgrounds -->
-        <item name="chatFragmentBg">@color/chatFragmentBackgroundDark</item>
-        <item name="exploreFragmentBg">@color/exploreFragmentBackgroundDark</item>
-        <item name="homeFragmentBg">@color/homeFragmentBackgroundDark</item>
-        <item name="mapFragmentBg">@color/mapFragmentBackgroundDark</item>
-        <item name="settingsFragmentBg">@color/settingsFragmentBackgroundDark</item>
+        <!-- For gradient Backgrounds -->
 
-        <!-- for BottomNavBar -->
+        <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColor</item>
+        <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColor</item>
+
+        <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColor</item>
+        <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColor</item>
+
+        <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColor</item>
+        <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColor</item>
+        <item name="chatFragmentGradientEndColor" >@color/chatFragmentGradientEndColor</item>
+
+        <item name="exploreFragmentGradientStartColor" >@color/exploreFragmentGradientStartColor</item>
+        <item name="exploreFragmentGradientCenterColor" >@color/exploreFragmentGradientCenterColor</item>
+        <item name="exploreFragmentGradientEndColor" >@color/exploreFragmentGradientEndColor</item>
+
+        <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColor</item>
+        <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColor</item>
+        <item name="homeFragmentGradientEndColor" >@color/homeFragmentGradientEndColor</item>
+
+        <item name="mapFragmentGradientStartColor" >@color/mapFragmentGradientStartColor</item>
+        <item name="mapFragmentGradientCenterColor" >@color/mapFragmentGradientCenterColor</item>
+        <item name="mapFragmentGradientEndColor" >@color/mapFragmentGradientEndColor</item>
+
+        <item name="settingsFragmentGradientStartColor" >@color/settingsFragmentGradientStartColor</item>
+        <item name="settingsFragmentGradientCenterColor" >@color/settingsFragmentGradientCenterColor</item>
+        <item name="settingsFragmentGradientEndColor" >@color/settingsFragmentGradientEndColor</item>
+
+        <item name="infoFragmentGradientStartColor" >@color/infoFragmentGradientStartColor</item>
+        <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColor</item>
+        <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColor</item>
+
+        <!-- BottomNavCheckedItemColor -->
         <item name="bottomNavBarCheckedItemColor">@color/bottomNavBarCheckedItemColorDark</item>
         <item name="bottomNavBarRippleColor">@color/bottomNavBarRippleColorDark</item>
 
-        <!-- Other items -->
         <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationViewDark</item>
 
+        <!-- StatusBarColor -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColorDark</item>
     </style>
 
@@ -79,7 +122,6 @@
     </style>
 
     <style name="ThemeOverlay.App.BottomNavigationViewDark" parent="">
-        <item name="colorPrimary">#9758BC</item>
-        <item name="colorOnPrimary">#41254E</item>
+        <item name="colorOnPrimary">@color/bottomNavBarItemColorDark</item>
     </style>
 </resources>

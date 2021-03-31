@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="?attr/chatFragmentBg"
-    tools:background="@color/chatFragmentBackground"
+    android:background="@drawable/chat_fragment_gradient_background"
+    tools:background="@drawable/chat_fragment_gradient_background"
     tools:context=".fragments.chatFragment">
 
     <TextView

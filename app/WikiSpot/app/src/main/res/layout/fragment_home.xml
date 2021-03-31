@@ -9,20 +9,35 @@
     tools:context=".fragments.homeFragment">
 
     <TextView
-        android:id="@+id/homeFragmentTextIdTest"
+        android:id="@+id/textView4"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
         android:background="@drawable/text_background_gradient"
         android:padding="5dp"
-        android:text="Home Fragment"
-        android:textColor="#fff"
-        android:textSize="24sp"
+        android:text="@string/home"
+        android:textColor="@color/white"
+        android:textSize="28sp"
         android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.fragment.app.FragmentContainerView
+        android:name="com.example.wikispot.fragments.infoFragment"
+        android:id="@+id/homeFragmentInnerFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.22000003" />
+        app:layout_constraintTop_toBottomOf="@+id/textView4">
+
+    </androidx.fragment.app.FragmentContainerView>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

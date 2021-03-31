@@ -1,12 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- Backgrounds -->
-    <attr name="chatFragmentBg" format="color"/>
-    <attr name="exploreFragmentBg" format="color"/>
-    <attr name="homeFragmentBg" format="color"/>
-    <attr name="mapFragmentBg" format="color"/>
-    <attr name="settingsFragmentBg" format="color"/>
+    <!-- For gradient Backgrounds -->
+
+    <attr name="textBackgroundGradientStartColor" format="color"/>
+    <attr name="textBackgroundGradientEndColor" format="color"/>
+
+    <attr name="bottomNavBarGradientStartColor" format="color"/>
+    <attr name="bottomNavBarGradientEndColor" format="color"/>
+
+    <attr name="chatFragmentGradientStartColor" format="color"/>
+    <attr name="chatFragmentGradientCenterColor" format="color"/>
+    <attr name="chatFragmentGradientEndColor" format="color"/>
+
+    <attr name="exploreFragmentGradientStartColor" format="color"/>
+    <attr name="exploreFragmentGradientCenterColor" format="color"/>
+    <attr name="exploreFragmentGradientEndColor" format="color"/>
+
+    <attr name="homeFragmentGradientStartColor" format="color"/>
+    <attr name="homeFragmentGradientCenterColor" format="color"/>
+    <attr name="homeFragmentGradientEndColor" format="color"/>
+
+    <attr name="mapFragmentGradientStartColor" format="color"/>
+    <attr name="mapFragmentGradientCenterColor" format="color"/>
+    <attr name="mapFragmentGradientEndColor" format="color"/>
+
+    <attr name="settingsFragmentGradientStartColor" format="color"/>
+    <attr name="settingsFragmentGradientCenterColor" format="color"/>
+    <attr name="settingsFragmentGradientEndColor" format="color"/>
+
+    <attr name="infoFragmentGradientStartColor" format="color"/>
+    <attr name="infoFragmentGradientCenterColor" format="color"/>
+    <attr name="infoFragmentGradientEndColor" format="color"/>
 
     <!-- For bottomNavBar -->
     <attr name="bottomNavBarCheckedItemColor" format="color"/>
