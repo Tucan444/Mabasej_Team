@@ -4,6 +4,8 @@
   "location": "izba",
   "time_to_heartbeat": 20,
   "time_to_heartbeat_offline": 25,
+  "save_table": false,
+  "time_to_save": 60,
   "log": {
     "save_error": true,
     "print_error": true,
@@ -19,5 +21,5 @@
     "location": [],
     "file_system": [],
     "last_heartbeat": []
-}
+  }
 }

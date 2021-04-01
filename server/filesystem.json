@@ -1,22 +1,22 @@
 {
-  "ID": 0,
-    "location": "izba",
-    "descrpition": {
-      "title": "legionrpi",
-      "description_s": "krátky popis, ktorý bude zobrazený iba v náhladovom okne",
-      "description_l": "dlhší popis zariadenia, ktorý bude zobrazený po otvorení",
-      "photo_s": "mala_fotka.png",
-      "photo_b": "velka fotka.png"
-    },
-    "files": [
-      {
-        "name": "test",
-        "format": ".jpg",
-        "description": "toto je jpg test file"
-      }, {
-        "name": "test2",
-        "format": ".txt",
-        "description": "toto je txt test file"
-      }
-    ]
+  "ID": "0",
+  "location": "izba",
+  "description": {
+    "title": "legionrpi",
+    "description_s": "krátky popis, ktorý bude zobrazený iba v náhladovom okne",
+    "description_l": "dlhší popis zariadenia, ktorý bude zobrazený po otvorení",
+    "photo_s": "mala_fotka.png",
+    "photo_b": "velka fotka.png"
+  },
+  "files": [
+    {
+      "name": "test",
+      "format": ".jpg",
+      "description": "toto je jpg test file"
+    }, {
+      "name": "test2",
+      "format": ".txt",
+      "description": "toto je txt test file"
+    }
+  ]
 }

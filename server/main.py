@@ -1,13 +1,15 @@
-from fastapi import FastAPI, Request
-from fastapi.responses import FileResponse, HTMLResponse
-from pydantic import BaseModel
-import engine
-import requests
-import time
+import hashlib
 import json
 import os
 import threading
-import hashlib
+import time
+import engine
+import requests
+import uuid
+from fastapi import FastAPI, Request
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import FileResponse
+from pydantic import BaseModel
 
 with open("settings.json", "r") as f:  # loading settings
     settings = json.load(f)
@@ -21,6 +23,16 @@ location = settings["location"]
 time_to_save = settings["time_to_save"]
 
 app = FastAPI()  # init of FastAPI
+
+origins = ["*", ]
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"],
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 log = engine.Log(settings["log"])  # init of LOG
 update = engine.Update()
 offline = []
@@ -39,6 +51,8 @@ sensors = {  # List of "live" data like tempeature, etc.
     "doba čakania": 2
 }
 
+messages = []
+
 heartbeat_table["ID"].append(ID)
 heartbeat_table["IP"].append(IP)
 heartbeat_table["location"].append(location)
@@ -46,14 +60,17 @@ heartbeat_table["file_system"].append(filesystem)
 heartbeat_table["last_heartbeat"].append(time_to_heartbeat)
 
 
-# Todo better "host" ID handeling
-
 class ServerTable(BaseModel):  # table of content for heartbeat request
     ID: list
     IP: list
     location: list
     file_system: list
     last_heartbeat: list
+
+
+@app.get("/")
+def read_root():
+    return {"Hello": "World"}
 
 
 @app.post("/heartbeat")
@@ -141,7 +158,7 @@ def comparision(file: str):
 
 @app.get("/devices_list")
 def get_devices_list():
-    return heartbeat_table["file_system"]
+    return [{"connected_id": ID}, *heartbeat_table["file_system"]]
 
 
 @app.get("/admin/{command}")
@@ -150,6 +167,25 @@ def admin(command: str):
         return [update.get_version(), update.get_updates()]
     if "update-" in command:
         os.system(f"""python3 system.py update -version {command.split("-")[1]}""")
+
+
+@app.get("/messages/get")
+def get_messages(m_from: int = 0, m_to: int = 10):
+    return messages[m_from:m_to]
+
+
+@app.get("/messages/reqister")
+def get_messages():
+    return uuid.uuid4().hex[24:]
+
+
+@app.post("/messages/post")
+def get_messages(m_sender: str = None, message: str = None):
+    if m_sender and message:
+        messages.append({"sender": m_sender, "message": message})
+        return "successfull"
+    else:
+        return "Empty message/sender"
 
 
 def send_heartbeat(ip, id):
@@ -187,7 +223,8 @@ def mainloop():
                             log.message(f"""{heartbeat_table["IP"][device_number]} gone online""")
                         heartbeat_table["last_heartbeat"][int(device_number)] = int(time_to_heartbeat) + 5
                 try:
-                    log.debug(f"""{device_ID} : time to heartbeat : {heartbeat_table["last_heartbeat"][device_number]}""")
+                    log.debug(
+                        f"""{device_ID} : time to heartbeat : {heartbeat_table["last_heartbeat"][device_number]}""")
                     heartbeat_table["last_heartbeat"][device_number] -= 1
                 except IndexError:
                     pass
@@ -204,5 +241,4 @@ def mainloop():
 thread_1 = threading.Thread(target=mainloop, daemon=True)
 thread_1.start()
 
-# Todo new filesystem handeling
 # Todo settings for easy adding/editing files/id/text
