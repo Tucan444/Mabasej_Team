@@ -6,16 +6,18 @@ import requests
 
 arguments = sys.argv
 arguments.remove(sys.argv[0])
+url = "https://raw.githubusercontent.com/UntriexTv/test_directory/main/ver.json"
 
 if len(arguments) == 0:
     sys.exit()
 
 command = arguments[0]
 if command in ["u", "update"]:
-    with open("version.json", "r") as f:  # loading settings
-        version = json.load(f)
-    url = version["url"]
-    server_version = json.loads(requests.get(url).text)
+    try:
+        server_version = json.loads(requests.get(url).text)
+    except Exception as error:
+        print(f"CAN'T DOWNLOAD VERSION LIST. ERROR: {error}")
+        sys.exit()
     if "-version" in arguments:
         try:
             version_download = arguments[arguments.index("-version") + 1]
@@ -27,23 +29,32 @@ if command in ["u", "update"]:
             sys.exit()
 
     else:
+        version_download = 0
+        try:
+            with open("version.json", "r") as f:  # loading settings
+                version = json.load(f)
+        except:
+            version = {"id": 0}
         for ver, data in enumerate(server_version.values()):
-            if data["id"] > version["id"]:
+            if data["id"] > version["id"] and ver > version_download:
                 version_download = list(server_version.keys())[ver]
+    try:
+        with open("update.zip", "wb") as save:
+            save.write(
+                bytes(requests.get(
+                    f"https://github.com/UntriexTv/test_directory/releases/download/{version_download}/update.zip").content))
+    except Exception as error:
+        print(f"FAILED TO DOWNLOAD UPDATE. ERROR: {error}")
+        sys.exit()
 
-    with open("update.zip", "wb") as save:
-        save.write(
-            bytes(requests.get(
-                f"https://github.com/UntriexTv/test_directory/releases/download/{version_download}/update.zip").content))
-    print("Download succefull")
-    print("Extracting update")
     if not os.path.isdir("update"):
         os.mkdir("update")
     with zipfile.ZipFile("update.zip", "r") as zip_ref:
-        zip_ref.extractall("")
+        zip_ref.extractall("update")
     os.rmdir("update")
     os.remove("update.zip")
-    print(f"update to {version_download} was succefull.")
+    print("SUCCESS")
+    print(f"""Update from version {version["version"]} to {version_download} was sucesfull""")
 
 if command == "clean":
     if arguments[1] == "all":
