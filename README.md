@@ -2,11 +2,12 @@
 We are working on system, that will help tourists in cities to get information about city more easily.
 
 # Hardware
-- work in progress (but probabbly we will use rpi with external antena for wifi)
+- Raspberry PI (for now tested only on rpi4. Works on rpi zero too, but it will be slow if more devices are connected)
+- External/Internal WiFi antena
 
 # Software
 - python 3.9.2 compatible server with basic web interface
-- python 3.x based mobile app with help of android studio
+- Kotlin based mobile app
 
 # Server
 To run server you need to install
