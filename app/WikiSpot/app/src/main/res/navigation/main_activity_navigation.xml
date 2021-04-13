@@ -16,11 +16,8 @@
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore">
         <action
-            android:id="@+id/navigateToHomeFragment"
+            android:id="@+id/navigateToMapFragment"
             app:destination="@id/mapFragment" />
-        <action
-            android:id="@+id/action_exploreFragment_to_homeFragment"
-            app:destination="@id/homeFragment" />
         <action
             android:id="@+id/navigateToInfoFragment"
             app:destination="@id/infoFragment" />
@@ -33,6 +30,9 @@
         <action
             android:id="@+id/action_homeFragment_to_chatFragment"
             app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/homeFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
     <fragment
         android:id="@+id/mapFragment"
@@ -42,6 +42,12 @@
         <action
             android:id="@+id/action_mapFragment_to_exploreFragment"
             app:destination="@id/exploreFragment" />
+        <argument
+            android:name="location"
+            app:argType="com.google.android.gms.maps.model.LatLng" />
+        <argument
+            android:name="markerTitle"
+            app:argType="string" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
@@ -75,8 +81,15 @@
         android:name="com.example.wikispot.fragments.infoFragment"
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" >
+        <argument
+            android:name="loadAutomatically"
+            app:argType="boolean"
+            android:defaultValue="false" />
         <action
-            android:id="@+id/navigateBackToExploreFragmentFromInfoFragment"
+            android:id="@+id/navigateBackToExploreFragment"
             app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/infoFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
     </fragment>
 </navigation>

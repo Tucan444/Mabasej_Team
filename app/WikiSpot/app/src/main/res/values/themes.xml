@@ -4,13 +4,13 @@
 
     <style name="Theme.WikiSpot" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#4CAF50</item>
-        <item name="colorPrimaryVariant">#388E3C</item>
-        <item name="colorOnPrimary">@color/white</item>
+        <item name="colorPrimary">@color/primary</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant</item>
+        <item name="colorOnPrimary">@color/onPrimary</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#E91E63</item>
-        <item name="colorSecondaryVariant">#F48FB1</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/secondary</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariant</item>
+        <item name="colorOnSecondary">@color/onSecondary</item>
 
         <!-- For gradient Backgrounds -->
 
@@ -66,45 +66,45 @@
 
     <style name="Theme.WikiSpotDark" parent="Theme.MaterialComponents.DayNight.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#B078F4</item>
-        <item name="colorPrimaryVariant">#5100B3</item>
-        <item name="colorOnPrimary">@color/black</item>
+        <item name="colorPrimary">@color/primaryDark</item>
+        <item name="colorPrimaryVariant">@color/primaryVariantDark</item>
+        <item name="colorOnPrimary">@color/onPrimaryDark</item>
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">@color/teal_200</item>
-        <item name="colorSecondaryVariant">@color/teal_200</item>
-        <item name="colorOnSecondary">@color/black</item>
+        <item name="colorSecondary">@color/secondaryDark</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariantDark</item>
+        <item name="colorOnSecondary">@color/onSecondaryDark</item>
 
         <!-- For gradient Backgrounds -->
 
-        <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColor</item>
-        <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColor</item>
+        <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColorDark</item>
+        <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColorDark</item>
 
-        <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColor</item>
-        <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColor</item>
+        <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColorDark</item>
+        <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColorDark</item>
 
-        <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColor</item>
-        <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColor</item>
-        <item name="chatFragmentGradientEndColor" >@color/chatFragmentGradientEndColor</item>
+        <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColorDark</item>
+        <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColorDark</item>
+        <item name="chatFragmentGradientEndColor" >@color/chatFragmentGradientEndColorDark</item>
 
-        <item name="exploreFragmentGradientStartColor" >@color/exploreFragmentGradientStartColor</item>
-        <item name="exploreFragmentGradientCenterColor" >@color/exploreFragmentGradientCenterColor</item>
-        <item name="exploreFragmentGradientEndColor" >@color/exploreFragmentGradientEndColor</item>
+        <item name="exploreFragmentGradientStartColor" >@color/exploreFragmentGradientStartColorDark</item>
+        <item name="exploreFragmentGradientCenterColor" >@color/exploreFragmentGradientCenterColorDark</item>
+        <item name="exploreFragmentGradientEndColor" >@color/exploreFragmentGradientEndColorDark</item>
 
-        <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColor</item>
-        <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColor</item>
-        <item name="homeFragmentGradientEndColor" >@color/homeFragmentGradientEndColor</item>
+        <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColorDark</item>
+        <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColorDark</item>
+        <item name="homeFragmentGradientEndColor" >@color/homeFragmentGradientEndColorDark</item>
 
-        <item name="mapFragmentGradientStartColor" >@color/mapFragmentGradientStartColor</item>
-        <item name="mapFragmentGradientCenterColor" >@color/mapFragmentGradientCenterColor</item>
-        <item name="mapFragmentGradientEndColor" >@color/mapFragmentGradientEndColor</item>
+        <item name="mapFragmentGradientStartColor" >@color/mapFragmentGradientStartColorDark</item>
+        <item name="mapFragmentGradientCenterColor" >@color/mapFragmentGradientCenterColorDark</item>
+        <item name="mapFragmentGradientEndColor" >@color/mapFragmentGradientEndColorDark</item>
 
-        <item name="settingsFragmentGradientStartColor" >@color/settingsFragmentGradientStartColor</item>
-        <item name="settingsFragmentGradientCenterColor" >@color/settingsFragmentGradientCenterColor</item>
-        <item name="settingsFragmentGradientEndColor" >@color/settingsFragmentGradientEndColor</item>
+        <item name="settingsFragmentGradientStartColor" >@color/settingsFragmentGradientStartColorDark</item>
+        <item name="settingsFragmentGradientCenterColor" >@color/settingsFragmentGradientCenterColorDark</item>
+        <item name="settingsFragmentGradientEndColor" >@color/settingsFragmentGradientEndColorDark</item>
 
-        <item name="infoFragmentGradientStartColor" >@color/infoFragmentGradientStartColor</item>
-        <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColor</item>
-        <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColor</item>
+        <item name="infoFragmentGradientStartColor" >@color/infoFragmentGradientStartColorDark</item>
+        <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColorDark</item>
+        <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColorDark</item>
 
         <!-- BottomNavCheckedItemColor -->
         <item name="bottomNavBarCheckedItemColor">@color/bottomNavBarCheckedItemColorDark</item>

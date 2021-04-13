@@ -8,8 +8,10 @@ import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wikispot.R
 import com.example.wikispot.ServerManagement
+import com.example.wikispot.fragments.exploreFragmentDirections
 import com.example.wikispot.modelsForAdapters.PlacePreview
 import com.example.wikispot.showToast
+import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.explore_list_item.view.*
 
 
@@ -19,11 +21,20 @@ class PlacePreviewsAdapter(private val context: Context, private val placePrevie
 
         var currentPlacePreview: PlacePreview? = null
         var pos: Int = 0
+        var location: LatLng? = null
 
         init {
             itemView.setOnClickListener {
                 ServerManagement.selectedServerId = currentPlacePreview?.id!!
-                Navigation.findNavController(it).navigate(R.id.navigateToInfoFragment)
+                val action = exploreFragmentDirections.navigateToInfoFragment(true)
+                Navigation.findNavController(it).navigate(action)
+            }
+
+            itemView.item_location_img.setOnClickListener {
+                if (location != null) {
+                    val action = exploreFragmentDirections.navigateToMapFragment(location!!, currentPlacePreview!!.title)
+                    Navigation.findNavController(it).navigate(action)
+                }
             }
         }
 
@@ -31,6 +42,14 @@ class PlacePreviewsAdapter(private val context: Context, private val placePrevie
             placePreview?.let {
                 itemView.item_title.text = placePreview.title
                 itemView.item_description.text = placePreview.description
+
+                try {
+                    val coordinates = placePreview.location!!.split(",")
+                    location = LatLng(coordinates[0].toDouble(), coordinates[1].toDouble())
+                } catch (e: Throwable) {
+                    println("[debug] Failed getting coordinates in ${placePreview.title}, explore fragment list.  Exception: $e")}
+
+
                 placePreview.img?.let {
                     itemView.item_img.setImageBitmap(placePreview.img)
                 }

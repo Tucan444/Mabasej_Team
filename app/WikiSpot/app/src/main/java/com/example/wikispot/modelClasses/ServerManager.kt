@@ -16,6 +16,8 @@ class ServerManager {
     private var receiverConnections = mutableListOf<ReceiverConnection>()
     private var viewConnections = mutableListOf<ViewConnection>()
 
+    // single time requests
+
     fun getData(dataReceiver: (String) -> Unit, context: Context, serverId: Int, path: String, attributePath: String="", numberOfAttempts: Int=2) {
         val dataRequestThread = Thread(DataRequest(dataReceiver, context, serverId, path, attributePath, numberOfAttempts))
         dataRequestThread.start()
@@ -27,7 +29,11 @@ class ServerManager {
                 var url = "${ServerManagement.baseUrl}devices_list"
 
                 if (path != "") {
-                    url = "${ServerManagement.baseUrl}files/$serverId/$path"
+                    if (path.contains(ServerManagement.sensors_keyword)){
+                        url = "${ServerManagement.baseUrl}$serverId/sensors"
+                    } else {
+                        url = "${ServerManagement.baseUrl}files/$serverId/$path"
+                    }
                 }
 
                 val request = Request.Builder().url(url).build()
@@ -46,11 +52,11 @@ class ServerManager {
 
                                 val jsonManager = JsonManager(context, receivedString)
                                 if (path == "") {
-                                    if (attributePath == "GET_JSON_ARRAY") {
+                                    if (attributePath == "GET_WHOLE_ARRAY") {
                                         dataReceiver(jsonManager.jsonArray.toString())
                                         return
                                     }
-                                    jsonManager.getJsonObject(serverId)
+                                    jsonManager.getJsonObject(0)
                                 } else {
                                     if (attributePath == "") {
                                         throw Throwable()
@@ -88,6 +94,8 @@ class ServerManager {
                     }
                 })
 
+                ServerManagement.totalNumberOfRequestsSent += 1
+
                 Thread.sleep(ServerManagement.dataRequestOnAttemptWait)
             }
         }
@@ -109,6 +117,8 @@ class ServerManager {
 
                     imageReceiver(bitmap)
                 } catch (e: Throwable) { println(e) }
+
+                ServerManagement.totalNumberOfRequestsSent += 1
 
                 Thread.sleep(ServerManagement.imageRequestOnAttemptWait)
             }
@@ -132,8 +142,27 @@ class ServerManager {
         }
     }
 
+    fun checkIfConnectionAlreadyExists(connectionName: String, connectionType: String="any"): Boolean{
+        if ((connectionType == "any") or (connectionType == "receiver")) {
+            for (n in 0 until receiverConnections.size) {
+                if (receiverConnections[n].connectionName == connectionName) {
+                    return true
+                }
+            }
+        }
+        if ((connectionType == "any") or (connectionType == "view")) {
+            for (n in 0 until viewConnections.size) {
+                if (viewConnections[n].connectionName == connectionName) {
+                    return true
+                }
+            }
+        }
+
+        return false
+    }
+
     fun deleteConnection(connectionName: String, connectionType: String="any") {  // other types are any, activity and view
-        if ((connectionType == "any") or (connectionType == "activity")) {
+        if ((connectionType == "any") or (connectionType == "receiver")) {
             for (i in 0 until receiverConnections.size) {  // checking in connections
                 try {
                     if (receiverConnections[i].connectionName == connectionName) {
@@ -156,11 +185,11 @@ class ServerManager {
         }
     }
 
-    fun addReceiverConnection(dataReceiver: (String) -> Unit, context: Context, connectionName: String, serverId: Int, path: String?=null, attributePath: String="", waitTime: Long=ServerManagement.receiverConnectionOnCheckWait) {
+    fun addReceiverConnection(dataReceiver: (String) -> Unit, context: Context, connectionName: String, serverId: Int, path: String="", attributePath: String="", waitTime: Long=ServerManagement.receiverConnectionOnCheckWait) {
         receiverConnections.add(ReceiverConnection(dataReceiver, context, connectionName, serverId, path, attributePath, waitTime))
     }
 
-    inner class ReceiverConnection(val dataReceiver: (String) -> Unit, val context: Context, val connectionName: String, val serverId: Int, val path: String?=null, val attributePath: String, val waitTime: Long) {
+    inner class ReceiverConnection(val dataReceiver: (String) -> Unit, val context: Context, val connectionName: String, val serverId: Int, val path: String="", val attributePath: String, val waitTime: Long) {
 
         var running = true
 
@@ -175,7 +204,11 @@ class ServerManager {
                     var url = "${ServerManagement.baseUrl}devices_list"
 
                     if (path != "") {
-                        url = "${ServerManagement.baseUrl}files/$serverId/$path"
+                        if (path.contains(ServerManagement.sensors_keyword)){
+                            url = "${ServerManagement.baseUrl}$serverId/sensors"
+                        } else {
+                            url = "${ServerManagement.baseUrl}files/$serverId/$path"
+                        }
                     }
 
                     val request = Request.Builder().url(url).build()
@@ -198,7 +231,7 @@ class ServerManager {
                                             dataReceiver(jsonManager.jsonArray.toString())
                                             return
                                         }
-                                        jsonManager.getJsonObject(serverId)
+                                        jsonManager.getJsonObject(0)
                                     } else {
                                         if (attributePath == "") {
                                             throw Throwable()
@@ -236,6 +269,8 @@ class ServerManager {
                         }
                     })
 
+                    ServerManagement.totalNumberOfRequestsSent += 1
+
                     Thread.sleep(waitTime)
                 }
             }
@@ -262,7 +297,11 @@ class ServerManager {
                     var url = "${ServerManagement.baseUrl}devices_list"
 
                     if (path != "") {
-                        url = "${ServerManagement.baseUrl}files/$serverId/$path"
+                        if (path.contains(ServerManagement.sensors_keyword)){
+                            url = "${ServerManagement.baseUrl}$serverId/sensors"
+                        } else {
+                            url = "${ServerManagement.baseUrl}files/$serverId/$path"
+                        }
                     }
 
                     val request = Request.Builder().url(url).build()
@@ -286,7 +325,7 @@ class ServerManager {
                                             view.text = jsonManager.jsonArray.toString()
                                             return
                                         }
-                                        jsonManager.getJsonObject(serverId)
+                                        jsonManager.getJsonObject(0)
                                     } else {
                                         if (attributePath == "") {
                                             throw Throwable()
@@ -333,6 +372,9 @@ class ServerManager {
                             println(e)
                         }
                     })
+
+                    ServerManagement.totalNumberOfRequestsSent += 1
+
                     Thread.sleep(ServerManagement.viewConnectionOnCheckWait)
                 }
             }

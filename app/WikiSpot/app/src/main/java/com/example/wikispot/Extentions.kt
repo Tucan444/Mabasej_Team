@@ -1,5 +1,7 @@
 package com.example.wikispot
 
+import android.app.Activity
+import android.app.AlertDialog
 import android.content.Context
 import android.os.Environment
 import android.view.View
@@ -28,38 +30,6 @@ fun Context.getThemeId(): Int {
         return R.style.Theme_WikiSpotDark
     } else {
         return R.style.Theme_WikiSpot
-    }
-}
-
-// for client
-fun Context.getDataFromServer(): String {
-    // requesting data
-    val url = "${ServerManagement.baseUrl}devices_list"
-    val request = Request.Builder().url(url).build()
-    val client = OkHttpClient()
-    var receivedResponse = ""
-
-    client.newCall(request).enqueue(object : Callback {
-        override fun onResponse(call: Call, response: Response) {
-            response.body?.let {
-                receivedResponse = response.body!!.string()
-            }
-        }
-
-        override fun onFailure(call: Call, e: IOException) {
-            println("Request Failed")
-            println(e)
-        }
-    })
-
-    Thread.sleep(400)
-
-    println("[debug] received string: $receivedResponse")
-    try {
-        JSONArray(receivedResponse)
-        return receivedResponse
-    } catch (exception: Throwable) {
-        return "[]"
     }
 }
 
@@ -113,4 +83,15 @@ fun Context.getStringFromSharedPreferences(accessKey: String, preferencesFilenam
     }
 
     return  ""
+}
+
+// Activity extensions
+
+fun Activity.askToQuit() {
+    val builder = AlertDialog.Builder(this)
+    builder.setTitle("Confirm")
+    builder.setMessage("Do you want to quit the application?")
+    builder.setPositiveButton("Yes") { _, _ -> finish()}
+    builder.setNegativeButton("No") { _, _ -> }
+    builder.show()
 }

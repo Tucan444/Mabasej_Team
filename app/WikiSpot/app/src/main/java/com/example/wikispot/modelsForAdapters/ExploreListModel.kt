@@ -3,13 +3,15 @@ package com.example.wikispot.modelsForAdapters
 import android.content.Context
 import android.graphics.Bitmap
 import android.media.Image
+import com.example.wikispot.ScreenParameters
 import com.example.wikispot.getStringFromSharedPreferences
 import com.example.wikispot.modelClasses.JsonManager
 import com.example.wikispot.modelClasses.JsonManagerLite
 import com.example.wikispot.saveString
+import com.google.android.gms.maps.model.LatLng
 import org.json.JSONArray
 
-data class PlacePreview(var title: String, var description: String, var img: Bitmap? = null, val id: Int?=null) {
+data class PlacePreview(var title: String, var description: String, val location: String? = null, var img: Bitmap? = null, val id: Int?=null) {
 
     init {
         val words = description.split(" ")
@@ -80,7 +82,7 @@ object PlaceSupplier {
         val jsonManager = JsonManager(context, save)
         for (n in 0 until jsonManager.getLengthOfJsonArray()) {
             val savedData = jsonManager.jsonArray?.get(n).toString().split("|||||")
-            val place = PlacePreview(savedData[0], savedData[1], null, savedData[2].toInt())
+            val place = PlacePreview(savedData[0], savedData[1], savedData[2], null, savedData[3].toInt())
             if (!checkIfContains(place)) {
                 appendPlace(place)
             }
@@ -93,10 +95,9 @@ object PlaceSupplier {
         for (n in places.indices) {
             val place = places[n]
             if (getSavePermission(place)) {
-                save.put(n, "${place!!.title}|||||${place.description}|||||${place.id}")
+                save.put(n, "${place!!.title}|||||${place.description}|||||${place.location}|||||${place.id}")
             }
         }
-        //save.put("hi|||||sdhsiujdghsiuy|||||45")
 
         context.saveString("placePreviews", save.toString(), "exploreFragmentCache")
     }
@@ -111,9 +112,12 @@ object PlaceSupplier {
                 controlJson!!.getJsonObject(n)
                 if (place.id == controlJson!!.getAttributeContent("ID").toInt()) {
                     if (place.title == controlJson!!.getAttributeContentByPath("description/title")) {
-                        val tempPlace = PlacePreview("", controlJson!!.getAttributeContentByPath("description/description_s"))
+                        val tempPlace = PlacePreview("", controlJson!!.getAttributeContentByPath("description/description_s"),
+                        controlJson!!.getAttributeContentByPath("location"))
                         if (place.description == tempPlace.description) {
-                            return true
+                            if (place.location == tempPlace.location) {
+                                return true
+                            }
                         }
                     }
                 }

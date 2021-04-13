@@ -1,5 +1,6 @@
 package com.example.wikispot.fragments
 
+import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -39,11 +40,20 @@ class homeFragment : Fragment(R.layout.fragment_home) {
                             fragment.mainDescription.text = json.getAttributeContentByPath("description/description_l")
                         }
                     }
+
+                    val imageReceiver: (Bitmap) -> Unit = { bitmap: Bitmap ->
+                        homeFragmentInnerFragment.post {
+                            homeFragmentInnerFragment.mainImage.setImageBitmap(bitmap)
+                        }
+                    }
+
+                    ServerManagement.serverManager.getImage(imageReceiver, json.getAttributeContent("ID").toInt(), "test0.jpg", 3)
+
                 }
             } catch (e: Throwable) { println(e) }
         }
 
-        ServerManagement.serverManager.getData(dataReceiver, requireContext(), 0, "", "GET_JSON_ARRAY", 3)
+        ServerManagement.serverManager.getData(dataReceiver, requireContext(), 0, "", "GET_WHOLE_ARRAY", 3)
 
     }
 
