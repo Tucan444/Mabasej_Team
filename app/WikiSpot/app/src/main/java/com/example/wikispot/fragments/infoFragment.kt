@@ -65,12 +65,16 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                     val json = JsonManager(requireContext(), data)
                     json.findJsonObjectByAttribute("ID", serverId)
 
-                    mainTitle.post {
-                        mainTitle.text = json.getAttributeContentByPath("description/title")
+                    mainImage?.let {
+                        mainTitle.post {
+                            mainTitle.text = json.getAttributeContentByPath("description/title")
+                        }
                     }
 
-                    mainDescription.post {
-                        this.mainDescription.text = json.getAttributeContentByPath("description/description_s")
+                    mainDescription?.let {
+                        mainDescription.post {
+                            this.mainDescription.text = json.getAttributeContentByPath("description/description_s")
+                        }
                     }
 
                     val imageReceiver1: (Bitmap) -> Unit = { bitmap: Bitmap ->
@@ -84,7 +88,8 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                     val coordinates = json.getAttributeContent("location").split(",")
                     location = LatLng(coordinates[0].toDouble(), coordinates[1].toDouble())
 
-                    ServerManagement.serverManager.getImage(imageReceiver1, json.getAttributeContent("ID").toInt(), "test0.jpg", 2)
+                    ServerManagement.serverManager.getImage(imageReceiver1, json.getAttributeContent("ID").toInt(),
+                            json.getAttributeContentByPath("description/photo_b"), 2)
 
                     // getting files
 
@@ -196,7 +201,8 @@ class infoFragment : Fragment(R.layout.fragment_info) {
     }
 
     fun goMapFragment() {
-        Navigation.findNavController(mainTitle).navigate(R.id.infoFragment_to_mapFragment)
+        val action = infoFragmentDirections.infoFragmentToMapFragment(LatLng(0.toDouble(), 0.toDouble()), true)
+        Navigation.findNavController(mainTitle).navigate(action)
     }
 
 }

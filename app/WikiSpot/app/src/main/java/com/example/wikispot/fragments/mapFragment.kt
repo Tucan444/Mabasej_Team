@@ -26,6 +26,7 @@ class mapFragment : Fragment(), GoogleMap.OnMarkerClickListener {
 
     val args: mapFragmentArgs by navArgs()
     private var loadFromMapManager = true
+    private var loadLastCoordinates = false
     var location: LatLng? = null
     var lastClickedMarkerTitle = ""
 
@@ -46,11 +47,14 @@ class mapFragment : Fragment(), GoogleMap.OnMarkerClickListener {
 
         try {
             location = args.location
+            loadLastCoordinates = args.loadLastCoordinates
             loadFromMapManager = false
         } catch (e: Throwable) { println("[debug] Exception in Map Fragment while getting args: $e") }
 
         if (loadFromMapManager) {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(MapManagement.connectedServerPosition, 15.0F))
+        } else if (loadLastCoordinates){
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(MapManagement.lastCoordinates, 15F))
         } else {
             googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.0F))
         }
@@ -80,6 +84,7 @@ class mapFragment : Fragment(), GoogleMap.OnMarkerClickListener {
                 for (n in PlaceSupplier.places.indices) {
                     if (marker.title == PlaceSupplier.places[n]!!.title) {
                         CustomBackstackVariables.infoFragmentBackDestination = "mapFragment"
+                        MapManagement.lastCoordinates = marker.position
                         ServerManagement.selectedServerId = PlaceSupplier.places[n]!!.id!!
                         val action = mapFragmentDirections.mapFragmentToInfoFragment()
                         Navigation.findNavController(navControllerView).navigate(action)

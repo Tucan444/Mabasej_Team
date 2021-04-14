@@ -34,6 +34,7 @@ object ServerManagement {
 
 object MapManagement {
     var connectedServerPosition: LatLng? = LatLng(0.toDouble(), 0.toDouble())
+    var lastCoordinates = LatLng(0.toDouble(), 0.toDouble())
 }
 
 

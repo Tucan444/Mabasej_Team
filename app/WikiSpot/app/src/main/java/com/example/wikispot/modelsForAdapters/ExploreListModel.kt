@@ -10,6 +10,8 @@ import com.example.wikispot.modelClasses.JsonManagerLite
 import com.example.wikispot.saveString
 import com.google.android.gms.maps.model.LatLng
 import org.json.JSONArray
+import java.lang.IndexOutOfBoundsException
+import java.lang.NullPointerException
 
 data class PlacePreview(var title: String, var description: String, var location: String? = null, var img: Bitmap? = null, val id: Int?=null) {
 
@@ -96,10 +98,12 @@ object PlaceSupplier {
     fun saveToCache(context: Context) {
         val save = JSONArray()
 
+        var i = 0
         for (n in places.indices) {
             val place = places[n]
             if (getSavePermission(place)) {
-                save.put(n, "${place!!.title}|||||${place.description}|||||${place.location}|||||${place.id}")
+                save.put(i, "${place!!.title}|||||${place.description}|||||${place.location}|||||${place.id}")
+                i++
             }
         }
 

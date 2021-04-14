@@ -118,6 +118,7 @@ class ServerManager {
                     val bitmap = BitmapFactory.decodeStream(inputStream)
 
                     imageReceiver(bitmap)
+                    break
                 } catch (e: Throwable) { println(e) }
 
                 ServerManagement.totalNumberOfRequestsSent += 1

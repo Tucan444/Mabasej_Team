@@ -49,7 +49,8 @@ class homeFragment : Fragment(R.layout.fragment_home) {
                         }
                     }
 
-                    ServerManagement.serverManager.getImage(imageReceiver, json.getAttributeContent("ID").toInt(), "test0.jpg", 3)
+                    ServerManagement.serverManager.getImage(imageReceiver, json.getAttributeContent("ID").toInt(),
+                            json.getAttributeContentByPath("description/photo_b"), 3)
 
                 }
             } catch (e: Throwable) { println(e) }

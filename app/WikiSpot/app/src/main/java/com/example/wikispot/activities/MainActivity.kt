@@ -265,7 +265,7 @@ class MainActivity : AppCompatActivity() {
                         place.img = bitmap
                     }
 
-                    ServerManagement.serverManager.getImage(imageReceiver, id, "test.png", 3)
+                    ServerManagement.serverManager.getImage(imageReceiver, id, json.getAttributeContentByPath("description/photo_s"), 3)
 
                     PlaceSupplier.appendPlace(place)
                 } else {
@@ -275,7 +275,7 @@ class MainActivity : AppCompatActivity() {
                             containingPlace?.img = bitmap
                         }
 
-                        ServerManagement.serverManager.getImage(imageReceiver, id, "test.png", 3)
+                        ServerManagement.serverManager.getImage(imageReceiver, id, json.getAttributeContentByPath("description/photo_s"), 3)
                     }
 
                     // checking if location wasn't changed

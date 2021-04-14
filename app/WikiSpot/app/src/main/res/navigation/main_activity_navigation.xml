@@ -52,6 +52,10 @@
                 android:name="loadAutomatically"
                 android:defaultValue="true" />
         </action>
+        <argument
+            android:name="loadLastCoordinates"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
