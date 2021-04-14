@@ -1,27 +1,29 @@
 package com.example.wikispot.activities
 
-import android.content.Intent
 import android.graphics.Bitmap
 import android.os.Bundle
 import android.util.DisplayMetrics
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.app.AppCompatDelegate
+import androidx.fragment.app.Fragment
 import androidx.navigation.findNavController
 import androidx.navigation.ui.setupWithNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.wikispot.*
+import com.example.wikispot.adapters.FileViewsAdapter
 import com.example.wikispot.adapters.LabeledValuesAdapter
+import com.example.wikispot.adapters.PlacePreviewsAdapter
 import com.example.wikispot.fragments.*
 import com.example.wikispot.modelClasses.JsonManager
 import com.example.wikispot.modelClasses.JsonManagerLite
 import com.example.wikispot.modelClasses.SettingsSaveManager
-import com.example.wikispot.modelsForAdapters.LabeledValue
-import com.example.wikispot.modelsForAdapters.LabeledValuesSupplier
-import com.example.wikispot.modelsForAdapters.PlacePreview
-import com.example.wikispot.modelsForAdapters.PlaceSupplier
+import com.example.wikispot.modelsForAdapters.*
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.fragment_explore.*
+import kotlinx.android.synthetic.main.fragment_home.*
 import kotlinx.android.synthetic.main.fragment_info.*
+import kotlinx.android.synthetic.main.fragment_info.view.*
 
 
 class MainActivity : AppCompatActivity() {
@@ -46,11 +48,15 @@ class MainActivity : AppCompatActivity() {
                     askToQuit()
                 }
                 is infoFragment -> {
-                    currentlyShownFragment.goExploreFragment()
+                    println(CustomBackstackVariables.infoFragmentBackDestination)
+                    when (CustomBackstackVariables.infoFragmentBackDestination) {
+                        "exploreFragment" -> { currentlyShownFragment.goExploreFragment() }
+                        "mapFragment" -> {currentlyShownFragment.goMapFragment()}
+                    }
+
                 }
             }
         } catch (e: Throwable) { println(e) }
-
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -82,47 +88,32 @@ class MainActivity : AppCompatActivity() {
             val dataReceiver1: (String) -> Unit = { data1: String ->
                 val json = JsonManager(this, data1, "JSONObject")
                 val names = json.currentJsonObject!!.names()
-                println("[debug] $data1")
 
                 try {
                     mainFragmentHost.childFragmentManager.fragments[0]?.let {
-                        when (it) {
-                            is chatFragment -> {
-                            }
-                            is exploreFragment -> {
-                            }
-                            is homeFragment -> {
-                                LabeledValuesSupplier.wipeData()
+                        if (it is homeFragment) {
+                            LabeledValuesSupplier.wipeData()
 
-                                for (n in 0 until names!!.length()) {
-                                    val labeledValue = LabeledValue(names[n].toString(), json.getAttributeContent(names[n].toString()))
-                                    if (!LabeledValuesSupplier.checkIfContains(labeledValue)) {
-                                        LabeledValuesSupplier.appendLabeledValue(labeledValue)
-                                    }
-                                }
-
-                                it.labeled_values_recycler_view.post {
-                                    val layoutManager = LinearLayoutManager(it.requireContext())
-                                    layoutManager.orientation = LinearLayoutManager.VERTICAL
-                                    it.labeled_values_recycler_view.layoutManager = layoutManager
-
-                                    val adapter = LabeledValuesAdapter(it.requireContext(), LabeledValuesSupplier.labeledValues)
-                                    it.labeled_values_recycler_view.adapter = adapter
+                            for (n in 0 until names!!.length()) {
+                                val labeledValue = LabeledValue(names[n].toString(), json.getAttributeContent(names[n].toString()))
+                                if (!LabeledValuesSupplier.checkIfContains(labeledValue)) {
+                                    LabeledValuesSupplier.appendLabeledValue(labeledValue)
                                 }
                             }
-                            is mapFragment -> {
+
+                            it.labeled_values_recycler_view.post {
+                                val layoutManager = LinearLayoutManager(it.requireContext())
+                                layoutManager.orientation = LinearLayoutManager.VERTICAL
+                                it.labeled_values_recycler_view.layoutManager = layoutManager
+
+                                val adapter = LabeledValuesAdapter(it.requireContext(), LabeledValuesSupplier.labeledValues)
+                                it.labeled_values_recycler_view.adapter = adapter
                             }
-                            is settingsFragment -> {
-                            }
-                            is infoFragment -> {
-                            }
-                            else -> println("[debug] unknown fragment in sensorsConnection")
                         }
                     }
-                } catch (e: Throwable) { println(e) }
+                } catch (e: Throwable) { println("[debug] Exception in main activity, sensors connection : $e") }
 
             }
-            println(data0)
 
             if (!ServerManagement.serverManager.checkIfConnectionAlreadyExists("sensorsConnection")){
                 ServerManagement.serverManager.addReceiverConnection(dataReceiver1, this, "sensorsConnection", data0.toInt(), ServerManagement.sensors_keyword)
@@ -133,13 +124,82 @@ class MainActivity : AppCompatActivity() {
                 var json = JsonManager(this, data1)
                 json = JsonManager(this, json.findJsonObjectByAttribute("ID", data0.toInt()), "JSONObject")
                 val positionsList = json.getAttributeContent("location").split(",")
-                MapManagement.connectedServerTitle = json.getAttributeContentByPath("description/title")
                 MapManagement.connectedServerPosition = LatLng(positionsList[0].toDouble(), positionsList[1].toDouble())
             }
 
             if (!ServerManagement.serverManager.checkIfConnectionAlreadyExists("mapConnection")){
                 ServerManagement.serverManager.addReceiverConnection(dataReceiver2, this, "mapConnection", data0.toInt(), "", "GET_WHOLE_ARRAY")
             }
+
+            val dataReceiver3: (String) -> Unit = { data1: String ->
+                val json = JsonManager(this, data1)
+                json.findJsonObjectByAttribute("ID", data0.toInt())
+
+                fun updateFileViewsRecyclerView(fragment: Fragment) {
+                    try {
+                        fragment.homeFragmentInnerFragment?.let {
+                            it.file_views_recycler_view.post {
+                                val layoutManager = LinearLayoutManager(fragment.requireContext())
+                                layoutManager.orientation = LinearLayoutManager.VERTICAL
+                                it.file_views_recycler_view.layoutManager = layoutManager
+
+                                val adapter = FileViewsAdapter(fragment.requireContext(), FileViewsSupplier.fileViews)
+                                it.file_views_recycler_view.adapter = adapter
+                            }
+                        }
+                    } catch (e: Throwable) { println("[debug] e1 that i  couldnt fix so try catch Exception: $e") }
+                }
+
+                try {
+                    mainFragmentHost.childFragmentManager.fragments[0]?.let {
+                        when (it) {
+
+                            is homeFragment -> {
+
+                                json.getAttributeContent("files")
+
+                                for (n in 0 until json.currentJsonAttribute1!!.length()) {
+                                    val fileInfo = JsonManagerLite(json.getAttributeContentByPath("files/$n"), "JSONObject")
+                                    val filetype = fileInfo.getAttributeContentByPath("format").split(".")[1]
+                                    val filename = fileInfo.getAttributeContentByPath("name")
+
+                                    // handling text
+                                    if ("txt json".contains(filetype)) {
+                                        val fileView = FileView(filetype, filename, "$data0|||||$filename.$filetype")
+                                        if (!FileViewsSupplier.checkIfContains(fileView)) {
+                                            FileViewsSupplier.appendFileView(fileView)
+                                            updateFileViewsRecyclerView(it)
+                                        }
+                                    }
+
+                                    // handling images
+                                    if ("jpg png".contains(filetype)) {
+                                        val fileView = FileView(filetype, filename, null, "$data0|||||$filename.$filetype")
+                                        if (!FileViewsSupplier.checkIfContains(fileView)) {
+                                            FileViewsSupplier.appendFileView(fileView)
+                                            updateFileViewsRecyclerView(it)
+                                        }
+                                    }
+
+                                    // handling pdf files
+                                    if ("pdf".contains(filetype)) {
+                                        val fileView = FileView(filetype, filename, null, null, "${ServerManagement.baseUrl}files/$data0/$filename.$filetype")
+                                        if (!FileViewsSupplier.checkIfContains(fileView)) {
+                                            FileViewsSupplier.appendFileView(fileView)
+                                            updateFileViewsRecyclerView(it)
+                                        }
+
+                                    }
+
+                                }
+                            }
+                        }
+                    }
+                } catch (e: Throwable) { println("[debug] Exception in main activity, files data request : $e") }
+
+            }
+
+            ServerManagement.serverManager.addReceiverConnection(dataReceiver3, this, "fileViewsConnection", data0.toInt(), "", "GET_WHOLE_ARRAY")
         }
 
         ServerManagement.serverManager.getData(dataReceiver0, this, 0, "", "connected_id", 3)
@@ -150,6 +210,7 @@ class MainActivity : AppCompatActivity() {
         PlaceSupplier.saveToCache(this)
         ServerManagement.serverManager.deleteConnection("sensorsConnection")
         ServerManagement.serverManager.deleteConnection("mapConnection")
+        ServerManagement.serverManager.deleteConnection("fileViewsConnection")
         ServerManagement.serverManager.deleteConnection("exploreListConnection")
         super.onPause()
     }
@@ -186,9 +247,7 @@ class MainActivity : AppCompatActivity() {
         val dataReceiver: (String) -> Unit = { data: String ->
             val json = JsonManager(this, data)
 
-            if (PlaceSupplier.controlJson == null) {
-                PlaceSupplier.controlJson = JsonManagerLite(data)
-            }
+            PlaceSupplier.controlJson = JsonManagerLite(data)
 
             for (i in 1 until json.getLengthOfJsonArray()) {
 
@@ -218,6 +277,26 @@ class MainActivity : AppCompatActivity() {
 
                         ServerManagement.serverManager.getImage(imageReceiver, id, "test.png", 3)
                     }
+
+                    // checking if location wasn't changed
+                    if ((containingPlace != null) and (containingPlace?.location != location)) {
+                        containingPlace?.location = location
+
+                        try {
+                            mainFragmentHost.childFragmentManager.fragments[0]?.let {
+                                if (it is exploreFragment) {
+                                    it.explore_recycler_view.post {
+                                        val layoutManager = LinearLayoutManager(it.requireContext())
+                                        layoutManager.orientation = LinearLayoutManager.VERTICAL
+                                        it.explore_recycler_view.layoutManager = layoutManager
+
+                                        val adapter = PlacePreviewsAdapter(it.requireContext(), PlaceSupplier.places)
+                                        it.explore_recycler_view.adapter = adapter
+                                    }
+                                }
+                            }
+                        } catch (e: Throwable) { println("[debug] e4 that i couldnt fix si try catch Exception: $e") }
+                    }
                 }
 
                 json.clearSelectedAttribute()
@@ -227,34 +306,4 @@ class MainActivity : AppCompatActivity() {
         ServerManagement.serverManager.addReceiverConnection(dataReceiver, this, "exploreListConnection", 0, "", "GET_WHOLE_ARRAY", 10000)
     }
 
-    private fun restartAppPartially() {  // todo remove if not used
-        val intent = Intent(applicationContext, MainActivity::class.java)
-
-        var currentNavHostFragmentName = "homeFragment"
-
-        try {
-            when (mainFragmentHost.childFragmentManager.fragments[0]) {
-                is chatFragment -> {
-                    currentNavHostFragmentName = "chatFragment"
-                }
-                is exploreFragment -> {
-                    currentNavHostFragmentName = "exploreFragment"
-                }
-                is homeFragment -> {
-                    currentNavHostFragmentName = "homeFragment"
-                }
-                is mapFragment -> {
-                    currentNavHostFragmentName = "mapFragment"
-                }
-                is settingsFragment -> {
-                    currentNavHostFragmentName = "settingsFragment"
-                }
-            }
-        } catch (e: Throwable) { println(e) }
-
-        intent.putExtra(IntentsKeys.startFragment, currentNavHostFragmentName)
-
-        startActivity(intent)
-        finish()
-    }
 }

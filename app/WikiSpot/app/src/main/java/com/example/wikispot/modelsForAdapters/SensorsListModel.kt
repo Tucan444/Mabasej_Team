@@ -23,7 +23,7 @@ object LabeledValuesSupplier {
     }
 
     fun wipeData() {
-        labeledValues = arrayOf<LabeledValue?>()
+        labeledValues = arrayOf()
     }
 
 }

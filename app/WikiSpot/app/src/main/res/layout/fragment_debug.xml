@@ -55,7 +55,7 @@
     </ScrollView>
 
     <com.github.barteksc.pdfviewer.PDFView
-        android:id="@+id/pdfView"
+        android:id="@+id/pdfContent"
         android:layout_width="200dp"
         android:layout_height="300dp"
         app:layout_constraintBottom_toBottomOf="parent"

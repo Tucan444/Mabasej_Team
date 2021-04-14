@@ -11,8 +11,8 @@ data class JsonManager(private val context: Context, val data: String, val input
 
     var jsonArray: JSONArray? = null
     var currentJsonObject: JSONObject? = null
-    private var currentJsonAttribute0: JSONObject? = null
-    private var currentJsonAttribute1: JSONArray? = null
+    var currentJsonAttribute0: JSONObject? = null
+    var currentJsonAttribute1: JSONArray? = null
 
     init {
         if (inputType == "JSONArray") {

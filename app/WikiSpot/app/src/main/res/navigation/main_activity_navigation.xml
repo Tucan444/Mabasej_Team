@@ -45,9 +45,13 @@
         <argument
             android:name="location"
             app:argType="com.google.android.gms.maps.model.LatLng" />
-        <argument
-            android:name="markerTitle"
-            app:argType="string" />
+        <action
+            android:id="@+id/mapFragment_to_infoFragment"
+            app:destination="@id/infoFragment" >
+            <argument
+                android:name="loadAutomatically"
+                android:defaultValue="true" />
+        </action>
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"

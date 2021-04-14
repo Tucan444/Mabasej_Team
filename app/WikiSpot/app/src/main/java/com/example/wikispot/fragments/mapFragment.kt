@@ -5,21 +5,29 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
+import com.example.wikispot.CustomBackstackVariables
 import com.example.wikispot.MapManagement
 import com.example.wikispot.R
+import com.example.wikispot.ServerManagement
+import com.example.wikispot.modelsForAdapters.PlaceSupplier
 import com.google.android.gms.maps.CameraUpdateFactory
+import com.google.android.gms.maps.GoogleMap
 import com.google.android.gms.maps.OnMapReadyCallback
 import com.google.android.gms.maps.SupportMapFragment
 import com.google.android.gms.maps.model.LatLng
+import com.google.android.gms.maps.model.Marker
 import com.google.android.gms.maps.model.MarkerOptions
+import kotlinx.android.synthetic.main.fragment_map.*
+import java.time.Clock
 
-class mapFragment : Fragment() {
+class mapFragment : Fragment(), GoogleMap.OnMarkerClickListener {
 
     val args: mapFragmentArgs by navArgs()
     private var loadFromMapManager = true
     var location: LatLng? = null
-    var markerTitle: String? = null
+    var lastClickedMarkerTitle = ""
 
     private val callback = OnMapReadyCallback { googleMap ->
         /**
@@ -38,17 +46,22 @@ class mapFragment : Fragment() {
 
         try {
             location = args.location
-            markerTitle = args.markerTitle
             loadFromMapManager = false
         } catch (e: Throwable) { println("[debug] Exception in Map Fragment while getting args: $e") }
 
         if (loadFromMapManager) {
-            googleMap.addMarker(MarkerOptions().position(MapManagement.connectedServerPosition!!).title(MapManagement.connectedServerTitle))
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(MapManagement.connectedServerPosition, 16.0F))
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(MapManagement.connectedServerPosition, 15.0F))
         } else {
-            googleMap.addMarker(MarkerOptions().position(location!!).title(markerTitle))
-            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 16.0F))
+            googleMap.animateCamera(CameraUpdateFactory.newLatLngZoom(location, 15.0F))
         }
+
+        // loading other markers
+        for (n in PlaceSupplier.places.indices) {
+            val coordinates = PlaceSupplier.places[n]?.location!!.split(",")
+            googleMap.addMarker(MarkerOptions().position(LatLng(coordinates[0].toDouble(), coordinates[1].toDouble())).title(PlaceSupplier.places[n]?.title))
+        }
+
+        googleMap.setOnMarkerClickListener(this)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
@@ -59,5 +72,24 @@ class mapFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val mapFragment = childFragmentManager.findFragmentById(R.id.map) as SupportMapFragment?
         mapFragment?.getMapAsync(callback)
+    }
+
+    override fun onMarkerClick(marker: Marker?): Boolean {
+        marker?.let {
+            if (marker.title == lastClickedMarkerTitle) {
+                for (n in PlaceSupplier.places.indices) {
+                    if (marker.title == PlaceSupplier.places[n]!!.title) {
+                        CustomBackstackVariables.infoFragmentBackDestination = "mapFragment"
+                        ServerManagement.selectedServerId = PlaceSupplier.places[n]!!.id!!
+                        val action = mapFragmentDirections.mapFragmentToInfoFragment()
+                        Navigation.findNavController(navControllerView).navigate(action)
+                    }
+                }
+            }
+            lastClickedMarkerTitle = marker.title
+            println("[debug] marker title ${marker.title}")
+            println(System.currentTimeMillis())
+        }
+        return false
     }
 }

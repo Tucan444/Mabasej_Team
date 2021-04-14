@@ -24,7 +24,7 @@ object ServerManagement {
     const val viewConnectionOnCheckWait: Long = 5000
     const val dataRequestOnAttemptWait: Long = 2000
     const val imageRequestOnAttemptWait: Long = 2000
-    const val baseUrl = "http://192.168.1.230:8000/"
+    const val baseUrl = "http://192.168.1.156:8000/"
     var selectedServerId = 0
 
     const val sensors_keyword = "_[{(S,e,n,s,o,r,s)}]_"
@@ -33,14 +33,18 @@ object ServerManagement {
 }
 
 object MapManagement {
-    var connectedServerPosition: LatLng? = null
-    var connectedServerTitle: String? = null
+    var connectedServerPosition: LatLng? = LatLng(0.toDouble(), 0.toDouble())
 }
 
 
 object ScreenParameters {
     var height = 1
     var width = 1
+}
+
+
+object CustomBackstackVariables {
+    var infoFragmentBackDestination = "exploreFragment"
 }
 
 

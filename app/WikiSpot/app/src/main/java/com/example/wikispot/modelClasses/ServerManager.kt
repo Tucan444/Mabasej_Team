@@ -5,6 +5,8 @@ import android.graphics.Bitmap
 import android.graphics.BitmapFactory
 import android.widget.TextView
 import com.example.wikispot.ServerManagement
+import com.github.barteksc.pdfviewer.PDFView
+import kotlinx.android.synthetic.main.file_view.view.*
 import okhttp3.*
 import org.json.JSONArray
 import org.json.JSONObject
@@ -101,7 +103,7 @@ class ServerManager {
         }
     }
 
-    fun getImage(imageReceiver: (Bitmap) -> Unit, serverId: Int, path: String, numberOfAttempts: Int) {
+    fun getImage(imageReceiver: (Bitmap) -> Unit, serverId: Int, path: String, numberOfAttempts: Int = 2) {
         val imageRequestThread = Thread(ImageRequest(imageReceiver, serverId, path, numberOfAttempts))
         imageRequestThread.start()
     }
@@ -123,6 +125,22 @@ class ServerManager {
                 Thread.sleep(ServerManagement.imageRequestOnAttemptWait)
             }
         }
+    }
+
+    fun loadPdfView(view: PDFView, url: String) {
+        val pdfLoadingRequestThread = Thread(PdfLoadingRequest(view, url))
+        pdfLoadingRequestThread.start()
+    }
+
+    inner class PdfLoadingRequest(val view: PDFView, val url: String): Runnable {
+        override fun run() {
+            val inputStream = java.net.URL(url).openStream()
+            view.post {
+                view.fromStream(inputStream).load()
+                view.zoomTo(view.width / 490.0F)
+            }
+        }
+
     }
 
     // connections

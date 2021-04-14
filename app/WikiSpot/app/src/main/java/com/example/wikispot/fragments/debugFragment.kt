@@ -1,9 +1,6 @@
 package com.example.wikispot.fragments
 
 import android.annotation.SuppressLint
-import android.graphics.Bitmap
-import android.graphics.BitmapFactory
-import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
@@ -41,19 +38,16 @@ class debugFragment : Fragment(R.layout.fragment_debug) {
 
         override fun run() {
             val inputStream = java.net.URL("${ServerManagement.baseUrl}files/1/sample.pdf").openStream()
-            val uri = Uri.parse("${ServerManagement.baseUrl}files/1/sample.pdf")
 
             Thread.sleep(500)
 
-            pdfView.post {
-                println("asdfsdfsdfs")
-                //pdfView.fromUri(uri).load()
-                pdfView.fromStream(inputStream).pages(0).load()
-                pdfView.zoomTo(pdfView.width / 490.0F)
-                println("[debug] zoom is ${pdfView.width / 490.0F}")
-                println(pdfView.width)
+            pdfContent.post {
+                pdfContent.fromStream(inputStream).load()
+                pdfContent.zoomTo(pdfContent.width / 490.0F)
+                println("[debug] zoom is ${pdfContent.width / 490.0F}")
+                println(pdfContent.width)
                 Thread.sleep(1000)
-                println(pdfView.currentPage)
+                println(pdfContent.currentPage)
             }
 
             ServerManagement.totalNumberOfRequestsSent += 1

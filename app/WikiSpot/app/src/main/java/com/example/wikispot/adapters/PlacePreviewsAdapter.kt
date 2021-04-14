@@ -4,8 +4,10 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.recyclerview.widget.RecyclerView
+import com.example.wikispot.CustomBackstackVariables
 import com.example.wikispot.R
 import com.example.wikispot.ServerManagement
 import com.example.wikispot.fragments.exploreFragmentDirections
@@ -25,6 +27,7 @@ class PlacePreviewsAdapter(private val context: Context, private val placePrevie
 
         init {
             itemView.setOnClickListener {
+                CustomBackstackVariables.infoFragmentBackDestination = "exploreFragment"
                 ServerManagement.selectedServerId = currentPlacePreview?.id!!
                 val action = exploreFragmentDirections.navigateToInfoFragment(true)
                 Navigation.findNavController(it).navigate(action)
@@ -32,7 +35,7 @@ class PlacePreviewsAdapter(private val context: Context, private val placePrevie
 
             itemView.item_location_img.setOnClickListener {
                 if (location != null) {
-                    val action = exploreFragmentDirections.navigateToMapFragment(location!!, currentPlacePreview!!.title)
+                    val action = exploreFragmentDirections.navigateToMapFragment(location!!)
                     Navigation.findNavController(it).navigate(action)
                 }
             }

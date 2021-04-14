@@ -1,9 +1,5 @@
 package com.example.wikispot.modelClasses
 
-import android.content.Context
-import com.example.wikispot.getStringFromSharedPreferences
-import com.example.wikispot.saveString
-import com.example.wikispot.showToast
 import org.json.JSONArray
 import org.json.JSONObject
 
@@ -94,7 +90,7 @@ data class JsonManagerLite(val data: String, val inputType: String = "JSONArray"
         val currentJsonAttributesBackup = listOf(currentJsonAttribute0, currentJsonAttribute1)  // backing up selected jsonAttributes
 
         // getting the attribute
-        clearSelectedAttribute()
+        clearSelectedAttributes()
         var result: Any? = null
         for (step in steps) {
             try {
@@ -115,7 +111,7 @@ data class JsonManagerLite(val data: String, val inputType: String = "JSONArray"
         return result.toString()
     }
 
-    fun clearSelectedAttribute() {
+    fun clearSelectedAttributes() {
         currentJsonAttribute0 = null
         currentJsonAttribute1 = null
     }

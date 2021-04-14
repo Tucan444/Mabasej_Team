@@ -35,15 +35,17 @@ class homeFragment : Fragment(R.layout.fragment_home) {
                     infoFragmentLoadedIn = true
 
                     homeFragmentInnerFragment.post {
-                        homeFragmentInnerFragment.let { fragment ->
+                        homeFragmentInnerFragment?.let { fragment ->
                             fragment.mainTitle.text = json.getAttributeContentByPath("description/title")
                             fragment.mainDescription.text = json.getAttributeContentByPath("description/description_l")
                         }
                     }
 
                     val imageReceiver: (Bitmap) -> Unit = { bitmap: Bitmap ->
-                        homeFragmentInnerFragment.post {
-                            homeFragmentInnerFragment.mainImage.setImageBitmap(bitmap)
+                        homeFragmentInnerFragment?.let {
+                            homeFragmentInnerFragment.post {
+                                homeFragmentInnerFragment.mainImage.setImageBitmap(bitmap)
+                            }
                         }
                     }
 

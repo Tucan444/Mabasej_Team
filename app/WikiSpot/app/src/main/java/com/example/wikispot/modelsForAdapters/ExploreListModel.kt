@@ -11,7 +11,7 @@ import com.example.wikispot.saveString
 import com.google.android.gms.maps.model.LatLng
 import org.json.JSONArray
 
-data class PlacePreview(var title: String, var description: String, val location: String? = null, var img: Bitmap? = null, val id: Int?=null) {
+data class PlacePreview(var title: String, var description: String, var location: String? = null, var img: Bitmap? = null, val id: Int?=null) {
 
     init {
         val words = description.split(" ")
@@ -38,7 +38,11 @@ object PlaceSupplier {
 
     var controlJson: JsonManagerLite? = null
 
-    var places = arrayOf<PlacePreview?>()
+    var places = arrayOf<PlacePreview?>(
+            PlacePreview("River", "", "39.94071648123733,-85.9346308193051"),
+            PlacePreview("Velky Manin", "", "49.12590793522579,18.49571849264312"),
+            PlacePreview("Klapy", "", "49.161527643132175,18.41231657316252")
+    )
 
     fun appendPlace(place: PlacePreview) {
         val array = places.copyOf(places.size + 1)
@@ -123,7 +127,6 @@ object PlaceSupplier {
                 }
             }
         }
-
         return false
     }
 
