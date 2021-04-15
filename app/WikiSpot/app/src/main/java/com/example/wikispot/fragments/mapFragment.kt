@@ -62,7 +62,8 @@ class mapFragment : Fragment(), GoogleMap.OnMarkerClickListener {
         // loading other markers
         for (n in PlaceSupplier.places.indices) {
             val coordinates = PlaceSupplier.places[n]?.location!!.split(",")
-            googleMap.addMarker(MarkerOptions().position(LatLng(coordinates[0].toDouble(), coordinates[1].toDouble())).title(PlaceSupplier.places[n]?.title))
+            googleMap.addMarker(MarkerOptions().position(LatLng(coordinates[0].toDouble(), coordinates[1].toDouble())).title(PlaceSupplier.places[n]?.title)
+                    .snippet(PlaceSupplier.places[n]!!.description))
         }
 
         googleMap.setOnMarkerClickListener(this)

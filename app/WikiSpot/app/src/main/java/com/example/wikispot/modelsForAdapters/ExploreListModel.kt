@@ -2,16 +2,11 @@ package com.example.wikispot.modelsForAdapters
 
 import android.content.Context
 import android.graphics.Bitmap
-import android.media.Image
-import com.example.wikispot.ScreenParameters
 import com.example.wikispot.getStringFromSharedPreferences
 import com.example.wikispot.modelClasses.JsonManager
 import com.example.wikispot.modelClasses.JsonManagerLite
 import com.example.wikispot.saveString
-import com.google.android.gms.maps.model.LatLng
 import org.json.JSONArray
-import java.lang.IndexOutOfBoundsException
-import java.lang.NullPointerException
 
 data class PlacePreview(var title: String, var description: String, var location: String? = null, var img: Bitmap? = null, val id: Int?=null) {
 
@@ -41,9 +36,9 @@ object PlaceSupplier {
     var controlJson: JsonManagerLite? = null
 
     var places = arrayOf<PlacePreview?>(
-            PlacePreview("River", "", "39.94071648123733,-85.9346308193051"),
-            PlacePreview("Velky Manin", "", "49.12590793522579,18.49571849264312"),
-            PlacePreview("Klapy", "", "49.161527643132175,18.41231657316252")
+            PlacePreview("River", "", "39.94071648123733,-85.9346308193051", null, 12),
+            PlacePreview("Velky Manin", "", "49.12590793522579,18.49571849264312", null, 16),
+            PlacePreview("Klapy", "", "49.161527643132175,18.41231657316252", null, 18)
     )
 
     fun appendPlace(place: PlacePreview) {
@@ -88,6 +83,7 @@ object PlaceSupplier {
         val jsonManager = JsonManager(context, save)
         for (n in 0 until jsonManager.getLengthOfJsonArray()) {
             val savedData = jsonManager.jsonArray?.get(n).toString().split("|||||")
+            println("[debug] saved data is $savedData")
             val place = PlacePreview(savedData[0], savedData[1], savedData[2], null, savedData[3].toInt())
             if (!checkIfContains(place)) {
                 appendPlace(place)

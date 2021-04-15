@@ -32,10 +32,6 @@
         <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColor</item>
         <item name="homeFragmentGradientEndColor" >@color/homeFragmentGradientEndColor</item>
 
-        <item name="mapFragmentGradientStartColor" >@color/mapFragmentGradientStartColor</item>
-        <item name="mapFragmentGradientCenterColor" >@color/mapFragmentGradientCenterColor</item>
-        <item name="mapFragmentGradientEndColor" >@color/mapFragmentGradientEndColor</item>
-
         <item name="settingsFragmentGradientStartColor" >@color/settingsFragmentGradientStartColor</item>
         <item name="settingsFragmentGradientCenterColor" >@color/settingsFragmentGradientCenterColor</item>
         <item name="settingsFragmentGradientEndColor" >@color/settingsFragmentGradientEndColor</item>
@@ -93,10 +89,6 @@
         <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColorDark</item>
         <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColorDark</item>
         <item name="homeFragmentGradientEndColor" >@color/homeFragmentGradientEndColorDark</item>
-
-        <item name="mapFragmentGradientStartColor" >@color/mapFragmentGradientStartColorDark</item>
-        <item name="mapFragmentGradientCenterColor" >@color/mapFragmentGradientCenterColorDark</item>
-        <item name="mapFragmentGradientEndColor" >@color/mapFragmentGradientEndColorDark</item>
 
         <item name="settingsFragmentGradientStartColor" >@color/settingsFragmentGradientStartColorDark</item>
         <item name="settingsFragmentGradientCenterColor" >@color/settingsFragmentGradientCenterColorDark</item>

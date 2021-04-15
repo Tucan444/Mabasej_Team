@@ -21,10 +21,6 @@
     <attr name="homeFragmentGradientCenterColor" format="color"/>
     <attr name="homeFragmentGradientEndColor" format="color"/>
 
-    <attr name="mapFragmentGradientStartColor" format="color"/>
-    <attr name="mapFragmentGradientCenterColor" format="color"/>
-    <attr name="mapFragmentGradientEndColor" format="color"/>
-
     <attr name="settingsFragmentGradientStartColor" format="color"/>
     <attr name="settingsFragmentGradientCenterColor" format="color"/>
     <attr name="settingsFragmentGradientEndColor" format="color"/>

@@ -1,23 +1,31 @@
 package com.example.wikispot.adapters
 
 import android.content.Context
+import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import androidx.core.content.ContextCompat.startActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wikispot.R
 import com.example.wikispot.ServerManagement
 import com.example.wikispot.modelsForAdapters.FileView
 import kotlinx.android.synthetic.main.file_view.view.*
+import java.io.File
+import java.io.FileOutputStream
+import java.net.URL
 
 
 class FileViewsAdapter(private val context: Context, private val fileViews: Array<FileView?>) : RecyclerView.Adapter<FileViewsAdapter.MyViewHolder>() {
 
     private val rotateOpen: Animation by lazy { AnimationUtils.loadAnimation(context, R.anim.open_rotation_anim) }
     private val rotateClose: Animation by lazy { AnimationUtils.loadAnimation(context, R.anim.close_rotation_anim) }
+    private val fadeIn: Animation by lazy {AnimationUtils.loadAnimation(context, R.anim.fade_in) }
+    private val fadeOut: Animation by lazy {AnimationUtils.loadAnimation(context, R.anim.fade_out) }
 
     inner class MyViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
 
@@ -31,6 +39,8 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
         init {
             itemView.setOnClickListener {
                 if (!opened) {
+                    itemView.downloadFileBtn.visibility = View.VISIBLE
+                    itemView.downloadFileBtn.startAnimation(fadeIn)
                     itemView.showFileBtn.startAnimation(rotateOpen)
 
                     fileView?.let {
@@ -60,17 +70,45 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                         }
                         pdfUrl?.let {
                             itemView.pdfContent.visibility = View.VISIBLE
-                            ServerManagement.serverManager.loadPdfView(itemView.pdfContent, pdfUrl!!)
+                            ServerManagement.serverManager.loadPdfView(itemView.pdfContent, pdfUrl!!, true)
+                            println("current page is: ${itemView.pdfContent.currentPage}")
                         }
                     }
                 } else {
                     itemView.showFileBtn.startAnimation(rotateClose)
                     itemView.textContent.textSize = 0F
+
+                    val downloadBtnVanishActionThread = Thread(DownloadBtnVanishAction())
+                    downloadBtnVanishActionThread.start()
+
                     itemView.imageContent.visibility = View.GONE
                     itemView.pdfContent.visibility = View.GONE
                 }
 
                 opened = !opened
+            }
+
+            itemView.downloadFileBtn.setOnClickListener {
+                textInfo?.let {
+                    val textInformation = textInfo!!.split("|||||")
+                    val url = "${ServerManagement.baseUrl}files/${textInformation[0]}/${textInformation[1]}"
+
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(context, browserIntent, null)
+                }
+
+                imgInfo?.let {
+                    val imgInformation = imgInfo!!.split("|||||")
+                    val url = "${ServerManagement.baseUrl}files/${imgInformation[0]}/${imgInformation[1]}"
+
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(url))
+                    startActivity(context, browserIntent, null)
+                }
+
+                pdfUrl?.let {
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(pdfUrl))
+                    startActivity(context, browserIntent, null)
+                }
             }
         }
 
@@ -91,6 +129,24 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
 
             this.fileView = fileView
             this.pos = pos
+        }
+
+        inner class DownloadBtnVanishAction: Runnable {
+            override fun run() {
+
+                itemView.post {
+                    itemView.downloadFileBtn.startAnimation(fadeOut)
+                }
+
+                Thread.sleep(600)
+
+                itemView.post {
+                    itemView.downloadFileBtn.clearAnimation()
+                    itemView.downloadFileBtn.visibility = View.GONE
+                }
+
+            }
+
         }
     }
 

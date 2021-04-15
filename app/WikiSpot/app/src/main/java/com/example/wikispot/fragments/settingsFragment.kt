@@ -5,10 +5,7 @@ import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
 import androidx.navigation.Navigation
-import com.example.wikispot.IntentsKeys
-import com.example.wikispot.R
-import com.example.wikispot.ServerManagement
-import com.example.wikispot.ThemeOptions
+import com.example.wikispot.*
 import com.example.wikispot.activities.MainActivity
 import com.example.wikispot.modelClasses.ServerManager
 import com.example.wikispot.modelClasses.SettingsSaveManager
@@ -21,6 +18,15 @@ class settingsFragment : Fragment(R.layout.fragment_settings) {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+
+        StartDirections.settingsFragmentStartDirection?.let {
+            when (StartDirections.settingsFragmentStartDirection) {
+                "debugFragment" -> {
+                    Navigation.findNavController(debugBtn).navigate(R.id.navigateToDebugFragment)
+                    StartDirections.settingsFragmentStartDirection = null
+                }
+            }
+        }
 
         settingsSaveManager = SettingsSaveManager(requireContext())
 

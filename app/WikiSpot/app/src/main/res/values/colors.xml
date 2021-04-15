@@ -35,10 +35,6 @@
     <color name="homeFragmentGradientCenterColor" >#9EC6FF</color>
     <color name="homeFragmentGradientEndColor" >#FEBBFF</color>
 
-    <color name="mapFragmentGradientStartColor" >#FBBEFC</color>
-    <color name="mapFragmentGradientCenterColor" >#A5CBFF</color>
-    <color name="mapFragmentGradientEndColor" >#95DDFC</color>
-
     <color name="settingsFragmentGradientStartColor" >#92EB97FC</color>
     <color name="settingsFragmentGradientCenterColor" >#A198F9</color>
     <color name="settingsFragmentGradientEndColor" >#74C7F7</color>
@@ -78,10 +74,6 @@
     <color name="homeFragmentGradientStartColorDark" >#83E1FF</color>
     <color name="homeFragmentGradientCenterColorDark" >#9EC6FF</color>
     <color name="homeFragmentGradientEndColorDark" >#FEBBFF</color>
-
-    <color name="mapFragmentGradientStartColorDark" >#FBBEFC</color>
-    <color name="mapFragmentGradientCenterColorDark" >#A5CBFF</color>
-    <color name="mapFragmentGradientEndColorDark" >#95DDFC</color>
 
     <color name="settingsFragmentGradientStartColorDark" >#92EB97FC</color>
     <color name="settingsFragmentGradientCenterColorDark" >#A198F9</color>

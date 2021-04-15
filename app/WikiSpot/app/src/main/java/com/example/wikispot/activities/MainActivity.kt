@@ -230,6 +230,10 @@ class MainActivity : AppCompatActivity() {
             "settingsFragment" -> {
                 mainBottomNavigationView.selectedItemId = R.id.settingsFragment
             }
+            "debugFragment" -> {
+                StartDirections.settingsFragmentStartDirection = "debugFragment"
+                mainBottomNavigationView.selectedItemId = R.id.settingsFragment
+            }
         }
     }
 

@@ -13,6 +13,10 @@ object MessagesSupplier {
         messages = array
     }
 
+    fun checkIfContains(message: Message) {
+
+    }
+
     fun wipeData() {
         messages = arrayOf()
     }

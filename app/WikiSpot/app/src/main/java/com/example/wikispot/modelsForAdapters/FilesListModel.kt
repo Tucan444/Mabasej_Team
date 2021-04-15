@@ -1,7 +1,5 @@
 package com.example.wikispot.modelsForAdapters
 
-import android.graphics.Bitmap
-
 data class FileView(val filetype: String, val filename: String, var textInfo: String? = null, var imgInfo: String? = null, var pdfUrl: String? = null)
 
 

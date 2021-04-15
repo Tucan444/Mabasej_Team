@@ -1,19 +1,20 @@
 package com.example.wikispot.fragments
 
 import android.annotation.SuppressLint
+import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.example.wikispot.IntentsKeys
 import com.example.wikispot.R
 import com.example.wikispot.ServerManagement
+import com.example.wikispot.activities.MainActivity
 import com.example.wikispot.modelClasses.JsonManager
 import kotlinx.android.synthetic.main.fragment_debug.*
 
 
 class debugFragment : Fragment(R.layout.fragment_debug) {
-
-    private lateinit var jsonManager: JsonManager
 
     @SuppressLint("SetTextI18n")
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
@@ -27,30 +28,31 @@ class debugFragment : Fragment(R.layout.fragment_debug) {
             outputText.text = ServerManagement.totalNumberOfRequestsSent.toString()
         }
 
-        val pdfRequestThread = Thread(PdfRequest())
-        pdfRequestThread.start()
+        clearServerConnectionsBtn.setOnClickListener {
+            ServerManagement.serverManager.clearConnections()
+        }
 
+        editTextIp.setText(ServerManagement.baseUrl)
 
+        changeIpBtn.setOnClickListener {
+            ServerManagement.baseUrl = editTextIp.text.toString()
+            restartAppPartially()
+        }
+
+        restartAppPartiallyBtn.setOnClickListener {
+            restartAppPartially()
+        }
 
     }
 
-    inner class PdfRequest : Runnable {
+    private fun restartAppPartially() {
+        val intent = Intent(context?.applicationContext, MainActivity::class.java)
 
-        override fun run() {
-            val inputStream = java.net.URL("${ServerManagement.baseUrl}files/1/sample.pdf").openStream()
+        intent.putExtra(IntentsKeys.startFragment, "debugFragment")
 
-            Thread.sleep(500)
+        ServerManagement.serverManager.clearConnections()
 
-            pdfContent.post {
-                pdfContent.fromStream(inputStream).load()
-                pdfContent.zoomTo(pdfContent.width / 490.0F)
-                println("[debug] zoom is ${pdfContent.width / 490.0F}")
-                println(pdfContent.width)
-                Thread.sleep(1000)
-                println(pdfContent.currentPage)
-            }
-
-            ServerManagement.totalNumberOfRequestsSent += 1
-        }
+        startActivity(intent)
+        activity?.finish()
     }
 }

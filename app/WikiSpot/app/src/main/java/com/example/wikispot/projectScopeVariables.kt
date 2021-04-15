@@ -24,10 +24,11 @@ object ServerManagement {
     const val viewConnectionOnCheckWait: Long = 5000
     const val dataRequestOnAttemptWait: Long = 2000
     const val imageRequestOnAttemptWait: Long = 2000
-    const val baseUrl = "http://192.168.1.156:8000/"
+    var baseUrl = "http://192.168.1.156:8000/"
     var selectedServerId = 0
 
     const val sensors_keyword = "_[{(S,e,n,s,o,r,s)}]_"
+    const val chat_keyword = "_[{(C,h,a,t)}]_"
 
     var totalNumberOfRequestsSent = 0
 }
@@ -50,7 +51,9 @@ object CustomBackstackVariables {
 
 
 object ThemeOptions {
-
     var darkTheme = false
+}
 
+object StartDirections {
+    var settingsFragmentStartDirection: String? = null
 }

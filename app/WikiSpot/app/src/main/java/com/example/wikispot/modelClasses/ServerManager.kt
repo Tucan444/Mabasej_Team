@@ -128,16 +128,16 @@ class ServerManager {
         }
     }
 
-    fun loadPdfView(view: PDFView, url: String) {
-        val pdfLoadingRequestThread = Thread(PdfLoadingRequest(view, url))
+    fun loadPdfView(view: PDFView, url: String, swipeHorizontal: Boolean=false) {
+        val pdfLoadingRequestThread = Thread(PdfLoadingRequest(view, url, swipeHorizontal))
         pdfLoadingRequestThread.start()
     }
 
-    inner class PdfLoadingRequest(val view: PDFView, val url: String): Runnable {
+    inner class PdfLoadingRequest(val view: PDFView, val url: String, private val swipeHorizontal: Boolean=false): Runnable {
         override fun run() {
             val inputStream = java.net.URL(url).openStream()
             view.post {
-                view.fromStream(inputStream).load()
+                view.fromStream(inputStream).swipeHorizontal(swipeHorizontal).load()
                 view.zoomTo(view.width / 490.0F)
             }
         }
@@ -150,15 +150,15 @@ class ServerManager {
         for (i in 0 until receiverConnections.size) {
             try {
                 receiverConnections[i].running = false
-                receiverConnections.removeAt(i)
             } catch (e: Throwable) { println("In clearConnections: $e") }
         }
+        receiverConnections = mutableListOf()
         for (i in 0 until viewConnections.size) {
             try {
                 viewConnections[i].running = false
-                viewConnections.removeAt(i)
             } catch (e: Throwable) { println("In clearConnections: $e") }
         }
+        viewConnections = mutableListOf()
     }
 
     fun checkIfConnectionAlreadyExists(connectionName: String, connectionType: String="any"): Boolean{

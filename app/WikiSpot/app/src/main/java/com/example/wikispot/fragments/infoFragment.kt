@@ -65,7 +65,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                     val json = JsonManager(requireContext(), data)
                     json.findJsonObjectByAttribute("ID", serverId)
 
-                    mainImage?.let {
+                    mainTitle?.let {
                         mainTitle.post {
                             mainTitle.text = json.getAttributeContentByPath("description/title")
                         }
@@ -177,7 +177,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                 val adapter = context?.let { LabeledValuesAdapter(it, LabeledValuesSupplier.labeledValues) }
                 labeled_values_recycler_view.adapter = adapter
             }
-        } catch (e: Throwable) { println("[debug] e3 that i couldnt fix so try catch Exception: $e") }
+        } catch (e: Throwable) { println("[debug] e3 Exception: $e") }
 
     }
 
@@ -192,7 +192,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                 val adapter = context?.let { FileViewsAdapter(it, FileViewsSupplier.fileViews) }
                 file_views_recycler_view.adapter = adapter
             }
-        } catch (e: Throwable) { println("[debug] e2 that i couldnt fix so try catch Exception: $e") }
+        } catch (e: Throwable) { println("[debug] e2 Exception: $e") }
 
     }
 
