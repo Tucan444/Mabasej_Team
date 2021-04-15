@@ -1,12 +1,12 @@
 {
   "ID": 0,
-  "location": "izba",
+  "location": "49.14178021389778,18.353783098441415",
   "description": {
     "title": "legionrpi",
     "description_s": "krátky popis, ktorý bude zobrazený iba v náhladovom okne",
     "description_l": "dlhší popis zariadenia, ktorý bude zobrazený po otvorení",
-    "photo_s": "mala_fotka.png",
-    "photo_b": "velka fotka.png"
+    "photo_s": "test.jpg",
+    "photo_b": "test.png"
   },
   "files": [
     {

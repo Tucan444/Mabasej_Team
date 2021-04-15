@@ -29,29 +29,24 @@ if command in ["u", "update"]:
             sys.exit()
 
     else:
-        version_download = 0
         try:
-            with open("version.json", "r") as f:  # loading settings
+            with open("version.json", "r", encoding='utf-8') as f:  # loading settings
                 version = json.load(f)
         except:
-            version = {"id": 0}
+            version = {"id": 0, "version": "recovery"}
         for ver, data in enumerate(server_version.values()):
-            if data["id"] > version["id"] and ver > version_download:
+            if data["id"] > version["id"]:
                 version_download = list(server_version.keys())[ver]
     try:
-        with open("update.zip", "wb") as save:
+        with open("update.zip", "wb", encoding='utf-8') as save:
             save.write(
                 bytes(requests.get(
                     f"https://github.com/UntriexTv/test_directory/releases/download/{version_download}/update.zip").content))
     except Exception as error:
         print(f"FAILED TO DOWNLOAD UPDATE. ERROR: {error}")
         sys.exit()
-
-    if not os.path.isdir("update"):
-        os.mkdir("update")
     with zipfile.ZipFile("update.zip", "r") as zip_ref:
-        zip_ref.extractall("update")
-    os.rmdir("update")
+        zip_ref.extractall("")
     os.remove("update.zip")
     print("SUCCESS")
     print(f"""Update from version {version["version"]} to {version_download} was sucesfull""")
@@ -60,24 +55,24 @@ if command == "clean":
     if arguments[1] == "all":
         open("log.txt", "w").close()
 
-        with open("settings.json", "r") as file:
+        with open("settings.json", "r", encoding='utf-8') as file:
             settings = json.load(file)
 
         for line in settings["heartbeat_table"]:
             settings["heartbeat_table"][line] = []
 
-        with open("settings.json", "w") as file:
+        with open("settings.json", "w", encoding='utf-8') as file:
             json.dump(settings, file, indent=2)
 
     if arguments[1] == "log":
         open("log.txt", "w").close()
 
     if arguments[1] == "heartbeat_table":
-        with open("settings.json", "r") as file:
+        with open("settings.json", "r", encoding='utf-8') as file:
             settings = json.load(file)
 
         for line in settings["heartbeat_table"]:
             settings["heartbeat_table"][line] = []
 
-        with open("settings.json", "w") as file:
+        with open("settings.json", "w", encoding='utf-8') as file:
             json.dump(settings, file, indent=2)

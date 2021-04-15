@@ -1,14 +1,13 @@
 import hashlib
 import json
 import os
-import sys
 import threading
 import time
 import engine
 import requests
 import uuid
 import subprocess
-from fastapi import FastAPI, Request
+from fastapi import FastAPI, Request, File, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
@@ -18,12 +17,12 @@ check.check_to_go()
 if check.state_list["error"]:
     for error in check.errors:
         print(error)
-    sys.exit()
+    check.fix_version()
 
-with open("settings.json", "r") as f:  # loading settings
+with open("settings.json", "r", encoding='utf-8') as f:  # loading settings
     settings = json.load(f)
 
-with open("filesystem.json", "r") as f:  # loading filesystem
+with open("filesystem.json", "r", encoding='utf-8') as f:  # loading filesystem
     filesystem = json.load(f)
 
 IP = settings["IP"]
@@ -54,7 +53,7 @@ time_to_heartbeat_offline = settings[
 heartbeat_table = settings["heartbeat_table"]
 sensors = {}
 
-messages = []
+messages = []  # {user: "", timestamp: time.Time(), message: ""}
 
 heartbeat_table["ID"].append(ID)
 heartbeat_table["IP"].append(IP)
@@ -163,8 +162,12 @@ def get_file(IDx: int, file: str, request: Request):
             log.error(f"{request.client} tried to access file ({file}) on id {IDx} that does not exist.")
             return f"ERROR: {file} does not exist."
         log.message(f"Downloaded {file} from {server_ip}")
-        with open(f"cache/{IDx}/{file}", "wb") as save:
-            save.write(bytes(r.content))
+        if ".txt" in file:
+            with open(f"cache/{IDx}/{file}", "wb", encoding='utf-8') as save:
+                save.write(bytes(r.content))
+        else:
+            with open(f"cache/{IDx}/{file}", "wb") as save:
+                save.write(bytes(r.content))
         return FileResponse(f"cache/{IDx}/{file}")
 
 
@@ -222,32 +225,39 @@ def admin_get(command: str):
         state = subprocess.check_output(["python3", "system.py", "update", "-version", f"""{command.split("-")[1]}"""])
         log.warning(state.decode("utf-8"))
         return state.decode("utf-8")
-    if command == "setting":
+    if command == "settings":
         return settings
+    if command == "filesystem":
+        return filesystem
 
 
-@app.post("admin/post/{command}")
-def admin_post(command: str, data):
-    pass
+@app.post("/admin/upload_file")
+async def create_upload_file(uploaded_file: UploadFile = File(...), patch: str = ""):
+    file_location = f"{patch}{uploaded_file.filename}"
+    with open(file_location, "wb+") as file_object:
+        file_object.write(uploaded_file.file.read())
+    return {"info": f"file '{uploaded_file.filename}' saved at '{file_location}'"}
 
 
 # Todo upload of update file and settings
 
 
 @app.get("/messages/get")
-def get_messages(m_from: int = 0, m_to: int = 10):
-    return messages[m_from:m_to]
+def get_messages(timestamp):
+    for position, message in enumerate(reversed(messages)):
+        if message["timestamp"] == timestamp:
+            return reversed(messages)[:position]
 
 
 @app.get("/messages/reqister")
 def get_messages():
-    return uuid.uuid4().hex[24:]
+    return [uuid.uuid4().hex[24:], messages[:9]]
 
 
 @app.post("/messages/post")
 def get_messages(m_sender: str = None, message: str = None):
     if m_sender and message:
-        messages.append({"sender": m_sender, "message": message})
+        messages.append({"sender": m_sender, "message": message, "timestamp": time.time()})
         return "successful"
     else:
         return "Empty message/sender"
@@ -303,7 +313,7 @@ def mainloop():
                 log.message("Saving heartbeat table.")
                 log.debug(f"Saving heartbeat table: {heartbeat_table}")
                 settings["heartbeat_table"] = heartbeat_table
-                with open("settings.json", "w") as file:
+                with open("settings.json", "w", encoding='utf-8') as file:
                     json.dump(settings, file, indent=2)
         time.sleep(1)
 

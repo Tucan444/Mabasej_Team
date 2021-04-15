@@ -1,7 +1,7 @@
 {
   "ID": 0,
   "IP": "192.168.1.99",
-  "location": "izba",
+  "location": "49.14178021389778,18.353783098441415",
   "time_to_heartbeat": 20,
   "time_to_heartbeat_offline": 25,
   "save_table": false,
@@ -13,7 +13,7 @@
     "print_warning": true,
     "save_message": false,
     "print_message": true,
-    "enable_debug": false
+    "enable_debug": true
   },
   "heartbeat_table": {
     "ID": [],

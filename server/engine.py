@@ -22,21 +22,21 @@ class Log:
         if self.print_error:
             print(f"{datetime.now()} -> ERROR: {error}")
         if self.save_error:
-            with open("log.txt", "a") as file:
+            with open("log.txt", "a", encoding='utf-8') as file:
                 file.write(f"\n{datetime.now()} -> ERROR: {error}")
 
     def warning(self, warning):
         if self.print_warning:
             print(f"{datetime.now()} -> Warning: {warning}")
         if self.save_warning:
-            with open("log.txt", "a") as file:
+            with open("log.txt", "a", encoding='utf-8') as file:
                 file.write(f"\n{datetime.now()} -> Warning: {warning}")
 
     def message(self, message):
         if self.print_messages:
             print(f"{datetime.now()} -> message: {message}")
         if self.save_messages:
-            with open("log.txt", "a") as file:
+            with open("log.txt", "a", encoding='utf-8') as file:
                 file.write(f"\n{datetime.now()} -> message: {message}")
 
     def debug(self, debug):
@@ -46,7 +46,7 @@ class Log:
 
 class Update:
     def __init__(self):
-        with open("version.json", "r") as f:  # loading settings
+        with open("version.json", "r", encoding='utf-8') as f:  # loading settings
             version = json.load(f)
         self.url = "https://raw.githubusercontent.com/UntriexTv/test_directory/main/ver.json"
         self.version = version["version"]
@@ -88,7 +88,7 @@ class Scan:
             self.errors.append("Filesystem is missing")
         else:
             try:
-                with open("filesystem.json", "r") as f:
+                with open("filesystem.json", "r", encoding='utf-8') as f:
                     filesystem = json.load(f)
             except:
                 self.state_list["error"].append("filesystem")
@@ -120,5 +120,6 @@ class Scan:
 
 
     def fix_version(self):
-        subprocess.check_output(["python3", "system.py", "update"])
+        o = subprocess.check_output(["python3", "system.py", "update"])
+        print(o)
 
