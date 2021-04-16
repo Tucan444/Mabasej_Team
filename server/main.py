@@ -197,7 +197,11 @@ def comparision(file: str):
 
 @app.get("/devices_list")
 def get_devices_list():
-    return [{"connected_id": ID}, *heartbeat_table["file_system"]]
+    returning_value = [{"connected_id": ID}, *heartbeat_table["file_system"]]
+    while "" in returning_value:
+        returning_value.remove("")
+    return returning_value
+
 
 
 @app.get("/admin/get/{command}")
