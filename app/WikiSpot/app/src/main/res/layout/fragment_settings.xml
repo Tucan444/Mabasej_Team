@@ -25,7 +25,7 @@
         android:text="@string/dark_theme"
         android:background="@drawable/text_background_gradient"
         android:padding="5dp"
-        android:textColor="#FFFFFF"
+        android:textColor="?attr/textOnTextBgColor"
         android:textSize="24sp"
         android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"

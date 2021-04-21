@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WikiSpot</string>
+    <string name="home">家</string>
+    <string name="map">地图</string>
+    <string name="explore">探索</string>
+    <string name="chat">聊天</string>
+    <string name="settings">设定值</string>
+    <string name="files">档案文件</string>
+    <string name="dark_theme">黑暗主题</string>
+</resources>

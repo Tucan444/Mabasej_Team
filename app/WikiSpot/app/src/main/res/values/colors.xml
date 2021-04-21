@@ -12,6 +12,10 @@
     <color name="secondaryVariant">#F48FB1</color>
     <color name="onSecondary">@color/black</color>
 
+    <color name="textOnTextBgColor">#fff</color>
+    <color name="generalIconsColor">#89000000</color>
+    <color name="generalTextColor">#89000000</color>
+
     <color name="bottomNavBarCheckedItemColor">#ECD21A1A</color>
     <color name="bottomNavBarItemColor">#320747</color>
     <color name="bottomNavBarRippleColor">#33C4BCC9</color>
@@ -46,6 +50,10 @@
     <color name="infoFragmentGradientCenterColor" >#A7D2FF</color>
     <color name="infoFragmentGradientEndColor" >#96E7FF</color>
 
+    <color name="contrastingGradientStartColor">#C4FFA5</color>
+    <color name="contrastingGradientCenterColor">#D1FBA0</color>
+    <color name="contrastingGradientEndColor">#F6FEBA</color>
+
     <!-- Dark Theme -->
     <color name="primaryDark">#B078F4</color>
     <color name="primaryVariantDark">#5100B3</color>
@@ -54,6 +62,10 @@
     <color name="secondaryDark">#FF03DAC5</color>
     <color name="secondaryVariantDark">#FF03DAC5</color>
     <color name="onSecondaryDark">@color/black</color>
+
+    <color name="textOnTextBgColorDark">#aaa</color>
+    <color name="generalIconsColorDark">#96FFFFFF</color>
+    <color name="generalTextColorDark">#AAFFFFFF</color>
 
     <color name="bottomNavBarCheckedItemColorDark">#FFB571</color>
     <color name="bottomNavBarItemColorDark">#320747</color>
@@ -88,5 +100,9 @@
     <color name="infoFragmentGradientStartColorDark" >#966B94</color>
     <color name="infoFragmentGradientCenterColorDark" >#69829D</color>
     <color name="infoFragmentGradientEndColorDark" >#54818E</color>
+
+    <color name="contrastingGradientStartColorDark">#729360</color>
+    <color name="contrastingGradientCenterColorDark">#809A62</color>
+    <color name="contrastingGradientEndColorDark">#8F936C</color>
 
 </resources>

@@ -11,7 +11,7 @@ data class Message(var senderId: String, val content: String, var timestamp: Str
     init {
         val r = getRandomGenerator(senderId)
 
-        senderName = "${NamesDatabase.names[r.nextInt(NamesDatabase.names.size)]} - ${r.nextInt(9999).toString()}"
+        senderName = "${NamesDatabase.names[r.nextInt(NamesDatabase.names.size)]} - ${r.nextInt(9999)}"
     }
 
     private fun getRandomGenerator(seedString: String): Random {
@@ -36,12 +36,20 @@ object MessagesSupplier {
         messages = array
     }
 
-    fun checkIfContains(message: Message): Boolean {
+    fun deleteMessageByIndex(i: Int) {
+        messages = messages.copyOfRange(0, i) + messages.copyOfRange(i + 1, messages.size)
+    }
+
+    fun checkIfContains(message: Message, checkTimestamp: Boolean=true): Boolean {
         for (i in messages.indices) {
             messages[i]?.let {
                 if (message.senderId == it.senderId) {
                     if (message.content == it.content) {
-                        if (message.timestamp == it.timestamp) {
+                        if (checkTimestamp) {
+                            if (message.timestamp == it.timestamp) {
+                                return true
+                            }
+                        } else {
                             return true
                         }
                     }
@@ -49,6 +57,22 @@ object MessagesSupplier {
             }
         }
         return false
+    }
+
+    fun clearWaitingMessages() {
+        val positionsOfItemsToRemove = mutableListOf<Int>()
+        for (i in messages.indices) {
+            if (messages[i]!!.timestamp == "waiting") {
+                positionsOfItemsToRemove.add(i)
+                println("waiting at: $i")
+            }
+        }
+
+        var subtractAmount = 0
+        for (index in positionsOfItemsToRemove) {
+            deleteMessageByIndex(index - subtractAmount)
+            subtractAmount += 1
+        }
     }
 
     fun getIndexOfLastMessageFromSelf(): Int? {

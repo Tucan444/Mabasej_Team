@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
+    <!-- General -->
+
+    <attr name="textOnTextBgColor" format="color" />
+    <attr name="generalIconsColor" format="color" />
+    <attr name="generalTextColor" format="color" />
+
     <!-- For Backgrounds -->
 
     <attr name="textBackgroundGradientStartColor" format="color"/>
@@ -31,6 +37,10 @@
     <attr name="infoFragmentGradientStartColor" format="color"/>
     <attr name="infoFragmentGradientCenterColor" format="color"/>
     <attr name="infoFragmentGradientEndColor" format="color"/>
+
+    <attr name="contrastingGradientStartColor" format="color"/>
+    <attr name="contrastingGradientCenterColor" format="color"/>
+    <attr name="contrastingGradientEndColor" format="color"/>
 
     <!-- For bottomNavBar -->
     <attr name="bottomNavBarCheckedItemColor" format="color"/>

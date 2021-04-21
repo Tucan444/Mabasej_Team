@@ -13,7 +13,6 @@ import com.example.wikispot.modelsForAdapters.MessagesSupplier
 import kotlinx.android.synthetic.main.fragment_chat.*
 import okhttp3.*
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
-import org.json.JSONArray
 import java.io.IOException
 
 
@@ -44,7 +43,7 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
 
     override fun onResume() {
         super.onResume()
-        loadNamesCache()
+        loadIdFromCache()
 
         val dataReceiver: (String) -> Unit = { data: String ->
             val json = JsonManager(requireContext(), data, "JSONObject")
@@ -56,7 +55,7 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
 
                         val r = requireContext().getRandomGenerator(GeneralVariables.id!!)
 
-                        GeneralVariables.name = "${NamesDatabase.names[r.nextInt(NamesDatabase.names.size)]} - ${r.nextInt(9999).toString()}"
+                        GeneralVariables.name = "${NamesDatabase.names[r.nextInt(NamesDatabase.names.size)]} - ${r.nextInt(9999)}"
 
                         json.getAttributeContent("data")
                         json.getAttributeContent("1")
@@ -79,6 +78,8 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
                         val length = json.currentJsonAttribute1!!.length()
                         json.clearSelectedAttribute()
 
+                        MessagesSupplier.clearWaitingMessages()
+
                         for (i in 0 until length) {
                             println("message at index n: ${json.getAttributeContentByPath("data/$i")}")
                             val jsonOfMessage = JsonManager(requireContext(), json.getAttributeContentByPath("data/$i"), "JSONObject")
@@ -86,16 +87,9 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
                                     jsonOfMessage.getAttributeContent("message"),
                                     jsonOfMessage.getAttributeContent("timestamp"))
 
-                            val lastMessageSentIndex = MessagesSupplier.getIndexOfLastMessageFromSelf()
-                            if (message.senderId != GeneralVariables.id) {
-                                if (!MessagesSupplier.checkIfContains(message)) {
-                                    MessagesSupplier.appendMessage(message)
-                                    updateRecyclerView()
-                                }
-                            } else {
-                                lastMessageSentIndex?.let {
-                                    MessagesSupplier.messages[lastMessageSentIndex]!!.timestamp = jsonOfMessage.getAttributeContent("timestamp")
-                                }
+                            if (!MessagesSupplier.checkIfContains(message)) {
+                                MessagesSupplier.appendMessage(message)
+                                updateRecyclerView()
                             }
                         }
                     }
@@ -108,7 +102,7 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
 
     override fun onPause() {
         super.onPause()
-        saveNamesCache()
+        saveIdToCache()
 
         ServerManagement.serverManager.deleteConnection("chatConnection")
     }
@@ -165,31 +159,17 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
 
     // loading and saving last names
 
-    private fun loadNamesCache() {
-        val namesCache = requireContext().getStringFromSharedPreferences("namesCache", "chatPreferences")
-        if (namesCache != "") {
-            ChatManagement.lastNames = JSONArray(namesCache)
+    private fun loadIdFromCache() {
+        val id = requireContext().getStringFromSharedPreferences("id")
+        if (id != "") {
+            GeneralVariables.id = id
         }
 
     }
 
-    private fun saveNamesCache() {
+    private fun saveIdToCache() {
         GeneralVariables.id?.let {
-            ChatManagement.lastNames.let {
-                val namesCache = JSONArray()
-
-                var subtractAmount = it.length()
-                if (it.length() > (ChatManagement.numberOfNamesToCache - 1)) {
-                    subtractAmount = ChatManagement.numberOfNamesToCache - 1
-                }
-
-                for (i in it.length() - subtractAmount until it.length()) {
-                    namesCache.put(it[i])
-                }
-                namesCache.put(GeneralVariables.id)
-
-                requireContext().saveString("namesCache", namesCache.toString(), "chatPreferences")
-            }
+            requireContext().saveString("id", GeneralVariables.id!!)
         }
     }
 

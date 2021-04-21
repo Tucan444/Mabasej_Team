@@ -29,10 +29,10 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="32dp"
-            android:layout_marginLeft="32dp"
             android:layout_marginTop="8dp"
             android:textSize="20sp"
             android:textStyle="bold"
+            android:textColor="?attr/generalTextColor"
             card_view:layout_constraintStart_toEndOf="@+id/item_img"
             card_view:layout_constraintTop_toTopOf="parent"
             tools:text="Title" />
@@ -41,6 +41,7 @@
             android:id="@+id/item_description"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:textColor="?attr/generalTextColor"
             tools:text="Description"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toStartOf="@+id/item_location_img"
@@ -57,8 +58,7 @@
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
-            card_view:srcCompat="@drawable/loacation_vector_asset"
-            card_view:tint="#F1E79F" />
+            card_view:srcCompat="@drawable/loacation_vector_asset" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

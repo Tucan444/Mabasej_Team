@@ -12,6 +12,11 @@
         <item name="colorSecondaryVariant">@color/secondaryVariant</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
 
+        <!-- General -->
+        <item name="textOnTextBgColor">@color/textOnTextBgColor</item>
+        <item name="generalIconsColor">@color/generalIconsColor</item>
+        <item name="generalTextColor">@color/generalTextColor</item>
+
         <!-- For Backgrounds -->
 
         <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColor</item>
@@ -43,6 +48,10 @@
         <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColor</item>
         <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColor</item>
 
+        <item name="contrastingGradientStartColor">@color/contrastingGradientStartColor</item>
+        <item name="contrastingGradientCenterColor">@color/contrastingGradientCenterColor</item>
+        <item name="contrastingGradientEndColor">@color/contrastingGradientEndColor</item>
+
         <!-- BottomNavCheckedItemColor -->
         <item name="bottomNavBarCheckedItemColor">@color/bottomNavBarCheckedItemColor</item>
         <item name="bottomNavBarRippleColor">@color/bottomNavBarRippleColor</item>
@@ -72,6 +81,11 @@
         <item name="colorSecondary">@color/secondaryDark</item>
         <item name="colorSecondaryVariant">@color/secondaryVariantDark</item>
         <item name="colorOnSecondary">@color/onSecondaryDark</item>
+
+        <!-- General -->
+        <item name="textOnTextBgColor">@color/textOnTextBgColorDark</item>
+        <item name="generalIconsColor">@color/generalIconsColorDark</item>
+        <item name="generalTextColor">@color/generalTextColorDark</item>
 
         <!-- For Backgrounds -->
 
@@ -103,6 +117,10 @@
         <item name="infoFragmentGradientStartColor" >@color/infoFragmentGradientStartColorDark</item>
         <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColorDark</item>
         <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColorDark</item>
+
+        <item name="contrastingGradientStartColor">@color/contrastingGradientStartColorDark</item>
+        <item name="contrastingGradientCenterColor">@color/contrastingGradientCenterColorDark</item>
+        <item name="contrastingGradientEndColor">@color/contrastingGradientEndColorDark</item>
 
         <!-- BottomNavCheckedItemColor -->
         <item name="bottomNavBarCheckedItemColor">@color/bottomNavBarCheckedItemColorDark</item>

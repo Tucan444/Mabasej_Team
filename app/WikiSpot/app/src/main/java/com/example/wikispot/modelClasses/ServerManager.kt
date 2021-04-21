@@ -510,7 +510,6 @@ class ServerManager {
                                     if (receivedString == "Internal Server Error") {
                                         return
                                     }
-
                                     val returnJsonObject = JSONObject()
                                     returnJsonObject.put("source", "messages/get")
                                     returnJsonObject.put("data", JSONArray(receivedString))
