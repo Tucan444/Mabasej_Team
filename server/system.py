@@ -76,3 +76,5 @@ if command == "clean":
 
         with open("settings.json", "w", encoding='utf-8') as file:
             json.dump(settings, file, indent=2)
+
+

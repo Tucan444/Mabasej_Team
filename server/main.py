@@ -203,7 +203,6 @@ def get_devices_list():
     return returning_value
 
 
-
 @app.get("/admin/get/{command}")
 def admin_get(command: str):
     if command == "get_updates":
@@ -247,14 +246,21 @@ async def create_upload_file(uploaded_file: UploadFile = File(...), patch: str =
 
 
 @app.get("/messages/get")
-def get_messages(timestamp):
-    for position, message in enumerate(reversed(messages)):
-        if message["timestamp"] == timestamp:
-            return reversed(messages)[:position]
+def get_messages(timestamp: str):
+    if timestamp:
+        for position, message in enumerate(reversed(messages)):
+            if float(message["timestamp"]) <= float(timestamp):
+                return list(reversed(list(reversed(messages))[:position]))
+
+        if timestamp == "0":
+            return messages
+        return []
+    else:
+        return messages[:10]
 
 
-@app.get("/messages/reqister")
-def get_messages():
+@app.get("/messages/register")
+def register():
     return [uuid.uuid4().hex[24:], messages[:9]]
 
 
