@@ -48,7 +48,6 @@ class MainActivity : AppCompatActivity() {
                     askToQuit()
                 }
                 is infoFragment -> {
-                    println(CustomBackstackVariables.infoFragmentBackDestination)
                     when (CustomBackstackVariables.infoFragmentBackDestination) {
                         "exploreFragment" -> { currentlyShownFragment.goExploreFragment() }
                         "mapFragment" -> {currentlyShownFragment.goMapFragment()}
@@ -78,6 +77,11 @@ class MainActivity : AppCompatActivity() {
         windowManager.defaultDisplay.getMetrics(displayMetrics)
         ScreenParameters.height = displayMetrics.heightPixels
         ScreenParameters.width = displayMetrics.widthPixels
+
+        val savedBaseUrl = this.getStringFromSharedPreferences("baseUrlSave")
+        if (savedBaseUrl != "") {
+            ServerManagement.baseUrl = savedBaseUrl
+        }
     }
 
     override fun onResume() {
@@ -90,24 +94,26 @@ class MainActivity : AppCompatActivity() {
                 val names = json.currentJsonObject!!.names()
 
                 try {
-                    mainFragmentHost.childFragmentManager.fragments[0]?.let {
-                        if (it is homeFragment) {
-                            LabeledValuesSupplier.wipeData()
+                    names?.let {
+                        mainFragmentHost.childFragmentManager.fragments[0]?.let {
+                            if (it is homeFragment) {
+                                LabeledValuesSupplier.wipeData()
 
-                            for (n in 0 until names!!.length()) {
-                                val labeledValue = LabeledValue(names[n].toString(), json.getAttributeContent(names[n].toString()))
-                                if (!LabeledValuesSupplier.checkIfContains(labeledValue)) {
-                                    LabeledValuesSupplier.appendLabeledValue(labeledValue)
+                                for (n in 0 until names.length()) {
+                                    val labeledValue = LabeledValue(names[n].toString(), json.getAttributeContent(names[n].toString()))
+                                    if (!LabeledValuesSupplier.checkIfContains(labeledValue)) {
+                                        LabeledValuesSupplier.appendLabeledValue(labeledValue)
+                                    }
                                 }
-                            }
 
-                            it.labeled_values_recycler_view.post {
-                                val layoutManager = LinearLayoutManager(it.requireContext())
-                                layoutManager.orientation = LinearLayoutManager.VERTICAL
-                                it.labeled_values_recycler_view.layoutManager = layoutManager
+                                it.labeled_values_recycler_view.post {
+                                    val layoutManager = LinearLayoutManager(it.requireContext())
+                                    layoutManager.orientation = LinearLayoutManager.VERTICAL
+                                    it.labeled_values_recycler_view.layoutManager = layoutManager
 
-                                val adapter = LabeledValuesAdapter(it.requireContext(), LabeledValuesSupplier.labeledValues)
-                                it.labeled_values_recycler_view.adapter = adapter
+                                    val adapter = LabeledValuesAdapter(it.requireContext(), LabeledValuesSupplier.labeledValues)
+                                    it.labeled_values_recycler_view.adapter = adapter
+                                }
                             }
                         }
                     }
@@ -122,7 +128,7 @@ class MainActivity : AppCompatActivity() {
             // getting other needed information
             val dataReceiver2: (String) -> Unit = {data1: String ->
                 var json = JsonManager(this, data1)
-                json = JsonManager(this, json.findJsonObjectByAttribute("ID", data0.toInt()), "JSONObject")
+                json = JsonManager(this, json.findJsonObjectByAttribute("ID", data0.toInt()), "JSONObject")  // todo doesnt return correct result
                 val positionsList = json.getAttributeContent("location").split(",")
                 MapManagement.connectedServerPosition = LatLng(positionsList[0].toDouble(), positionsList[1].toDouble())
             }
@@ -147,7 +153,7 @@ class MainActivity : AppCompatActivity() {
                                 it.file_views_recycler_view.adapter = adapter
                             }
                         }
-                    } catch (e: Throwable) { println("[debug] e1 that i  couldnt fix so try catch Exception: $e") }
+                    } catch (e: Throwable) { println("[debug] e1 that i couldnt fix so try catch Exception: $e") }
                 }
 
                 try {

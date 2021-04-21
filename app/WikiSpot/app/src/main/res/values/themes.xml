@@ -12,7 +12,7 @@
         <item name="colorSecondaryVariant">@color/secondaryVariant</item>
         <item name="colorOnSecondary">@color/onSecondary</item>
 
-        <!-- For gradient Backgrounds -->
+        <!-- For Backgrounds -->
 
         <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColor</item>
         <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColor</item>
@@ -23,10 +23,13 @@
         <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColor</item>
         <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColor</item>
         <item name="chatFragmentGradientEndColor" >@color/chatFragmentGradientEndColor</item>
+        <item name="chatFragmentBgStrokeColor">@color/chatFragmentBgStrokeColor</item>
+        <item name="chatFragmentWriteBarBgColor">@color/chatFragmentWriteBarBgColor</item>
 
         <item name="exploreFragmentGradientStartColor" >@color/exploreFragmentGradientStartColor</item>
         <item name="exploreFragmentGradientCenterColor" >@color/exploreFragmentGradientCenterColor</item>
         <item name="exploreFragmentGradientEndColor" >@color/exploreFragmentGradientEndColor</item>
+        <item name="exploreFragmentListItemBackgroundColor">@color/exploreFragmentListItemBackgroundColor</item>
 
         <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColor</item>
         <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColor</item>
@@ -70,7 +73,7 @@
         <item name="colorSecondaryVariant">@color/secondaryVariantDark</item>
         <item name="colorOnSecondary">@color/onSecondaryDark</item>
 
-        <!-- For gradient Backgrounds -->
+        <!-- For Backgrounds -->
 
         <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColorDark</item>
         <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColorDark</item>
@@ -81,10 +84,13 @@
         <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColorDark</item>
         <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColorDark</item>
         <item name="chatFragmentGradientEndColor" >@color/chatFragmentGradientEndColorDark</item>
+        <item name="chatFragmentBgStrokeColor">@color/chatFragmentBgStrokeColorDark</item>
+        <item name="chatFragmentWriteBarBgColor">@color/chatFragmentWriteBarBgColorDark</item>
 
         <item name="exploreFragmentGradientStartColor" >@color/exploreFragmentGradientStartColorDark</item>
         <item name="exploreFragmentGradientCenterColor" >@color/exploreFragmentGradientCenterColorDark</item>
         <item name="exploreFragmentGradientEndColor" >@color/exploreFragmentGradientEndColorDark</item>
+        <item name="exploreFragmentListItemBackgroundColor">@color/exploreFragmentListItemBackgroundColorDark</item>
 
         <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColorDark</item>
         <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColorDark</item>

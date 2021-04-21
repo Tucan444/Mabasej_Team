@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WikiSpot</string>
+    <string name="chat">Čet</string>
+    <string name="explore">Prehliadať</string>
+    <string name="home">Domov</string>
+    <string name="map">Mapa</string>
+    <string name="settings">Nastavenia</string>
+    <string name="files">Súbory</string>
+    <string name="dark_theme">Tmavá téma</string>
+</resources>

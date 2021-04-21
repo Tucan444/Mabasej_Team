@@ -7,11 +7,11 @@ import android.os.Environment
 import android.view.View
 import android.widget.Toast
 import com.google.android.material.snackbar.Snackbar
-import okhttp3.*
-import org.json.JSONArray
-import java.io.*
+import java.io.File
+import java.io.FileInputStream
 import java.nio.channels.FileChannel
 import java.nio.charset.Charset
+import java.util.*
 
 // for showing messages
 
@@ -83,6 +83,18 @@ fun Context.getStringFromSharedPreferences(accessKey: String, preferencesFilenam
     }
 
     return  ""
+}
+
+// Other
+
+fun Context.getRandomGenerator(seedString: String): Random {
+    var n: Long = 0
+    for (element in seedString) {
+        n += element.toInt()
+    }
+
+    println(n)
+    return Random(n)
 }
 
 // Activity extensions

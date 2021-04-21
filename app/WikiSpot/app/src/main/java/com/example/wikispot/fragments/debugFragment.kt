@@ -6,11 +6,9 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
-import com.example.wikispot.IntentsKeys
-import com.example.wikispot.R
-import com.example.wikispot.ServerManagement
+import com.example.wikispot.*
 import com.example.wikispot.activities.MainActivity
-import com.example.wikispot.modelClasses.JsonManager
+import com.example.wikispot.modelsForAdapters.MessagesSupplier
 import kotlinx.android.synthetic.main.fragment_debug.*
 
 
@@ -34,13 +32,18 @@ class debugFragment : Fragment(R.layout.fragment_debug) {
 
         editTextIp.setText(ServerManagement.baseUrl)
 
-        changeIpBtn.setOnClickListener {
+        changeUrlBtn.setOnClickListener {
             ServerManagement.baseUrl = editTextIp.text.toString()
+            requireContext().saveString("baseUrlSave", editTextIp.text.toString())
             restartAppPartially()
         }
 
         restartAppPartiallyBtn.setOnClickListener {
             restartAppPartially()
+        }
+
+        closeAppBtn.setOnClickListener {
+            activity?.finish()
         }
 
     }
@@ -51,6 +54,8 @@ class debugFragment : Fragment(R.layout.fragment_debug) {
         intent.putExtra(IntentsKeys.startFragment, "debugFragment")
 
         ServerManagement.serverManager.clearConnections()
+        MessagesSupplier.wipeData()
+        GeneralVariables.id = null
 
         startActivity(intent)
         activity?.finish()

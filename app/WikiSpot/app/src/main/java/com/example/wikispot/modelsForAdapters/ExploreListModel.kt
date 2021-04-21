@@ -11,7 +11,7 @@ import org.json.JSONArray
 data class PlacePreview(var title: String, var description: String, var location: String? = null, var img: Bitmap? = null, val id: Int?=null) {
 
     init {
-        val words = description.split(" ")
+        val words = description.split(" ", "\n")
         description = ""
         var lastLine = ""
 
@@ -35,11 +35,7 @@ object PlaceSupplier {
 
     var controlJson: JsonManagerLite? = null
 
-    var places = arrayOf<PlacePreview?>(
-            PlacePreview("River", "", "39.94071648123733,-85.9346308193051", null, 12),
-            PlacePreview("Velky Manin", "", "49.12590793522579,18.49571849264312", null, 16),
-            PlacePreview("Klapy", "", "49.161527643132175,18.41231657316252", null, 18)
-    )
+    var places = arrayOf<PlacePreview?>()
 
     fun appendPlace(place: PlacePreview) {
         val array = places.copyOf(places.size + 1)
@@ -83,7 +79,6 @@ object PlaceSupplier {
         val jsonManager = JsonManager(context, save)
         for (n in 0 until jsonManager.getLengthOfJsonArray()) {
             val savedData = jsonManager.jsonArray?.get(n).toString().split("|||||")
-            println("[debug] saved data is $savedData")
             val place = PlacePreview(savedData[0], savedData[1], savedData[2], null, savedData[3].toInt())
             if (!checkIfContains(place)) {
                 appendPlace(place)

@@ -4,6 +4,7 @@ import android.graphics.Bitmap
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
+import androidx.navigation.Navigation
 import com.example.wikispot.R
 import com.example.wikispot.ServerManagement
 import com.example.wikispot.modelClasses.JsonManager
@@ -18,6 +19,10 @@ class homeFragment : Fragment(R.layout.fragment_home) {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         loadCache()
+
+        chatBtn.setOnClickListener {
+            Navigation.findNavController(it).navigate(R.id.homeFragment_to_chatFragment)
+        }
     }
 
     override fun onResume() {

@@ -26,10 +26,13 @@
     <color name="chatFragmentGradientStartColor" >#FCB0EF</color>
     <color name="chatFragmentGradientCenterColor" >#9ECFFF</color>
     <color name="chatFragmentGradientEndColor" >#9FE7FF</color>
+    <color name="chatFragmentBgStrokeColor" >#7FFFFFFF</color>
+    <color name="chatFragmentWriteBarBgColor">#FFF</color>
 
     <color name="exploreFragmentGradientStartColor" >#A1DEFC</color>
     <color name="exploreFragmentGradientCenterColor" >#A5CBFF</color>
     <color name="exploreFragmentGradientEndColor" >#F9B6F6</color>
+    <color name="exploreFragmentListItemBackgroundColor">#fff</color>
 
     <color name="homeFragmentGradientStartColor" >#83E1FF</color>
     <color name="homeFragmentGradientCenterColor" >#9EC6FF</color>
@@ -55,32 +58,35 @@
     <color name="bottomNavBarCheckedItemColorDark">#FFB571</color>
     <color name="bottomNavBarItemColorDark">#320747</color>
     <color name="bottomNavBarRippleColorDark">#33222222</color>
-    <color name="statusBarColorDark">#4527A0</color>
+    <color name="statusBarColorDark">#000000</color>
 
-    <color name="textBackgroundGradientStartColorDark" >#80E5BEFF</color>
-    <color name="textBackgroundGradientEndColorDark" >#80FFB5F0</color>
+    <color name="textBackgroundGradientStartColorDark" >#80A185B4</color>
+    <color name="textBackgroundGradientEndColorDark" >#80926789</color>
 
-    <color name="bottomNavBarGradientStartColorDark" >#FCDD94</color>
-    <color name="bottomNavBarGradientEndColorDark" >#C5F8AB</color>
+    <color name="bottomNavBarGradientStartColorDark" >#9F8B5D</color>
+    <color name="bottomNavBarGradientEndColorDark" >#749265</color>
 
-    <color name="chatFragmentGradientStartColorDark" >#FCB0EF</color>
-    <color name="chatFragmentGradientCenterColorDark" >#9ECFFF</color>
-    <color name="chatFragmentGradientEndColorDark" >#9FE7FF</color>
+    <color name="chatFragmentGradientStartColorDark" >#885E81</color>
+    <color name="chatFragmentGradientCenterColorDark" >#516B85</color>
+    <color name="chatFragmentGradientEndColorDark" >#5E8A99</color>
+    <color name="chatFragmentBgStrokeColorDark" >#D43E3E3E</color>
+    <color name="chatFragmentWriteBarBgColorDark">#444</color>
 
-    <color name="exploreFragmentGradientStartColorDark" >#A1DEFC</color>
-    <color name="exploreFragmentGradientCenterColorDark" >#A5CBFF</color>
-    <color name="exploreFragmentGradientEndColorDark" >#F9B6F6</color>
+    <color name="exploreFragmentGradientStartColorDark" >#587A8B</color>
+    <color name="exploreFragmentGradientCenterColorDark" >#657C9C</color>
+    <color name="exploreFragmentGradientEndColorDark" >#896488</color>
+    <color name="exploreFragmentListItemBackgroundColorDark">#636363</color>
 
-    <color name="homeFragmentGradientStartColorDark" >#83E1FF</color>
-    <color name="homeFragmentGradientCenterColorDark" >#9EC6FF</color>
-    <color name="homeFragmentGradientEndColorDark" >#FEBBFF</color>
+    <color name="homeFragmentGradientStartColorDark" >#4F889A</color>
+    <color name="homeFragmentGradientCenterColorDark" >#647EA3</color>
+    <color name="homeFragmentGradientEndColorDark" >#977098</color>
 
-    <color name="settingsFragmentGradientStartColorDark" >#92EB97FC</color>
-    <color name="settingsFragmentGradientCenterColorDark" >#A198F9</color>
-    <color name="settingsFragmentGradientEndColorDark" >#74C7F7</color>
+    <color name="settingsFragmentGradientStartColorDark" >#92875691</color>
+    <color name="settingsFragmentGradientCenterColorDark" >#6863A2</color>
+    <color name="settingsFragmentGradientEndColorDark" >#4B7F9D</color>
 
-    <color name="infoFragmentGradientStartColorDark" >#FFB6FB</color>
-    <color name="infoFragmentGradientCenterColorDark" >#A7D2FF</color>
-    <color name="infoFragmentGradientEndColorDark" >#96E7FF</color>
+    <color name="infoFragmentGradientStartColorDark" >#966B94</color>
+    <color name="infoFragmentGradientCenterColorDark" >#69829D</color>
+    <color name="infoFragmentGradientEndColorDark" >#54818E</color>
 
 </resources>

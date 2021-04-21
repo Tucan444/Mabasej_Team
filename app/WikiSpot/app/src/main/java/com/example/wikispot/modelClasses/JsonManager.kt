@@ -1,6 +1,7 @@
 package com.example.wikispot.modelClasses
 
 import android.content.Context
+import com.example.wikispot.GeneralVariables
 import com.example.wikispot.getStringFromSharedPreferences
 import com.example.wikispot.saveString
 import com.example.wikispot.showToast
@@ -72,7 +73,8 @@ data class JsonManager(private val context: Context, val data: String, val input
                         }
                     }
                 }
-            } else if (currentJsonAttribute1 != null) {
+            }
+            if (currentJsonAttribute1 != null) {
                 try {
                     currentJsonAttribute0 = currentJsonAttribute1!!.getJSONObject(name.toInt())
                     return currentJsonAttribute0.toString()
@@ -117,7 +119,7 @@ data class JsonManager(private val context: Context, val data: String, val input
             }
         }
 
-        return ""
+        return GeneralVariables.variableMissingKeyword
     }
 
     fun getAttributeContentByPath(path: String): String {
@@ -136,7 +138,7 @@ data class JsonManager(private val context: Context, val data: String, val input
                 // loading back saved json attributes
                 currentJsonAttribute0 = currentJsonAttributesBackup[0] as JSONObject?
                 currentJsonAttribute1 = currentJsonAttributesBackup[1] as JSONArray?
-                return ""
+                return GeneralVariables.variableMissingKeyword
             }
         }
 
@@ -183,7 +185,7 @@ data class JsonManager(private val context: Context, val data: String, val input
 
             val attributeContent = getAttributeContentByPath(attributePath)
 
-            if (attributeContent != "null") {
+            if (attributeContent != GeneralVariables.variableMissingKeyword) {
 
                 if (attributeContent == value.toString()) {
                     return currentJsonObject.toString()

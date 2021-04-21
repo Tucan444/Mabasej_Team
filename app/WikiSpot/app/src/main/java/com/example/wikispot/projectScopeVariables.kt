@@ -1,13 +1,18 @@
 package com.example.wikispot
 
-import android.util.DisplayMetrics
 import com.example.wikispot.modelClasses.ServerManager
 import com.google.android.gms.maps.model.LatLng
+import org.json.JSONArray
 
 
 object GeneralVariables {
 
     var appRunningFirstTime = true
+
+    var id: String? = null
+    var name: String? = null
+
+    const val variableMissingKeyword = "_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_"
 
 }
 
@@ -22,15 +27,20 @@ object ServerManagement {
     var serverManager = ServerManager()
     const val receiverConnectionOnCheckWait: Long = 4000
     const val viewConnectionOnCheckWait: Long = 5000
+    const val chatConnectionOnCheckWait: Long = 1000
     const val dataRequestOnAttemptWait: Long = 2000
     const val imageRequestOnAttemptWait: Long = 2000
     var baseUrl = "http://192.168.1.156:8000/"
     var selectedServerId = 0
 
     const val sensors_keyword = "_[{(S,e,n,s,o,r,s)}]_"
-    const val chat_keyword = "_[{(C,h,a,t)}]_"
 
     var totalNumberOfRequestsSent = 0
+}
+
+object ChatManagement {
+    var lastNames = JSONArray()
+    const val numberOfNamesToCache = 4
 }
 
 object MapManagement {

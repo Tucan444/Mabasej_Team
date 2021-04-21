@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WikiSpot</string>
+    <string name="dark_theme">темная тема</string>
+    <string name="files">файлы</string>
+    <string name="settings">настройки</string>
+    <string name="map">карта</string>
+    <string name="home">дом</string>
+    <string name="explore">просматривать</string>
+    <string name="chat">чат</string>
+</resources>

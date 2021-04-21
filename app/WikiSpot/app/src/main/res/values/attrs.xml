@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <!-- For gradient Backgrounds -->
+    <!-- For Backgrounds -->
 
     <attr name="textBackgroundGradientStartColor" format="color"/>
     <attr name="textBackgroundGradientEndColor" format="color"/>
@@ -12,10 +12,13 @@
     <attr name="chatFragmentGradientStartColor" format="color"/>
     <attr name="chatFragmentGradientCenterColor" format="color"/>
     <attr name="chatFragmentGradientEndColor" format="color"/>
+    <attr name="chatFragmentBgStrokeColor" format="color" />
+    <attr name="chatFragmentWriteBarBgColor" format="color" />
 
     <attr name="exploreFragmentGradientStartColor" format="color"/>
     <attr name="exploreFragmentGradientCenterColor" format="color"/>
     <attr name="exploreFragmentGradientEndColor" format="color"/>
+    <attr name="exploreFragmentListItemBackgroundColor" format="color" />
 
     <attr name="homeFragmentGradientStartColor" format="color"/>
     <attr name="homeFragmentGradientCenterColor" format="color"/>

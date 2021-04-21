@@ -9,7 +9,7 @@
         />
 
     <stroke
-        android:color="#7FFFFFFF"
+        android:color="?attr/chatFragmentBgStrokeColor"
         android:width="10dp"/>
 
 </shape>

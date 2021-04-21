@@ -4,30 +4,29 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#E35050"
+    android:background="#E34B4B"
     tools:context=".fragments.debugFragment">
 
     <Button
         android:id="@+id/goSecondDebugFragmentBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
-        android:layout_marginEnd="52dp"
+        android:layout_marginTop="16dp"
+        android:layout_marginEnd="16dp"
         android:text="2"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/debugFragmentTitle" />
 
     <Button
         android:id="@+id/getNumberOfSentRequestsBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
         android:text="Get number of sent requests"
         android:textSize="12sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.503"
+        app:layout_constraintEnd_toStartOf="@+id/goSecondDebugFragmentBtn"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/goSecondDebugFragmentBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/debugFragmentTitle" />
 
     <ScrollView
         android:id="@+id/scrollView3"
@@ -56,11 +55,11 @@
     </ScrollView>
 
     <Button
-        android:id="@+id/changeIpBtn"
+        android:id="@+id/changeUrlBtn"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="Change IP"
+        android:text="Change Url"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextIp" />
@@ -97,6 +96,31 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/changeIpBtn" />
+        app:layout_constraintTop_toBottomOf="@+id/changeUrlBtn" />
+
+    <TextView
+        android:id="@+id/debugFragmentTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="Debug fragment"
+        android:textColor="#FFFFFF"
+        android:textSize="30sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/closeAppBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:text="Close app"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/restartAppPartiallyBtn" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
