@@ -157,3 +157,7 @@
  SENSOR: name='sensor1' value='test'
 2021-04-14 14:10:06.190377 -> Warning: Address(host='192.168.1.99', port=58192) created new sensor.
  SENSOR: name='sensor2' value='123456789'
+2021-04-22 10:15:53.540044 -> Warning: Address(host='192.168.1.99', port=43642) created new sensor.
+ SENSOR: name='test1' value='juhuu'
+2021-04-22 10:16:02.865022 -> Warning: Address(host='192.168.1.99', port=43644) created new sensor.
+ SENSOR: name='test2' value='eeeh'

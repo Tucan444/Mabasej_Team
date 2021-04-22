@@ -6,6 +6,7 @@
   "time_to_heartbeat_offline": 25,
   "save_table": false,
   "time_to_save": 60,
+  "max_mess": 20,
   "log": {
     "save_error": true,
     "print_error": true,

@@ -75,6 +75,11 @@ class Sensor(BaseModel):
     value: str
 
 
+class Message(BaseModel):
+    m_sender: str
+    message: str
+
+
 @app.get("/")
 def read_root():
     return "wikispot"
@@ -265,9 +270,12 @@ def register():
 
 
 @app.post("/messages/post")
-def get_messages(m_sender: str = None, message: str = None):
-    if m_sender and message:
-        messages.append({"sender": m_sender, "message": message, "timestamp": time.time()})
+def post_messages(data: Message):
+    log.debug(f"Message was posted. Sender: {data.m_sender}\n MESSAGE: {data.message}")
+    if len(messages) >= settings["max_mess"]:
+        del messages[:len(messages) - settings["max_mess"]]
+    if data.m_sender and data.message:
+        messages.append({"sender": data.m_sender, "message": data.message, "timestamp": time.time()})
         return "successful"
     else:
         return "Empty message/sender"
