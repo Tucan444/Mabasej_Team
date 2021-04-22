@@ -38,6 +38,8 @@
     <attr name="infoFragmentGradientCenterColor" format="color"/>
     <attr name="infoFragmentGradientEndColor" format="color"/>
 
+    <attr name="debugFragmentBackround" format="color"/>
+
     <attr name="contrastingGradientStartColor" format="color"/>
     <attr name="contrastingGradientCenterColor" format="color"/>
     <attr name="contrastingGradientEndColor" format="color"/>

@@ -16,7 +16,7 @@ data class PlacePreview(var title: String, var description: String, var location
         var lastLine = ""
 
         for (word in words) {
-            if (lastLine.length + word.length < 40) {
+            if (lastLine.length + word.length < 25) {
                 if (lastLine != "") {
                     lastLine += " "
                     description += " "

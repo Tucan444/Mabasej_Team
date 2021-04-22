@@ -22,6 +22,8 @@
         <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColor</item>
         <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColor</item>
 
+        <item name="debugFragmentBackround" >@color/debugFragmentBg</item>
+
         <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColor</item>
         <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColor</item>
 
@@ -60,6 +62,7 @@
 
         <!-- StatusBarColor -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColor</item>
+        <item name="android:windowLightStatusBar">true</item>
     </style>
 
     <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
@@ -94,6 +97,8 @@
 
         <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColorDark</item>
         <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColorDark</item>
+
+        <item name="debugFragmentBackround" >@color/debugFragmentBgDark</item>
 
         <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColorDark</item>
         <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColorDark</item>
@@ -130,6 +135,8 @@
 
         <!-- StatusBarColor -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColorDark</item>
+        <item name="android:navigationBarColor">@color/black</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="l">false</item>
     </style>
 
 
