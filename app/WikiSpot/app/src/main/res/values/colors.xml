@@ -13,16 +13,16 @@
     <color name="onSecondary">@color/black</color>
 
     <color name="textOnTextBgColor">#fff</color>
-    <color name="generalIconsColor">#BA000000</color>
-    <color name="generalTextColor">#8A000000</color>
+    <color name="generalIconsColor">#CC000000</color>
+    <color name="generalTextColor">#CC000000</color>
 
     <color name="bottomNavBarCheckedItemColor">#EC1D5CFD</color>
     <color name="bottomNavBarItemColor">#EC5B89FF</color>
     <color name="bottomNavBarRippleColor">#7D8DC1</color>
-    <color name="statusBarColor">#EDEDED</color>
+    <color name="statusBarColor">#83E1FF</color>
 
-    <color name="textBackgroundGradientStartColor" >#74DDFF</color>
-    <color name="textBackgroundGradientEndColor" >#7DE0FF</color>
+    <color name="textBackgroundGradientStartColor" >#BF74DDFF</color>
+    <color name="textBackgroundGradientEndColor" >#BF7DE0FF</color>
 
     <color name="bottomNavBarGradientStartColor" >#EDEDED</color>
     <color name="bottomNavBarGradientEndColor" >#F6F6F6</color>
@@ -65,14 +65,14 @@
     <color name="secondaryVariantDark">#3954FF</color>
     <color name="onSecondaryDark">@color/black</color>
 
-    <color name="textOnTextBgColorDark">#aaa</color>
-    <color name="generalIconsColorDark">#96AEAEAE</color>
-    <color name="generalTextColorDark">#9F9F9F</color>
+    <color name="textOnTextBgColorDark">#E3E3E3</color>
+    <color name="generalIconsColorDark">#CCC5C5C5</color>
+    <color name="generalTextColorDark">#D6D6D6</color>
 
-    <color name="bottomNavBarCheckedItemColorDark">#002F80</color>
-    <color name="bottomNavBarItemColorDark">#003697</color>
+    <color name="bottomNavBarCheckedItemColorDark">#003898</color>
+    <color name="bottomNavBarItemColorDark">#003DAC</color>
     <color name="bottomNavBarRippleColorDark">#091961</color>
-    <color name="statusBarColorDark">#000000</color>
+    <color name="statusBarColorDark">#00143A</color>
 
     <color name="textBackgroundGradientStartColorDark" >#80000C5C</color>
     <color name="textBackgroundGradientEndColorDark" >#80001A5C</color>
