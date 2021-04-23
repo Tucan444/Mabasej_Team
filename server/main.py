@@ -239,12 +239,20 @@ def admin_get(command: str):
         return filesystem
 
 
-@app.post("/admin/upload_file")
-async def create_upload_file(uploaded_file: UploadFile = File(...), patch: str = ""):
+@app.post("/admin/{id_server}/upload_file")
+async def create_upload_file(id_server: int, uploaded_file: UploadFile = File(...), patch: str = ""):
     file_location = f"{patch}{uploaded_file.filename}"
-    with open(file_location, "wb+") as file_object:
-        file_object.write(uploaded_file.file.read())
-    return {"info": f"file '{uploaded_file.filename}' saved at '{file_location}'"}
+    if id_server == ID:
+        with open(file_location, "wb+") as file_object:
+            file_object.write(uploaded_file.file.read())
+    else:
+        with open(f"cache/{uploaded_file.filename}", "wb+") as file_object:
+            file_object.write(uploaded_file.file.read())
+        file = open(f"cache/{uploaded_file.filename}", "r")
+        requests.post(f"""http://{heartbeat_table["IP"][heartbeat_table["ID"].index(id_server)]}:8000/admin/{id_server}/upload_file""",
+                      files={"uploaded_file": file, "patch": patch})
+        file.close()
+    return {"info": f"""file '{uploaded_file.filename}' saved at '{id_server}/{file_location}'"""}
 
 
 # Todo upload of update file and settings

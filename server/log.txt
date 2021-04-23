@@ -161,3 +161,5 @@
  SENSOR: name='test1' value='juhuu'
 2021-04-22 10:16:02.865022 -> Warning: Address(host='192.168.1.99', port=43644) created new sensor.
  SENSOR: name='test2' value='eeeh'
+2021-04-23 11:22:54.684617 -> Warning: 192.168.1.231 disconnected/is not available
+2021-04-23 11:36:58.295015 -> Warning: 192.168.1.231 disconnected/is not available
