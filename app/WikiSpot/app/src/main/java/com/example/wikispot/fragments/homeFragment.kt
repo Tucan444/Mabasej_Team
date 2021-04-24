@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
+import com.example.wikispot.GeneralVariables
 import com.example.wikispot.R
 import com.example.wikispot.ServerManagement
 import com.example.wikispot.modelClasses.JsonManager
@@ -39,17 +40,37 @@ class homeFragment : Fragment(R.layout.fragment_home) {
 
                     infoFragmentLoadedIn = true
 
+                    val phoneNumberLoaded = json.getAttributeContentByPath("description/phone_number")
+                    if (phoneNumberLoaded != GeneralVariables.variableMissingKeyword) {
+                        GeneralVariables.phoneNumber = phoneNumberLoaded.toInt()
+                    }
+
+                    val emailLoaded = json.getAttributeContentByPath("description/email")
+                    if (emailLoaded != GeneralVariables.variableMissingKeyword) {
+                        GeneralVariables.email = emailLoaded
+                    }
+
                     homeFragmentInnerFragment.post {
                         homeFragmentInnerFragment?.let { fragment ->
-                            fragment.mainTitle.text = json.getAttributeContentByPath("description/title")
-                            fragment.mainDescription.text = json.getAttributeContentByPath("description/description_l")
+                            val title = json.getAttributeContentByPath("description/title")
+                            val description = json.getAttributeContentByPath("description/description_l")
+
+                            if (title != GeneralVariables.variableMissingKeyword) {
+                                fragment.mainTitle.text = title
+                            }
+
+                            if (description != GeneralVariables.variableMissingKeyword) {
+                                fragment.mainDescription.text = description
+                            }
                         }
                     }
 
                     val imageReceiver: (Bitmap) -> Unit = { bitmap: Bitmap ->
                         homeFragmentInnerFragment?.let {
                             homeFragmentInnerFragment.post {
-                                homeFragmentInnerFragment.mainImage.setImageBitmap(bitmap)
+                                try {
+                                    homeFragmentInnerFragment.mainImage.setImageBitmap(bitmap)
+                                } catch (e: Throwable) { println("[debug] e7 Exception: $e") }
                             }
                         }
                     }

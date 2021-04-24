@@ -1,12 +1,15 @@
 package com.example.wikispot.fragments
 
+import android.content.Intent
 import android.graphics.Bitmap
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import androidx.navigation.Navigation
 import androidx.navigation.fragment.navArgs
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.wikispot.GeneralVariables
 import com.example.wikispot.R
 import com.example.wikispot.ServerManagement
 import com.example.wikispot.adapters.FileViewsAdapter
@@ -17,16 +20,18 @@ import com.example.wikispot.modelsForAdapters.FileView
 import com.example.wikispot.modelsForAdapters.FileViewsSupplier
 import com.example.wikispot.modelsForAdapters.LabeledValue
 import com.example.wikispot.modelsForAdapters.LabeledValuesSupplier
+import com.example.wikispot.showToast
 import com.google.android.gms.maps.model.LatLng
 import kotlinx.android.synthetic.main.fragment_info.*
-import java.io.File
 
 
 class infoFragment : Fragment(R.layout.fragment_info) {
 
     private val args: infoFragmentArgs by navArgs()
     var location: LatLng? = null
-    var loadAutomatically = false
+    var phoneNumber: Int? = null
+    var email: String? = null
+    var executeLoadFuntion = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -37,21 +42,51 @@ class infoFragment : Fragment(R.layout.fragment_info) {
         updateFileViewsRecyclerView()
 
         try {
-            loadAutomatically = args.loadAutomatically
+            executeLoadFuntion = args.executeLoadFuntion
         } catch (e: Throwable) { println("[debug] Exception in Info Fragment while getting args: $e") }
 
-        if (loadAutomatically) {
+        if (executeLoadFuntion) {
             load()
+        } else {
+            getContactInfoFromGeneralVariables()
         }
 
         locationBtn.setOnClickListener {
-            if (loadAutomatically) {
+            if (executeLoadFuntion) {
                 if (location != null) {
                     val action = infoFragmentDirections.infoFragmentToMapFragment(location!!)
                     Navigation.findNavController(it).navigate(action)
                 }
             } else {
                 Navigation.findNavController(it).navigate(R.id.homeFragment_to_mapFragment)
+            }
+        }
+
+        phoneBtn.setOnClickListener {
+            if (phoneNumber != null) {
+                phoneNumber?.let {
+                    val intent = Intent(Intent.ACTION_DIAL)
+                    intent.data = Uri.parse("tel:$phoneNumber")
+                    startActivity(intent)
+                }
+            } else {
+                requireContext().showToast("Phone number not found.")
+            }
+        }
+
+        emailBtn.setOnClickListener {
+            if (email != null) {
+                email?.let{
+                    val intent = Intent(Intent.ACTION_SEND)
+
+                    intent.putExtra(Intent.EXTRA_EMAIL, arrayOf(email))
+
+                    intent.type = "text/plain"
+
+                    startActivity(Intent.createChooser(intent, "Send Email"))
+                }
+            } else {
+                requireContext().showToast("Email address not found.")
             }
         }
     }
@@ -65,15 +100,33 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                     val json = JsonManager(requireContext(), data)
                     json.findJsonObjectByAttribute("ID", serverId)
 
+                    val phoneNumberLoaded = json.getAttributeContentByPath("description/phone_number")
+                    if (phoneNumberLoaded != GeneralVariables.variableMissingKeyword) {
+                        phoneNumber = phoneNumberLoaded.toInt()
+                        checkContactInformation()
+                    }
+
+                    val emailLoaded = json.getAttributeContentByPath("description/email")
+                    if (emailLoaded != GeneralVariables.variableMissingKeyword) {
+                        email = emailLoaded
+                        checkContactInformation()
+                    }
+
                     mainTitle?.let {
                         mainTitle.post {
-                            mainTitle.text = json.getAttributeContentByPath("description/title")
+                            val title = json.getAttributeContentByPath("description/title")
+                            if (title != GeneralVariables.variableMissingKeyword) {
+                                mainTitle.text = title
+                            }
                         }
                     }
 
                     mainDescription?.let {
                         mainDescription.post {
-                            this.mainDescription.text = json.getAttributeContentByPath("description/description_s")
+                            val description = json.getAttributeContentByPath("description/description_l")
+                            if (description != GeneralVariables.variableMissingKeyword) {
+                                mainDescription.text = description
+                            }
                         }
                     }
 
@@ -99,10 +152,11 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                         val fileInfo = JsonManagerLite(json.getAttributeContentByPath("files/$n"), "JSONObject")
                         val filetype = fileInfo.getAttributeContentByPath("format").split(".")[1]
                         val filename = fileInfo.getAttributeContentByPath("name")
+                        val fileDescription = fileInfo.getAttributeContent("description")
 
                         // handling text
                         if ("txt json".contains(filetype)) {
-                            val fileView = FileView(filetype, filename, "$serverId|||||$filename.$filetype")
+                            val fileView = FileView(filetype, filename, fileDescription, "$serverId|||||$filename.$filetype")
                             if (!FileViewsSupplier.checkIfContains(fileView)) {
                                 FileViewsSupplier.appendFileView(fileView)
                                 updateFileViewsRecyclerView()
@@ -111,7 +165,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
 
                         // handling images
                         if ("jpg png".contains(filetype)) {
-                            val fileView = FileView(filetype, filename, null, "$serverId|||||$filename.$filetype")
+                            val fileView = FileView(filetype, filename, fileDescription, null, "$serverId|||||$filename.$filetype")
                             if (!FileViewsSupplier.checkIfContains(fileView)) {
                                 FileViewsSupplier.appendFileView(fileView)
                                 updateFileViewsRecyclerView()
@@ -120,7 +174,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
 
                         // handling pdf files
                         if ("pdf".contains(filetype)) {
-                            val fileView = FileView(filetype, filename, null, null, "${ServerManagement.baseUrl}files/$serverId/$filename.$filetype")
+                            val fileView = FileView(filetype, filename, fileDescription, null, null, "${ServerManagement.baseUrl}files/$serverId/$filename.$filetype")
                             if (!FileViewsSupplier.checkIfContains(fileView)) {
                                 FileViewsSupplier.appendFileView(fileView)
                                 updateFileViewsRecyclerView()
@@ -132,7 +186,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
             }
         }
 
-        val sensorsDataReceiver: (String) -> Unit = {data: String ->
+        val sensorsDataReceiver: (String) -> Unit = { data: String ->
             try {
                 context?.let {
                     val json = JsonManager(requireContext(), data, "JSONObject")
@@ -155,9 +209,51 @@ class infoFragment : Fragment(R.layout.fragment_info) {
         }
 
         context?.let {
-            ServerManagement.serverManager.getData(dataReceiver, requireContext(), serverId, "", "GET_WHOLE_ARRAY")
+            ServerManagement.serverManager.getData(dataReceiver, requireContext(), serverId, "", "GET_WHOLE_ARRAY", 3)
             ServerManagement.serverManager.addReceiverConnection(sensorsDataReceiver, requireContext(), "infoFragmentSensorsConnection",
                     serverId, ServerManagement.sensors_keyword)
+        }
+    }
+
+    private fun getContactInfoFromGeneralVariables(numberOfAttempts: Int = 8) {
+        class RetrieveContactInfoFromGeneralVariables(val attemptsCount: Int): Runnable {
+            override fun run() {
+                for (i in 0 until attemptsCount) {
+                    phoneNumber = GeneralVariables.phoneNumber
+                    email = GeneralVariables.email
+
+                    if (phoneNumber != null) {
+                        checkContactInformation()
+                        break
+                    }
+                    if (email != null) {
+                        checkContactInformation()
+                        break
+                    }
+                    Thread.sleep(300)
+                }
+            }
+        }
+
+        val retrieveContactInfoFromGeneralVariables = Thread(RetrieveContactInfoFromGeneralVariables(numberOfAttempts))
+        retrieveContactInfoFromGeneralVariables.start()
+    }
+
+    private fun checkContactInformation() {
+        phoneNumber?.let {
+            try {
+                phoneBtn.post {
+                    phoneBtn.visibility = View.VISIBLE
+                }
+            } catch (e: Throwable) { println("[debug] Exception in checkContactInformation: $e") }
+        }
+
+        email?.let {
+            try {
+                emailBtn.post {
+                    emailBtn.visibility = View.VISIBLE
+                }
+            } catch (e: Throwable) { println("[debug] Exception in checkContactInformation: $e") }
         }
     }
 

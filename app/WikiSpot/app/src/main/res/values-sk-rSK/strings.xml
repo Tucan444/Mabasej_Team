@@ -8,6 +8,8 @@
     <string name="settings">Nastavenia</string>
     <string name="files">Súbory</string>
     <string name="dark_theme">Tmavá téma</string>
+
+
     <string name="get_number_of_sent_requests">Získať počet poslaných requestov</string>
     <string name="_2">2/2</string>
     <string name="output">Výstup</string>

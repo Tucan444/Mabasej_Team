@@ -1,6 +1,7 @@
 package com.example.wikispot.modelsForAdapters
 
-data class FileView(val filetype: String, val filename: String, var textInfo: String? = null, var imgInfo: String? = null, var pdfUrl: String? = null)
+data class FileView(val filetype: String, val filename: String, val fileDescription: String,
+                    var textInfo: String? = null, var imgInfo: String? = null, var pdfUrl: String? = null)
 
 
 object FileViewsSupplier {

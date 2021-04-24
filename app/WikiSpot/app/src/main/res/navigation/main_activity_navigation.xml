@@ -90,7 +90,7 @@
         android:label="fragment_info"
         tools:layout="@layout/fragment_info" >
         <argument
-            android:name="loadAutomatically"
+            android:name="executeLoadFuntion"
             app:argType="boolean"
             android:defaultValue="false" />
         <action

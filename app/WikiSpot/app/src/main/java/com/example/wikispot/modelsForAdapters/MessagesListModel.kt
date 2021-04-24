@@ -34,9 +34,14 @@ object MessagesSupplier {
         val array = messages.copyOf(messages.size + 1)
         array[messages.size] = message
         messages = array
+
+        if (messages.size > GeneralVariables.max_amount_of_saved_messages) {
+            deleteMessageByIndex(0)
+            println(messages.size)
+        }
     }
 
-    fun deleteMessageByIndex(i: Int) {
+    private fun deleteMessageByIndex(i: Int) {
         messages = messages.copyOfRange(0, i) + messages.copyOfRange(i + 1, messages.size)
     }
 

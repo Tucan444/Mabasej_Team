@@ -10,14 +10,12 @@ import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
 import androidx.core.content.ContextCompat.startActivity
+import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
 import com.example.wikispot.R
 import com.example.wikispot.ServerManagement
 import com.example.wikispot.modelsForAdapters.FileView
 import kotlinx.android.synthetic.main.file_view.view.*
-import java.io.File
-import java.io.FileOutputStream
-import java.net.URL
 
 
 class FileViewsAdapter(private val context: Context, private val fileViews: Array<FileView?>) : RecyclerView.Adapter<FileViewsAdapter.MyViewHolder>() {
@@ -46,6 +44,7 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                     fileView?.let {
                         textInfo?.let {
                             itemView.textContent.textSize = 18F
+                            itemView.textContent.setPadding(32)
                             val dataReceiver: (String) -> Unit = { data: String ->
                                 itemView.textContent.post {
                                     itemView.textContent.text = data
@@ -77,6 +76,7 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                 } else {
                     itemView.showFileBtn.startAnimation(rotateClose)
                     itemView.textContent.textSize = 0F
+                    itemView.textContent.setPadding(0)
 
                     val downloadBtnVanishActionThread = Thread(DownloadBtnVanishAction())
                     downloadBtnVanishActionThread.start()
@@ -124,7 +124,8 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                     pdfUrl = it
                 }
 
-                itemView.filename_text.text = fileView.filename
+                itemView.filenameText.text = fileView.filename
+                itemView.fileDescription.text = fileView.fileDescription
             }
 
             this.fileView = fileView

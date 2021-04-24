@@ -18,14 +18,14 @@
         android:padding="4dp">
 
         <TextView
-            android:id="@+id/filename_text"
+            android:id="@+id/filenameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="36dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:textColor="?attr/generalTextColor"
             android:textSize="24sp"
             android:textStyle="bold"
-            android:textColor="?attr/generalTextColor"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:layout_constraintTop_toTopOf="parent"
             tools:text="Filename" />
@@ -46,13 +46,14 @@
             android:id="@+id/textContent"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="32dp"
+            android:layout_marginTop="52dp"
+            android:textColor="?attr/secondaryTextColor"
             android:textSize="0sp"
             card_view:layout_constraintBottom_toTopOf="@+id/imageContent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.497"
             card_view:layout_constraintStart_toStartOf="parent"
-            card_view:layout_constraintTop_toBottomOf="@+id/filename_text"
+            card_view:layout_constraintTop_toBottomOf="@+id/filenameText"
             tools:ignore="SmallSp" />
 
         <ImageView
@@ -63,7 +64,7 @@
             card_view:layout_constraintBottom_toTopOf="@+id/pdfContent"
             card_view:layout_constraintEnd_toEndOf="parent"
             card_view:layout_constraintHorizontal_bias="0.5"
-            card_view:layout_constraintStart_toEndOf="@+id/filename_text"
+            card_view:layout_constraintStart_toEndOf="@+id/filenameText"
             card_view:layout_constraintStart_toStartOf="parent"
             card_view:srcCompat="@drawable/blank" />
 
@@ -88,6 +89,18 @@
             card_view:layout_constraintEnd_toStartOf="@+id/showFileBtn"
             card_view:layout_constraintTop_toTopOf="@+id/showFileBtn"
             card_view:srcCompat="@drawable/ic_baseline_download_24" />
+
+        <TextView
+            android:id="@+id/fileDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="@color/secondaryTextColor"
+            card_view:layout_constraintEnd_toStartOf="@+id/showFileBtn"
+            card_view:layout_constraintStart_toStartOf="@+id/filenameText"
+            card_view:layout_constraintTop_toBottomOf="@+id/filenameText"
+            tools:text="file_description" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

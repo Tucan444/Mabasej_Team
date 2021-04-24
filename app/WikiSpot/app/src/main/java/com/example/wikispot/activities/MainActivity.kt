@@ -168,10 +168,11 @@ class MainActivity : AppCompatActivity() {
                                     val fileInfo = JsonManagerLite(json.getAttributeContentByPath("files/$n"), "JSONObject")
                                     val filetype = fileInfo.getAttributeContentByPath("format").split(".")[1]
                                     val filename = fileInfo.getAttributeContentByPath("name")
+                                    val fileDescription = fileInfo.getAttributeContentByPath("description")
 
                                     // handling text
                                     if ("txt json".contains(filetype)) {
-                                        val fileView = FileView(filetype, filename, "$data0|||||$filename.$filetype")
+                                        val fileView = FileView(filetype, filename, fileDescription, "$data0|||||$filename.$filetype")
                                         if (!FileViewsSupplier.checkIfContains(fileView)) {
                                             FileViewsSupplier.appendFileView(fileView)
                                             updateFileViewsRecyclerView(it)
@@ -180,7 +181,7 @@ class MainActivity : AppCompatActivity() {
 
                                     // handling images
                                     if ("jpg png".contains(filetype)) {
-                                        val fileView = FileView(filetype, filename, null, "$data0|||||$filename.$filetype")
+                                        val fileView = FileView(filetype, filename, fileDescription, null, "$data0|||||$filename.$filetype")
                                         if (!FileViewsSupplier.checkIfContains(fileView)) {
                                             FileViewsSupplier.appendFileView(fileView)
                                             updateFileViewsRecyclerView(it)
@@ -189,7 +190,7 @@ class MainActivity : AppCompatActivity() {
 
                                     // handling pdf files
                                     if ("pdf".contains(filetype)) {
-                                        val fileView = FileView(filetype, filename, null, null, "${ServerManagement.baseUrl}files/$data0/$filename.$filetype")
+                                        val fileView = FileView(filetype, filename, fileDescription, null, null, "${ServerManagement.baseUrl}files/$data0/$filename.$filetype")
                                         if (!FileViewsSupplier.checkIfContains(fileView)) {
                                             FileViewsSupplier.appendFileView(fileView)
                                             updateFileViewsRecyclerView(it)

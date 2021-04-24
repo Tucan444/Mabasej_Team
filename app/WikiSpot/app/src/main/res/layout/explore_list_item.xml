@@ -39,15 +39,17 @@
 
         <TextView
             android:id="@+id/item_description"
-            android:layout_width="wrap_content"
+            android:layout_width="0dp"
             android:layout_height="wrap_content"
-            android:textColor="?attr/generalTextColor"
-            tools:text="Description"
+            android:layout_marginStart="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="?attr/secondaryTextColor"
             card_view:layout_constraintBottom_toBottomOf="parent"
             card_view:layout_constraintEnd_toStartOf="@+id/item_location_img"
             card_view:layout_constraintHorizontal_bias="0.15"
             card_view:layout_constraintStart_toEndOf="@+id/item_img"
-            card_view:layout_constraintTop_toBottomOf="@+id/item_title" />
+            card_view:layout_constraintTop_toBottomOf="@+id/item_title"
+            tools:text="Description" />
 
         <ImageView
             android:id="@+id/item_location_img"

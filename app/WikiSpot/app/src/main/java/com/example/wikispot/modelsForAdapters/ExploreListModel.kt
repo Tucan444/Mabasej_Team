@@ -8,28 +8,7 @@ import com.example.wikispot.modelClasses.JsonManagerLite
 import com.example.wikispot.saveString
 import org.json.JSONArray
 
-data class PlacePreview(var title: String, var description: String, var location: String? = null, var img: Bitmap? = null, val id: Int?=null) {
-
-    init {
-        val words = description.split(" ", "\n")
-        description = ""
-        var lastLine = ""
-
-        for (word in words) {
-            if (lastLine.length + word.length < 25) {
-                if (lastLine != "") {
-                    lastLine += " "
-                    description += " "
-                }
-                lastLine += word
-                description += word
-            } else {
-                description += "\n$word"
-                lastLine = word
-            }
-        }
-    }
-}
+data class PlacePreview(var title: String, var description: String, var location: String? = null, var img: Bitmap? = null, val id: Int?=null)
 
 object PlaceSupplier {
 

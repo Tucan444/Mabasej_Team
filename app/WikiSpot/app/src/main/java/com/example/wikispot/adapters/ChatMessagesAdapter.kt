@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.example.wikispot.ChatManagement
 import com.example.wikispot.GeneralVariables
 import com.example.wikispot.R
 import com.example.wikispot.modelsForAdapters.Message
@@ -25,15 +24,8 @@ class ChatMessagesAdapter(private val context: Context, private val messages: Ar
                 itemView.message_content_text.text = message.content
 
                 if (GeneralVariables.id == message.senderId) {
-                    itemView.message_author_text.textAlignment = View.TEXT_ALIGNMENT_TEXT_END
-                    itemView.message_content_text.textAlignment = View.TEXT_ALIGNMENT_TEXT_END
-                }
-                for (n in 0 until ChatManagement.lastNames.length()) {
-                    if (ChatManagement.lastNames[n] == message.senderId) {
-                        itemView.message_author_text.textAlignment = View.TEXT_ALIGNMENT_TEXT_END
-                        itemView.message_content_text.textAlignment = View.TEXT_ALIGNMENT_TEXT_END
-                        itemView.message_author_text.text = GeneralVariables.name
-                    }
+                    itemView.message_author_text.textAlignment = View.TEXT_ALIGNMENT_VIEW_END
+                    itemView.message_content_text.textAlignment = View.TEXT_ALIGNMENT_VIEW_END
                 }
             }
 
@@ -44,6 +36,7 @@ class ChatMessagesAdapter(private val context: Context, private val messages: Ar
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
         val message = messages[position]
+        holder.setIsRecyclable(false)
         holder.setData(message, position)
     }
 

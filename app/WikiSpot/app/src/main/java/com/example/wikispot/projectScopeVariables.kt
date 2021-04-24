@@ -12,6 +12,10 @@ object GeneralVariables {
     var id: String? = null
     var name: String? = null
 
+    var email:String? = null
+    var phoneNumber: Int? = null
+
+    const val max_amount_of_saved_messages = 32
     const val variableMissingKeyword = "_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_"
 
 }
@@ -38,10 +42,6 @@ object ServerManagement {
     var totalNumberOfRequestsSent = 0
 }
 
-object ChatManagement {
-    var lastNames = JSONArray()
-    const val numberOfNamesToCache = 4
-}
 
 object MapManagement {
     var connectedServerPosition: LatLng? = LatLng(0.toDouble(), 0.toDouble())

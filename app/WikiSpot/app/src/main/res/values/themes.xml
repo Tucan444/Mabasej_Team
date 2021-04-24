@@ -16,13 +16,12 @@
         <item name="textOnTextBgColor">@color/textOnTextBgColor</item>
         <item name="generalIconsColor">@color/generalIconsColor</item>
         <item name="generalTextColor">@color/generalTextColor</item>
+        <item name="secondaryTextColor">@color/secondaryTextColor</item>
 
         <!-- For Backgrounds -->
 
         <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColor</item>
         <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColor</item>
-
-        <item name="debugFragmentBackround" >@color/debugFragmentBg</item>
 
         <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColor</item>
         <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColor</item>
@@ -50,6 +49,8 @@
         <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColor</item>
         <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColor</item>
 
+        <item name="debugFragmentBackground" >@color/debugFragmentBg</item>
+
         <item name="contrastingGradientStartColor">@color/contrastingGradientStartColor</item>
         <item name="contrastingGradientCenterColor">@color/contrastingGradientCenterColor</item>
         <item name="contrastingGradientEndColor">@color/contrastingGradientEndColor</item>
@@ -62,7 +63,8 @@
 
         <!-- StatusBarColor -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColor</item>
-        <item name="android:windowLightStatusBar">true</item>
+
+        <item name="android:windowLightStatusBar" tools:targetApi="l">true</item>
     </style>
 
     <style name="Widget.App.BottomNavigationView" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
@@ -89,6 +91,7 @@
         <item name="textOnTextBgColor">@color/textOnTextBgColorDark</item>
         <item name="generalIconsColor">@color/generalIconsColorDark</item>
         <item name="generalTextColor">@color/generalTextColorDark</item>
+        <item name="secondaryTextColor">@color/secondaryTextColorDark</item>
 
         <!-- For Backgrounds -->
 
@@ -97,8 +100,6 @@
 
         <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColorDark</item>
         <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColorDark</item>
-
-        <item name="debugFragmentBackround" >@color/debugFragmentBgDark</item>
 
         <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColorDark</item>
         <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColorDark</item>
@@ -123,6 +124,8 @@
         <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColorDark</item>
         <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColorDark</item>
 
+        <item name="debugFragmentBackground" >@color/debugFragmentBgDark</item>
+
         <item name="contrastingGradientStartColor">@color/contrastingGradientStartColorDark</item>
         <item name="contrastingGradientCenterColor">@color/contrastingGradientCenterColorDark</item>
         <item name="contrastingGradientEndColor">@color/contrastingGradientEndColorDark</item>
@@ -135,7 +138,9 @@
 
         <!-- StatusBarColor -->
         <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColorDark</item>
+
         <item name="android:navigationBarColor">@color/black</item>
+
         <item name="android:windowLightStatusBar" tools:targetApi="l">false</item>
     </style>
 

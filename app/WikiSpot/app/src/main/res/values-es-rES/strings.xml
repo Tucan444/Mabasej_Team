@@ -8,22 +8,4 @@
     <string name="settings">Ajustes</string>
     <string name="files">Archivos</string>
     <string name="dark_theme">Tema oscuro</string>
-    <string name="get_number_of_sent_requests">Get number of sent requests</string>
-    <string name="_2">2/2</string>
-    <string name="output">output</string>
-    <string name="name" translatable="false">Name</string>
-    <string name="clear_server_connections" translatable="false">Clear server connections</string>
-    <string name="restart_app_partially" translatable="false">Restart app partially</string>
-    <string name="debug_fragment" translatable="false">Debug page 1/2</string>
-    <string name="close_app" translatable="false">Close app</string>
-    <string name="another_debug_fragment" translatable="false">Debug page 2/2</string>
-    <string name="_1" translatable="false">1/2</string>
-    <string name="generate_and_save_data" translatable="false">Generate and save data</string>
-    <string name="load_and_show_data" translatable="false">Load and Show data</string>
-    <string name="data_content" translatable="false">Data content</string>
-    <string name="attribute_path" translatable="false">Atributes path</string>
-    <string name="create_view_connection" translatable="false">Create test Connection</string>
-    <string name="stop_connection" translatable="false">Stop test Connection</string>
-    <string name="file_path" translatable="false">File path</string>
-    <string name="change_url">Change Url</string>
 </resources>

@@ -13,6 +13,8 @@ import com.example.wikispot.modelsForAdapters.MessagesSupplier
 import kotlinx.android.synthetic.main.fragment_chat.*
 import okhttp3.*
 import okhttp3.HttpUrl.Companion.toHttpUrlOrNull
+import okhttp3.MediaType.Companion.toMediaTypeOrNull
+import org.json.JSONObject
 import java.io.IOException
 
 
@@ -22,6 +24,19 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
         super.onViewCreated(view, savedInstanceState)
 
         updateRecyclerView()
+
+        writeBar.setOnClickListener {
+            val scrollDownThread = Thread(ScrollDown(300))
+            scrollDownThread.start()
+        }
+        userMessageText.setOnClickListener {
+            val scrollDownThread = Thread(ScrollDown(300))
+            scrollDownThread.start()
+        }
+        userMessageText.setOnFocusChangeListener { _, _ ->
+            val scrollDownThread = Thread(ScrollDown(300))
+            scrollDownThread.start()
+        }
 
         sendMessageBtn.setOnClickListener {
             GeneralVariables.id?.let {
@@ -46,9 +61,10 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
         loadIdFromCache()
 
         val dataReceiver: (String) -> Unit = { data: String ->
-            val json = JsonManager(requireContext(), data, "JSONObject")
 
             try {
+                val json = JsonManager(requireContext(), data, "JSONObject")
+
                 when (json.getAttributeContent("source")) {
                     "messages/register" -> {
                         GeneralVariables.id = json.getAttributeContentByPath("data/0")
@@ -123,18 +139,31 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
 
     }
 
+    inner class ScrollDown(private val after: Long): Runnable {
+        override fun run() {
+            Thread.sleep(after)
+            try {
+                chat_messages_recycler_view.post {
+                    chat_messages_recycler_view.scrollToPosition(MessagesSupplier.messages.size - 1)
+                }
+            } catch (e: Throwable) { println("[debug] e6 Exception: $e") }
+        }
+    }
+
     inner class MessagePost(private val message: Message): Runnable {
         override fun run() {
-            val urlBuilder: HttpUrl.Builder = "${ServerManagement.baseUrl}messages/post".toHttpUrlOrNull()!!.newBuilder()
-                    .addQueryParameter("m_sender", message.senderId)
-                    .addQueryParameter("message", message.content)
-            val url: String = urlBuilder.build().toString()
 
-            val formBody: FormBody = FormBody.Builder().build()
+            val url = "${ServerManagement.baseUrl}messages/post"
+
+            val json: MediaType? = "application/json; charset=utf-8".toMediaTypeOrNull()
+
+            val body:RequestBody = RequestBody.create(json, JSONObject()
+                    .put("m_sender", message.senderId)
+                    .put("message", message.content).toString())
 
             val request: Request = Request.Builder()
                     .url(url)
-                    .post(formBody)
+                    .post(body)
                     .build()
             val client = OkHttpClient()
 
