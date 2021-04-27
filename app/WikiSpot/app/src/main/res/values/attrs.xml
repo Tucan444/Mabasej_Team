@@ -39,6 +39,9 @@
     <attr name="infoFragmentGradientCenterColor" format="color"/>
     <attr name="infoFragmentGradientEndColor" format="color"/>
 
+    <attr name="fileViewBackgroundColor" format="color"/>
+    <attr name="messageBackground" format="color"/>
+
     <attr name="debugFragmentBackground" format="color"/>
 
     <attr name="contrastingGradientStartColor" format="color"/>

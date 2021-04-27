@@ -49,6 +49,9 @@
         <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColor</item>
         <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColor</item>
 
+        <item name="fileViewBackgroundColor">@color/fileViewBackgroundColor</item>
+        <item name="messageBackground"></item>
+
         <item name="debugFragmentBackground" >@color/debugFragmentBg</item>
 
         <item name="contrastingGradientStartColor">@color/contrastingGradientStartColor</item>
@@ -123,6 +126,9 @@
         <item name="infoFragmentGradientStartColor" >@color/infoFragmentGradientStartColorDark</item>
         <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColorDark</item>
         <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColorDark</item>
+
+        <item name="fileViewBackgroundColor">@color/fileViewBackgroundColorDark</item>
+        <item name="messageBackground"></item>
 
         <item name="debugFragmentBackground" >@color/debugFragmentBgDark</item>
 
