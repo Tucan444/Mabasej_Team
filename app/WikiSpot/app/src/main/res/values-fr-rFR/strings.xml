@@ -8,4 +8,9 @@
     <string name="home">Domicile</string>
     <string name="explore">Explorer</string>
     <string name="chat">Discuter</string>
+    <string name="status">Statut :</string>
+    <string name="temperature">Température :</string>
+    <string name="number_of_people">Nombre de personnes :</string>
+    <string name="open">Ouvert</string>
+    <string name="closed">Fermé</string>
 </resources>

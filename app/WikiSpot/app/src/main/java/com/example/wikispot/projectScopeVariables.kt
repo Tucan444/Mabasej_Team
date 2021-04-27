@@ -18,6 +18,8 @@ object GeneralVariables {
     const val max_amount_of_saved_messages = 32
     const val variableMissingKeyword = "_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_"
 
+    const val translatePrefix = "[translate]-"
+
 }
 
 object IntentsKeys {

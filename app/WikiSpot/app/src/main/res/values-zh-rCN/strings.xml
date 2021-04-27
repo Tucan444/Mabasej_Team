@@ -8,4 +8,9 @@
     <string name="settings">设定值</string>
     <string name="files">档案文件</string>
     <string name="dark_theme">黑暗主题</string>
+    <string name="closed">关闭</string>
+    <string name="open">打开</string>
+    <string name="number_of_people">人数 ：</string>
+    <string name="temperature">温度 ：</string>
+    <string name="status">地位 ：</string>
 </resources>

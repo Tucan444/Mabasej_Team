@@ -13,8 +13,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:textColor="?attr/generalTextColor"
-        android:text="@string/_2"
+        android:textColor="@color/white"
+        android:text="2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/debugFragmentTitle" />
 
@@ -23,8 +23,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="?attr/generalTextColor"
-        android:text="@string/get_number_of_sent_requests"
+        android:textColor="@color/white"
+        android:text="get number of sent requests"
         android:textSize="12sp"
         app:layout_constraintEnd_toStartOf="@+id/goSecondDebugFragmentBtn"
         app:layout_constraintStart_toStartOf="parent"
@@ -53,7 +53,7 @@
                 android:background="#6A5252"
                 android:backgroundTint="#E39595"
                 android:padding="4dp"
-                android:text="@string/output" />
+                android:text="output" />
         </LinearLayout>
     </ScrollView>
 
@@ -62,8 +62,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="?attr/generalTextColor"
-        android:text="@string/change_url"
+        android:textColor="@color/white"
+        android:text="change url"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/editTextIp" />
@@ -75,7 +75,6 @@
         android:layout_marginTop="16dp"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="@string/name"
         app:layout_constraintEnd_toEndOf="@+id/scrollView3"
         app:layout_constraintStart_toStartOf="@+id/scrollView3"
         app:layout_constraintTop_toBottomOf="@+id/scrollView3" />
@@ -85,8 +84,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="?attr/generalTextColor"
-        android:text="@string/clear_server_connections"
+        android:textColor="@color/white"
+        android:text="clear server connections"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -97,8 +96,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="?attr/generalTextColor"
-        android:text="@string/restart_app_partially"
+        android:textColor="@color/white"
+        android:text="restart app partially"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
@@ -109,7 +108,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="@string/debug_fragment"
+        android:text="debug fragment"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -123,8 +122,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:textColor="?attr/generalTextColor"
-        android:text="@string/close_app"
+        android:textColor="@color/white"
+        android:text="close app"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"

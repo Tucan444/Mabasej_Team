@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
-        android:text="@string/another_debug_fragment"
+        android:text="another debug fragment"
         android:textColor="#FFFFFF"
         android:textSize="30sp"
         android:textStyle="bold"
@@ -27,7 +27,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="32dp"
-        android:text="@string/_1"
+        android:textColor="@color/white"
+        android:text="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
@@ -38,7 +39,8 @@
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/generate_and_save_data"
+        android:textColor="@color/white"
+        android:text="generate and save data"
         app:layout_constraintEnd_toStartOf="@+id/goFirstDegubFragmentBtn"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
@@ -49,7 +51,8 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
         android:layout_marginTop="16dp"
-        android:text="@string/load_and_show_data"
+        android:textColor="@color/white"
+        android:text="load and show data"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/generateAndSaveDataBtn" />
 
@@ -68,7 +71,7 @@
             android:id="@+id/dataContentView"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@string/data_content"
+            android:text="data content"
             android:textAlignment="center" />
     </ScrollView>
 
@@ -78,7 +81,8 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:ems="10"
-        android:hint="@string/attribute_path"
+        android:textColor="@color/white"
+        android:hint="attribute path"
         android:inputType="textPersonName"
         app:layout_constraintStart_toStartOf="@+id/loadAndShowDataBtn"
         app:layout_constraintTop_toBottomOf="@+id/loadAndShowDataBtn" />
@@ -88,7 +92,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
-        android:text="@string/create_view_connection"
+        android:textColor="@color/white"
+        android:text="create view connection"
         android:textSize="12sp"
         app:layout_constraintStart_toStartOf="@+id/attributePathInput"
         app:layout_constraintTop_toBottomOf="@+id/attributePathInput" />
@@ -98,7 +103,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
-        android:text="@string/stop_connection"
+        android:textColor="@color/white"
+        android:text="stop connection"
         android:textSize="13sp"
         app:layout_constraintBottom_toBottomOf="@+id/attributePathInput"
         app:layout_constraintStart_toEndOf="@+id/attributePathInput"
@@ -109,7 +115,7 @@
         android:layout_width="160dp"
         android:layout_height="wrap_content"
         android:ems="10"
-        android:hint="@string/file_path"
+        android:hint="file path"
         android:inputType="textPersonName"
         app:layout_constraintBottom_toTopOf="@+id/attributePathInput"
         app:layout_constraintStart_toStartOf="@+id/loadAndShowDataBtn"

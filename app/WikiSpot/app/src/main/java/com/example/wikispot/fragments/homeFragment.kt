@@ -82,7 +82,7 @@ class homeFragment : Fragment(R.layout.fragment_home) {
             } catch (e: Throwable) { println(e) }
         }
 
-        ServerManagement.serverManager.getData(dataReceiver, requireContext(), 0, "", "GET_WHOLE_ARRAY", 3)
+        ServerManagement.serverManager.getData(dataReceiver, requireContext(), 0, "", "GET_WHOLE_ARRAY", 4)
 
     }
 

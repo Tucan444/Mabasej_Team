@@ -8,4 +8,9 @@
     <string name="home">дом</string>
     <string name="explore">просматривать</string>
     <string name="chat">чат</string>
+    <string name="temperature">Температура :</string>
+    <string name="status">Статус :</string>
+    <string name="number_of_people">Число людей :</string>
+    <string name="open">Открыть</string>
+    <string name="closed">Закрыто</string>
 </resources>

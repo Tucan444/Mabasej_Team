@@ -8,4 +8,9 @@
     <string name="files">ファイル</string>
     <string name="settings">設定</string>
     <string name="dark_theme">暗いテーマ</string>
+    <string name="closed">閉まっている</string>
+    <string name="open">開いた</string>
+    <string name="number_of_people">人々の数 ：</string>
+    <string name="status">状態 ：</string>
+    <string name="temperature">温度：</string>
 </resources>

@@ -6,24 +6,15 @@
     <string name="map">Map</string>
     <string name="settings">Settings</string>
 
+    <!-- Labeled values translated labels -->
+    <string name="temperature">Temperature :</string>
+    <string name="status">Status :</string>
+    <string name="number_of_people">Number of people :</string>
+
+    <!-- Labeled values translated values -->
+    <string name="open">Open</string>
+    <string name="closed">Closed</string>
+
     <string name="files">Files</string>
     <string name="dark_theme">Dark theme</string>
-    <string name="get_number_of_sent_requests" translatable="false">Get number of sent requests</string>
-    <string name="_2" translatable="false">2/2</string>
-    <string name="output" translatable="false">Output</string>
-    <string name="change_url" translatable="false">Change Url</string>
-    <string name="name" translatable="false">Name</string>
-    <string name="clear_server_connections" translatable="false">Clear server connections</string>
-    <string name="restart_app_partially" translatable="false">Restart app partially</string>
-    <string name="debug_fragment" translatable="false">Debug page 1/2</string>
-    <string name="close_app" translatable="false">Close app</string>
-    <string name="another_debug_fragment" translatable="false">Debug page 2/2</string>
-    <string name="_1" translatable="false">1/2</string>
-    <string name="generate_and_save_data" translatable="false">Generate and save data</string>
-    <string name="load_and_show_data" translatable="false">Load and Show data</string>
-    <string name="data_content" translatable="false">Data content</string>
-    <string name="attribute_path" translatable="false">Atributes path</string>
-    <string name="create_view_connection" translatable="false">Create test Connection</string>
-    <string name="stop_connection" translatable="false">Stop test Connection</string>
-    <string name="file_path" translatable="false">File path</string>
 </resources>

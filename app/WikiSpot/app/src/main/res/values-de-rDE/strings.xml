@@ -8,4 +8,9 @@
     <string name="settings">Einstellungen</string>
     <string name="files">Dateien</string>
     <string name="dark_theme">Dunkles Thema</string>
+    <string name="closed">Geschlossen</string>
+    <string name="open">Öffnen</string>
+    <string name="number_of_people">Anzahl der Personen :</string>
+    <string name="status">Status :</string>
+    <string name="temperature">Temperatur :</string>
 </resources>

@@ -1,9 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
+
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="invisible">#00000000</color>
 
-    <!-- Light Theme -->
     <color name="primary">#4CAF50</color>
     <color name="primaryVariant">#388E3C</color>
     <color name="onPrimary">@color/white</color>
@@ -57,7 +58,120 @@
     <color name="contrastingGradientCenterColor">#D1FBA0</color>
     <color name="contrastingGradientEndColor">#F6FEBA</color>
 
-    <!-- Dark Theme -->
+
+
+
+    <color name="primaryDark">#020C3C</color>
+    <color name="primaryVariantDark">#0E144A</color>
+    <color name="onPrimaryDark">@color/black</color>
+
+    <color name="secondaryDark">#E91E63</color>
+    <color name="secondaryVariantDark">#F48FB1</color>
+    <color name="onSecondaryDark">@color/black</color>
+
+    <color name="textOnTextBgColorDark">#F2F2F2</color>
+    <color name="generalIconsColorDark">#CCC5C5C5</color>
+    <color name="generalTextColorDark">#D6D6D6</color>
+    <color name="secondaryTextColorDark">#F0F5F5F5</color>
+
+    <color name="bottomNavBarCheckedItemColorDark">#2E6DDA</color>
+    <color name="bottomNavBarItemColorDark">#003DAC</color>
+    <color name="bottomNavBarRippleColorDark">#604B4B4B</color>
+    <color name="statusBarColorDark">#EC000000</color>
+
+    <color name="textBackgroundGradientStartColorDark" >#CEB31111</color>
+    <color name="textBackgroundGradientEndColorDark" >#B99D2A2A</color>
+
+    <color name="bottomNavBarGradientStartColorDark" >#1A1C33</color>
+    <color name="bottomNavBarGradientEndColorDark" >#262040</color>
+
+    <color name="debugFragmentBgDark">#6F3131</color>
+
+    <color name="chatFragmentGradientStartColorDark" >#5C1313</color>
+    <color name="chatFragmentGradientCenterColorDark" >#061D4B</color>
+    <color name="chatFragmentGradientEndColorDark" >#031029</color>
+    <color name="chatFragmentBgStrokeColorDark" >#191021</color>
+    <color name="chatFragmentWriteBarBgColorDark">#BF323232</color>
+
+    <color name="exploreFragmentGradientStartColorDark" >#091121</color>
+    <color name="exploreFragmentGradientCenterColorDark" >#08133A</color>
+    <color name="exploreFragmentGradientEndColorDark" >#FA481111</color>
+    <color name="exploreFragmentListItemBackgroundColorDark">#1B1A1F</color>
+.
+    <color name="homeFragmentGradientStartColorDark" >#6F0F0F</color>
+    <color name="homeFragmentGradientCenterColorDark" >#0B204A</color>
+    <color name="homeFragmentGradientEndColorDark" >#001132</color>
+
+    <color name="settingsFragmentGradientStartColorDark" >#590710</color>
+    <color name="settingsFragmentGradientCenterColorDark" >#021A44</color>
+    <color name="settingsFragmentGradientEndColorDark" >#0B1528</color>
+
+    <color name="infoFragmentGradientStartColorDark" >#0B1D4B</color>
+    <color name="infoFragmentGradientCenterColorDark" >#0E1A33</color>
+    <color name="infoFragmentGradientEndColorDark" >#710E0E</color>
+
+    <color name="contrastingGradientStartColorDark">#8833374A</color>
+    <color name="contrastingGradientCenterColorDark">#7932395E</color>
+    <color name="contrastingGradientEndColorDark">#6F252D4E</color>
+
+    <!--
+
+    <color name="primary">#A6BFFF</color>
+    <color name="primaryVariant">#6994FF</color>
+    <color name="onPrimary">@color/white</color>
+
+    <color name="secondary">#321EE9</color>
+    <color name="secondaryVariant">#F48FB1</color>
+    <color name="onSecondary">@color/black</color>
+
+    <color name="textOnTextBgColor">#fff</color>
+    <color name="generalIconsColor">#CC000000</color>
+    <color name="generalTextColor">#CC000000</color>
+    <color name="secondaryTextColor">#96262626</color>
+
+    <color name="bottomNavBarCheckedItemColor">#EC1D5CFD</color>
+    <color name="bottomNavBarItemColor">#EC5B89FF</color>
+    <color name="bottomNavBarRippleColor">#7D8DC1</color>
+    <color name="statusBarColor">#83E1FF</color>
+
+    <color name="textBackgroundGradientStartColor" >#BF74DDFF</color>
+    <color name="textBackgroundGradientEndColor" >#BF7DE0FF</color>
+
+    <color name="bottomNavBarGradientStartColor" >#EDEDED</color>
+    <color name="bottomNavBarGradientEndColor" >#F6F6F6</color>
+
+    <color name="debugFragmentBg">#FF7272</color>
+
+    <color name="chatFragmentGradientStartColor" >#83E1FF</color>
+    <color name="chatFragmentGradientCenterColor" >#4ED4FF</color>
+    <color name="chatFragmentGradientEndColor" >#83E1FF</color>
+    <color name="chatFragmentBgStrokeColor" >#CB4DD4FF</color>
+    <color name="chatFragmentWriteBarBgColor">#43FFFFFF</color>
+
+    <color name="exploreFragmentGradientStartColor" >#83E1FF</color>
+    <color name="exploreFragmentGradientCenterColor" >#4ED4FF</color>
+    <color name="exploreFragmentGradientEndColor" >#83E1FF</color>
+    <color name="exploreFragmentListItemBackgroundColor">#FDFDFD</color>
+
+    <color name="homeFragmentGradientStartColor" >#7BDFFF</color>
+    <color name="homeFragmentGradientCenterColor" >#4ED4FF</color>
+    <color name="homeFragmentGradientEndColor" >#7BDFFF</color>
+
+    <color name="settingsFragmentGradientStartColor" >#83E1FF</color>
+    <color name="settingsFragmentGradientCenterColor" >#4ED4FF</color>
+    <color name="settingsFragmentGradientEndColor" >#83E1FF</color>
+
+    <color name="infoFragmentGradientStartColor" >#83E1FF</color>
+    <color name="infoFragmentGradientCenterColor" >#4ED4FF</color>
+    <color name="infoFragmentGradientEndColor" >#83E1FF</color>
+
+    <color name="contrastingGradientStartColor">#63D9FF</color>
+    <color name="contrastingGradientCenterColor">#44D2FF</color>
+    <color name="contrastingGradientEndColor">#59D7FF</color>
+
+
+
+
     <color name="primaryDark">#000F9E</color>
     <color name="primaryVariantDark">#000B75</color>
     <color name="onPrimaryDark">@color/black</color>
@@ -69,7 +183,7 @@
     <color name="textOnTextBgColorDark">#E3E3E3</color>
     <color name="generalIconsColorDark">#CCC5C5C5</color>
     <color name="generalTextColorDark">#D6D6D6</color>
-    <color name="secondaryTextColorDark">#EFFFFFFF</color>
+    <color name="secondaryTextColorDark">#E3CDCDCD</color>
 
     <color name="bottomNavBarCheckedItemColorDark">#003898</color>
     <color name="bottomNavBarItemColorDark">#003DAC</color>
@@ -111,114 +225,6 @@
     <color name="contrastingGradientCenterColorDark">#0E275C</color>
     <color name="contrastingGradientEndColorDark">#132855</color>
 
+    -->
+
 </resources>
-
-
-<!-- Light Theme --> <!--
-<color name="primary">#A6BFFF</color>
-<color name="primaryVariant">#6994FF</color>
-<color name="onPrimary">@color/white</color>
-
-<color name="secondary">#321EE9</color>
-<color name="secondaryVariant">#F48FB1</color>
-<color name="onSecondary">@color/black</color>
-
-<color name="textOnTextBgColor">#fff</color>
-<color name="generalIconsColor">#CC000000</color>
-<color name="generalTextColor">#CC000000</color>
-
-<color name="bottomNavBarCheckedItemColor">#EC1D5CFD</color>
-<color name="bottomNavBarItemColor">#EC5B89FF</color>
-<color name="bottomNavBarRippleColor">#7D8DC1</color>
-<color name="statusBarColor">#83E1FF</color>
-
-<color name="textBackgroundGradientStartColor" >#BF74DDFF</color>
-<color name="textBackgroundGradientEndColor" >#BF7DE0FF</color>
-
-<color name="bottomNavBarGradientStartColor" >#EDEDED</color>
-<color name="bottomNavBarGradientEndColor" >#F6F6F6</color>
-
-<color name="debugFragmentBg">#FF7272</color>
-
-<color name="chatFragmentGradientStartColor" >#83E1FF</color>
-<color name="chatFragmentGradientCenterColor" >#4ED4FF</color>
-<color name="chatFragmentGradientEndColor" >#83E1FF</color>
-<color name="chatFragmentBgStrokeColor" >#CB4DD4FF</color>
-<color name="chatFragmentWriteBarBgColor">#43FFFFFF</color>
-
-<color name="exploreFragmentGradientStartColor" >#83E1FF</color>
-<color name="exploreFragmentGradientCenterColor" >#4ED4FF</color>
-<color name="exploreFragmentGradientEndColor" >#83E1FF</color>
-<color name="exploreFragmentListItemBackgroundColor">#FDFDFD</color>
-
-<color name="homeFragmentGradientStartColor" >#7BDFFF</color>
-<color name="homeFragmentGradientCenterColor" >#4ED4FF</color>
-<color name="homeFragmentGradientEndColor" >#7BDFFF</color>
-
-<color name="settingsFragmentGradientStartColor" >#83E1FF</color>
-<color name="settingsFragmentGradientCenterColor" >#4ED4FF</color>
-<color name="settingsFragmentGradientEndColor" >#83E1FF</color>
-
-<color name="infoFragmentGradientStartColor" >#83E1FF</color>
-<color name="infoFragmentGradientCenterColor" >#4ED4FF</color>
-<color name="infoFragmentGradientEndColor" >#83E1FF</color>
-
-<color name="contrastingGradientStartColor">#63D9FF</color>
-<color name="contrastingGradientCenterColor">#44D2FF</color>
-<color name="contrastingGradientEndColor">#59D7FF</color> -->
-
-<!-- Dark Theme --> <!--
-<color name="primaryDark">#000F9E</color>
-<color name="primaryVariantDark">#000B75</color>
-<color name="onPrimaryDark">@color/black</color>
-
-<color name="secondaryDark">#0320DA</color>
-<color name="secondaryVariantDark">#3954FF</color>
-<color name="onSecondaryDark">@color/black</color>
-
-<color name="textOnTextBgColorDark">#E3E3E3</color>
-<color name="generalIconsColorDark">#CCC5C5C5</color>
-<color name="generalTextColorDark">#D6D6D6</color>
-<color name="secondaryTextColor">#96262626</color>
-
-<color name="bottomNavBarCheckedItemColorDark">#003898</color>
-<color name="bottomNavBarItemColorDark">#003DAC</color>
-<color name="bottomNavBarRippleColorDark">#091961</color>
-<color name="statusBarColorDark">#00143A</color>
-
-<color name="textBackgroundGradientStartColorDark" >#80000C5C</color>
-<color name="textBackgroundGradientEndColorDark" >#80001A5C</color>
-
-<color name="bottomNavBarGradientStartColorDark" >#1B1B1B</color>
-<color name="bottomNavBarGradientEndColorDark" >#0E0E0E</color>
-
-<color name="debugFragmentBgDark">#5E0000</color>
-
-<color name="chatFragmentGradientStartColorDark" >#00143A</color>
-<color name="chatFragmentGradientCenterColorDark" >#001235</color>
-<color name="chatFragmentGradientEndColorDark" >#00143A</color>
-<color name="chatFragmentBgStrokeColorDark" >#00062C</color>
-<color name="chatFragmentWriteBarBgColorDark">#BF1C1C1C</color>
-
-<color name="exploreFragmentGradientStartColorDark" >#00143A</color>
-<color name="exploreFragmentGradientCenterColorDark" >#001235</color>
-<color name="exploreFragmentGradientEndColorDark" >#00143A</color>
-<color name="exploreFragmentListItemBackgroundColorDark">#171717</color>
-
-<color name="homeFragmentGradientStartColorDark" >#00143A</color>
-<color name="homeFragmentGradientCenterColorDark" >#001235</color>
-<color name="homeFragmentGradientEndColorDark" >#00143A</color>
-
-<color name="settingsFragmentGradientStartColorDark" >#00143A</color>
-<color name="settingsFragmentGradientCenterColorDark" >#001235</color>
-<color name="settingsFragmentGradientEndColorDark" >#00143A</color>
-
-<color name="infoFragmentGradientStartColorDark" >#001030</color>
-<color name="infoFragmentGradientCenterColorDark" >#000D27</color>
-<color name="infoFragmentGradientEndColorDark" >#001030</color>
-
-<color name="contrastingGradientStartColorDark">#132855</color>
-<color name="contrastingGradientCenterColorDark">#0E275C</color>
-<color name="contrastingGradientEndColorDark">#132855</color>
-
-</resources> -->

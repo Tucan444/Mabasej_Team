@@ -9,23 +9,9 @@
     <string name="files">Súbory</string>
     <string name="dark_theme">Tmavá téma</string>
 
-
-    <string name="get_number_of_sent_requests">Získať počet poslaných requestov</string>
-    <string name="_2">2/2</string>
-    <string name="output">Výstup</string>
-    <string name="change_url">Zmeniť Url</string>
-    <string name="name" translatable="false">Meno</string>
-    <string name="clear_server_connections" translatable="false">Vyčistiť cache</string>
-    <string name="restart_app_partially" translatable="false">Reštartovať aplikáciu</string>
-    <string name="debug_fragment" translatable="false">Debug 1/2</string>
-    <string name="close_app" translatable="false">Zatvoriť aplikáciu</string>
-    <string name="another_debug_fragment" translatable="false">Debug 2/2</string>
-    <string name="_1" translatable="false">1/2</string>
-    <string name="generate_and_save_data" translatable="false">Vygenerovať a uložiť dáta</string>
-    <string name="load_and_show_data" translatable="false">Načítať dáta</string>
-    <string name="data_content" translatable="false">Obsah dát</string>
-    <string name="attribute_path" translatable="false">Cesta (atributes)</string>
-    <string name="create_view_connection" translatable="false">Vytvoriť test spojenie</string>
-    <string name="stop_connection" translatable="false">Zastaviť test spojenie</string>
-    <string name="file_path" translatable="false">Cesta (súbor)</string>
+    <string name="status">Status :</string>
+    <string name="number_of_people">Počet ľudí :</string>
+    <string name="open">Otvorené</string>
+    <string name="closed">Zatvorené</string>
+    <string name="temperature">Teplota :</string>
 </resources>
