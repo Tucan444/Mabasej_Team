@@ -31,7 +31,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
     var location: LatLng? = null
     var phoneNumber: Int? = null
     var email: String? = null
-    var executeLoadFuntion = false
+    var executeLoadFunction = false
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
@@ -42,17 +42,21 @@ class infoFragment : Fragment(R.layout.fragment_info) {
         updateFileViewsRecyclerView()
 
         try {
-            executeLoadFuntion = args.executeLoadFuntion
-        } catch (e: Throwable) { println("[debug] Exception in Info Fragment while getting args: $e") }
+            executeLoadFunction = args.executeLoadFuntion
+        } catch (e: Throwable) {
+            if (!e.toString().contains("has null arguments")){
+                println("[debug] Exception in Info Fragment while getting args: $e")
+            }
+        }
 
-        if (executeLoadFuntion) {
+        if (executeLoadFunction) {
             load()
         } else {
             getContactInfoFromGeneralVariables()
         }
 
         locationBtn.setOnClickListener {
-            if (executeLoadFuntion) {
+            if (executeLoadFunction) {
                 if (location != null) {
                     val action = infoFragmentDirections.infoFragmentToMapFragment(location!!)
                     Navigation.findNavController(it).navigate(action)
@@ -243,7 +247,9 @@ class infoFragment : Fragment(R.layout.fragment_info) {
         phoneNumber?.let {
             try {
                 phoneBtn.post {
-                    phoneBtn.visibility = View.VISIBLE
+                    phoneBtn?.let {
+                        phoneBtn.visibility = View.VISIBLE
+                    }
                 }
             } catch (e: Throwable) { println("[debug] Exception in checkContactInformation: $e") }
         }
@@ -251,7 +257,9 @@ class infoFragment : Fragment(R.layout.fragment_info) {
         email?.let {
             try {
                 emailBtn.post {
-                    emailBtn.visibility = View.VISIBLE
+                    emailBtn?.let {
+                        emailBtn.visibility = View.VISIBLE
+                    }
                 }
             } catch (e: Throwable) { println("[debug] Exception in checkContactInformation: $e") }
         }

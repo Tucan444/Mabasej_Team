@@ -97,7 +97,6 @@ class chatFragment : Fragment(R.layout.fragment_chat) {
                         MessagesSupplier.clearWaitingMessages()
 
                         for (i in 0 until length) {
-                            println("message at index n: ${json.getAttributeContentByPath("data/$i")}")
                             val jsonOfMessage = JsonManager(requireContext(), json.getAttributeContentByPath("data/$i"), "JSONObject")
                             val message = Message(jsonOfMessage.getAttributeContent("sender"),
                                     jsonOfMessage.getAttributeContent("message"),

@@ -48,9 +48,6 @@
         <action
             android:id="@+id/mapFragment_to_infoFragment"
             app:destination="@id/infoFragment" >
-            <argument
-                android:name="loadAutomatically"
-                android:defaultValue="true" />
         </action>
         <argument
             android:name="loadLastCoordinates"

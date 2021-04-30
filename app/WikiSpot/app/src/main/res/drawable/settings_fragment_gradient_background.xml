@@ -4,6 +4,7 @@
 
     <gradient
         android:centerY="0.7"
+        android:centerX="1.1"
         android:startColor="?attr/settingsFragmentGradientStartColor"
         android:centerColor="?attr/settingsFragmentGradientCenterColor"
         android:endColor="?attr/settingsFragmentGradientEndColor"

@@ -87,14 +87,12 @@ class mapFragment : Fragment(), GoogleMap.OnMarkerClickListener {
                         CustomBackstackVariables.infoFragmentBackDestination = "mapFragment"
                         MapManagement.lastCoordinates = marker.position
                         ServerManagement.selectedServerId = PlaceSupplier.places[n]!!.id!!
-                        val action = mapFragmentDirections.mapFragmentToInfoFragment()
+                        val action = mapFragmentDirections.mapFragmentToInfoFragment(true)
                         Navigation.findNavController(navControllerView).navigate(action)
                     }
                 }
             }
             lastClickedMarkerTitle = marker.title
-            println("[debug] marker title ${marker.title}")
-            println(System.currentTimeMillis())
         }
         return false
     }

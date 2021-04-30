@@ -206,35 +206,50 @@ class ServerManager {
 
     fun deleteConnection(connectionName: String, connectionType: String = "any") {  // other types are any, activity and view
         if ((connectionType == "any") or (connectionType == "receiver")) {
+            val indexesToRemove = mutableListOf<Int>()
             for (i in 0 until receiverConnections.size) {  // checking in connections
                 try {
                     if (receiverConnections[i].connectionName == connectionName) {
                         receiverConnections[i].running = false
-                        receiverConnections.removeAt(i)
+                        indexesToRemove.add(i)
                     }
                 } catch (e: Throwable) { println("In deleteConnection: $e") }
+            }
+
+            for (i in 0 until indexesToRemove.size) {
+                receiverConnections.removeAt(indexesToRemove[i] - i)
             }
         }
 
         if ((connectionType == "any") or (connectionType == "view")) {
+            val indexesToRemove = mutableListOf<Int>()
             for (i in 0 until viewConnections.size) {  // checking in connections
                 try {
                     if (viewConnections[i].connectionName == connectionName) {
                         viewConnections[i].running = false
-                        viewConnections.removeAt(i)
+                        indexesToRemove.add(i)
                     }
                 } catch (e: Throwable) { println("In deleteConnection: $e") }
+            }
+
+            for (i in 0 until indexesToRemove.size) {
+                viewConnections.removeAt(indexesToRemove[i] - i)
             }
         }
 
         if ((connectionType == "any") or (connectionType == "chat")) {
+            val indexesToRemove = mutableListOf<Int>()
             for (i in 0 until chatConnections.size) {  // checking in connections
                 try {
                     if (chatConnections[i].connectionName == connectionName) {
                         chatConnections[i].running = false
-                        chatConnections.removeAt(i)
+                        indexesToRemove.add(i)
                     }
                 } catch (e: Throwable) { println("In deleteConnection: $e") }
+            }
+
+            for (i in 0 until indexesToRemove.size) {
+                chatConnections.removeAt(indexesToRemove[i] - i)
             }
         }
     }

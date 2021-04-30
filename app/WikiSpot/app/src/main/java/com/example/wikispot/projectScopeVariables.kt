@@ -37,6 +37,7 @@ object ServerManagement {
     const val dataRequestOnAttemptWait: Long = 2000
     const val imageRequestOnAttemptWait: Long = 2000
     var baseUrl = "http://192.168.1.156:8000/"
+    var connectedServerId: Int? = null
     var selectedServerId = 0
 
     const val sensors_keyword = "_[{(S,e,n,s,o,r,s)}]_"

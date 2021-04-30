@@ -13,7 +13,7 @@
     <color name="secondaryVariant">#F48FB1</color>
     <color name="onSecondary">@color/black</color>
 
-    <color name="textOnTextBgColor">#fff</color>
+    <color name="textOnTextBgColor">#E6FFFFFF</color>
     <color name="generalIconsColor">#89000000</color>
     <color name="generalTextColor">#89000000</color>
     <color name="secondaryTextColor">#96262626</color>
@@ -38,7 +38,7 @@
     <color name="exploreFragmentGradientStartColor" >#A1DEFC</color>
     <color name="exploreFragmentGradientCenterColor" >#A5CBFF</color>
     <color name="exploreFragmentGradientEndColor" >#F9B6F6</color>
-    <color name="exploreFragmentListItemBackgroundColor">#fff</color>
+    <color name="exploreFragmentListItemBackgroundColor">#FBF1FF</color>
 
     <color name="homeFragmentGradientStartColor" >#83E1FF</color>
     <color name="homeFragmentGradientCenterColor" >#9EC6FF</color>
@@ -57,9 +57,15 @@
 
     <color name="debugFragmentBg">#FF7272</color>
 
-    <color name="contrastingGradientStartColor">#C4FFA5</color>
-    <color name="contrastingGradientCenterColor">#D1FBA0</color>
-    <color name="contrastingGradientEndColor">#F6FEBA</color>
+    <!--
+    <color name="contrastingGradientStartColor">#99B0E4FE</color>
+    <color name="contrastingGradientCenterColor">#66B6E6EE</color>
+    <color name="contrastingGradientEndColor">#99C0D4FB</color> -->
+
+
+    <color name="contrastingGradientStartColor">#99C8FCFF</color>
+    <color name="contrastingGradientCenterColor">#99CCF7FF</color>
+    <color name="contrastingGradientEndColor">#99E7EFFF</color>
 
 
 
@@ -72,53 +78,57 @@
     <color name="secondaryVariantDark">#F48FB1</color>
     <color name="onSecondaryDark">@color/black</color>
 
-    <color name="textOnTextBgColorDark">#F2F2F2</color>
-    <color name="generalIconsColorDark">#CCC5C5C5</color>
-    <color name="generalTextColorDark">#D6D6D6</color>
-    <color name="secondaryTextColorDark">#F0F5F5F5</color>
+    <color name="textOnTextBgColorDark">#E7E7E7</color>
+    <color name="generalIconsColorDark">#CCBEBEBE</color>
+    <color name="generalTextColorDark">#CCCCCC</color>
+    <color name="secondaryTextColorDark">#CDE0DFDF</color>
 
-    <color name="bottomNavBarCheckedItemColorDark">#4343E6</color>
-    <color name="bottomNavBarItemColorDark">#0C16AA</color>
-    <color name="bottomNavBarRippleColorDark">#604B4B4B</color>
+    <color name="bottomNavBarCheckedItemColorDark">#F76751F8</color>
+    <color name="bottomNavBarItemColorDark">#F75241C2</color>
+    <color name="bottomNavBarRippleColorDark">#26644F69</color>
     <color name="statusBarColorDark">#EC000000</color>
 
-    <color name="textBackgroundGradientStartColorDark" >#A3422392</color>
-    <color name="textBackgroundGradientEndColorDark" >#9451357D</color>
+    <color name="textBackgroundGradientStartColorDark" >#80AC78C4</color>
+    <color name="textBackgroundGradientEndColorDark" >#80855C95</color>
 
-    <color name="bottomNavBarGradientStartColorDark" >#0F0F1C</color>
-    <color name="bottomNavBarGradientEndColorDark" >#0F0B15</color>
+    <color name="bottomNavBarGradientStartColorDark" >#33284E</color>
+    <color name="bottomNavBarGradientEndColorDark" >#302444</color>
 
-    <color name="fileViewBackgroundColorDark">#2643386A</color>
-    <color name="messageBackgroundColorDark">#2643386A</color>
+    <color name="fileViewBackgroundColorDark">#4D473D6A</color>
+    <color name="messageBackgroundColorDark">#2DC39CE1</color>
 
     <color name="debugFragmentBgDark">#6F3131</color>
 
-    <color name="chatFragmentGradientStartColorDark" >#36135C</color>
-    <color name="chatFragmentGradientCenterColorDark" >#06134B</color>
-    <color name="chatFragmentGradientEndColorDark" >#030729</color>
-    <color name="chatFragmentBgStrokeColorDark" >#191021</color>
+    <color name="chatFragmentGradientStartColorDark" >#4D306D</color>
+    <color name="chatFragmentGradientCenterColorDark" >#222D54</color>
+    <color name="chatFragmentGradientEndColorDark" >#1D2043</color>
+    <color name="chatFragmentBgStrokeColorDark" >#221934</color>
     <color name="chatFragmentWriteBarBgColorDark">#BF323232</color>
 
-    <color name="exploreFragmentGradientStartColorDark" >#091121</color>
-    <color name="exploreFragmentGradientCenterColorDark" >#08133A</color>
-    <color name="exploreFragmentGradientEndColorDark" >#FA2D1148</color>
-    <color name="exploreFragmentListItemBackgroundColorDark">#1B1A1F</color>
+    <color name="exploreFragmentGradientStartColorDark" >#1E293E</color>
+    <color name="exploreFragmentGradientCenterColorDark" >#212C51</color>
+    <color name="exploreFragmentGradientEndColorDark" >#FA452862</color>
+    <color name="exploreFragmentListItemBackgroundColorDark">#323251</color>
 .
-    <color name="homeFragmentGradientStartColorDark" >#001132</color>
-    <color name="homeFragmentGradientCenterColorDark" >#0B204A</color>
-    <color name="homeFragmentGradientEndColorDark" >#36054F</color>
+    <color name="homeFragmentGradientStartColorDark" >#263863</color>
+    <color name="homeFragmentGradientCenterColorDark" >#1F2360</color>
+    <color name="homeFragmentGradientEndColorDark" >#452159</color>
 
-    <color name="settingsFragmentGradientStartColorDark" >#2D145B</color>
-    <color name="settingsFragmentGradientCenterColorDark" >#140945</color>
-    <color name="settingsFragmentGradientEndColorDark" >#0F1237</color>
+    <color name="settingsFragmentGradientStartColorDark" >#4B3377</color>
+    <color name="settingsFragmentGradientCenterColorDark" >#352C5B</color>
+    <color name="settingsFragmentGradientEndColorDark" >#2B2E5C</color>
 
-    <color name="infoFragmentGradientStartColorDark" >#380B4B</color>
-    <color name="infoFragmentGradientCenterColorDark" >#0E1A33</color>
-    <color name="infoFragmentGradientEndColorDark" >#0B1D4B</color>
+    <color name="infoFragmentGradientStartColorDark" >#542766</color>
+    <color name="infoFragmentGradientCenterColorDark" >#1A294A</color>
+    <color name="infoFragmentGradientEndColorDark" >#2A3B65</color>
 
-    <color name="contrastingGradientStartColorDark">#8833374A</color>
+    <color name="contrastingGradientStartColorDark">#8842475F</color>
+    <color name="contrastingGradientCenterColorDark">#79454D78</color>
+    <color name="contrastingGradientEndColorDark">#6F363F67</color>
+
+    <!--<color name="contrastingGradientStartColorDark">#8833374A</color>
     <color name="contrastingGradientCenterColorDark">#7932395E</color>
-    <color name="contrastingGradientEndColorDark">#6F252D4E</color>
+    <color name="contrastingGradientEndColorDark">#6F252D4E</color> -->
 
     <!--
 
