@@ -15,6 +15,7 @@ class SettingsSaveManager(val context: Context) {
         val sharedPreferences = context.getSharedPreferences("settings", Context.MODE_PRIVATE)
 
         ThemeOptions.darkTheme = sharedPreferences.getBoolean("darkMode", ThemeOptions.darkTheme)
+        ThemeOptions.moreColors = sharedPreferences.getBoolean("moreColors", ThemeOptions.moreColors)
 
         // checking if we want to use system default theme
         try {
@@ -38,6 +39,7 @@ class SettingsSaveManager(val context: Context) {
         editor.apply{
             putBoolean("appRunningFirstTime", false)
             putBoolean("darkMode", ThemeOptions.darkTheme)
+            putBoolean("moreColors", ThemeOptions.moreColors)
         }.apply()
     }
 

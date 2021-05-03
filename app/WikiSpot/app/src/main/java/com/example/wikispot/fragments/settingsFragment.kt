@@ -1,6 +1,7 @@
 package com.example.wikispot.fragments
 
 import android.content.Intent
+import android.content.res.Resources
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.View
@@ -10,6 +11,7 @@ import com.example.wikispot.activities.MainActivity
 import com.example.wikispot.modelClasses.ServerManager
 import com.example.wikispot.modelClasses.SettingsSaveManager
 import kotlinx.android.synthetic.main.fragment_settings.*
+import javax.xml.transform.sax.TemplatesHandler
 
 
 class settingsFragment : Fragment(R.layout.fragment_settings) {
@@ -41,12 +43,17 @@ class settingsFragment : Fragment(R.layout.fragment_settings) {
             settingsSaveManager.saveSettings()
             restartAppPartially()
         }
+
+        moreColorsSwitch.setOnCheckedChangeListener { _, isChecked ->
+            ThemeOptions.moreColors = isChecked
+            settingsSaveManager.saveSettings()
+            restartAppPartially()
+        }
     }
 
     private fun loadSettings() {
-        if (ThemeOptions.darkTheme) {
-            darkThemeSwitch.isChecked = true
-        }
+        darkThemeSwitch.isChecked = ThemeOptions.darkTheme
+        moreColorsSwitch.isChecked = ThemeOptions.moreColors
     }
 
     private fun restartAppPartially() {

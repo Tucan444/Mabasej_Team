@@ -124,7 +124,7 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                     pdfUrl = it
                 }
 
-                itemView.filenameText.text = fileView.filename
+                itemView.filenameText.text = fileView.filename.replace("_", " ")
                 itemView.fileDescription.text = fileView.fileDescription
             }
 

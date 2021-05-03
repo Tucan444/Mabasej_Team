@@ -158,4 +158,163 @@
     <style name="ThemeOverlay.App.BottomNavigationViewDark" parent="">
         <item name="colorOnPrimary">@color/bottomNavBarItemColorDark</item>
     </style>
+
+    <!-- Colorful light theme -->
+
+    <style name="Theme.WikiSpot_" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primary_</item>
+        <item name="colorPrimaryVariant">@color/primaryVariant_</item>
+        <item name="colorOnPrimary">@color/onPrimary_</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondary_</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariant_</item>
+        <item name="colorOnSecondary">@color/onSecondary_</item>
+
+        <!-- General -->
+        <item name="textOnTextBgColor">@color/textOnTextBgColor_</item>
+        <item name="generalIconsColor">@color/generalIconsColor_</item>
+        <item name="generalTextColor">@color/generalTextColor_</item>
+        <item name="secondaryTextColor">@color/secondaryTextColor_</item>
+
+        <!-- For Backgrounds -->
+
+        <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColor_</item>
+        <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColor_</item>
+
+        <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColor_</item>
+        <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColor_</item>
+
+        <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColor_</item>
+        <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColor_</item>
+        <item name="chatFragmentGradientEndColor" >@color/chatFragmentGradientEndColor_</item>
+        <item name="chatFragmentBgStrokeColor">@color/chatFragmentBgStrokeColor_</item>
+        <item name="chatFragmentWriteBarBgColor">@color/chatFragmentWriteBarBgColor_</item>
+
+        <item name="exploreFragmentGradientStartColor" >@color/exploreFragmentGradientStartColor_</item>
+        <item name="exploreFragmentGradientCenterColor" >@color/exploreFragmentGradientCenterColor_</item>
+        <item name="exploreFragmentGradientEndColor" >@color/exploreFragmentGradientEndColor_</item>
+        <item name="exploreFragmentListItemBackgroundColor">@color/exploreFragmentListItemBackgroundColor_</item>
+
+        <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColor_</item>
+        <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColor_</item>
+        <item name="homeFragmentGradientEndColor" >@color/homeFragmentGradientEndColor_</item>
+
+        <item name="settingsFragmentGradientStartColor" >@color/settingsFragmentGradientStartColor_</item>
+        <item name="settingsFragmentGradientCenterColor" >@color/settingsFragmentGradientCenterColor_</item>
+        <item name="settingsFragmentGradientEndColor" >@color/settingsFragmentGradientEndColor_</item>
+
+        <item name="infoFragmentGradientStartColor" >@color/infoFragmentGradientStartColor_</item>
+        <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColor_</item>
+        <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColor_</item>
+
+        <item name="fileViewBackgroundColor">@color/fileViewBackgroundColor_</item>
+        <item name="messageBackground">@color/messageBackgroundColor_</item>
+
+        <item name="debugFragmentBackground" >@color/debugFragmentBg_</item>
+
+        <item name="contrastingGradientStartColor">@color/contrastingGradientStartColor_</item>
+        <item name="contrastingGradientCenterColor">@color/contrastingGradientCenterColor_</item>
+        <item name="contrastingGradientEndColor">@color/contrastingGradientEndColor_</item>
+
+        <!-- BottomNavCheckedItemColor -->
+        <item name="bottomNavBarCheckedItemColor">@color/bottomNavBarCheckedItemColor_</item>
+        <item name="bottomNavBarRippleColor">@color/bottomNavBarRippleColor_</item>
+
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationView_</item>
+
+        <!-- StatusBarColor -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColor_</item>
+
+        <item name="android:windowLightStatusBar" tools:targetApi="l">true</item>
+    </style>
+
+    <style name="Widget.App.BottomNavigationView_" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationView_</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationView_" parent="">
+        <item name="colorOnPrimary">@color/bottomNavBarItemColor_</item>
+    </style>
+
+    <!-- Colorful dark theme -->
+
+    <style name="Theme.WikiSpotDark_" parent="Theme.MaterialComponents.DayNight.NoActionBar">
+        <!-- Primary brand color. -->
+        <item name="colorPrimary">@color/primaryDark_</item>
+        <item name="colorPrimaryVariant">@color/primaryVariantDark_</item>
+        <item name="colorOnPrimary">@color/onPrimaryDark_</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">@color/secondaryDark_</item>
+        <item name="colorSecondaryVariant">@color/secondaryVariantDark_</item>
+        <item name="colorOnSecondary">@color/onSecondaryDark_</item>
+
+        <!-- General -->
+        <item name="textOnTextBgColor">@color/textOnTextBgColorDark_</item>
+        <item name="generalIconsColor">@color/generalIconsColorDark_</item>
+        <item name="generalTextColor">@color/generalTextColorDark_</item>
+        <item name="secondaryTextColor">@color/secondaryTextColorDark_</item>
+
+        <!-- For Backgrounds -->
+
+        <item name="textBackgroundGradientStartColor" >@color/textBackgroundGradientStartColorDark_</item>
+        <item name="textBackgroundGradientEndColor" >@color/textBackgroundGradientEndColorDark_</item>
+
+        <item name="bottomNavBarGradientStartColor" >@color/bottomNavBarGradientStartColorDark_</item>
+        <item name="bottomNavBarGradientEndColor" >@color/bottomNavBarGradientEndColorDark_</item>
+
+        <item name="chatFragmentGradientStartColor" >@color/chatFragmentGradientStartColorDark_</item>
+        <item name="chatFragmentGradientCenterColor" >@color/chatFragmentGradientCenterColorDark_</item>
+        <item name="chatFragmentGradientEndColor" >@color/chatFragmentGradientEndColorDark_</item>
+        <item name="chatFragmentBgStrokeColor">@color/chatFragmentBgStrokeColorDark_</item>
+        <item name="chatFragmentWriteBarBgColor">@color/chatFragmentWriteBarBgColorDark_</item>
+
+        <item name="exploreFragmentGradientStartColor" >@color/exploreFragmentGradientStartColorDark_</item>
+        <item name="exploreFragmentGradientCenterColor" >@color/exploreFragmentGradientCenterColorDark_</item>
+        <item name="exploreFragmentGradientEndColor" >@color/exploreFragmentGradientEndColorDark_</item>
+        <item name="exploreFragmentListItemBackgroundColor">@color/exploreFragmentListItemBackgroundColorDark_</item>
+
+        <item name="homeFragmentGradientStartColor" >@color/homeFragmentGradientStartColorDark_</item>
+        <item name="homeFragmentGradientCenterColor" >@color/homeFragmentGradientCenterColorDark_</item>
+        <item name="homeFragmentGradientEndColor" >@color/homeFragmentGradientEndColorDark_</item>
+
+        <item name="settingsFragmentGradientStartColor" >@color/settingsFragmentGradientStartColorDark_</item>
+        <item name="settingsFragmentGradientCenterColor" >@color/settingsFragmentGradientCenterColorDark_</item>
+        <item name="settingsFragmentGradientEndColor" >@color/settingsFragmentGradientEndColorDark_</item>
+
+        <item name="infoFragmentGradientStartColor" >@color/infoFragmentGradientStartColorDark_</item>
+        <item name="infoFragmentGradientCenterColor" >@color/infoFragmentGradientCenterColorDark_</item>
+        <item name="infoFragmentGradientEndColor" >@color/infoFragmentGradientEndColorDark_</item>
+
+        <item name="fileViewBackgroundColor">@color/fileViewBackgroundColorDark_</item>
+        <item name="messageBackground">@color/messageBackgroundColorDark_</item>
+
+        <item name="debugFragmentBackground" >@color/debugFragmentBgDark</item>
+
+        <item name="contrastingGradientStartColor">@color/contrastingGradientStartColorDark_</item>
+        <item name="contrastingGradientCenterColor">@color/contrastingGradientCenterColorDark_</item>
+        <item name="contrastingGradientEndColor">@color/contrastingGradientEndColorDark_</item>
+
+        <!-- BottomNavCheckedItemColor -->
+        <item name="bottomNavBarCheckedItemColor">@color/bottomNavBarCheckedItemColorDark_</item>
+        <item name="bottomNavBarRippleColor">@color/bottomNavBarRippleColorDark_</item>
+
+        <item name="bottomNavigationStyle">@style/Widget.App.BottomNavigationViewDark_</item>
+
+        <!-- StatusBarColor -->
+        <item name="android:statusBarColor" tools:targetApi="l">@color/statusBarColorDark_</item>
+
+        <item name="android:navigationBarColor">@color/black</item>
+
+        <item name="android:windowLightStatusBar" tools:targetApi="l">false</item>
+    </style>
+
+
+    <style name="Widget.App.BottomNavigationViewDark_" parent="Widget.MaterialComponents.BottomNavigationView.Colored">
+        <item name="materialThemeOverlay">@style/ThemeOverlay.App.BottomNavigationViewDark_</item>
+    </style>
+
+    <style name="ThemeOverlay.App.BottomNavigationViewDark_" parent="">
+        <item name="colorOnPrimary">@color/bottomNavBarItemColorDark_</item>
+    </style>
 </resources>

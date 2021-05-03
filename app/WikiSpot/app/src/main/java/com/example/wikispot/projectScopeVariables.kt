@@ -65,6 +65,7 @@ object CustomBackstackVariables {
 
 object ThemeOptions {
     var darkTheme = false
+    var moreColors = false
 }
 
 object StartDirections {
