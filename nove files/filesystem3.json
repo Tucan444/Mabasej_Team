@@ -1,0 +1,22 @@
+{
+  "ID": 3,
+  "location": "49.10101907820781, 18.440001048091226",
+  "description": {
+    "title": "Považsko Bystrické Múzeum",
+    "description_s": "Otvorené",
+    "description_l": "Otváracie hodiny:\nUT-PIA: 08:00 - 16:00",
+    "photo_s": "muzeum_out.jpg",
+    "photo_b": "muzeum_in.jpg"
+  },
+  "files3": [
+    {
+      "name": "Cenník",
+      "format": ".pdf",
+      "description": "toto je jpg test file"
+    }, {
+      "name": "Náhľad",
+      "format": ".pdf",
+      "description": "jedalny listok"
+    }
+  ]
+}
