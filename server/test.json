@@ -18,6 +18,11 @@
       "name": "test2",
       "format": ".txt",
       "description": "toto je txt test file"
+    },
+    {
+      "name": "Wikispot",
+      "format": "docx",
+      "description": "Test"
     }
   ]
 }

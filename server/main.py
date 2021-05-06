@@ -12,6 +12,20 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 
+devs = {
+    "Matej Justus": {
+        "git": "https://github.com/UntriexTv", "mail": "maco.justus@gmail.com"},
+    "Benjamin Kojda": {
+        "git": "https://github.com/Tucan444", "mail": "ben4442004@gmail.com"
+    },
+    "Jakub Ďuriš": {
+        "git": "https://github.com/ff0082", "mail": "jakub1.duris@gmail.com"
+    },
+    "Samuel Šubika": {
+          "git": "https://github.com/JustSteel", "mail": "SteelSamko2000@gmail.com"}
+}
+
+
 check = engine.Scan()
 check.check_to_go()
 if check.state_list["error"]:
@@ -168,7 +182,7 @@ def get_file(IDx: int, file: str, request: Request):
             return f"ERROR: {file} does not exist."
         log.message(f"Downloaded {file} from {server_ip}")
         if ".txt" in file:
-            with open(f"cache/{IDx}/{file}", "wb", encoding='utf-8') as save:
+            with open(f"cache/{IDx}/{file}", "wb") as save:
                 save.write(bytes(r.content))
         else:
             with open(f"cache/{IDx}/{file}", "wb") as save:
@@ -176,16 +190,21 @@ def get_file(IDx: int, file: str, request: Request):
         return FileResponse(f"cache/{IDx}/{file}")
 
 
-@app.post("/update_sensor")
-def update_sensors(data: Sensor, request: Request):
+@app.post("/{IDx}/update_sensor")
+def update_sensors(data: Sensor, request: Request, IDx: int):
     global sensors
-    if data.name in sensors:
-        log.message(f"{request.client.host} updated sensor {data.name} with value {data.value}")
-        sensors[data.name] = data.value
+    if IDx == ID:
+        if data.name in sensors:
+            log.message(f"{request.client.host} updated sensor {data.name} with value {data.value}")
+            sensors[data.name] = data.value
+        else:
+            log.warning(f"{request.client} created new sensor.\n SENSOR: {data}")
+            sensors[data.name] = data.value
+            return f"Successfuly made new sensor"
     else:
-        log.warning(f"{request.client} created new sensor.\n SENSOR: {data}")
-        sensors[data.name] = data.value
-        return f"Successfuly made"
+        r = requests.post(f"""http://{heartbeat_table["IP"][heartbeat_table["ID"].index(IDx)]}:8000/{IDx}/update_sensor""",
+                          json={"name": data.name, "value": data.value})
+        return r.text
 
 
 @app.get("/compare/{file}")
@@ -215,6 +234,7 @@ def admin_get(command: str):
     if "update-" in command:
         state = []
         version = command.split("-")[1]
+        return "success"
         for rpi in heartbeat_table["IP"]:
             if rpi != IP:
                 r = requests.get(f"""http://{rpi}:8000/admin/get/update_one-{version}""")
@@ -224,17 +244,17 @@ def admin_get(command: str):
                     log.warning(f"""{rpi} failed to update. Manual update may be needed for proper working of network.
                     Response from server: {r.text}""")
                 state.append({rpi: r.text.strip('"').split("\\n")})
-        # Todo Remove development comments
-        # subprocess.check_output(f"""python3 system.py update -version {version}""")
+        subprocess.check_output(f"""python3 system.py update -version {version}""")
         log.message(f"All devices in network should be updated to {version}")
         state.append({IP: "updated"})
         return state
     if "update_one-" in command:
+        return "success"
         state = subprocess.check_output(["python3", "system.py", "update", "-version", f"""{command.split("-")[1]}"""])
         log.warning(state.decode("utf-8"))
         return state.decode("utf-8")
-    if command == "settings":
-        return settings
+    if command == "heartbeat_table":
+        return heartbeat_table
     if command == "filesystem":
         return filesystem
 
@@ -242,24 +262,22 @@ def admin_get(command: str):
 @app.post("/admin/{id_server}/upload_file")
 async def create_upload_file(id_server: int, uploaded_file: UploadFile = File(...), patch: str = ""):
     file_location = f"{patch}{uploaded_file.filename}"
+    print(f"file location: {file_location}")
     if id_server == ID:
         with open(file_location, "wb+") as file_object:
             file_object.write(uploaded_file.file.read())
     else:
         with open(f"cache/{uploaded_file.filename}", "wb+") as file_object:
             file_object.write(uploaded_file.file.read())
-        file = open(f"cache/{uploaded_file.filename}", "r")
+        file = open(f"cache/{uploaded_file.filename}", "rb")
         requests.post(f"""http://{heartbeat_table["IP"][heartbeat_table["ID"].index(id_server)]}:8000/admin/{id_server}/upload_file""",
                       files={"uploaded_file": file, "patch": patch})
         file.close()
     return {"info": f"""file '{uploaded_file.filename}' saved at '{id_server}/{file_location}'"""}
 
 
-# Todo upload of update file and settings
-
-
 @app.get("/messages/get")
-def get_messages(timestamp: str):
+def get_messages(timestamp: str = None):
     if timestamp:
         for position, message in enumerate(reversed(messages)):
             if float(message["timestamp"]) <= float(timestamp):
@@ -277,6 +295,11 @@ def register():
     return [uuid.uuid4().hex[24:], messages[:9]]
 
 
+@app.get("/discovery")
+def discovery():
+    return "Success"
+
+
 @app.post("/messages/post")
 def post_messages(data: Message):
     log.debug(f"Message was posted. Sender: {data.m_sender}\n MESSAGE: {data.message}")
@@ -289,15 +312,11 @@ def post_messages(data: Message):
         return "Empty message/sender"
 
 
-@app.get("/debug")
-def debug_esp():
-    return "test successful"
-
-
 def send_heartbeat(ip, id):
     global heartbeat_table
     log.message(f"""sending heartbeat to {ip}({"offline" if id in offline else "online"})""")
     cache_request = requests.post(f"http://{ip}:8000/heartbeat", data=json.dumps(heartbeat_table))
+    print(cache_request.text)
     heartbeat_table = dict(cache_request.json()[0])
     log.debug(json.dumps(cache_request.json(), indent=4))
 
@@ -346,6 +365,9 @@ def mainloop():
 
 print(f"""Starting WikiSpot V{update.get_version()["version"]}""")
 print("GitHub: https://github.com/Tucan444/Mabasej_Team")
+print("Developers of this project: ")
+for dev in devs:
+    print(f"""{dev}, GitHub: {devs[dev]["git"]}, mail: {devs[dev]["mail"]}""")
 thread_1 = threading.Thread(target=mainloop, daemon=True)
 thread_1.start()
 

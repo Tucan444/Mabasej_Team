@@ -9,18 +9,18 @@
   "max_mess": 20,
   "log": {
     "save_error": true,
-    "print_error": true,
+    "print_error": false,
     "save_warning": true,
-    "print_warning": true,
+    "print_warning": false,
     "save_message": false,
-    "print_message": true,
-    "enable_debug": true
+    "print_message": false,
+    "enable_debug": false
   },
   "heartbeat_table": {
-    "ID": [],
-    "IP": [],
-    "location": [],
-    "file_system": [],
-    "last_heartbeat": []
+    "ID": [1],
+    "IP": ["10.61.42.92"],
+    "location": [""],
+    "file_system": [""],
+    "last_heartbeat": [5]
   }
 }

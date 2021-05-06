@@ -85,7 +85,7 @@
                     Response from server: "SUCCESS\nUpdate from version 0.6 to 0.6 was sucesfull\n"
 2021-04-06 18:52:52.010837 -> Warning: 192.168.1.231 disconnected/is not available
 2021-04-06 18:53:06.029220 -> Warning: 192.168.1.232 disconnected/is not available
-2021-04-06 19:52:34.214066 -> Warning: Device Address(host='10.42.0.238', port=18381) is creating new sensor data. 
+2021-04-06 19:52:34.214066 -> Warning: Device Address(host='10.42.0.238', port=18381) is creating new sensor data.
  SENSOR: ['vlhkost', '40']
 2021-04-06 20:58:51.194511 -> Warning: Address(host='10.42.0.238', port=11244) created new sensor.
  SENSOR: name='Teplota' value='18'
@@ -163,3 +163,40 @@
  SENSOR: name='test2' value='eeeh'
 2021-04-23 11:22:54.684617 -> Warning: 192.168.1.231 disconnected/is not available
 2021-04-23 11:36:58.295015 -> Warning: 192.168.1.231 disconnected/is not available
+2021-04-23 18:13:09.497747 -> Warning: Address(host='192.168.1.28', port=45062) created new sensor.
+ SENSOR: name='teplota' value='26°C'
+2021-04-23 20:25:12.224311 -> ERROR: Address(host='192.168.1.28', port=48898) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-23 20:25:14.287622 -> ERROR: Address(host='192.168.1.28', port=48898) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-24 11:54:17.948411 -> ERROR: Sensor data download from 1 failed.
+ ERROR: 1 is not in list
+2021-04-24 11:54:21.952522 -> ERROR: Sensor data download from 1 failed.
+ ERROR: 1 is not in list
+2021-04-24 18:38:26.095820 -> ERROR: Address(host='192.168.1.7', port=32928) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-24 18:38:28.128341 -> ERROR: Address(host='192.168.1.7', port=33038) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-24 18:41:06.944584 -> ERROR: Address(host='192.168.1.7', port=33612) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-24 18:41:08.942270 -> ERROR: Address(host='192.168.1.7', port=33612) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-24 18:41:08.961718 -> ERROR: Address(host='192.168.1.7', port=33612) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-24 18:41:11.001168 -> ERROR: Address(host='192.168.1.7', port=33996) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-24 18:46:18.062541 -> ERROR: Address(host='192.168.1.7', port=34856) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-24 18:46:20.103101 -> ERROR: Address(host='192.168.1.7', port=35128) tried to access file (_[{(V,a,r,i,a,b,l,e, ,m,i,s,s,i,n,g)}]_) on id 1 that does not exist.
+2021-04-26 14:51:30.981645 -> Warning: Address(host='192.168.1.99', port=41106) created new sensor.
+ SENSOR: name='string' value='string'
+2021-04-27 11:03:50.711031 -> Warning: Address(host='192.168.1.99', port=38418) created new sensor.
+ SENSOR: name='string' value='string'
+2021-04-27 11:04:00.123540 -> Warning: Address(host='192.168.1.99', port=38426) created new sensor.
+ SENSOR: name='test' value='012'
+2021-04-27 11:04:13.492698 -> ERROR: Sensor data download from 1 failed.
+ ERROR: 1 is not in list
+2021-04-27 11:04:56.073021 -> ERROR: Sensor data download from 1 failed.
+ ERROR: 1 is not in list
+2021-04-27 19:13:46.323037 -> Warning: Address(host='192.168.1.99', port=44312) created new sensor.
+ SENSOR: name='string' value='string'
+2021-04-27 19:13:53.203502 -> Warning: Address(host='192.168.1.99', port=44322) created new sensor.
+ SENSOR: name='test' value='0'
+2021-05-02 20:06:54.398494 -> Warning: Address(host='192.168.1.99', port=52808) created new sensor.
+ SENSOR: name='test' value='0'
+2021-05-02 20:38:09.342482 -> Warning: Address(host='192.168.1.99', port=53404) created new sensor.
+ SENSOR: name='[translate]-tempeature' value='16'
+2021-05-02 20:38:31.096100 -> Warning: Address(host='192.168.1.99', port=53422) created new sensor.
+ SENSOR: name='tempeature' value='16'
+2021-05-04 16:11:47.026867 -> Warning: 192.168.1.231 disconnected/is not available
