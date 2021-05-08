@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <title>WikiSpot</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="WikiSpotLoc.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="desc_short.js"></script>
+    <script src="click1.js"></script>
+    <script src="sensors.js"></script>
+</head>
+<body>
+    <header>
+        <img src="wikispot-white.png" alt="wikispot" id="logo" usemap="#navhome">
+        <map name="navhome">
+            <area shape="rect" coords="20, 15, 255, 100" href="http://www.spspb.sk/kontakt.html?page_id=91" alt="home">
+        </map>
+        <nav>
+            <ul id="container">
+                <li id="home" onclick="location.href = 'WikiSpot.html';"><a href="WikiSpot.html">DOMOV</a></li>
+                <li id="about" onclick="location.href = 'WikiSpotLoc.html';"><a href="WikiSpotLoc.html">WIKISPOT</a></li>
+                <li id="project" onclick="location.href = 'WikiSpotPro.html';"><a href="WikiSpotPro.html">O PROJEKTE</a></li>
+                <li id="contact" onclick="location.href = 'http://www.spspb.sk/kontakt.html?page_id=91';"><a href="http://www.spspb.sk/kontakt.html?page_id=91">KONTAKT</a></li>
+            </ul>
+            <div class="nav">
+                <label for="check" id="bmenu">&#9776</label>
+                <input type="checkbox" id="check">  
+                <table class="menu">
+                    <tr><td><a href="WikiSpot.html" class="expandable">DOMOV</a></td></tr>
+                    <tr><td><a href="WikiSpotLoc.html" class="expandable">WIKISPOT</a></td></tr>
+                    <tr><td><a href="WikiSpotPro.html" class="expandable">PROJEKT</a></td></tr>
+                    <tr><td><a href="#" class="expandable">KOTAKT</a></td></tr>
+                </table>
+            </div>
+        </nav>
+    </header>
+    <!--Device select-->
+    <input type="radio" id="checkExp1" name="pick" class="pickNone">
+    <input type="radio" id="checkExp2" name="pick" class="pickNone">
+    <!--1st device-->
+    <label for="checkExp1">
+        <section id="wsData1">
+            <div id="wsBackGround1" class="round_s"></div>
+            <section id="myData"></section>
+            <section id="myTitle"></section>
+            <div id="imgData1">
+                <img src="http://192.168.1.105:8000/files/0/library.jpg" alt="wsimage1" style="width: 100px; height: 100px;">
+            </div>
+            <input type="checkbox" id="checkDesc1" class="none">
+            <label for="checkDesc1" id="descIcon1" onclick="lul1()"><div id="fuckme1">&#9660</div></label>
+            <div id="dataExpand1"></div>
+        </section>
+    </label>
+    <section id="wsData1Exp" class="round">
+        <article id="wsData1desc_l">
+            <div id="desc_l1"></div>
+        </article>
+        <article>
+            <img src="http://192.168.1.105:8000/files/0/library.jpg" alt="wsData1img" id="wsData1img" style="height: 300px; width: 500px;">
+        </article>
+    </section>
+    <!--2nd device-->
+    <label for="checkExp2">
+        <section id="wsData2">
+            <div id="wsBackGround2" class="round_s"></div>
+            <section id="myData2"></section>
+            <section id="myTitle2"></section>
+            <div id="imgData2">
+                <img src="http://192.168.1.105:8000/files/0/test.jpg" alt="wsimage2" style="width: 100px; height: 100px;">
+            </div>
+            <label for="checkDesc2" id="descIcon2" onclick="lul2()"><div id="fuckme2">&#9660</div></label>
+            <input type="checkbox" id="checkDesc2" class="none">
+            <div id="dataExpand2" class="round_s"></div>
+        </section>
+    </label>
+    <section id="wsData2Exp" class="round">
+        <article id="wsData2desc_l">
+            <div id="desc_l2"></div>
+        </article>
+        <article>
+            <img src="http://192.168.1.105:8000/files/0/test.jpg" alt="wsData2img" id="wsData2img" style="height: 300px; width: 500px;">
+        </article>
+    </section>
+</body>
+</html>
+<!--3rd device-->
+<label for="checkExp3">
+    <section id="wsData3">
+        <div id="wsBackGround3" class="round_s"></div>
+        <section id="myData3"></section>
+        <section id="myTitle3"></section>
+        <div id="imgData3">
+            <img src="http://192.168.1.105:8000/files/0/test.jpg" alt="wsimage3" style="width: 100px; height: 100px;">
+        </div>
+        <label for="checkDesc3" id="descIcon3" onclick="lul2()"><div id="fuckme3">&#9660</div></label>
+        <input type="checkbox" id="checkDesc3" class="none">
+        <div id="dataExpand3"></div>
+    </section>
+</label>
+<section id="wsData3Exp" class="round">
+    <article id="wsData3desc_l">
+        <div id="desc_l3"></div>
+    </article>
+    <article>
+        <img src="http://192.168.1.105:8000/files/0/test.jpg" alt="wsData3img" id="wsData3img" style="height: 300px; width: 500px;">
+    </article>
+</section>
+</body>
+</html>
+<!--4th device-->
+<label for="checkExp4">
+    <section id="wsData4">
+        <div id="wsBackGround4" class="round_s"></div>
+        <section id="myData4"></section>
+        <section id="myTitle4"></section>
+        <div id="imgData4">
+            <img src="http://192.168.1.105:8000/files/0/test.jpg" alt="wsimage4" style="width: 100px; height: 100px;">
+        </div>
+        <label for="checkDesc4" id="descIcon4" onclick="lul4()"><div id="fuckme4">&#9660</div></label>
+        <input type="checkbox" id="checkDesc4" class="none">
+        <div id="dataExpand4"></div>
+    </section>
+</label>
+<section id="wsData4Exp" class="round">
+    <article id="wsData4desc_l">
+        <div id="desc_l4"></div>
+    </article>
+    <article>
+        <img src="http://192.168.1.105:8000/files/0/test.jpg" alt="wsData4img" id="wsData4img" style="height: 300px; width: 500px;">
+    </article>
+</section>
+</body>
+</html>
+<!--5th device-->
+<label for="checkExp5">
+    <section id="wsData5">
+        <div id="wsBackGround5" class="round_s"></div>
+        <section id="myData5"></section>
+        <section id="myTitle5"></section>
+        <div id="imgData5">
+            <img src="http://192.168.1.105:8000/files/0/test.jpg" alt="wsimage5" style="width: 100px; height: 100px;">
+        </div>
+        <label for="checkDesc5" id="descIcon5" onclick="lul5()"><div id="fuckme5">&#9660</div></label>
+        <input type="checkbox" id="checkDesc5">
+        <div id="dataExpand5"></div>
+    </section>
+</label>
+<section id="wsData5Exp" class="round">
+    <article id="wsData5desc_l">
+        <div id="desc_l5"></div>
+    </article>
+    <article>
+        <img src="http://192.168.1.105:8000/files/0/test.jpg" alt="wsData5img" id="wsData5img" style="height: 300px; width: 500px;">
+    </article>
+</section>
+</body>
+</html>

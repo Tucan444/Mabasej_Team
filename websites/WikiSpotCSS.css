@@ -1,210 +1,84 @@
-/* elements */
-body{
-    background-color: #00B4D8;
+/* ---------- Základné štýly ---------- */
+header {
+    background-image: url(header-background.jpg);
+}
+body {
+    background-image: url(header-background.jpg);
     margin: 0;
-}
-header{
-    background-color:#0077B6;
-    padding-bottom: 23px;
-}
-img{
-    padding-top: 25px;
-    padding-left: 25px;
-}
-nav{
-    float: right;
-    position: sticky;
-}
-ul{
-    margin: 0;
-    margin-left: 280px;
-}
-li{
-    padding-top: 50px;
-    padding-bottom: 48px;
-    padding-left: 50px;
-    padding-right: 50px;
-    margin-right: -5px;
-    display: inline-block;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    transition: background-color 0.5s;
-    position: relative;
-}
-#contact{
-    margin: 0;
-}
-li:hover{
-    background-color: rgba(79, 80, 80, 0.356);
-    transition: ease-in-out;
-    transition: background-color 0.5s;
-
-}
-a{
-    text-decoration: none;
-    color: #FFFFFF;
-}
-label{
-    visibility: collapse;
     user-select: none;
 }
-/* classes */
-.expandable{
-    visibility: collapse;
-    display: block;
-    margin-left: 0;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    text-decoration: none;
-    color: black;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 20px;
-    text-align: center;
+/* ---------- Navigačná lišta (navbar) ---------- */
+.list {
+    margin: 0px;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
 }
-.an{
+.item {
+    list-style: none;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+.item:first-child {
+    margin-right: auto;
+    margin-left: 1.3rem;
+}
+.itemImg {
+    margin-right: auto;
+    margin-left: 1.3rem;
+}
+.list li {
     color: #FFFFFF;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    font-size: 35px;
-    margin: 0;
-    margin-top: 340px;
-    margin-left: 150px;
+    font-size: 20px;
 }
-/* IDs */
-#here{
-    margin-top: 150px;
+.list li:hover {
+    color: chartreuse;
+    transition: color 0.2s ease-in-out;
 }
-#phone{
-    width: 200px;
-    height: 400px;
-    border: 10px solid grey;
-    border-radius: 5%;
-    background-color: black;
-    margin-left: 150px;
-    margin-top: 150px;
-    position: relative;
+.wsImg {
+    border-radius: 10px;
 }
-#ref{
-    position: relative;
-    margin-top: 180px;
-    margin-left: -30px;
-    width: 2px;
-    height: 250px;
-    border: 2px solid rgba(79, 80, 80, 0.356);
-    border-radius: 30%;
-    background: rgba(126, 133, 133, 0.356);
+.wsImg:first-child {
+    margin-right: auto;
 }
-#ref2{
-    position: relative;
-    margin-top: 450px;
-    margin-left: -30px;
-    width:50;
-    border: 3px solid rgba(166, 172, 172, 0.39);
-    border-radius: 50%;
+/* ---------- Burger Menu ---------- */
+.burger {
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    visibility: collapse;
+    margin-right: 2rem;
+    margin-top: -10px;
+    position: absolute;
 }
-#phone, #ref, #ref2, #android{
-    display: inline;
-    float: left;
-}
-#check{
+.burgerList {
     display: none;
 }
-/* responsive */
-@media (max-width: 1250px){
-    ul{
+@media (max-width: 800px) {
+    .item {
+        display: none;
+    }
+    .burger {
+        visibility: visible;
+    }
+    .burgerList {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
         margin-top: 0px;
-        margin-left: 0px;
-    }
-}
-@media (max-width: 955px){
-    #check:checked ~ * .expandable{
-        visibility: visible;
-    }
-    ul{
-        visibility: collapse;
-        padding: 0;
-    }
-    label{
-        font-size: 40px;
-        float: right;
-        margin-top: -90px;
-        margin-right: 45px;
-        position: relative;
-        visibility: visible;
-    }
-    .expandable{
-        visibility: collapse;
-        display: block;
-        position: relative;
-        margin-left: 400px;
-        text-decoration: none;
-        color: black;
+        color: white;
+        list-style: none;
         font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
         font-size: 20px;
-        text-align: center;
     }
-    .menu{
-        position: relative;
-        margin-left: -12em;
+    .bItem {
+        margin-top: 10px;
     }
-
-}
-@media (max-width: 914px){
-    label{
-        font-size: 40px;
-        float: right;
-        margin-top: -90px;
-        margin-right: 45px;
-        position: relative;
-    }
-    .menu{
-        margin-top: -97px;
-    }
-}
-@media (max-width: 860px){
-    label{
-        font-size: 40px;
-        float: right;
-        margin-top: -90px;
-        margin-right: 45px;
-        position: relative;
-    }
-}
-@media (max-width: 840px){
-    label{
-        font-size: 40px;
-        float: right;
-        margin-top: -90px;
-        margin-right: 45px;
-        position: relative;
-    }
-}
-@media (max-width: 692px){
-    label{
-        font-size: 40px;
-        float: right;
-        margin-top: -90px;
-        margin-right: 45px;
-        position: relative;
-    }
-    .menu{
-        margin-top: -217px;
-    }
-}
-@media (max-width: 635px){
-    label{
-        font-size: 40px;
-        float: right;
-        margin-top: -90px;
-        margin-right: 45px;
-        position: relative;
-    }
-}
-@media (max-width: 618px){
-    label{
-        font-size: 40px;
-        float: right;
-        margin-top: -90px;
-        margin-right: 45px;
-        position: relative;
+    .appear {
+        display: flex;
     }
 }
