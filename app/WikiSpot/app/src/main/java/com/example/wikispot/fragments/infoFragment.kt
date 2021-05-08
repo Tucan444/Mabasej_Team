@@ -41,6 +41,8 @@ class infoFragment : Fragment(R.layout.fragment_info) {
         updateSensorsRecyclerView()
         updateFileViewsRecyclerView()
 
+        //file_views_recycler_view.isNestedScrollingEnabled = false
+
         try {
             executeLoadFunction = args.executeLoadFuntion
         } catch (e: Throwable) {
@@ -168,7 +170,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                         }
 
                         // handling images
-                        if ("jpg png".contains(filetype)) {
+                        else if ("jpg png".contains(filetype)) {
                             val fileView = FileView(filetype, filename, fileDescription, null, "$serverId|||||$filename.$filetype")
                             if (!FileViewsSupplier.checkIfContains(fileView)) {
                                 FileViewsSupplier.appendFileView(fileView)
@@ -177,13 +179,21 @@ class infoFragment : Fragment(R.layout.fragment_info) {
                         }
 
                         // handling pdf files
-                        if ("pdf".contains(filetype)) {
+                        else if ("pdf".contains(filetype)) {
                             val fileView = FileView(filetype, filename, fileDescription, null, null, "${ServerManagement.baseUrl}files/$serverId/$filename.$filetype")
                             if (!FileViewsSupplier.checkIfContains(fileView)) {
                                 FileViewsSupplier.appendFileView(fileView)
                                 updateFileViewsRecyclerView()
                             }
 
+                        }
+
+                        else {
+                            val fileView = FileView(filetype, filename, fileDescription, null, null, null, "${ServerManagement.baseUrl}files/$serverId/$filename.$filetype")
+                            if (!FileViewsSupplier.checkIfContains(fileView)) {
+                                FileViewsSupplier.appendFileView(fileView)
+                                updateFileViewsRecyclerView()
+                            }
                         }
                     }
                 } catch (e: Throwable) { println("[debug] exception in infoFragment load data request Exception: $e") }
@@ -290,6 +300,7 @@ class infoFragment : Fragment(R.layout.fragment_info) {
         try {
             file_views_recycler_view.post {
                 val layoutManager = LinearLayoutManager(context)
+
                 layoutManager.orientation = LinearLayoutManager.VERTICAL
                 file_views_recycler_view.layoutManager = layoutManager
 
