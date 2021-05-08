@@ -73,7 +73,6 @@ $(document).ready(function() {
     append_element(urls, descriptions, n);
 
     $.get("http://192.168.1.105:8000/devices_list", function(data) {
-
     console.log(data); 
     var myJson = JSON.stringify(data[1]["description"]["description_s"]);
     var myJson1 = JSON.stringify(data[1]["description"]["title"]);
