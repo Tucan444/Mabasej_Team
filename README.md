@@ -22,11 +22,13 @@ Wikispot is in testing stages, but it is possible to install it using our .img f
 | RPI 2                 | :question: Untested.                                                                        | :x:           |
 | RPI                   | :question: Untested.                                                                        | :x:           |
 
+
 ### Fresh istall (.img) Only RPI
 login credentials
 > login: dietpi
 
 > password: WikiSpot2021
+
 
 requirements:
 1. WikiSpot image file (download: *soon*)
@@ -34,13 +36,14 @@ requirements:
 3. BalenaEtcher (or another sd card flasher) *link:*  https://www.balena.io/etcher/
 4. SD card reader
 
+
 Install:
 1. Download all required files (wikispot.img and balenaetcher) and install BalenaEtcher
 2. Insert SD card into computer/reader, open BalenaEtcher -> chose Flash from file -> chose downloaded wikispot.img -> Select your sd in *Select target* -> Flash!
 3. :exclamation: WINDOWS will show unformated drive. Cancel it. It is because of uncompatible format for windows :exclamation:
 4. After flashing open partition *boot* (should apear as USB), find file *dietpi.txt* and open it in text editor.
    - Accept license by changing `AUTO_SETUP_ACCEPT_LICENSE=0` to `AUTO_SETUP_ACCEPT_LICENSE=1`
-   - Change name of WikiSpot `AUTO_SETUP_NET_HOSTNAME=WikiSpot-CHANGE_ME` by changing only *CHANGE_ME*
+   - Change name of WikiSpot `AUTO_SETUP_NET_HOSTNAME=WikiSpot-CHANGE_ME` by changing only *CHANGE_ME* or leave *CHANGE_ME* for random number name *WikiSpot-54346
    - You can set static ip address by changing `AUTO_SETUP_NET_USESTATIC=0` to `AUTO_SETUP_NET_USESTATIC=1` And entering your setting into required lines.
    - If you want to use computer vision plugin with rpi camera set `ENABLE_COMPUTER_VISION_PLUGIN=0` to `ENABLE_COMPUTER_VISION_PLUGIN=1` (*recommended only on RPI4)
    - If you want to use RPI as access point to WikiSpot change `#AUTO_SETUP_INSTALL_SOFTWARE_ID=60` to `AUTO_SETUP_INSTALL_SOFTWARE_ID=60`
@@ -50,13 +53,17 @@ Install:
 7. The setup will take approximately 25-40 min (RPI 4b (2gb) and 70 mb download speed)
 8. Done you can start using WikiSpot and edit contents of WikiSpot with our app (*coming soon*)
 
+
 ### Script install
 *coming soon*
+
 
 ### Manual install
 *coming soon*
 
+
 ## Server filesystem
+
 ```
 └── test_directory
     ├── cache                                      # files forwarded from another servers to client
@@ -76,7 +83,9 @@ Install:
     └── version.json                               # version of WikiSpot
 ```
 
+
 ### filesystem
+
 ```
 {
   "ID": 0,                                                           # ID of WikiSpots, Needs to be different, because network will crash
@@ -97,8 +106,10 @@ Install:
   ]
 }
 ```
+
 To manualy add new file to server (on setup or via ssh) add file to `server_directory/files`
 and add record for file into `files` list in `filesystem.json`. :exclamation:do not forget "," after last record:exclamation:
+
 ```
 
     {
@@ -108,7 +119,9 @@ and add record for file into `files` list in `filesystem.json`. :exclamation:do 
     }
 ```
 
+
 ### settings.json
+
 ```
 {
   "time_to_heartbeat": 20,                # Time to ping of another online servers in seconds
@@ -136,7 +149,9 @@ and add record for file into `files` list in `filesystem.json`. :exclamation:do 
   }
 }
 ```
+
 If you want to manually add server on first setup or via ssh fill heartbeat table like this.
+
 ```
 "heartbeat_table": {                    # Saved servers
     "ID": [1],                          # ID of server as integer (number)
@@ -146,6 +161,7 @@ If you want to manually add server on first setup or via ssh fill heartbeat tabl
     "last_heartbeat": [10]              # After how many seconds will server try to connect for the first time
   }
 ```
+
 :bangbang:If the server will be offline for long time (heartbeat + offline heartbeat) it will be removed from heartbeat table. If the save function is disabled server will trying to connect after restart:bangbang:
 
 
