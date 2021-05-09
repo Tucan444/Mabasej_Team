@@ -58,6 +58,8 @@ IP = get_my_ip()
 ID = filesystem["ID"]
 location = filesystem["location"]
 time_to_save = settings["time_to_save"]
+settings["location"]
+settings["ID"]
 app = FastAPI()  # init of FastAPI
 
 origins = ["*", ]
