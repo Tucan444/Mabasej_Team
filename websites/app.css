@@ -1,0 +1,278 @@
+/* ---------- Základné štýly ---------- */
+header {
+    background-image: url(header-background.jpg);
+}
+body {
+    background-image: url(header-background.jpg);
+    margin: 0;
+    user-select: none;
+}
+/* ---------- Navigačná lišta (navbar) ---------- */
+.list {
+    margin: 0px;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.item {
+    list-style: none;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+.item:first-child {
+    margin-right: auto;
+    margin-left: 1.3rem;
+}
+.itemImg {
+    margin-right: auto;
+    margin-left: 1.3rem;
+}
+.list li {
+    color: #FFFFFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+.list li:hover {
+    color: chartreuse;
+    transition: color 0.2s ease-in-out;
+}
+.wsImg {
+    border-radius: 10px;
+}
+.wsImg:first-child {
+    margin-right: auto;
+}
+/* ---------- Burger Menu ---------- */
+.burger {
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    visibility: collapse;
+    margin-right: 2rem;
+    margin-top: -10px;
+    position: absolute;
+}
+.burgerList {
+    display: none;
+}
+/* ---------- 1 ---------- */
+#list1 {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    margin-right: 30px;
+    margin-top: 28px;
+    transition: transform 0.5s ease-in-out;
+}
+#hey1 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+#hou1 {
+    margin-top: 50px;
+    margin-left: -60px;
+}
+/* ---------- 2 ---------- */
+#list2 {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    margin-right: 30px;
+    margin-top: 28px;
+    transition: transform 0.5s ease-in-out;
+}
+#hey2 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+#hou2 {
+    margin-top: 50px;
+    margin-left: -60px;
+}
+/* ---------- 3 ---------- */
+#list3 {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    margin-right: 30px;
+    margin-top: 28px;
+    transition: transform 0.5s ease-in-out;
+}
+#hey3 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+#hou3 {
+    margin-top: 50px;
+    margin-left: -60px;
+}
+/* ---------- 4 ---------- */
+#list4 {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    margin-right: 30px;
+    margin-top: 28px;
+    transition: transform 0.5s ease-in-out;
+}
+#hey4 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+#hou4 {
+    margin-top: 50px;
+    margin-left: -60px;
+}
+/* ---------- 5 ---------- */
+#list5 {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    margin-right: 30px;
+    margin-top: 28px;
+    transition: transform 0.5s ease-in-out;
+}
+#hey5 {
+    font-weight: bold;
+    margin-top: 15px;
+}
+#hou5 {
+    margin-top: 50px;
+    margin-left: -60px;
+}
+/* ---------- Zdieľané štýly (classes) ---------- */
+.wsList {
+    background: white;
+    width: 550px;
+    height: 100px;
+    border-radius: 10px;
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.hey {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+}
+.klol {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    margin-bottom: 10px;
+    margin-left: 10px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.constantImg {
+    grid-area: obrazok;
+    display: flex;
+    width: 300px; 
+    height: 300px; 
+    top: 250px;
+    left: 50px;
+    transition: display 1s 1s;
+}
+.mystyle {
+    transform: rotate(180deg);
+}
+.appear {
+    display: flex;
+}
+.arrow {
+    cursor: pointer;
+    height: 40px;
+    width: 40px;
+    font-size: 40px;
+    margin-right: 30px;
+    margin-top: 28px;
+    transition: transform 0.5s ease-in-out;
+}
+/* ---------- Grid Layout ---------- */
+.obrazok { 
+    grid-area: obrazok;
+    width: 500px;
+    height: 300px;
+    margin-left: 25px;
+}
+.text { 
+    grid-area: description; 
+}
+.senzory { 
+    grid-area: senzory; 
+}
+.info { 
+    grid-area: info; 
+}
+.listHide {
+    display: none;
+    background: #ffffff;
+}
+.expand {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px 5px;
+    grid-template-areas:
+      "obrazok senzory"
+      "description info";
+    margin-top: 2px;
+    margin-left: 20px;
+    margin-bottom: 2px;
+    border-radius: 10px;
+    height: 600px;
+    width: 550px;
+}
+.big {
+    display: grid;
+    grid-template-columns: 1.3fr 0.7fr;
+    grid-template-rows: 1fr 1fr;
+    gap: 5px 5px;
+    grid-template-areas:
+      "obrazok senzory"
+      "description info";
+    position: absolute;
+    border-radius: 10px;
+    left: 650px;
+    top: 117px;
+    height: 700px;
+    width: 900px;
+    background: royalblue;
+    align-items: center;
+}
+.appear {
+    display: flex;
+}
+/* ---------- Responzívnosť (media tag) ---------- */
+@media (max-width: 1000px) {
+    .big {
+        display: none;
+    }
+}
+@media (max-width: 800px) {
+    .item {
+        display: none;
+    }
+    .burger {
+        visibility: visible;
+    }
+    .burgerList {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+        margin-top: 0px;
+        color: white;
+        list-style: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+    }
+    .bItem {
+        margin-top: 10px;
+    }
+}

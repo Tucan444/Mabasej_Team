@@ -9,6 +9,8 @@ import android.view.View
 import android.view.ViewGroup
 import android.view.animation.Animation
 import android.view.animation.AnimationUtils
+import android.widget.RelativeLayout
+import androidx.constraintlayout.widget.ConstraintLayout
 import androidx.core.content.ContextCompat.startActivity
 import androidx.core.view.setPadding
 import androidx.recyclerview.widget.RecyclerView
@@ -32,6 +34,7 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
         var textInfo: String? = null
         var imgInfo: String? = null
         var pdfUrl: String? = null
+        var generalUrl: String? = null
         var opened = false
 
         init {
@@ -39,7 +42,9 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                 if (!opened) {
                     itemView.downloadFileBtn.visibility = View.VISIBLE
                     itemView.downloadFileBtn.startAnimation(fadeIn)
-                    itemView.showFileBtn.startAnimation(rotateOpen)
+                    if (generalUrl == null) {
+                        itemView.showFileBtn.startAnimation(rotateOpen)
+                    }
 
                     fileView?.let {
                         textInfo?.let {
@@ -70,16 +75,17 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                         pdfUrl?.let {
                             itemView.pdfContent.visibility = View.VISIBLE
                             ServerManagement.serverManager.loadPdfView(itemView.pdfContent, pdfUrl!!, true)
-                            println("current page is: ${itemView.pdfContent.currentPage}")
                         }
                     }
                 } else {
-                    itemView.showFileBtn.startAnimation(rotateClose)
-                    itemView.textContent.textSize = 0F
-                    itemView.textContent.setPadding(0)
-
+                    if (generalUrl == null) {
+                        itemView.showFileBtn.startAnimation(rotateClose)
+                    }
                     val downloadBtnVanishActionThread = Thread(DownloadBtnVanishAction())
                     downloadBtnVanishActionThread.start()
+
+                    itemView.textContent.textSize = 0F
+                    itemView.textContent.setPadding(0)
 
                     itemView.imageContent.visibility = View.GONE
                     itemView.pdfContent.visibility = View.GONE
@@ -109,6 +115,11 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                     val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(pdfUrl))
                     startActivity(context, browserIntent, null)
                 }
+
+                generalUrl?.let {
+                    val browserIntent = Intent(Intent.ACTION_VIEW, Uri.parse(generalUrl))
+                    startActivity(context, browserIntent, null)
+                }
             }
         }
 
@@ -122,6 +133,20 @@ class FileViewsAdapter(private val context: Context, private val fileViews: Arra
                 }
                 fileView.pdfUrl?.let {
                     pdfUrl = it
+                }
+                fileView.generalUrl?.let {
+                    generalUrl = it
+                    itemView.showFileBtn.visibility = View.INVISIBLE
+                    // setting new margins
+
+                    var params = itemView.downloadFileBtn.layoutParams as ConstraintLayout.LayoutParams
+                    params.marginEnd = 24
+                    itemView.downloadFileBtn.layoutParams = params
+
+                    params = itemView.showFileBtn.layoutParams as ConstraintLayout.LayoutParams
+                    params.marginEnd = 0
+                    itemView.showFileBtn.layoutParams = params
+
                 }
 
                 itemView.filenameText.text = fileView.filename.replace("_", " ")

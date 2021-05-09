@@ -1,41 +1,37 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sk">
 <head>
-    <title>Travellly</title>
-    <link rel="stylesheet" href="WikiSpotCSS.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <title>WikiSpot</title>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <link rel="stylesheet" href="WikiSpotCSS.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="appjs.js"></script>
 </head>
+<header>
+    <nav>
+        <!-- Navigačná lišta /veľká obrazovka/ -->
+        <ul class="list">
+            <img src="wikispot-white.png" alt="" class="itemImg">
+            <li class="item" onclick="location.href = 'WikiSpot.html'">DOMOV</li>
+            <li class="item" onclick="location.href = 'WikiSpotWS.html'">WIKISPOT</li>
+            <li class="item" onclick="location.href = 'WikiSpotPro.html'">O PROJEKTE</li>
+            <li class="item" onclick="location.href = 'WikiSpotCon.html'">KONTAKT</li>
+            <div class="burger" onclick="bmenu()">&#9776</div>
+        </ul>
+        <!-- Navigačná lisťa /malá obrazovka/ -->
+        <ul class="burgerList" id="bonger">
+            <li class="bItem">DOMOV</li>
+            <li class="bItem">WIKISPOT</li>
+            <li class="bItem">O PROJEKTE</li>
+            <li class="bItem">KONTAKT</li>
+        </ul>
+    </nav>
+</header>
 <body>
-    <header>
-        <img src="wikispot.png" alt="wikispot" id="logo">
-        <nav>
-            <ul id="container">
-                <li id="home"><a href="travellly.html">HOME</a></li>
-                <li id="about"><a href="http://www.spspb.sk/o-skole.html?page_id=95">O NÁS</a></li>
-                <li id="project"><a href="http://www.spspb.sk/partneri.html?page_id=1362">O PROJEKTE</a></li>
-                <li id="contact"><a href="http://www.spspb.sk/kontakt.html?page_id=91">KONTAKT</a></li>
-            </ul>
-            <div class="nav">
-                <label for="check" id="bmenu">&#9776</label>
-                <input type="checkbox" id="check">  
-                <table class="menu">
-                    <tr><td><a href="#" class="expandable">HOME</a></td></tr>
-                    <tr><td><a href="#" class="expandable">ABOUT</a></td></tr>
-                    <tr><td><a href="#" class="expandable">PROJECT</a></td></tr>
-                    <tr><td><a href="#" class="expandable">CONTACT</a></td></tr>
-                </table>
-            </div>
-        </nav>
-    </header>
-    <!--<article>
-        <div class="an" class="next" id="android"><a href="http://localhost:8000/files/0/PQ.apk">Android</a></div>
-    </article>
-    <section>
-        <div id="phone" class="next"></div>
-        <div id="ref"></div>
-        <div id="ref2"></div>
-    </section>-->
+    <div id="downloadHolder">
+        <div id="download">SŤIAHNUŤ &#9660</div>
+        <div id="phone"><img src="samsung1.png" alt="" id="phoneImg"></div>
+    </div>
 </body>
 </html>

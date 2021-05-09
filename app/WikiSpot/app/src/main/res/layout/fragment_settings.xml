@@ -47,7 +47,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="32dp"
-        android:text="More colors"
+        android:text="@string/more_colors"
         android:background="@drawable/text_background_gradient"
         android:padding="5dp"
         android:textColor="?attr/textOnTextBgColor"
@@ -64,6 +64,7 @@
         android:layout_marginStart="16dp"
         app:layout_constraintBottom_toBottomOf="@+id/moreColorsSwitchText"
         app:layout_constraintStart_toEndOf="@+id/moreColorsSwitchText"
-        app:layout_constraintTop_toTopOf="@+id/moreColorsSwitchText" />
+        app:layout_constraintTop_toTopOf="@+id/moreColorsSwitchText"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
