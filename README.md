@@ -9,14 +9,18 @@ We are working on system, that will help tourists in cities to get information a
 - python 3.9.2 compatible server with basic web interface
 - Kotlin based mobile app
 
-# Server
-To run server you need to install
-- hypercorn - "pip install hypercorn"
-- fastapi - "pip install fastapi"
-- requests - "pip install requests"
-- aiofiles - "pip install aiofiles"
+# Install
+Wikispot is in testing stages, but it is possible to install it using our .img file (link coming soon) based on DietPi or custom script.
 
-then run by command - "hypercorn main:app --bind <IP:port>"
-To connect to another rpi you need to edit settings.json with different ID and fill heartbeat table.
+| Device                | Server compatible                                                                           |  Instalation  |
+| :-------------------- | :------------------------------------------------------------------------------------------ | :-----------: |
+| Ubuntu (I7, 16GB ram) | :heavy_check_mark: WORKING (Only server)                                                    | Manual/script |
+| RPI 4b (2GB)          | :heavy_check_mark: WORKING                                                                  | .img/script   |
+| RPI 400 (4GB)         | :grey_question: Untested. Should work.                                                      | .img/script   |
+| RPI 3b+               | :grey_question: Untested. Should work.                                                      | .img/script   |
+| RPI zero w            | :white_check_mark: Working with fewer devices (Only server. No AP, Computer vision)         | .img/script   |
+| RPI 2                 | :question: Untested.                                                                        | :x:           |
+| RPI 1                 | :question: Untested.                                                                        | :x:           |
+
 
 This is not finished product
