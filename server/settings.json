@@ -1,26 +1,25 @@
 {
-  "ID": 0,
-  "IP": "192.168.1.99",
-  "location": "49.14178021389778,18.353783098441415",
   "time_to_heartbeat": 20,
   "time_to_heartbeat_offline": 25,
-  "save_table": false,
+  "save_table": true,
   "time_to_save": 60,
   "max_mess": 20,
+  "cache_size_mb": 1000,
+  "clear_cache_on_startup": false,
   "log": {
     "save_error": true,
-    "print_error": false,
+    "print_error": true,
     "save_warning": true,
-    "print_warning": false,
+    "print_warning": true,
     "save_message": false,
-    "print_message": false,
+    "print_message": true,
     "enable_debug": false
   },
   "heartbeat_table": {
-    "ID": [1],
-    "IP": ["10.61.42.92"],
-    "location": [""],
-    "file_system": [""],
-    "last_heartbeat": [5]
+    "ID": [],
+    "IP": [],
+    "location": [],
+    "file_system": [],
+    "last_heartbeat": []
   }
 }

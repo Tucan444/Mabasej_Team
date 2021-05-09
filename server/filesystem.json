@@ -1,10 +1,10 @@
 {
   "ID": 0,
-  "location": "49.14178021389778,18.353783098441415",
+  "location": "25.997417761947318, -97.15738221291177",
   "description": {
-    "title": "legionrpi",
-    "description_s": "kr\u00e1tky popis, ktor\u00fd bude zobrazen\u00fd iba v n\u00e1hladovom okne",
-    "description_l": "dlh\u0161\u00ed popis zariadenia, ktor\u00fd bude zobrazen\u00fd po otvoren\u00ed",
+    "title": "WikiSpot-demo",
+    "description_s": "Krátky popis",
+    "description_l": "Dlhší popis",
     "photo_s": "test.jpg",
     "photo_b": "test.png"
   },
@@ -12,12 +12,12 @@
     {
       "name": "test",
       "format": ".jpg",
-      "description": "toto je jpg test file"
+      "description": "This is jpg test file"
     },
     {
-      "name": "test2",
+      "name": "test",
       "format": ".txt",
-      "description": "toto je txt test file"
+      "description": "This is txt test file"
     }
   ]
 }
