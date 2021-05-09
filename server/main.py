@@ -17,7 +17,8 @@ from pydantic import BaseModel
 
 devs = {
     "Matej Justus": {
-        "git": "https://github.com/UntriexTv", "mail": "maco.justus@gmail.com"},
+        "git": "https://github.com/UntriexTv", "mail": "maco.justus@gmail.com"
+    },
     "Benjamin Kojda": {
         "git": "https://github.com/Tucan444", "mail": "ben4442004@gmail.com"
     },
