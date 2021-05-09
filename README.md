@@ -27,7 +27,7 @@ Wikispot is in testing stages, but it is possible to install it using our .img f
 login credentials
 > login: dietpi
 
-> password: WikiSpot2021
+> password: WikiSpot
 
 
 requirements:
