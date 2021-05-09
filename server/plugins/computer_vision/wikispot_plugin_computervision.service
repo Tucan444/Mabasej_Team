@@ -1,0 +1,15 @@
+[Unit]
+Description=WikiSpot official computer vision plugin
+After=wikispot.service
+StartLimitIntervalSec=4
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=10
+User=root
+WorkingDirectory=/root/test_directory/plugins/computer_vision
+ExecStart=/root/test_directory/plugins/computer_vision
+
+[Install]
+WantedBy=multi-user.target
