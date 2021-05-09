@@ -1,0 +1,24 @@
+{
+  "ID": 0,
+  "location": "49.14178021389778,18.353783098441415",
+  "description": {
+    "title": "Reštaurácia pod slivkou",
+    "description_s": "Otvorené",
+    "description_l": "Otváracie hodiny:\nPON-PIA: 09:00 - 22:00\nSOB: zatvorené\nNED: 14:00-21:00",
+    "photo_s": "restaurant_out.jpg",
+    "photo_b": "restaurant_in.jpg",
+    "email": "restauracia.podslivkou@gmail.com",
+    "phone_number": "0928229120"
+  },
+  "files": [
+    {
+      "name": "Podrobnosti",
+      "format": ".txt",
+      "description": "Vybavenie, služby a kontakt"
+    }, {
+      "name": "Jedálny lístok",
+      "format": ".pdf",
+      "description": ""
+    }
+  ]
+}
