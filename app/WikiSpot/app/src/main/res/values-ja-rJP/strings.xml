@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">ウィキすぽっと</string>
+    <string name="map">地図</string>
+    <string name="chat">チャット</string>
+    <string name="explore">見る</string>
+    <string name="home">家</string>
+    <string name="files">ファイル</string>
+    <string name="settings">設定</string>
+    <string name="dark_theme">暗いテーマ</string>
+    <string name="closed">閉まっている</string>
+    <string name="open">開いた</string>
+    <string name="number_of_people">人々の数 ：</string>
+    <string name="status">状態 ：</string>
+    <string name="temperature">温度：</string>
+    <string name="more_colors">より多くの色</string>
+</resources>

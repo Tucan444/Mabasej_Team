@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WikiSpot</string>
+    <string name="chat">Čet</string>
+    <string name="explore">Prehliadať</string>
+    <string name="home">Domov</string>
+    <string name="map">Mapa</string>
+    <string name="settings">Nastavenia</string>
+    <string name="files">Súbory</string>
+    <string name="dark_theme">Tmavá téma</string>
+
+    <string name="status">Status :</string>
+    <string name="number_of_people">Počet ľudí :</string>
+    <string name="open">Otvorené</string>
+    <string name="closed">Zatvorené</string>
+    <string name="temperature">Teplota :</string>
+    <string name="more_colors">Viac farieb</string>
+</resources>

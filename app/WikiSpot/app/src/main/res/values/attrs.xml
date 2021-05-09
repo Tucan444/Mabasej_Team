@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <!-- General -->
+
+    <attr name="textOnTextBgColor" format="color" />
+    <attr name="generalIconsColor" format="color" />
+    <attr name="generalTextColor" format="color" />
+    <attr name="secondaryTextColor" format="color" />
+
+    <!-- For Backgrounds -->
+
+    <attr name="textBackgroundGradientStartColor" format="color"/>
+    <attr name="textBackgroundGradientEndColor" format="color"/>
+
+    <attr name="bottomNavBarGradientStartColor" format="color"/>
+    <attr name="bottomNavBarGradientEndColor" format="color"/>
+
+    <attr name="chatFragmentGradientStartColor" format="color"/>
+    <attr name="chatFragmentGradientCenterColor" format="color"/>
+    <attr name="chatFragmentGradientEndColor" format="color"/>
+    <attr name="chatFragmentBgStrokeColor" format="color" />
+    <attr name="chatFragmentWriteBarBgColor" format="color" />
+
+    <attr name="exploreFragmentGradientStartColor" format="color"/>
+    <attr name="exploreFragmentGradientCenterColor" format="color"/>
+    <attr name="exploreFragmentGradientEndColor" format="color"/>
+    <attr name="exploreFragmentListItemBackgroundColor" format="color" />
+
+    <attr name="homeFragmentGradientStartColor" format="color"/>
+    <attr name="homeFragmentGradientCenterColor" format="color"/>
+    <attr name="homeFragmentGradientEndColor" format="color"/>
+
+    <attr name="settingsFragmentGradientStartColor" format="color"/>
+    <attr name="settingsFragmentGradientCenterColor" format="color"/>
+    <attr name="settingsFragmentGradientEndColor" format="color"/>
+
+    <attr name="infoFragmentGradientStartColor" format="color"/>
+    <attr name="infoFragmentGradientCenterColor" format="color"/>
+    <attr name="infoFragmentGradientEndColor" format="color"/>
+
+    <attr name="fileViewBackgroundColor" format="color"/>
+    <attr name="messageBackground" format="color"/>
+
+    <attr name="debugFragmentBackground" format="color"/>
+
+    <attr name="contrastingGradientStartColor" format="color"/>
+    <attr name="contrastingGradientCenterColor" format="color"/>
+    <attr name="contrastingGradientEndColor" format="color"/>
+
+    <!-- For bottomNavBar -->
+    <attr name="bottomNavBarCheckedItemColor" format="color"/>
+    <attr name="bottomNavBarRippleColor" format="color"/>
+
+</resources>

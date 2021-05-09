@@ -10,9 +10,13 @@
         android:id="@+id/mainBottomNavigationView"
         android:layout_width="match_parent"
         android:layout_height="70dp"
+        app:itemRippleColor="?attr/bottomNavBarRippleColor"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
+        app:itemIconTint="@color/bottom_nav_bar_item_color"
+        app:itemTextColor="@color/bottom_nav_bar_item_color"
+        android:background="@drawable/bottom_nav_bar_gradient_background"
         app:menu="@menu/main_bottom_nav_menu" />
 
     <fragment
@@ -27,4 +31,5 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:navGraph="@navigation/main_activity_navigation" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

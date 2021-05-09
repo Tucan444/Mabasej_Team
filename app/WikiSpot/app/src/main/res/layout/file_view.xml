@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginLeft="4dp"
+    android:layout_marginTop="2dp"
+    android:layout_marginRight="4dp"
+    android:layout_marginBottom="2dp"
+    android:backgroundTint="?attr/fileViewBackgroundColor"
+    card_view:cardCornerRadius="10dp"
+    card_view:cardElevation="0dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="4dp">
+
+        <TextView
+            android:id="@+id/filenameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="16dp"
+            android:textColor="?attr/generalTextColor"
+            android:textSize="24sp"
+            android:textStyle="bold"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            tools:text="Filename" />
+
+        <ImageView
+            android:id="@+id/showFileBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="36dp"
+            android:layout_marginEnd="32dp"
+            android:scaleX="4"
+            android:scaleY="4"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintTop_toTopOf="parent"
+            card_view:srcCompat="@drawable/ic_baseline_arrow_drop_down_24" />
+
+        <TextView
+            android:id="@+id/textContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="52dp"
+            android:textColor="?attr/secondaryTextColor"
+            android:textSize="0sp"
+            card_view:layout_constraintBottom_toTopOf="@+id/imageContent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.497"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:layout_constraintTop_toBottomOf="@+id/filenameText"
+            tools:ignore="SmallSp" />
+
+        <ImageView
+            android:id="@+id/imageContent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:visibility="gone"
+            card_view:layout_constraintBottom_toTopOf="@+id/pdfContent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.5"
+            card_view:layout_constraintStart_toEndOf="@+id/filenameText"
+            card_view:layout_constraintStart_toStartOf="parent"
+            card_view:srcCompat="@drawable/blank" />
+
+        <com.github.barteksc.pdfviewer.PDFView
+            android:id="@+id/pdfContent"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:layout_margin="5dp"
+            android:visibility="gone"
+            card_view:layout_constraintBottom_toBottomOf="parent"
+            card_view:layout_constraintEnd_toEndOf="parent"
+            card_view:layout_constraintHorizontal_bias="0.5"
+            card_view:layout_constraintStart_toStartOf="parent" />
+
+        <ImageView
+            android:id="@+id/downloadFileBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="32dp"
+            android:visibility="gone"
+            card_view:layout_constraintBottom_toBottomOf="@+id/showFileBtn"
+            card_view:layout_constraintEnd_toStartOf="@+id/showFileBtn"
+            card_view:layout_constraintTop_toTopOf="@+id/showFileBtn"
+            card_view:srcCompat="@drawable/ic_baseline_download_24" />
+
+        <TextView
+            android:id="@+id/fileDescription"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="16dp"
+            android:layout_marginEnd="16dp"
+            android:textColor="?attr/secondaryTextColor"
+            card_view:layout_constraintEnd_toStartOf="@+id/showFileBtn"
+            card_view:layout_constraintStart_toStartOf="@+id/filenameText"
+            card_view:layout_constraintTop_toBottomOf="@+id/filenameText"
+            tools:text="file_description" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.cardview.widget.CardView>

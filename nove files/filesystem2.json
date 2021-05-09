@@ -1,0 +1,22 @@
+{
+  "ID": 2,
+  "location": "49.14437583832675, 18.466946907073503",
+  "description": {
+    "title": "Mestská plaváreň",
+    "description_s": "Otvorené",
+    "description_l": "Otvorené nonstop\nOtváracie doby sa počas sviatkov môžu líšiť",
+    "photo_s": "plavaren_out.jpg",
+    "photo_b": "plavaren_in.jpg"
+  },
+  "files2": [
+    {
+      "name": "Služby a kontakt",
+      "format": ".txt",
+      "description": "toto je jpg test file"
+    }, {
+      "name": "Fotogaléria a cenník",
+      "format": ".pdf",
+      "description": "toto je txt test file"
+    }
+  ]
+}

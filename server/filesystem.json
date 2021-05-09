@@ -1,22 +1,23 @@
 {
   "ID": 0,
-    "location": "izba",
-    "descrpition": {
-      "title": "legionrpi",
-      "description_s": "krátky popis, ktorý bude zobrazený iba v náhladovom okne",
-      "description_l": "dlhší popis zariadenia, ktorý bude zobrazený po otvorení",
-      "photo_s": "mala_fotka.png",
-      "photo_b": "velka fotka.png"
+  "location": "25.997417761947318, -97.15738221291177",
+  "description": {
+    "title": "WikiSpot-demo",
+    "description_s": "Krátky popis",
+    "description_l": "Dlhší popis",
+    "photo_s": "test.jpg",
+    "photo_b": "test.png"
+  },
+  "files": [
+    {
+      "name": "test",
+      "format": ".jpg",
+      "description": "This is jpg test file"
     },
-    "files": [
-      {
-        "name": "test",
-        "format": ".jpg",
-        "description": "toto je jpg test file"
-      }, {
-        "name": "test2",
-        "format": ".txt",
-        "description": "toto je txt test file"
-      }
-    ]
+    {
+      "name": "test",
+      "format": ".txt",
+      "description": "This is txt test file"
+    }
+  ]
 }

@@ -4,20 +4,67 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#F57C00"
+    android:background="@drawable/settings_fragment_gradient_background"
+    tools:background="@drawable/settings_fragment_gradient_background"
     tools:context=".fragments.settingsFragment">
 
+    <ImageView
+        android:id="@+id/debugBtn"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/debug_vector_asset" />
+
     <TextView
+        android:id="@+id/darkThemeSwitchText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Settings Fragment"
-        android:textColor="@android:color/white"
+        android:layout_marginStart="64dp"
+        android:layout_marginTop="88dp"
+        android:text="@string/dark_theme"
+        android:background="@drawable/text_background_gradient"
+        android:padding="5dp"
+        android:textColor="?attr/textOnTextBgColor"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Switch
+        android:id="@+id/darkThemeSwitch"
+        android:layout_width="50dp"
+        android:layout_height="21dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginLeft="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/darkThemeSwitchText"
+        app:layout_constraintStart_toEndOf="@+id/darkThemeSwitchText"
+        app:layout_constraintTop_toTopOf="@+id/darkThemeSwitchText"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <TextView
+        android:id="@+id/moreColorsSwitchText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="32dp"
+        android:text="@string/more_colors"
+        android:background="@drawable/text_background_gradient"
+        android:padding="5dp"
+        android:textColor="?attr/textOnTextBgColor"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="@+id/darkThemeSwitchText"
+        app:layout_constraintStart_toStartOf="@+id/darkThemeSwitchText"
+        app:layout_constraintTop_toBottomOf="@+id/darkThemeSwitchText" />
+
+    <Switch
+        android:id="@+id/moreColorsSwitch"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        app:layout_constraintBottom_toBottomOf="@+id/moreColorsSwitchText"
+        app:layout_constraintStart_toEndOf="@+id/moreColorsSwitchText"
+        app:layout_constraintTop_toTopOf="@+id/moreColorsSwitchText"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

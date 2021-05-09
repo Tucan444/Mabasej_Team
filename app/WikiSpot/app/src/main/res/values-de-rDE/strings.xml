@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WikiSpot</string>
+    <string name="chat">Plaudern</string>
+    <string name="explore">Erkunden</string>
+    <string name="home">Start</string>
+    <string name="map">Karte</string>
+    <string name="settings">Einstellungen</string>
+    <string name="files">Dateien</string>
+    <string name="dark_theme">Dunkles Thema</string>
+    <string name="closed">Geschlossen</string>
+    <string name="open">Öffnen</string>
+    <string name="number_of_people">Anzahl der Personen :</string>
+    <string name="status">Status :</string>
+    <string name="temperature">Temperatur :</string>
+    <string name="more_colors">Mehr Farben</string>
+</resources>

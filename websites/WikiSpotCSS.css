@@ -1,0 +1,114 @@
+/* ---------- Základné štýly ---------- */
+header {
+    background-image: url(header-background.jpg);
+}
+body {
+    background-image: url(header-background.jpg);
+    margin: 0;
+    user-select: none;
+}
+/* ---------- Navigačná lišta (navbar) ---------- */
+.list {
+    margin: 0px;
+    padding: 1rem 0;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+.item {
+    list-style: none;
+    margin-right: 3rem;
+    cursor: pointer;
+}
+.item:first-child {
+    margin-right: auto;
+    margin-left: 1.3rem;
+}
+.itemImg {
+    margin-right: auto;
+    margin-left: 1.3rem;
+}
+.list li {
+    color: #FFFFFF;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
+}
+.list li:hover {
+    color: chartreuse;
+    transition: color 0.2s ease-in-out;
+}
+.wsImg {
+    border-radius: 10px;
+}
+.wsImg:first-child {
+    margin-right: auto;
+}
+/* ---------- Burger Menu ---------- */
+.burger {
+    cursor: pointer;
+    font-size: 40px;
+    color: white;
+    display: flex;
+    visibility: collapse;
+    margin-right: 2rem;
+    margin-top: -10px;
+    position: absolute;
+}
+.burgerList {
+    display: none;
+}
+@media (max-width: 800px) {
+    .item {
+        display: none;
+    }
+    .burger {
+        visibility: visible;
+    }
+    .burgerList {
+        display: none;
+        flex-direction: column;
+        align-items: center;
+        margin-right: 30px;
+        margin-top: 0px;
+        color: white;
+        list-style: none;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 20px;
+    }
+    .bItem {
+        margin-top: 10px;
+    }
+    .appear {
+        display: flex;
+    }
+}
+/* ---------- Hlavná stránka ---------- */
+#downloadHolder {
+    margin-top: 5%;
+    margin-left: 25%;
+    display: flex;
+    justify-content: space-between;
+    width: 550px;
+    align-items: center;
+    
+}
+#download {
+    cursor: pointer;
+    background-color: none;
+    color: white;
+    border: 4px white solid;
+    border-radius: 50px;
+    width: auto;
+    height: 20px;
+    padding: 10px;
+    position: static;
+    font-size: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+#download:hover {
+    background-color: white;
+    color: rgb(47, 40, 150) ;
+}
+#phoneImg {
+    width: 350px;
+}

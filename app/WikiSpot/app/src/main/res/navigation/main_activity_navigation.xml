@@ -16,14 +16,24 @@
         android:label="fragment_explore"
         tools:layout="@layout/fragment_explore">
         <action
-            android:id="@+id/action_exploreFragment_to_mapFragment"
+            android:id="@+id/navigateToMapFragment"
             app:destination="@id/mapFragment" />
+        <action
+            android:id="@+id/navigateToInfoFragment"
+            app:destination="@id/infoFragment" />
     </fragment>
     <fragment
         android:id="@+id/homeFragment"
         android:name="com.example.wikispot.fragments.homeFragment"
         android:label="fragment_home"
-        tools:layout="@layout/fragment_home" />
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/homeFragment_to_chatFragment"
+            app:destination="@id/chatFragment" />
+        <action
+            android:id="@+id/homeFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
     <fragment
         android:id="@+id/mapFragment"
         android:name="com.example.wikispot.fragments.mapFragment"
@@ -32,10 +42,59 @@
         <action
             android:id="@+id/action_mapFragment_to_exploreFragment"
             app:destination="@id/exploreFragment" />
+        <argument
+            android:name="location"
+            app:argType="com.google.android.gms.maps.model.LatLng" />
+        <action
+            android:id="@+id/mapFragment_to_infoFragment"
+            app:destination="@id/infoFragment" >
+        </action>
+        <argument
+            android:name="loadLastCoordinates"
+            app:argType="boolean"
+            android:defaultValue="false" />
     </fragment>
     <fragment
         android:id="@+id/settingsFragment"
         android:name="com.example.wikispot.fragments.settingsFragment"
         android:label="fragment_settings"
-        tools:layout="@layout/fragment_settings" />
+        tools:layout="@layout/fragment_settings" >
+        <action
+            android:id="@+id/navigateToDebugFragment"
+            app:destination="@id/debugFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/debugFragment"
+        android:name="com.example.wikispot.fragments.debugFragment"
+        android:label="fragment_debug"
+        tools:layout="@layout/fragment_debug" >
+        <action
+            android:id="@+id/navigateToAnotherDebugFragment"
+            app:destination="@id/anotherDebugFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/anotherDebugFragment"
+        android:name="com.example.wikispot.fragments.anotherDebugFragment"
+        android:label="fragment_another_debug"
+        tools:layout="@layout/fragment_another_debug" >
+        <action
+            android:id="@+id/navigateBackToDebugFragment"
+            app:destination="@id/debugFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/infoFragment"
+        android:name="com.example.wikispot.fragments.infoFragment"
+        android:label="fragment_info"
+        tools:layout="@layout/fragment_info" >
+        <argument
+            android:name="executeLoadFuntion"
+            app:argType="boolean"
+            android:defaultValue="false" />
+        <action
+            android:id="@+id/navigateBackToExploreFragment"
+            app:destination="@id/exploreFragment" />
+        <action
+            android:id="@+id/infoFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
 </navigation>
