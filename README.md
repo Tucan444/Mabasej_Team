@@ -1,26 +1,49 @@
 1. [Mabasej team project](#mabasej_team)
 2. [App](#app)
-3. [Server](#server)
-   1. [Install .img (RPI)](#image-install)
-   2. [Install script (DietPi, work in progress](#script-install)
+   1. [Installation from apk](#install)
+4. [Server](#server)
+   1. [Install .img (RPI) server+web+computer_vision](#image-install)
+   2. [Install script (DietPi, work in progress) server](#script-install)
    3. [Install manually (work in progress)](#manual-install)
    4. [Server filesystem](#server-filesystem)
-      1.[filesystem.json](#filesystem.json)
-      2.[settings.json](#settings.json)
-      3.
+   5. [filesystem.json](#filesystem)
+   6. [settings.json](#settings)
 
 # Mabasej_Team
 We are working on system, that will help tourists in cities to get information about city more easily.
-| Part of project | State | Available for easy install |
-| :-------------- | :---- | :------------------------: |
-| Server          | Working | 🟢 |
-| Computer Vision Plugin | Working | 🟢 |
-| Web             | Demo Working | 🟠 |
-| Android app     | Demo Working | 🟠 manual server ip 🟠 |
+| Part of project | State | Available for easy install | Comments |
+| :-------------- | :---- | :------------------------: | :------: |
+| Server          | Working | 🟢 | Fully working if config is correct |
+| Computer Vision Plugin | Working | 🟢 |                         |
+| Web             | Demo Working | 🟠 |                           |
+| Android app     | Working | 🟢 |  🟠manual server ip🟠 |
 
 
 # App
-Is made in android studio and supports android devices (Android 6<)
+Is programmed in android studio (kotlin)
+It is based on simple interface with only few buttons, but lot of informations:
+- Home- *Shows contents of the server that the user is connected to*
+- Explore- *Shows all servers in list with small description and photo.* *User can acces map locations of server or all informations about server*
+- Map- *Map that contains pins from all servers and user can open server info from here.* *Also it is possible to start navigation with google maps from here*
+- Chat- *Users connected to same server can chat here*
+- Settings- *Simple settings for theme and hidden debug menu*
+
+## Install
+Requirements: 
+- Android 6 and newer
+- wikispot.apk (will be added by 10:00 11.5.2021)
+
+Steps:
+
+1. Download `wikispot.apk` to your mobile and install it. (you will probablly need to enable installing apps from your browser)
+2. After instalation open app and go to settings.
+3. Click on the top right corner and debug menu should show up.
+4. Change ip to your server ip and chose `CHANGE URL`
+5. Chose `Home` menu and you should see your server.
+
+⚠️ Because of android limitations we were not able to do automatic connection, but we are working on workaround ⚠️
+
+
 
 # Server
 Wikispot is in testing stages, but it is possible to install it using our [.img file](https://github.com/Tucan444/Mabasej_Team/releases/tag/V1.0) based on DietPi or custom script.
@@ -37,6 +60,7 @@ Wikispot is in testing stages, but it is possible to install it using our [.img 
 
 
 ## image install
+
 login credentials
 > login: dietpi
 
@@ -76,6 +100,7 @@ Install:
 
 
 ## Server filesystem
+Tree view of server
 
 ```
 └── test_directory
@@ -97,7 +122,8 @@ Install:
 ```
 
 
-### filesystem.json
+### filesystem
+File: `filesystem.json`
 
 ```
 {
@@ -133,7 +159,8 @@ and add record for file into `files` list in `filesystem.json`. :exclamation:do 
 ```
 
 
-### settings.json
+### settings
+File: `settings.json`
 
 ```
 {
