@@ -1,20 +1,56 @@
+1. [Mabasej team project](#mabasej_team)
+2. [App](#app)
+   1. [Installation from apk](#install)
+4. [Server](#server)
+   1. [Install .img (RPI) server+web+computer_vision](#image-install)
+   2. [Install script (DietPi, work in progress) server](#script-install)
+   3. [Install manually (work in progress)](#manual-install)
+   4. [Server filesystem](#server-filesystem)
+   5. [filesystem.json](#filesystem)
+   6. [settings.json](#settings)
+
 # Mabasej_Team
 We are working on system, that will help tourists in cities to get information about city more easily.
+| Part of project | State | Available for easy install | Comments |
+| :-------------- | :---- | :------------------------: | :------: |
+| Server          | Working | 🟢 | Fully working if config is correct |
+| Computer Vision Plugin | Working | 🟢 |                         |
+| Web             | Demo Working | 🟠 |                           |
+| Android app     | Working | 🟢 |  🟠manual server ip🟠 |
 
-## Hardware
-- Raspberry PI (for now tested only on rpi4. Works on rpi zero too, but it will be slow if more devices are connected)
-- External/Internal WiFi antena
 
-## Software
-- python 3.9.2 compatible server with basic web interface
-- Kotlin based mobile app
+# App
+Is programmed in android studio (kotlin)
+It is based on simple interface with only few buttons, but lot of informations:
+- Home- *Shows contents of the server that the user is connected to*
+- Explore- *Shows all servers in list with small description and photo.* *User can acces map locations of server or all informations about server*
+- Map- *Map that contains pins from all servers and user can open server info from here.* *Also it is possible to start navigation with google maps from here*
+- Chat- *Users connected to same server can chat here*
+- Settings- *Simple settings for theme and hidden debug menu*
 
 ## Install
-Wikispot is in testing stages, but it is possible to install it using our .img file (link coming soon) based on DietPi or custom script.
+Requirements: 
+- Android 6 and newer
+- wikispot.apk (will be added by 10:00 11.5.2021)
+
+Steps:
+
+1. Download `wikispot.apk` to your mobile and install it. (you will probablly need to enable installing apps from your browser)
+2. After instalation open app and go to settings.
+3. Click on the top right corner and debug menu should show up.
+4. Change ip to your server ip and chose `CHANGE URL`
+5. Chose `Home` menu and you should see your server.
+
+⚠️ Because of android limitations we were not able to do automatic connection, but we are working on workaround ⚠️
+
+
+
+# Server
+Wikispot is in testing stages, but it is possible to install it using our [.img file](https://github.com/Tucan444/Mabasej_Team/releases/tag/V1.0) based on DietPi or custom script.
 
 | Device                | Server compatible                                                                           |  Instalation  |
 | :-------------------- | :------------------------------------------------------------------------------------------ | :-----------: |
-| Ubuntu (I7, 16GB ram) | :heavy_check_mark: WORKING (Only server)                                                    | Manual/script |
+| Ubuntu (I7, 16GB ram) | :heavy_check_mark: WORKING (Only server automated setup)                                    | Manual/script |
 | RPI 4b (2GB)          | :heavy_check_mark: WORKING                                                                  | .img/script   |
 | RPI 400 (4GB)         | :grey_question: Untested. Should work.                                                      | .img/script   |
 | RPI 3b+               | :grey_question: Untested. Should work.                                                      | .img/script   |
@@ -23,7 +59,8 @@ Wikispot is in testing stages, but it is possible to install it using our .img f
 | RPI                   | :question: Untested.                                                                        | :x:           |
 
 
-### Fresh istall (.img) Only RPI
+## image install
+
 login credentials
 > login: dietpi
 
@@ -31,9 +68,9 @@ login credentials
 
 
 requirements:
-1. WikiSpot image file (download: *soon*)
+1. [WikiSpot image file](https://github.com/Tucan444/Mabasej_Team/releases/tag/V1.0)
 2. MicroSd card (recommended: >=16GB, :exclamation: ALL DATA STORED ON SD CARD WILL BE FORMATED :exclamation:)
-3. BalenaEtcher (or another sd card flasher) *link:*  https://www.balena.io/etcher/
+3. [BalenaEtcher](https://www.balena.io/etcher/) (or another sd card flasher) *link:*  https://www.balena.io/etcher/
 4. SD card reader
 
 
@@ -54,15 +91,16 @@ Install:
 8. Done you can start using WikiSpot and edit contents of WikiSpot with our app (*coming soon*)
 
 
-### Script install
+## Script install
 *coming soon*
 
 
-### Manual install
+## Manual install
 *coming soon*
 
 
 ## Server filesystem
+Tree view of server
 
 ```
 └── test_directory
@@ -85,6 +123,7 @@ Install:
 
 
 ### filesystem
+File: `filesystem.json`
 
 ```
 {
@@ -120,7 +159,8 @@ and add record for file into `files` list in `filesystem.json`. :exclamation:do 
 ```
 
 
-### settings.json
+### settings
+File: `settings.json`
 
 ```
 {
