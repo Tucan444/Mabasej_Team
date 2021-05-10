@@ -1,6 +1,6 @@
 
 $(document).ready(function() {
-    let base_url = "http://lohost:8000/";
+    let base_url = "http://192.168.1.105:8000/";
     let ids_list = [];
 
     $.get("ip.txt", function(data) {
@@ -32,7 +32,7 @@ $(document).ready(function() {
             </div>
             <!-- Veľké zobrazenie -->
             <div id="big${id}" class="big">
-                <div class="imgBig"><img class="obrazok_big" src="${image_urls[1]}" alt="#"></div>
+                <div class="imgBig"><img class="wsImg" src="${image_urls[1]}" alt="#"></div>
                 <div class="text_big">${descriptions[1]}</div>
                 <div class="sensors_big">
                 </div>
@@ -109,6 +109,4 @@ $(document).ready(function() {
      
         })
     }
-    
-    init_wesite();
 })

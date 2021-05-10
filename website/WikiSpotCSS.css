@@ -91,19 +91,20 @@ body {
 /* ---------- Hlavná stránka ---------- */
 #downloadHolder {
     margin-top: 5%;
-    margin-left: 25%;
+    margin-left: 35%;
     display: flex;
     justify-content: space-between;
     width: 550px;
     align-items: center;
     
 }
-#download {
+#appDownload {
     cursor: pointer;
     background-color: none;
     color: white;
     border: 4px white solid;
     border-radius: 50px;
+    margin-right: -100px;
     width: auto;
     height: 20px;
     padding: 10px;
@@ -116,7 +117,8 @@ body {
     color: rgb(47, 40, 150) ;
 }
 #phoneImg {
-    width: 350px;
+    width: 250px;
+    height: auto;
 }
 #conHolder {
     width: 500px;

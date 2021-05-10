@@ -222,12 +222,6 @@ body {
     flex-direction: column;
 
 }
-.imgBig {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-}
 .text_small { 
     grid-area: description;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
@@ -303,6 +297,18 @@ body {
 .appear {
     display: flex;
 }
+.imgBig {
+    margin-left: 25px;
+    margin-top: 25px;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.wsImg {
+    width: 500px;
+    height: 350px;
+}
 /* ---------- Responzívnosť (media tag) ---------- */
 @media (max-width: 1550px) {
     .obrazok_big {
@@ -372,13 +378,13 @@ body {
         font-size: 15px;
     }
     .list_item_holder {
-        margin-right: 0px;
+        margin-right: 20px;
     }
     #arrow0 {
-        margin-top: 32px;
-        font-size: 30px;
-        width: 30px;
-        height: 30px;
+        margin-top: 30px;
+        font-size: 40px;
+        width: 40px;
+        height: 40px;
     }
     .expand {
         margin-left: 0px;
