@@ -4,6 +4,8 @@ header {
 }
 body {
     background-image: url(header-background.jpg);
+    background-repeat: no-repeat;
+    background-attachment: fixed;
     margin: 0;
     user-select: none;
 }
@@ -14,6 +16,7 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
+    flex-direction: row;
 }
 .item {
     list-style: none;
@@ -58,6 +61,9 @@ body {
     display: none;
 }
 @media (max-width: 800px) {
+    #githubImg {
+        display: none;
+    }
     .item {
         display: none;
     }
@@ -111,4 +117,21 @@ body {
 }
 #phoneImg {
     width: 350px;
+}
+#conHolder {
+    width: 500px;
+    height: 500px;
+    margin-top: 15%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+/* ---------- O projekte ---------- */
+#projectInfo {
+    background-color: rgb(255, 255, 255);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: black;
+    width: 300px;
+    height: auto;
 }

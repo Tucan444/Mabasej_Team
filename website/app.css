@@ -6,6 +6,8 @@ body {
     background-image: url(header-background.jpg);
     margin: 0;
     user-select: none;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
 }
 /* ---------- Navigačná lišta (navbar) ---------- */
 .list {
@@ -36,12 +38,6 @@ body {
 .list li:hover {
     color: chartreuse;
     transition: color 0.2s ease-in-out;
-}
-.wsImg {
-    border-radius: 10px;
-}
-.wsImg:first-child {
-    margin-right: auto;
 }
 /* ---------- Burger Menu ---------- */
 .burger {
@@ -161,22 +157,31 @@ body {
     flex-direction: row;
     justify-content: flex-end;
 }
-.klol {
+.short_description {
+    width: 300px;
+}
+.list_item_holder {
     display: flex;
-    flex-direction: row;
-    justify-content: flex-end;
+    flex-direction: column;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-right: 71px;
     margin-bottom: 10px;
     margin-left: 10px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
-.constantImg {
-    grid-area: obrazok;
+.sens_style_heat {
+    grid-area: senzory;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-size: 20px;
     display: flex;
-    width: 300px; 
-    height: 300px; 
-    top: 250px;
-    left: 50px;
-    transition: display 1s 1s;
+    align-items: center;
+    flex-direction: column;
+
+}
+.wsImg {
+    border-radius: 10px;
+    margin-right: auto;
 }
 .mystyle {
     transform: rotate(180deg);
@@ -194,24 +199,72 @@ body {
     transition: transform 0.5s ease-in-out;
 }
 /* ---------- Grid Layout ---------- */
-.obrazok { 
+.obrazok_small {
     grid-area: obrazok;
-    width: 500px;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    width: 100px; 
+    height: 100px; 
+    margin-left: 25px;
+    border-radius: 10px;
+    transition: display 1s 1s;
+}
+.obrazok_big { 
+    grid-area: obrazok;
+    width: 400px;
     height: 300px;
+    margin-left: 0px;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+
+}
+.imgBig {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+}
+.text_small { 
+    grid-area: description;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
     margin-left: 25px;
 }
-.text { 
-    grid-area: description; 
+.text_big {
+    grid-area: description;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    margin-left: 25px;
 }
-.senzory { 
-    grid-area: senzory; 
+.sensors_small {
+    width: 140px; 
+    grid-area: senzory;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
 }
-.info { 
+.sensors_big {
+    grid-area: senzory;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+.info_small { 
+    grid-area: info; 
+}
+.info_big {
     grid-area: info; 
 }
 .listHide {
     display: none;
-    background: #ffffff;
 }
 .expand {
     display: grid;
@@ -227,6 +280,7 @@ body {
     border-radius: 10px;
     height: 600px;
     width: 550px;
+    background-color: white;
 }
 .big {
     display: grid;
@@ -238,6 +292,7 @@ body {
       "description info";
     position: absolute;
     border-radius: 10px;
+    margin-top: -12px;
     left: 650px;
     top: 117px;
     height: 700px;
@@ -249,7 +304,27 @@ body {
     display: flex;
 }
 /* ---------- Responzívnosť (media tag) ---------- */
-@media (max-width: 1000px) {
+@media (max-width: 1550px) {
+    .obrazok_big {
+        width: 400px;
+        height: 250px;
+    }
+    .big {
+        width: 800px;
+        height: 600px;
+    }
+}
+@media (max-width: 1450px) {
+    .obrazok_big {
+        width: 350px;
+        height: 200px;
+    }
+    .big {
+        width: 700px;
+        height: 500px;
+    }
+}
+@media (max-width: 1350px) {
     .big {
         display: none;
     }
@@ -262,7 +337,6 @@ body {
         visibility: visible;
     }
     .burgerList {
-        display: none;
         flex-direction: column;
         align-items: center;
         margin-right: 30px;
@@ -274,5 +348,54 @@ body {
     }
     .bItem {
         margin-top: 10px;
+    }
+    
+}
+@media (max-width: 570px) {
+    .wsList {
+        background: white;
+        width: 500px;
+        height: 100px;
+        border-radius: 10px;
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+    .wsImg {
+        width: 120px;
+        border-radius: 10px;
+        margin-right: auto;
+    }
+    .title0 {
+        font-size: 15px;
+    }
+    .short_description {
+        font-size: 15px;
+    }
+    .list_item_holder {
+        margin-right: 0px;
+    }
+    #arrow0 {
+        margin-top: 32px;
+        font-size: 30px;
+        width: 30px;
+        height: 30px;
+    }
+    .expand {
+        margin-left: 0px;
+        width: 500px;
+        height: 550px;
+    }
+}
+@media (max-width: 360px) and (max-height: 640px) {
+    .wsList {
+        background: white;
+        width: 360px;
+        height: 100px;
+        border-radius: 10px;
+        margin-left: 0px;
+        margin-top: 5px;
+    }
+    .list_item_holder {
+        margin-right: -10px;
     }
 }

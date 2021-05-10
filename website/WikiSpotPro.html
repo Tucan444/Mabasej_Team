@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="WikiSpotCSS.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script src="appjs.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <header>
     <nav>
@@ -16,7 +17,7 @@
             <li class="item" onclick="location.href = 'WikiSpot.html'">DOMOV</li>
             <li class="item" onclick="location.href = 'WikiSpotWS.html'">WIKISPOT</li>
             <li class="item" onclick="location.href = 'WikiSpotPro.html'">O PROJEKTE</li>
-            <li class="item" onclick="location.href = 'WikiSpotCon.html'">KONTAKT</li>
+            <li class="item" onclick="location.href = 'WikiSpotCon.html'"><a href="https://github.com/Tucan444/Mabasej_Team"><img src="GitHub-Mark-Light-64px.png" alt="githublogo" id="githubImg"></a></li>
             <div class="burger" onclick="bmenu()">&#9776</div>
         </ul>
         <!-- Navigačná lisťa /malá obrazovka/ -->
@@ -29,9 +30,7 @@
     </nav>
 </header>
 <body>
-    <div id="downloadHolder">
-        <div id="download">SŤIAHNUŤ &#9660</div>
-        <div id="phone"><img src="samsung1.png" alt="" id="phoneImg"></div>
-    </div>
+    <article id="projectInfo"></article>
+    <script src="about.js"></script>
 </body>
 </html>
