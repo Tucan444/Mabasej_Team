@@ -1,20 +1,33 @@
+1. [Mabasej team project](#mabasej_team)
+2. [App](#app)
+3. [Server](#server)
+   1. [Install .img (RPI)](#image-install)
+   2. [Install script (DietPi, work in progress](#script-install)
+   3. [Install manually (work in progress)](#manual-install)
+   4. [Server filesystem](#server-filesystem)
+      1.[filesystem.json](#filesystem.json)
+      2.[settings.json](#settings.json)
+      3.
+
 # Mabasej_Team
 We are working on system, that will help tourists in cities to get information about city more easily.
+| Part of project | State | Available for easy install |
+| :-------------- | :---- | :------------------------: |
+| Server          | Working | 🟢 |
+| Computer Vision Plugin | Working | 🟢 |
+| Web             | Demo Working | 🟠 |
+| Android app     | Demo Working | 🟠 manual server ip 🟠 |
 
-## Hardware
-- Raspberry PI (for now tested only on rpi4. Works on rpi zero too, but it will be slow if more devices are connected)
-- External/Internal WiFi antena
 
-## Software
-- python 3.9.2 compatible server with basic web interface
-- Kotlin based mobile app
+# App
+Is made in android studio and supports android devices (Android 6<)
 
-## Install
-Wikispot is in testing stages, but it is possible to install it using our .img file (link coming soon) based on DietPi or custom script.
+# Server
+Wikispot is in testing stages, but it is possible to install it using our [.img file](https://github.com/Tucan444/Mabasej_Team/releases/tag/V1.0) based on DietPi or custom script.
 
 | Device                | Server compatible                                                                           |  Instalation  |
 | :-------------------- | :------------------------------------------------------------------------------------------ | :-----------: |
-| Ubuntu (I7, 16GB ram) | :heavy_check_mark: WORKING (Only server)                                                    | Manual/script |
+| Ubuntu (I7, 16GB ram) | :heavy_check_mark: WORKING (Only server automated setup)                                    | Manual/script |
 | RPI 4b (2GB)          | :heavy_check_mark: WORKING                                                                  | .img/script   |
 | RPI 400 (4GB)         | :grey_question: Untested. Should work.                                                      | .img/script   |
 | RPI 3b+               | :grey_question: Untested. Should work.                                                      | .img/script   |
@@ -23,7 +36,7 @@ Wikispot is in testing stages, but it is possible to install it using our .img f
 | RPI                   | :question: Untested.                                                                        | :x:           |
 
 
-### Fresh istall (.img) Only RPI
+## image install
 login credentials
 > login: dietpi
 
@@ -31,9 +44,9 @@ login credentials
 
 
 requirements:
-1. WikiSpot image file (download: *soon*)
+1. [WikiSpot image file](https://github.com/Tucan444/Mabasej_Team/releases/tag/V1.0)
 2. MicroSd card (recommended: >=16GB, :exclamation: ALL DATA STORED ON SD CARD WILL BE FORMATED :exclamation:)
-3. BalenaEtcher (or another sd card flasher) *link:*  https://www.balena.io/etcher/
+3. [BalenaEtcher](https://www.balena.io/etcher/) (or another sd card flasher) *link:*  https://www.balena.io/etcher/
 4. SD card reader
 
 
@@ -54,11 +67,11 @@ Install:
 8. Done you can start using WikiSpot and edit contents of WikiSpot with our app (*coming soon*)
 
 
-### Script install
+## Script install
 *coming soon*
 
 
-### Manual install
+## Manual install
 *coming soon*
 
 
@@ -84,7 +97,7 @@ Install:
 ```
 
 
-### filesystem
+### filesystem.json
 
 ```
 {
