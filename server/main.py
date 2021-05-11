@@ -17,8 +17,7 @@ from pydantic import BaseModel
 
 devs = {
     "Matej Justus": {
-        "git": "https://github.com/UntriexTv", "mail": "maco.justus@gmail.com"
-    },
+        "git": "https://github.com/UntriexTv", "mail": "maco.justus@gmail.com"},
     "Benjamin Kojda": {
         "git": "https://github.com/Tucan444", "mail": "ben4442004@gmail.com"
     },
@@ -89,7 +88,14 @@ if ID not in heartbeat_table["ID"]:
     heartbeat_table["location"].append(location)
     heartbeat_table["file_system"].append(filesystem)
     heartbeat_table["last_heartbeat"].append(time_to_heartbeat)
+else:
+    index_server_run = heartbeat_table["ID"].index(ID)
+    heartbeat_table["IP"][index_server_run] = IP
+    heartbeat_table["location"][index_server_run] = location
+    heartbeat_table["file_system"][index_server_run] = filesystem
+    heartbeat_table["last_heartbeat"][index_server_run] = time_to_heartbeat
 
+heartbeat_table["my_ip"] = IP
 
 class ServerTable(BaseModel):  # table of content for heartbeat request
     ID: list
@@ -97,6 +103,7 @@ class ServerTable(BaseModel):  # table of content for heartbeat request
     location: list
     file_system: list
     last_heartbeat: list
+    my_ip: str
 
 
 class Sensor(BaseModel):
@@ -116,7 +123,8 @@ def read_root():
 
 @app.post("/heartbeat")
 def heartbeat(s_table: ServerTable, request: Request):
-    log.message(f"server requested heartbeat {request.client.host}:{request.client.port}")
+    global heartbeat_table
+    log.message(f"server requested heartbeat {s_table.my_ip}:{request.client.port}")
     log.debug(f"Recieved server table: {s_table}")
 
     try:
@@ -132,8 +140,8 @@ def heartbeat(s_table: ServerTable, request: Request):
             elif server_id == ID:
                 log.debug(f"Updated my heartbeat from {s_table.last_heartbeat[position]} to {time_to_heartbeat}")
                 heartbeat_table["last_heartbeat"][heartbeat_table["ID"].index(ID)] = time_to_heartbeat
-            else:
-                log.message(f"Heartbeat from new server:\n        ID: {server_id} IP: {request.client}")
+            elif server_id not in heartbeat_table["ID"]:
+                log.message(f"Heartbeat from new server:\n        ID: {server_id} IP: {s_table.my_ip}")
                 heartbeat_table["ID"].append(int(s_table.ID[position]))
                 heartbeat_table["IP"].append(s_table.IP[position])
                 heartbeat_table["location"].append(s_table.location[position])
@@ -142,10 +150,12 @@ def heartbeat(s_table: ServerTable, request: Request):
                 log.debug(f"Created {server_id}`s heartbeat:    {s_table.last_heartbeat[position]}")
     except Exception as error:
         log.error(f"heartbeat > {error}")
-
-    if heartbeat_table["ID"][heartbeat_table["IP"].index(request.client.host)] in offline:
-        offline.remove(heartbeat_table["ID"][heartbeat_table["IP"].index(request.client.host)])
-        log.warning(f"{request.client.host} gone online")
+    try:
+        if heartbeat_table["ID"][heartbeat_table["IP"].index(s_table.my_ip)] in offline:
+            offline.remove(heartbeat_table["ID"][heartbeat_table["IP"].index(s_table.my_ip)])
+            log.warning(f"{s_table.my_ip} gone online")
+    except Exception as error:
+        log.error(f"heartbeat > {error}")
 
     return heartbeat_table, {"ID": ID, "file_system": filesystem, "location": location}
 
@@ -169,7 +179,6 @@ def get_sensors(IDx: int, request: Request):
 @app.get("/files/{IDx}/{file}")
 def get_file(IDx: int, file: str, request: Request):
     log.debug(f"""{request.client} requested {file} from {"this server" if IDx == ID else f"id {IDx}"}""")
-    server_ip = heartbeat_table["IP"][heartbeat_table["ID"].index(IDx)]
     if IDx == ID:
         if os.path.isfile(f"files/{file}"):
             return FileResponse(f"files/{file}")
@@ -180,6 +189,7 @@ def get_file(IDx: int, file: str, request: Request):
         log.warning(f"{request.client} tried to access id ({IDx}) that does not exist.")
         return f"ERROR: {IDx} does not exist."
     else:
+        server_ip = heartbeat_table["IP"][heartbeat_table["ID"].index(IDx)]
         if os.path.isdir(f"cache/{IDx}"):
             if os.path.isfile(f"cache/{IDx}/{file}"):
                 with open(f"cache/{IDx}/{file}", "rb") as compared_file:
@@ -212,7 +222,7 @@ def get_file(IDx: int, file: str, request: Request):
 @app.post("/{IDx}/update_sensor")
 def update_sensors(data: Sensor, request: Request, IDx: int):
     global sensors
-    if IDx == ID:
+    if IDx == ID or IDx == -1:
         if data.name in sensors:
             if not data.value:
                 log.message(f"{request.client.host} removed sensor {data.name}")
@@ -224,10 +234,12 @@ def update_sensors(data: Sensor, request: Request, IDx: int):
             log.warning(f"{request.client} created new sensor.\n SENSOR: {data}")
             sensors[data.name] = data.value
             return f"Successfuly made new sensor"
-    else:
+    elif IDx in heartbeat_table["ID"]:
         r = requests.post(f"""http://{heartbeat_table["IP"][heartbeat_table["ID"].index(IDx)]}:8000/{IDx}/update_sensor""",
                           json={"name": data.name, "value": data.value})
         return r.text
+    else:
+        return f"ERROR: server {IDx} does not exist."
 
 
 @app.get("/compare/{file}")

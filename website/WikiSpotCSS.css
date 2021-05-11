@@ -28,6 +28,7 @@ body {
     margin-left: 1.3rem;
 }
 .itemImg {
+    cursor: pointer;
     margin-right: auto;
     margin-left: 1.3rem;
 }
@@ -37,7 +38,7 @@ body {
     font-size: 20px;
 }
 .list li:hover {
-    color: chartreuse;
+    color: rgba(255, 255, 255, 0.418);
     transition: color 0.2s ease-in-out;
 }
 .wsImg {
@@ -90,7 +91,7 @@ body {
 }
 /* ---------- Hlavná stránka ---------- */
 #downloadHolder {
-    margin-top: 5%;
+    margin-top: 10px;
     margin-left: 35%;
     display: flex;
     justify-content: space-between;
@@ -104,20 +105,21 @@ body {
     color: white;
     border: 4px white solid;
     border-radius: 50px;
-    margin-right: -100px;
+    margin-right: 0px;
     width: auto;
-    height: 20px;
+    height: 30px;
     padding: 10px;
     position: static;
-    font-size: 20px;
+    font-size: 25px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: background-color 0.5s, color 0.5s;
 }
-#download:hover {
+#appDownload:hover {
     background-color: white;
     color: rgb(47, 40, 150) ;
 }
 #phoneImg {
-    width: 250px;
+    width: 350px;
     height: auto;
 }
 #conHolder {
@@ -131,9 +133,15 @@ body {
 }
 /* ---------- O projekte ---------- */
 #projectInfo {
-    background-color: rgb(255, 255, 255);
+    position: absolute;
+    top: 250px;
+    left: 450px;
+    background-color: rgba(255, 255, 255, 0.322);
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color: black;
-    width: 300px;
+    color: rgb(255, 255, 255);
+    padding: 15px;
+    border-radius: 20px;
+    width: 470px;
     height: auto;
+    font-size: 40px;
 }

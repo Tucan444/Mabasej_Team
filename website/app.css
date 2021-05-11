@@ -27,6 +27,7 @@ body {
     margin-left: 1.3rem;
 }
 .itemImg {
+    cursor: pointer;
     margin-right: auto;
     margin-left: 1.3rem;
 }
@@ -36,7 +37,7 @@ body {
     font-size: 20px;
 }
 .list li:hover {
-    color: chartreuse;
+    color: rgba(75, 61, 204, 0.459);
     transition: color 0.2s ease-in-out;
 }
 /* ---------- Burger Menu ---------- */
@@ -310,6 +311,14 @@ body {
     height: 350px;
 }
 /* ---------- Responzívnosť (media tag) ---------- */
+@media (min-width: 1350px) {
+    .arrow {
+        display: none;
+    }
+    .wsList {
+        width: 481px;
+    }
+}
 @media (max-width: 1550px) {
     .obrazok_big {
         width: 400px;

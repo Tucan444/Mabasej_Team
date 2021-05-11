@@ -6,13 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link rel="stylesheet" href="WikiSpotCSS.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!-- Add icon library -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> 
     <script src="appjs.js"></script>
 </head>
 <header>
     <nav>
         <!-- Navigačná lišta /veľká obrazovka/ -->
         <ul class="list">
-            <img src="wikispot-white.png" alt="" class="itemImg">
+            <img src="wikispot-white.png" alt="" class="itemImg" onclick="location.href = 'WikiSpot.html'">
             <li class="item" onclick="location.href = 'WikiSpot.html'">DOMOV</li>
             <li class="item" onclick="location.href = 'WikiSpotWS.html'">WIKISPOT</li>
             <li class="item" onclick="location.href = 'WikiSpotPro.html'">O PROJEKTE</li>
@@ -30,7 +32,7 @@
 </header>
 <body>
     <div id="downloadHolder">
-        <a href=""></a><div id="appDownload">SŤIAHNUŤ &#9660</div></a>
+        <a href=""></a><div id="appDownload">SŤIAHNUŤ <i class="fa fa-download"></i></div></a>
         <img src="wikispotphone.png" alt="" id="phoneImg">
     </div>
 </body>
