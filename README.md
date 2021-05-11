@@ -31,7 +31,7 @@ It is based on simple interface with only few buttons, but lot of informations:
 ## Install
 Requirements: 
 - Android 6 and newer
-- wikispot.apk (will be added by 10:00 11.5.2021)
+- [WikiSpot.apk](https://github.com/Tucan444/Mabasej_Team/releases/tag/V1.0)
 
 Steps:
 
