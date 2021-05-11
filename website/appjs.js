@@ -1,5 +1,5 @@
 function onclick1() {
-    var click = document.getElementById("arrow1");
+    var click = document.getElementById("arrow0");
     click.classList.toggle("mystyle");
     var expand = document.getElementById("listExpand1");
     expand.classList.toggle("expand");

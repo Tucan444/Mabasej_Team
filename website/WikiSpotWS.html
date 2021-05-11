@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="app.css">
+    <title>WikiSpot</title>
+    <script src="appjs.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+</head>
+<header>
+    <nav>
+        <!-- Navigačná lišta /veľká obrazovka/ -->
+        <ul class="list">
+            <img src="wikispot-white.png" alt="" class="itemImg" onclick="location.href = 'WikiSpot.html'">
+            <li class="item" onclick="location.href = 'WikiSpot.html'">DOMOV</li>
+            <li class="item" onclick="location.href = 'WikiSpotWS.html'">WIKISPOT</li>
+            <li class="item" onclick="location.href = 'WikiSpotPro.html'">O PROJEKTE</li>
+            <li class="item" onclick="location.href = 'WikiSpotCon.html'"><a href="https://github.com/Tucan444/Mabasej_Team"><img src="GitHub-Mark-Light-64px.png" alt="githublogo" id="githubImg"></a></li>
+            <div class="burger" onclick="bmenu()">&#9776</div>
+        </ul>
+        <!-- Navigačná lisťa /malá obrazovka/ -->
+        <ul class="burgerList" id="bonger">
+            <li class="bItem">DOMOV</li>
+            <li class="bItem">WIKISPOT</li>
+            <li class="bItem">O PROJEKTE</li>
+            <li class="bItem">KONTAKT</li>
+        </ul>
+    </nav>
+</header>
+<body>
+
+
+<script src="desc_short.js"></script>
+</body>
+</html>
