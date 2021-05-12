@@ -16,7 +16,7 @@ We are working on system, that will help tourists in cities to get information a
 | Server          | Working | 🟢 | Fully working if config is correct |
 | Computer Vision Plugin | Working | 🟢 |                         |
 | Web             | Demo Working | 🟠 |                           |
-| Android app     | Working | 🟢 |  🟠manual server ip🟠 </br>(wokring automatically if connected to AP on rpi)|
+| Android app     | Working | 🟢 |  🟠manual server ip </br>(working automatically if connected to AP on RPI)|
 
 
 # App
