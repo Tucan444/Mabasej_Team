@@ -26,7 +26,7 @@ $(document).ready(function() {
             <div id="listExpand${id}" class="listHide">
                 <img src="${image_urls[1]}" alt="#" class="obrazok_big">
                 <div class="text_small">${descriptions[1]}</div>
-                <div class="sensors_small">
+                <div id="sensors_small${id}" class="sensors_small">
                 </div>
                 <div class="info_small"></div>
             </div>
@@ -34,7 +34,7 @@ $(document).ready(function() {
             <div id="big${id}" class="big">
                 <div class="imgBig"><img class="wsImg" src="${image_urls[1]}" alt="#"></div>
                 <div class="text_big">${descriptions[1]}</div>
-                <div class="sensors_big">
+                <div id="sensors_big${id}" class="sensors_big">
                 </div>
                 <div class="info_big"></div>
             </div>`;
@@ -44,11 +44,18 @@ $(document).ready(function() {
         $.get(`${base_url}${id}/sensors`, function(data1) {
             Object.keys(data1).forEach(function(key) {
                 let value = data1[key];
+
+                // removing [translate]-
                 if (key.startsWith("[translate]-")) {
-                    key = key.slice(12, key.length);
+                    key = key.slice(12);
                 }
-                $(".sensors_small").append(`<p class="sens_style_heat">${key}: ${value}</p>`);
-                $(".sensors_big").append(`<p class="sens_style_heat">${key}: ${value}</p>`);
+                if (value.startsWith("[translate]-")) {
+                    value = value.slice(12);
+                }
+                
+                // appending to DOM
+                $(`#sensors_small${id}`).append(`<p class="sens_style_heat">${key}: ${value}</p>`);
+                $(`#sensors_big${id}`).append(`<p class="sens_style_heat">${key}: ${value}</p>`);
             });
         });
 
